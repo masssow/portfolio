@@ -29,16 +29,16 @@
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav justify-content-end">
-							<li class="nav-item active"><a class="nav-link" href="#">Accueil</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">Qui suis-je</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+							<li class="nav-item active"><a class="nav-link" href="{{ path('app_home')}}">Accueil</a></li>
+							<li class="nav-item"><a class="nav-link" href="{{ path ('app_about')}}">Qui suis-je</a></li>
+							<li class="nav-item"><a class="nav-link" href="{{ path ('app_services')}}">Services</a></li>
 							{# <li class="nav-item"><a class="nav-link" href="{{ path ('app_portfolio')}}">Portfolio</a></li> #}
 							<li class="nav-item submenu dropdown">
-								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								 aria-expanded="false">Pages</a>
+								<a href="{{ path ('app_posts')}}" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+								 aria-expanded="false">Blog</a>
 								<ul class="dropdown-menu">
 									<li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
-									<li class="nav-item"><a class="nav-link" href="portfolio-details.html">Portfolio Details</a></li>
+									{# <li class="nav-item"><a class="nav-link" href="portfolio-details.html">Portfolio Details</a></li> #}
 								</ul>
 							</li>
 							{# <li class="nav-item submenu dropdown">
@@ -90,6 +90,39 @@
     
         {% block body %}{% endblock %}
 </body>
+
+<!--================Footer Area =================-->
+	<footer class="footer_area">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-12">
+					<div class="footer_top flex-column">
+						<div class="footer_logo">
+							<a href="#">
+								<img src="img/logo.png" alt="">
+							</a>
+							{# <h4>Follow Me</h4> #}
+						</div>
+						{# <div class="footer_social">
+							<a href="#"><i class="fa fa-facebook"></i></a>
+							<a href="#"><i class="fa fa-twitter"></i></a>
+							<a href="#"><i class="fa fa-dribbble"></i></a>
+							<a href="#"><i class="fa fa-behance"></i></a>
+						</div> #}
+					</div>
+				</div>
+			</div>
+			<div class="row footer_bottom justify-content-center">
+				<p class="col-lg-8 col-sm-12 footer-text">
+					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+				Samba SOW SOW &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved 
+			{# <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#" target="_blank"></a> #}
+			<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+			</div>
+		</div>
+	</footer>
+	<!--================End Footer Area =================-->
+
 
 		{% block javascripts %}
             {{ encore_entry_script_tags('app') }}

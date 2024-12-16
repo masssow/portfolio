@@ -1,0 +1,43 @@
+{% extends 'admin-base.html.twig' %}
+
+{% block title %}CategoriePosts index{% endblock %}
+
+{% block body %}
+    <h1>CategoriePosts index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>ImageName</th>
+                {# <th>ImageSize</th> #}
+                <th>UpdatedAt</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for categorie_post in categorie_posts %}
+            <tr>
+                <td>{{ categorie_post.id }}</td>
+                <td>{{ categorie_post.name }}</td>
+                <td>{{ categorie_post.description }}</td>
+                <td><img src="{{ asset ('images/categories/' ~ categorie_post.imageName)}}" style="max-height:150px;
+                {# <td>{{ categorie_post.imageSize }}</td> #}
+                <td>{{ categorie_post.updatedAt ? categorie_post.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_admin_categorie_show', {'id': categorie_post.id}) }}">show</a>
+                    <a href="{{ path('app_admin_categorie_edit', {'id': categorie_post.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_admin_categorie_new') }}">Create new</a>
+{% endblock %}

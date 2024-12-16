@@ -43,6 +43,11 @@ Encore
         pattern: /\.(png|jpg|jpeg|svg|gif)$/ // Extensions d'images à copier
     })
 
+     .copyFiles({
+        from: './node_modules/@fortawesome/fontawesome-free/webfonts',
+        to: 'webfonts/[name].[ext]'
+    })
+
     .cleanupOutputBeforeBuild()
     .enableBuildNotifications()
     .enableSourceMaps(!Encore.isProduction())

@@ -4,7 +4,7 @@ import 'popper.js';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-
+import '@fortawesome/fontawesome-free/js/all.js';
 import 'magnific-popup/dist/magnific-popup.css';
 import 'magnific-popup';
 import 'jquery-nice-select/css/nice-select.css';
@@ -37,6 +37,57 @@ const pexelsClient = createClient('YOUR_PEXELS_API_KEY');
     $(this).attr('aria-expanded', !expanded);
     var target = $(this).attr('data-target');
     $(target).toggleClass('show');
+});
+
+// Post Commentaires :
+document.addEventListener('DOMContentLoaded', () => {
+    const commentForm = document.querySelector('#comment-form'); // Assurez-vous que le formulaire a cet ID
+
+    if (commentForm) {
+        commentForm.addEventListener('submit', async (e) => {
+            e.preventDefault(); // Empêche le rechargement de la page
+
+            const formData = new FormData(commentForm);
+
+            try {
+                const response = await fetch(commentForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest', // Indique que c'est une requête AJAX
+                    },
+                });
+
+                if (!response.ok) {
+                    throw new Error('Erreur lors de l\'envoi du formulaire');
+                }
+
+                const result = await response.json();
+
+                // Afficher un message de succès
+                const messageContainer = document.querySelector('#message-container');
+                messageContainer.innerHTML = `<div class="alert alert-success">${result.message}</div>`;
+
+                // Ajouter le nouveau commentaire à la liste
+                const commentList = document.querySelector('#comment-list');
+                if (commentList) {
+                    const newComment = document.createElement('div');
+                    newComment.classList.add('comment');
+                    newComment.innerHTML = `
+                        <p><strong>${result.comment.name}</strong> (${result.comment.createdAt})</p>
+                        <p>${result.comment.content}</p>
+                    `;
+                    commentList.prepend(newComment); // Ajouter au début de la liste
+                }
+
+                // Réinitialiser le formulaire
+                commentForm.reset();
+            } catch (error) {
+                const messageContainer = document.querySelector('#message-container');
+                messageContainer.innerHTML = `<div class="alert alert-danger">${error.message}</div>`;
+            }
+        });
+    }
 });
 
 // Initialisation des plugins

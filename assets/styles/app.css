@@ -19498,14 +19498,14 @@ readers do not read off random characters that represent icons */
   --fa-style-family-classic: "Font Awesome 6 Free";
   --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free";
 }
-/* 
+
 @font-face {
   font-family: "Font Awesome 6 Free";
   font-style: normal;
   font-weight: 900;
   font-display: block;
-  src: url("../webfonts/fa-solid-900.woff2") format("woff2"), url("../webfonts/fa-solid-900.ttf") format("truetype");
-} */
+  src: url("../fonts/webfonts/fa-solid-900.woff2") format("woff2"), url("../fonts/webfonts/fa-solid-900.ttf") format("truetype");
+}
 .fas,
 .fa-solid {
   font-weight: 900;
@@ -19521,13 +19521,13 @@ readers do not read off random characters that represent icons */
   --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
 }
 
-/* @font-face {
+@font-face {
   font-family: "Font Awesome 6 Brands";
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url("../webfonts/fa-brands-400.woff2") format("woff2"), url("../webfonts/fa-brands-400.ttf") format("truetype");
-} */
+  src: url("../fonts/webfonts/fa-brands-400.woff2") format("woff2"), url("../fonts/webfonts/fa-brands-400.ttf") format("truetype");
+}
 .fab,
 .fa-brands {
   font-weight: 400;
@@ -21663,13 +21663,13 @@ readers do not read off random characters that represent icons */
   --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Free";
 }
 
-/* @font-face {
+@font-face {
   font-family: "Font Awesome 6 Free";
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url("../webfonts/fa-regular-400.woff2") format("woff2"), url("../webfonts/fa-regular-400.ttf") format("truetype");
-} */
+  src: url("../fonts/webfonts/fa-regular-400.woff2") format("woff2"), url("../fonts/webfonts/fa-regular-400.ttf") format("truetype");
+}
 .far,
 .fa-regular {
   font-weight: 400;
@@ -21838,17 +21838,17 @@ readers do not read off random characters that represent icons */
   /* Start Gradient Area css
   ============================================================================================ */
   .gradient-bg, .comments-area .btn-reply:hover, .blog-pagination .page-link:hover, .blog-pagination .page-item.active .page-link, .blog_right_sidebar .tag_cloud_widget ul li a:hover, .blog_right_sidebar .newsletter_widget .bbtns, .blog_right_sidebar .widget_title, .header_area .navbar .nav .nav-item.submenu ul .nav-item:hover .nav-link {
-    background: linear-gradient(90deg, #4458dc 0%, #854fee 100%);
+    background: linear-gradient(90deg, #eabd6f 0%, #3c84bc 100%);
   }
   .border-gradient {
-    -o-border-image: linear-gradient(90deg, #4458dc 0%, #854fee 100%);
-       border-image: linear-gradient(90deg, #4458dc 0%, #854fee 100%);
+    -o-border-image: linear-gradient(90deg, #eabd6f 0%, #3c84bc 100%);
+       border-image: linear-gradient(90deg, #eabd6f 0%, #3c84bc 100%);
   }
   .gradient-bg2 {
-    background: linear-gradient(90deg, #4458dc 0%, #854fee 100%);
+    background: linear-gradient(90deg, #eabd6f 0%, #3c84bc 100%);
   }
   .gradient-color, .contact_info .info_item i {
-    background: linear-gradient(90deg, #4458dc 0%, #854fee 100%);
+    background: linear-gradient(90deg, #eabd6f 0%, #3c84bc 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -21869,7 +21869,7 @@ readers do not read off random characters that represent icons */
     border-radius: 5px;
     background-origin: border-box;
     background-clip: content-box, border-box;
-    background-image: linear-gradient(to right, #4458dc 0%, #854fee 100%), radial-gradient(circle at top left, #4458dc, #854fee);
+    background-image: linear-gradient(to right, #eabd6f 0%, #3c84bc 100%), radial-gradient(circle at top left, #eabd6f, #3c84bc);
     border: double 2px transparent;
     box-shadow: 0px 10px 30px rgba(118, 85, 225, 0.3);
   }
@@ -21877,20 +21877,20 @@ readers do not read off random characters that represent icons */
     padding: 0 42px;
   }
   .primary_btn.tr-bg {
-    background-image: linear-gradient(#ffffff, #ffffff), radial-gradient(circle at top left, #4458dc, #854fee);
+    background-image: linear-gradient(#ffffff, #ffffff), radial-gradient(circle at top left, #eabd6f, #3c84bc);
     border: 2px solid transparent;
     color: #222222;
     box-shadow: none;
   }
   .primary_btn.tr-bg:hover {
-    background-image: linear-gradient(to right, #4458dc 0%, #854fee 100%), radial-gradient(circle at top left, #4458dc, #854fee);
+    background-image: linear-gradient(to right, #eabd6f 0%, #3c84bc 100%), radial-gradient(circle at top left, #eabd6f, #3c84bc);
     border: double 2px transparent;
     color: #ffffff;
     box-shadow: 0px 10px 30px rgba(118, 85, 225, 0.3);
   }
   .primary_btn:hover {
-    background-image: linear-gradient(#ffffff, #ffffff), radial-gradient(circle at top left, #4458dc, #854fee);
-    border: 2px solid #854fee;
+    background-image: linear-gradient(#ffffff, #ffffff), radial-gradient(circle at top left, #eabd6f, #3c84bc);
+    border: 2px solid #3c84bc;
     color: #222222;
     box-shadow: none;
     background-clip: border-box;
@@ -21934,7 +21934,7 @@ readers do not read off random characters that represent icons */
     display: none;
   }
   .header_area .navbar .nav .nav-item:hover .nav-link, .header_area .navbar .nav .nav-item.active .nav-link {
-    color: #4458dc;
+    color: #eabd6f;
   }
   .header_area .navbar .nav .nav-item.submenu {
     position: relative;
@@ -22169,7 +22169,7 @@ readers do not read off random characters that represent icons */
   }
   @media (max-width: 991px) {
     .banner_area .banner_inner {
-      background: #854fee;
+      background: #3c84bc;
       width: 100%;
     }
   }
@@ -22236,8 +22236,8 @@ readers do not read off random characters that represent icons */
     display: inline-block;
   }
   .blog_btn:hover {
-    background: #4458dc;
-    border-color: #4458dc;
+    background: #eabd6f;
+    border-color: #eabd6f;
     color: #fff;
   }
   .white_bg_btn {
@@ -22254,7 +22254,7 @@ readers do not read off random characters that represent icons */
     border: none;
   }
   .white_bg_btn:hover {
-    background: #4458dc;
+    background: #eabd6f;
     color: #fff;
   }
   /* Causes Area css
@@ -22274,7 +22274,7 @@ readers do not read off random characters that represent icons */
     margin-right: 0px;
   }
   .causes_slider .owl-dots .owl-dot.active {
-    background: #4458dc;
+    background: #eabd6f;
   }
   .causes_item {
     background: #fff;
@@ -22293,7 +22293,7 @@ readers do not read off random characters that represent icons */
   .causes_item .causes_img .c_parcent span {
     width: 70%;
     height: 3px;
-    background: #4458dc;
+    background: #eabd6f;
     position: absolute;
     left: 0px;
     bottom: 0px;
@@ -22303,7 +22303,7 @@ readers do not read off random characters that represent icons */
     position: absolute;
     right: -10px;
     bottom: 0px;
-    background: #4458dc;
+    background: #eabd6f;
     color: #fff;
     padding: 0px 5px;
   }
@@ -22319,7 +22319,7 @@ readers do not read off random characters that represent icons */
     cursor: pointer;
   }
   .causes_item .causes_text h4:hover {
-    color: #4458dc;
+    color: #eabd6f;
   }
   .causes_item .causes_text p {
     font-size: 14px;
@@ -22330,11 +22330,11 @@ readers do not read off random characters that represent icons */
   }
   .causes_item .causes_bottom a {
     width: 50%;
-    border: 1px solid #4458dc;
+    border: 1px solid #eabd6f;
     text-align: center;
     float: left;
     line-height: 50px;
-    background: #4458dc;
+    background: #eabd6f;
     color: #fff;
     font-family: "Roboto", sans-serif;
     font-size: 14px;
@@ -22388,7 +22388,7 @@ readers do not read off random characters that represent icons */
     color: #000000;
   }
   .tags .tag_btn:before {
-    background: #4458dc;
+    background: #eabd6f;
   }
   .tags .tag_btn + .tag_btn {
     margin-left: 2px;
@@ -22440,7 +22440,7 @@ readers do not read off random characters that represent icons */
     height: 1px;
   }
   .categories_post:hover .categories_details {
-    background: rgba(68, 88, 220, 0.85);
+    background: rgba(234, 189, 111, 0.85);
   }
   /*============ blog_left_sidebar css ==============*/
   .blog_item {
@@ -22460,7 +22460,7 @@ readers do not read off random characters that represent icons */
     color: #777777;
   }
   .blog_info .post_tag a.active {
-    color: #4458dc;
+    color: #eabd6f;
   }
   .blog_info .blog_meta li a {
     font: 300 14px/20px "Roboto", sans-serif;
@@ -22478,7 +22478,7 @@ readers do not read off random characters that represent icons */
     vertical-align: middle;
   }
   .blog_info .blog_meta li a:hover {
-    color: #4458dc;
+    color: #eabd6f;
   }
   .blog_post img {
     max-width: 100%;
@@ -22497,7 +22497,7 @@ readers do not read off random characters that represent icons */
     transition: all 0.3s linear;
   }
   .blog_details h2:hover {
-    color: #4458dc;
+    color: #eabd6f;
   }
   .blog_details p {
     margin-bottom: 26px;
@@ -22535,8 +22535,8 @@ readers do not read off random characters that represent icons */
     border-radius: 45px;
     z-index: 0;
     border: double 2px transparent;
-    background-image: linear-gradient(white, white), radial-gradient(circle at top left, #4458dc, #854fee);
-    background-image: -o-linear-gradient(white, white), -o-radial-gradient(circle at top left, #4458dc, #854fee);
+    background-image: linear-gradient(white, white), radial-gradient(circle at top left, #eabd6f, #3c84bc);
+    background-image: -o-linear-gradient(white, white), -o-radial-gradient(circle at top left, #eabd6f, #3c84bc);
     background-origin: border-box;
     background-clip: content-box, border-box;
     padding: 0;
@@ -22604,7 +22604,7 @@ readers do not read off random characters that represent icons */
     margin-left: 20px;
   }
   .blog_right_sidebar .author_widget .social_icon a:hover {
-    color: #4458dc;
+    color: #eabd6f;
   }
   .blog_right_sidebar .popular_post_widget .post_item .media-body {
     justify-content: center;
@@ -22619,7 +22619,7 @@ readers do not read off random characters that represent icons */
     transition: all 0.3s linear;
   }
   .blog_right_sidebar .popular_post_widget .post_item .media-body h3:hover {
-    color: #4458dc;
+    color: #eabd6f;
   }
   .blog_right_sidebar .popular_post_widget .post_item .media-body p {
     font-size: 12px;
@@ -22646,10 +22646,10 @@ readers do not read off random characters that represent icons */
     padding-top: 15px;
   }
   .blog_right_sidebar .post_category_widget .cat-list li:hover a {
-    color: #4458dc;
+    color: #eabd6f;
   }
   .blog_right_sidebar .post_category_widget .cat-list li:hover {
-    border-color: #4458dc;
+    border-color: #eabd6f;
   }
   .blog_right_sidebar .newsletter_widget {
     text-align: center;
@@ -22782,7 +22782,7 @@ readers do not read off random characters that represent icons */
     transition: all 0.2s linear;
   }
   .single-post-area .social-links li a:hover {
-    color: #4458dc;
+    color: #eabd6f;
   }
   .single-post-area .blog_details {
     padding-top: 26px;
@@ -23119,7 +23119,7 @@ readers do not read off random characters that represent icons */
   .modal-message .modal-dialog .modal-content .modal-header h2 {
     display: block;
     text-align: center;
-    color: #4458dc;
+    color: #eabd6f;
     padding-bottom: 10px;
     font-family: "Roboto", sans-serif;
   }
@@ -23148,25 +23148,25 @@ readers do not read off random characters that represent icons */
   }
   .sample-text-area p b {
     font-weight: bold;
-    color: #4458dc;
+    color: #eabd6f;
   }
   .sample-text-area p i {
-    color: #4458dc;
+    color: #eabd6f;
     font-style: italic;
   }
   .sample-text-area p sup {
-    color: #4458dc;
+    color: #eabd6f;
     font-style: italic;
   }
   .sample-text-area p sub {
-    color: #4458dc;
+    color: #eabd6f;
     font-style: italic;
   }
   .sample-text-area p del {
-    color: #4458dc;
+    color: #eabd6f;
   }
   .sample-text-area p u {
-    color: #4458dc;
+    color: #eabd6f;
   }
   /*============== End Elements Area css ================*/
   /*==============Elements Button Area css ================*/
@@ -23277,11 +23277,11 @@ readers do not read off random characters that represent icons */
   }
   .link-border {
     background: transparent;
-    border: 1px solid #4458dc;
-    color: #4458dc;
+    border: 1px solid #eabd6f;
+    color: #eabd6f;
   }
   .link-border:before {
-    background: #4458dc;
+    background: #eabd6f;
   }
   .radius {
     border-radius: 3px;
@@ -24495,7 +24495,7 @@ readers do not read off random characters that represent icons */
     }
   }
   .client-info .lage {
-    color: #854fee;
+    color: #3c84bc;
     font-family: "Rubik", sans-serif;
     font-size: 100px;
     font-weight: 700;
@@ -24526,7 +24526,7 @@ readers do not read off random characters that represent icons */
     }
   }
   .call-now p {
-    color: #854fee;
+    color: #3c84bc;
     font-size: 16px;
     text-transform: uppercase;
     margin-bottom: 5px;
@@ -24568,7 +24568,7 @@ readers do not read off random characters that represent icons */
     transition: all 0.4s ease 0s;
   }
   .portfolio_area .filters ul li:hover, .portfolio_area .filters ul li.active {
-    color: #854fee;
+    color: #3c84bc;
   }
   @media (max-width: 767px) {
     .portfolio_area .filters ul li {
@@ -24695,7 +24695,7 @@ readers do not read off random characters that represent icons */
   .testimonial_area .owl-carousel .owl-dots .owl-dot.active {
     height: 12px;
     width: 12px;
-    background: #854fee;
+    background: #3c84bc;
   }
   @media (max-width: 991px) {
     .testimonial_area .owl-carousel .owl-dots {
@@ -25290,7 +25290,7 @@ readers do not read off random characters that represent icons */
     }
   }
   .footer_area .footer_social a i:hover {
-    color: #854fee;
+    color: #3c84bc;
   }
   .footer_area .footer_bottom {
     text-align: center;
@@ -25299,7 +25299,7 @@ readers do not read off random characters that represent icons */
     margin-bottom: 0;
   }
   .footer_area .footer_bottom a {
-    color: #854fee;
+    color: #3c84bc;
   }
   /* End Footer Area css
   ============================================================================================ */
@@ -25492,21 +25492,21 @@ button:focus {
 .blog-pagination .page-item.active .page-link,
 .blog-pagination .page-link:hover,
 .comments-area .btn-reply:hover {
-  background: linear-gradient(90deg, #4458dc 0%, #854fee 100%);
+  background: linear-gradient(90deg, #6192be 0%, #6a8ca4 100%);
 }
 
 .border-gradient {
-  -o-border-image: linear-gradient(90deg, #4458dc 0%, #854fee 100%);
-     border-image: linear-gradient(90deg, #4458dc 0%, #854fee 100%);
+  -o-border-image: linear-gradient(90deg, #6192be 0%, #6a8ca4 100%);
+     border-image: linear-gradient(90deg, #6192be 0%, #6a8ca4 100%);
 }
 
 .gradient-bg2 {
-  background: linear-gradient(90deg, #4458dc 0%, #854fee 100%);
+  background: linear-gradient(90deg, #6192be 0%, #6a8ca4 100%);
 }
 
 .gradient-color,
 .contact_info .info_item i {
-  background: linear-gradient(90deg, #4458dc 0%, #854fee 100%);
+  background: linear-gradient(90deg, #6192be 0%, #6a8ca4 100%);
   -webkit-background-clip: text;
           background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -25529,7 +25529,7 @@ button:focus {
   border-radius: 5px;
   background-origin: border-box;
   background-clip: content-box, border-box;
-  background-image: linear-gradient(to right, #4458dc 0%, #854fee 100%), radial-gradient(circle at top left, #4458dc, #854fee);
+  background-image: linear-gradient(to right, #6192be 0%, #6a8ca4 100%), radial-gradient(circle at top left, #6192be, #6a8ca4);
   border: double 2px transparent;
   box-shadow: 0px 10px 30px rgba(118, 85, 225, 0.3);
 }
@@ -25539,22 +25539,22 @@ button:focus {
 }
 
 .primary_btn.tr-bg {
-  background-image: linear-gradient(#ffffff, #ffffff), radial-gradient(circle at top left, #4458dc, #854fee);
+  background-image: linear-gradient(#ffffff, #ffffff), radial-gradient(circle at top left, #6192be, #eabd6f);
   border: 2px solid transparent;
   color: #222222;
   box-shadow: none;
 }
 
 .primary_btn.tr-bg:hover {
-  background-image: linear-gradient(to right, #4458dc 0%, #854fee 100%), radial-gradient(circle at top left, #4458dc, #854fee);
+  background-image: linear-gradient(to right, #6192be 0%, #eabd6f 100%), radial-gradient(circle at top left, #6192be, #6a8ca4);
   border: double 2px transparent;
   color: #ffffff;
   box-shadow: 0px 10px 30px rgba(118, 85, 225, 0.3);
 }
 
 .primary_btn:hover {
-  background-image: linear-gradient(#ffffff, #ffffff), radial-gradient(circle at top left, #4458dc, #854fee);
-  border: 2px solid #854fee;
+  background-image: linear-gradient(#ffffff, #ffffff), radial-gradient(circle at top left, #6192be, #6a8ca4);
+  border: 2px solid #6a8ca4;
   color: #222222;
   box-shadow: none;
   background-clip: border-box;
@@ -25607,7 +25607,7 @@ button:focus {
 
 .header_area .navbar .nav .nav-item:hover .nav-link,
 .header_area .navbar .nav .nav-item.active .nav-link {
-  color: #4458dc;
+  color: #6192be;
 }
 
 .header_area .navbar .nav .nav-item.submenu {
@@ -25757,7 +25757,7 @@ button:focus {
 ============================================================================================ */
 .home_banner_area {
   z-index: 1;
-  background: url(../images/img/banner/home-banner.png) no-repeat top center;
+  background-color: #eabd6f;
   background-position: center;
   background-size: cover;
 }
@@ -25858,7 +25858,7 @@ button:focus {
   overflow: hidden;
   width: 100%;
   min-height: 485px;
-  background: url(../images/img/banner/common-banner.png) no-repeat right bottom;
+  background-color: #eabd6f;
   background-size: 90% 85%;
   width: 98%;
   z-index: 1;
@@ -25871,7 +25871,7 @@ button:focus {
 }
 @media (max-width: 991px) {
   .banner_area .banner_inner {
-    background: #854fee;
+    background: #eabd6f;
     width: 100%;
   }
 }
@@ -25945,8 +25945,8 @@ button:focus {
 }
 
 .blog_btn:hover {
-  background: #4458dc;
-  border-color: #4458dc;
+  background: #6192be;
+  border-color: #6192be;
   color: #fff;
 }
 
@@ -25965,7 +25965,7 @@ button:focus {
 }
 
 .white_bg_btn:hover {
-  background: #4458dc;
+  background: #6192be;
   color: #fff;
 }
 
@@ -25989,7 +25989,7 @@ button:focus {
 }
 
 .causes_slider .owl-dots .owl-dot.active {
-  background: #4458dc;
+  background: #6192be;
 }
 
 .causes_item {
@@ -26012,7 +26012,7 @@ button:focus {
 .causes_item .causes_img .c_parcent span {
   width: 70%;
   height: 3px;
-  background: #4458dc;
+  background: #6192be;
   position: absolute;
   left: 0px;
   bottom: 0px;
@@ -26023,7 +26023,7 @@ button:focus {
   position: absolute;
   right: -10px;
   bottom: 0px;
-  background: #4458dc;
+  background: #6192be;
   color: #fff;
   padding: 0px 5px;
 }
@@ -26042,7 +26042,7 @@ button:focus {
 }
 
 .causes_item .causes_text h4:hover {
-  color: #4458dc;
+  color: #6192be;
 }
 
 .causes_item .causes_text p {
@@ -26055,11 +26055,11 @@ button:focus {
 
 .causes_item .causes_bottom a {
   width: 50%;
-  border: 1px solid #4458dc;
+  border: 1px solid #6192be;
   text-align: center;
   float: left;
   line-height: 50px;
-  background: #4458dc;
+  background: #6192be;
   color: #fff;
   font-family: "Roboto", sans-serif;
   font-size: 14px;
@@ -26124,7 +26124,7 @@ button:focus {
 }
 
 .tags .tag_btn:before {
-  background: #4458dc;
+  background: #6192be;
 }
 
 .tags .tag_btn + .tag_btn {
@@ -26211,7 +26211,7 @@ button:focus {
 }
 
 .blog_info .post_tag a.active {
-  color: #4458dc;
+  color: #6192be;
 }
 
 .blog_info .blog_meta li a {
@@ -26232,7 +26232,7 @@ button:focus {
 }
 
 .blog_info .blog_meta li a:hover {
-  color: #4458dc;
+  color: #6192be;
 }
 
 .blog_post img {
@@ -26256,7 +26256,7 @@ button:focus {
 }
 
 .blog_details h2:hover {
-  color: #4458dc;
+  color: #6192be;
 }
 
 .blog_details p {
@@ -26299,8 +26299,8 @@ button:focus {
   border-radius: 45px;
   z-index: 0;
   border: double 2px transparent;
-  background-image: linear-gradient(white, white), radial-gradient(circle at top left, #4458dc, #854fee);
-  background-image: -o-linear-gradient(white, white), -o-radial-gradient(circle at top left, #4458dc, #854fee);
+  background-image: linear-gradient(white, white), radial-gradient(circle at top left, #6192be, #6a8ca4);
+  background-image: -o-linear-gradient(white, white), -o-radial-gradient(circle at top left, #6192be, #6a8ca4);
   background-origin: border-box;
   background-clip: content-box, border-box;
   padding: 0;
@@ -26381,7 +26381,7 @@ button:focus {
 }
 
 .blog_right_sidebar .author_widget .social_icon a:hover {
-  color: #4458dc;
+  color: #6192be;
 }
 
 .blog_right_sidebar .popular_post_widget .post_item .media-body {
@@ -26399,7 +26399,7 @@ button:focus {
 }
 
 .blog_right_sidebar .popular_post_widget .post_item .media-body h3:hover {
-  color: #4458dc;
+  color: #6192be;
 }
 
 .blog_right_sidebar .popular_post_widget .post_item .media-body p {
@@ -26433,11 +26433,11 @@ button:focus {
 }
 
 .blog_right_sidebar .post_category_widget .cat-list li:hover a {
-  color: #4458dc;
+  color: #6192be;
 }
 
 .blog_right_sidebar .post_category_widget .cat-list li:hover {
-  border-color: #4458dc;
+  border-color: #6192be;
 }
 
 .blog_right_sidebar .newsletter_widget {
@@ -26599,7 +26599,7 @@ button:focus {
 }
 
 .single-post-area .social-links li a:hover {
-  color: #4458dc;
+  color: #6192be;
 }
 
 .single-post-area .blog_details {
@@ -27000,7 +27000,7 @@ button:focus {
 .modal-message .modal-dialog .modal-content .modal-header h2 {
   display: block;
   text-align: center;
-  color: #4458dc;
+  color: #6192be;
   padding-bottom: 10px;
   font-family: "Roboto", sans-serif;
 }
@@ -27036,30 +27036,30 @@ button:focus {
 
 .sample-text-area p b {
   font-weight: bold;
-  color: #4458dc;
+  color: #6192be;
 }
 
 .sample-text-area p i {
-  color: #4458dc;
+  color: #6192be;
   font-style: italic;
 }
 
 .sample-text-area p sup {
-  color: #4458dc;
+  color: #6192be;
   font-style: italic;
 }
 
 .sample-text-area p sub {
-  color: #4458dc;
+  color: #6192be;
   font-style: italic;
 }
 
 .sample-text-area p del {
-  color: #4458dc;
+  color: #6192be;
 }
 
 .sample-text-area p u {
-  color: #4458dc;
+  color: #6192be;
 }
 
 /*============== End Elements Area css ================*/
@@ -27201,12 +27201,12 @@ button:focus {
 
 .link-border {
   background: transparent;
-  border: 1px solid #4458dc;
-  color: #4458dc;
+  border: 1px solid #6192be;
+  color: #6192be;
 }
 
 .link-border:before {
-  background: #4458dc;
+  background: #6192be;
 }
 
 .radius {
@@ -28641,7 +28641,7 @@ h6 {
   }
 }
 .client-info .lage {
-  color: #854fee;
+  color: #eabd6f;
   font-family: "Rubik", sans-serif;
   font-size: 100px;
   font-weight: 700;
@@ -28675,7 +28675,7 @@ h6 {
   }
 }
 .call-now p {
-  color: #854fee;
+  color: #6a8ca4;
   font-size: 16px;
   text-transform: uppercase;
   margin-bottom: 5px;
@@ -28723,7 +28723,7 @@ h6 {
 
 .portfolio_area .filters ul li:hover,
 .portfolio_area .filters ul li.active {
-  color: #854fee;
+  color: #6a8ca4;
 }
 
 @media (max-width: 767px) {
@@ -28873,7 +28873,7 @@ h6 {
 .testimonial_area .owl-carousel .owl-dots .owl-dot.active {
   height: 12px;
   width: 12px;
-  background: #854fee;
+  background: #eabd6f;
 }
 
 @media (max-width: 991px) {
@@ -29500,7 +29500,7 @@ h6 {
   }
 }
 .footer_area .footer_social a i:hover {
-  color: #854fee;
+  color: #6a8ca4;
 }
 
 .footer_area .footer_bottom {
@@ -29512,7 +29512,7 @@ h6 {
 }
 
 .footer_area .footer_bottom a {
-  color: #854fee;
+  color: #eabd6f;
 }
 
 /* End Footer Area css
