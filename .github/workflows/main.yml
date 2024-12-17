@@ -15,6 +15,9 @@ jobs:
         uses: actions/checkout@v3
 
       # Étape 2 : Configurer la connexion SSH
+      - name: Test SSH connection
+        run: |
+          ssh -o StrictHostKeyChecking=no hostinger "echo 'SSH connection successful'"
       - name: Set up SSH connection
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
