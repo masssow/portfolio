@@ -15,9 +15,6 @@ jobs:
         uses: actions/checkout@v3
 
       # Étape 2 : Configurer la connexion SSH
-      - name: Test SSH connection
-        run: |
-          ssh -o StrictHostKeyChecking=no -p 65002 u910560794@195.35.49.40 "echo 'SSH connection successful'"
       - name: Set up SSH connection
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
@@ -25,11 +22,15 @@ jobs:
           mkdir -p ~/.ssh
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          echo "Host hostinger" >> ~/.ssh/config
-          echo "  HostName 195.35.49.40" >> ~/.ssh/config
-          echo "  User u910560794" >> ~/.ssh/config
-          echo "  Port 65002" >> ~/.ssh/config
-          echo "  IdentityFile ~/.ssh/id_rsa" >> ~/.ssh/config
+          cat >> ~/.ssh/config <<-EOF
+          Host hostinger
+            HostName 195.35.49.40
+            User u910560794
+            Port 65002
+            IdentityFile ~/.ssh/id_rsa
+            StrictHostKeyChecking no
+          EOF
+
 
       # Étape 3 : Déployer le projet Symfony via SSH
       - name: Deploy to Hostinger
