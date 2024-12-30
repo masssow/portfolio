@@ -34,7 +34,7 @@ jobs:
       - name: Deploy to Hostinger
         run: |
           ssh -o StrictHostKeyChecking=no hostinger << 'EOF'
-            cd /home/u910560794/domains/massgrafik.com/public_html
+            cd /home/u791166429/domains/massgrafik.com/public_html
             git pull origin main
             composer install --no-dev --optimize-autoloader
             php bin/console cache:clear --env=prod
