@@ -24,8 +24,8 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           cat >> ~/.ssh/config <<-EOF
           Host hostinger
-            HostName 195.35.49.40
-            User u910560794
+            HostName 178.16.128.226
+            User u791166429
             Port 65002
             IdentityFile ~/.ssh/id_rsa
             StrictHostKeyChecking no
