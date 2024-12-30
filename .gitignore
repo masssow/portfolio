@@ -10,7 +10,7 @@
 /vendor/
 /src/DataFixtures/
 /public/uploads/
-/src/DataFixtures/
+/DataFixtures/
 ###< symfony/framework-bundle ###
 
 ###> phpunit/phpunit ###
