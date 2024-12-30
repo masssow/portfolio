@@ -8,6 +8,7 @@ import '@fortawesome/fontawesome-free/js/all.js';
 import 'magnific-popup/dist/magnific-popup.css';
 import 'magnific-popup';
 import 'jquery-nice-select/css/nice-select.css';
+import 'linearicons/dist/web-font/style.css';
 import 'jquery-nice-select';
 import Choices from 'choices.js';
 // Pexels API (client-side usage)
@@ -89,6 +90,59 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+// Post Commentaires :
+
+//CategoriePosts
+document.addEventListener('DOMContentLoaded', () => {
+    const postsContainer = document.getElementById('posts-container');
+
+    // Délégation d'événement pour les liens de catégories
+    document.addEventListener('click', (e) => {
+        const link = e.target.closest('.categorie-link');
+        if (link) {
+            e.preventDefault();
+            const categorieId = link.dataset.categorieId;
+            if (!categorieId) return;
+            document.querySelectorAll('.categorie-link').forEach(el => el.classList.remove('active'));
+            link.classList.add('active');
+            fetch(`/blog?categorie_id=${categorieId}`, {
+                headers: { 'X-Requested-With': 'XMLHttpRequest' },
+            })
+                .then(response => response.ok ? response.text() : Promise.reject('Erreur réseau'))
+                .then(html => {
+                    postsContainer.innerHTML = html;
+                    window.scrollTo(0, postsContainer.offsetTop); // Scroll to the top of the posts container
+                })
+                .catch(error => console.error(error));
+        }
+    });
+
+    // Délégation d'événement pour les liens de pagination
+    postsContainer.addEventListener('click', (e) => {
+        const link = e.target.closest('.page-link');
+        if (link) {
+            e.preventDefault();
+            const url = link.href;
+            fetch(url, {
+                headers: { 'X-Requested-With': 'XMLHttpRequest' },
+            })
+                .then(response => response.ok ? response.text() : Promise.reject('Erreur réseau'))
+                .then(html => {
+                    postsContainer.innerHTML = html;
+                    window.scrollTo(0, postsContainer.offsetTop); // Scroll to the top of the posts container
+                })
+                .catch(error => console.error(error));
+        }
+    });
+});
+
+// Initialisation des plugins
+$(document).ready(function () {
+    // Owl Carousel
+    // ...existing code...
+});
+//CategoriePosts
+
 
 // Initialisation des plugins
 $(document).ready(function () {

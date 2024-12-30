@@ -1,76 +1,10 @@
-reste de balises post du template : 
-<body class="blog_version">
-  <!--================ Start Banner Area =================-->
-    <section class="banner_area">
-        <div class="banner_inner d-flex align-items-center">
-            <div class="container">
-                <div class="banner_content text-center">
-                    <h2>Blog</h2>
-                    <div class="page_link">
-                        <a href="index.html">Home</a>
-                        <a href="blog.html">Our Blog</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--================ End Banner Area =================-->
-
-    <!--================Blog Categorie Area =================-->
-        <section class="blog_categorie_area section_gap_top">
-            <div class="container">
-                <div class="row">
-                {% for categorie in categories %}
-                    <div class="col-lg-4">
-                        <div class="categories_post">
-                            <img src="{{ asset ('build/images/img/blog/cat-post/' ~ categorie.imageName)}}" alt="post">
-                            <div class="categories_details">
-                                <div class="categories_text">
-                                    <a href="single-blog.html"><h5>{{categorie.name}}</h5></a>
-                                    <div class="border_line"></div>
-                                    <p>{{categorie.description}}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {% endfor %}
-                    {# <div class="col-lg-4">
-                        <div class="categories_post">
-                            <img src="img/blog/cat-post/cat-post-2.jpg" alt="post">
-                            <div class="categories_details">
-                                <div class="categories_text">
-                                    <a href="single-blog.html"><h5>Politics</h5></a>
-                                    <div class="border_line"></div>
-                                    <p>Be a part of politics</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="categories_post">
-                            <img src="img/blog/cat-post/cat-post-1.jpg" alt="post">
-                            <div class="categories_details">
-                                <div class="categories_text">
-                                    <a href="single-blog.html"><h5>Food</h5></a>
-                                    <div class="border_line"></div>
-                                    <p>Let the food be finished</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div> #}
-                </div>
-            </div>
-        </section>
-    <!--================Blog Categorie Area =================-->
-    
-     
-    <!--================Blog Area =================-->
+<!--================Blog Area =================-->
     <section class="blog_area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
-                        {% for post in pagination %}
                     <div class="blog_left_sidebar">
+                        {% for post in pagination %}
                         <article class="row blog_item">
                             <div class="col-md-3">
                                 <div class="blog_info text-right">
@@ -79,30 +13,30 @@ reste de balises post du template :
                                         <a class="active" href="#">Technology,</a>
                                         <a href="#">Politics,</a>
                                         <a href="#">Lifestyle</a>
-                                    </div> {# post_tag #}
+                                    </div>
                                     <ul class="blog_meta list">
                                         <li><a href="#">Mark wiens<i class="lnr lnr-user"></i></a></li>
                                         <li><a href="#">{{post.createdAt | date('d-m-Y')}}<i class="lnr lnr-calendar-full"></i></a></li>
                                         <li><a href="#">1.2M Views<i class="lnr lnr-eye"></i></a></li>
                                         <li><a href="#">06 Comments<i class="lnr lnr-bubble"></i></a></li>
                                     </ul>
-                                </div> {# blog_info #}
-                            </div> {# col-md-3 #}
+                                </div>
+                            </div>
                             <div class="col-md-9">
                                 <div class="blog_post">
-                                    <img src="{{ asset ('build/images/img/blog/main-blog/' ~ post.imageName)}}" alt="">
+                                    <img src="{{ asset ('images/posts/' ~ post.imageName) }}" alt="">
                                     <div class="blog_details">
-                                        <a href="single-blog.html"><h2>{{post.title}}</h2></a>
-                                        <p>{{post.content}}</p>
-                                        <a href="single-blog.html" class="primary_btn"><span>View More</span></a>
-                                    </div>     
-                                </div>{# blog_post #}
-                            </div>{# col-md-9 #}
+                                        <a href="{{ path('app_single_posts', {'id': post.id}) }}"><h2>{{ post.title }}</h2></a>
+                                        <p>{{ post.content }}</p>
+                                        <a href="{{ path('app_single_posts', {'id': post.id}) }}" class="primary_btn"><span>Voir plus</span></a>
+                                    </div>
+                                </div>
+                            </div>
                         </article>
                         {% endfor %}
                         <nav class="blog-pagination justify-content-center d-flex">
                             <ul class="pagination">
-                                {{ knp_pagination_render(pagination)}}
+                            {{knp_pagination_render(pagination)}}
                                 {# <li class="page-item">
                                     <a href="#" class="page-link" aria-label="Previous">
                                         <span aria-hidden="true">
@@ -110,11 +44,8 @@ reste de balises post du template :
                                         </span>
                                     </a>
                                 </li> #}
-                                {# <li class="page-item"><a href="#" class="page-link"> </a></li> #}
-                                {# <li class="page-item active"><a href="#" class="page-link">02</a></li>
-                                <li class="page-item"><a href="#" class="page-link">03</a></li>
-                                <li class="page-item"><a href="#" class="page-link">04</a></li>
-                                <li class="page-item"><a href="#" class="page-link">09</a></li> #}
+                                {# <li class="page-item"><a href="#" class="page-link">01</a></li> #}
+                                
                                 {# <li class="page-item">
                                     <a href="#" class="page-link" aria-label="Next">
                                         <span aria-hidden="true">
@@ -124,9 +55,8 @@ reste de balises post du template :
                                 </li> #}
                             </ul>
                         </nav>
-                    </div> {# blog_left_sidebar #}
-                </div> {# col-lg-8 #}
-
+                    </div>
+                </div>
                 <div class="col-lg-4">
                     <div class="blog_right_sidebar">
                         <aside class="single_sidebar_widget search_widget">
@@ -140,15 +70,15 @@ reste de balises post du template :
                         </aside>
                         <aside class="single_sidebar_widget author_widget">
                             <img class="author_img rounded-circle" src="img/blog/author.png" alt="">
-                            <h4>Charlie Barber</h4>
-                            <p>Senior blog writer</p>
+                            <h4>Samba SOW SOW</h4>
+                            <p>passionné du web et partageur de tech !</p>
                             <div class="social_icon">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
                                 <a href="#"><i class="fa fa-twitter"></i></a>
                                 <a href="#"><i class="fa fa-github"></i></a>
                                 <a href="#"><i class="fa fa-behance"></i></a>
                             </div>
-                            <p>Boot camps have its supporters andit sdetractors. Some people do not understand why you should have to spend money on boot camp when you can get. Boot camps have itssuppor ters andits detractors.</p>
+                            <p>Bienvenue dans mon petit coin de partage numérique ! Je suis un développeur web passionné, jonglant entre Symfony, WordPress et un peu tout ce qui touche au web. Autodidacte dans l'âme, je débroussaille le vaste monde de l'informatique avec curiosité et un brin de folie.</p>
                             <div class="br"></div>
                         </aside>
                         <aside class="single_sidebar_widget popular_post_widget">
@@ -275,5 +205,82 @@ reste de balises post du template :
             </div>
         </div>
     </section>
-    <!--================Blog Area =================-->
-</body>
+    <!--================Blog Area 
+
+
+
+
+
+
+
+
+    <?php
+
+namespace App\Controller;
+
+use App\Entity\CategoriePosts;
+use App\Repository\PostsRepository;
+use App\Repository\CategoriePostsRepository;
+use Knp\Component\Pager\PaginatorInterface;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+
+class PostsController extends AbstractController
+{
+    #[Route('/blog', name: 'app_posts')]
+    public function index(Request $request, PostsRepository $postsRepository, CategoriePostsRepository $categoriePostsRepository, PaginatorInterface $paginator): Response
+    {
+
+        $categorie = $categoriePostsRepository->findBy([], null, 3 );
+        $query = $postsRepository->findWithPaginator();
+
+        $categorieId = $request->query->get('categorie_id');
+
+        if ($request->isXmlHttpRequest() && $categorieId) {
+            $query = $postsRepository->findByCategorie($categorieId);
+        }else{
+
+            $query = $postsRepository->findWithPaginator();
+           
+        }
+
+        $pagination = $paginator->paginate($query, $request->query->getInt('page', 1), 5);
+
+        if ($request->isXmlHttpRequest()) {
+            return $this->render('posts/_post.html.twig', [ 
+                'pagination'=> $pagination,
+            ]);
+        }
+        // $post = $postsRepository->findAll();
+
+        return $this->render('posts/index.html.twig', [
+            // 'posts'         => $post,
+            'categories'    => $categorie,
+            'pagination'    => $pagination   
+        ]);
+    }
+
+   
+}
+
+
+
+
+Derniere ajout Sprint
+
+- logo icon favicon
+- 3 Images par post vichuplaoder
+- logique Recuperation des postes d'une categorie
+- Affichage nombre de posts et comments
+
+public function findByCategorie(int $categorieId)
+    {
+        return $this->createQueryBuilder('p')
+        ->innerJoin('p.categoriePosts', 'c')
+        ->where('c.id = :categorieI')
+        ->setParameter('categorieId', $categorieId)
+        ->orderBy('p.createdAt', 'DESC')
+        ->getQuery();
+    }

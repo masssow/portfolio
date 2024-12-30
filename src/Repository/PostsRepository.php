@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Entity\CategoriePosts;
 use App\Entity\Posts;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -31,6 +32,29 @@ class PostsRepository extends ServiceEntityRepository
     //        ;
     //    }
 
+    // public function findByCategorie(int $categorieId)
+    // {
+    //     return $this->createQueryBuilder('p')
+    //         ->innerJoin('p.categoriePosts', 'c')
+    //         ->where('c.id = :categorieI')
+    //         ->setParameter('categorieId', $categorieId)
+    //         ->orderBy('p.createdAt', 'DESC')
+    //         ->getQuery();
+    // }
+    public function findByCategorie(?int $categorieId)
+    {
+        $qb = $this->createQueryBuilder('p')
+        ->innerJoin('p.categoriePosts', 'c');
+
+        if ($categorieId) {
+            $qb->where('c.id = :categorieId')
+                ->setParameter('categorieId', $categorieId);
+        }
+
+        return $qb->orderBy('p.createdAt', 'DESC')
+            ->getQuery();
+    }
+
        public function findWithPaginator()
        {
            return $this->createQueryBuilder('a')
@@ -39,14 +63,24 @@ class PostsRepository extends ServiceEntityRepository
            ;
        }
 
+    public function countPostsByCategorie()
+    {
+        return $this->createQueryBuilder('p')
+            ->select('c.id, COUNT(p.id) as postCount')
+            ->innerJoin('p.categoriePosts', 'c')
+            ->groupBy('c.id')
+            ->getQuery()
+            ->getResult();
+    }
+
     
       
        public function findNextPost(Posts $currentPost): ?Posts
        {
            return $this->createQueryBuilder('p')
-               ->andWhere('p.createdAt < :currentDate')
+               ->andWhere('p.createdAt > :currentDate')
                ->setParameter('currentDate', $currentPost->getCreatedAt() )
-               ->orderBy('p.createdAt', 'DESC')
+               ->orderBy('p.createdAt', 'ASC')
                ->setMaxResults(1)
                ->getQuery()
                ->getOneOrNullResult()
@@ -56,9 +90,9 @@ class PostsRepository extends ServiceEntityRepository
        public function findPreviusPost(Posts $currentPost): ?Posts
        {
            return $this->createQueryBuilder('p')
-                ->andWhere('p.createdAt > :currentDate')
+                ->andWhere('p.createdAt < :currentDate')
                 ->setParameter('currentDate', $currentPost->getCreatedAt())
-                ->orderBy('p.createdAt', 'ASC')
+                ->orderBy('p.createdAt', 'DESC')
                 ->setMaxResults(1)
                 ->getQuery()
                 ->getOneOrNullResult()

@@ -14,7 +14,6 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 #[ORM\Entity(repositoryClass: CategoriePostsRepository::class)]
 #[Vich\Uploadable]
 
-
 class CategoriePosts
 {
     #[ORM\Id]
@@ -29,13 +28,7 @@ class CategoriePosts
     private ?string $description = null;
 
     #[Vich\UploadableField(mapping: 'categories', fileNameProperty: 'imageName')]
-    private ?File $imageFile;
-
-    /**
-     * @var Collection<int, Posts>
-     */
-    #[ORM\OneToMany(targetEntity: Posts::class, mappedBy: 'categoriePosts')]
-    private Collection $posts;
+    private ?File $imageFile = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $imageName = null;
@@ -45,6 +38,17 @@ class CategoriePosts
 
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $updatedAt = null;
+
+    /**
+     * @var Collection<int, Posts>
+     */
+    #[ORM\ManyToMany(targetEntity: Posts::class, mappedBy: 'categoriePosts')]
+    private Collection $posts;
+
+    public function __toString()
+    {
+        return $this->name;
+    }
 
     public function __construct()
     {
@@ -105,37 +109,6 @@ class CategoriePosts
         return $this->imageFile;
     }
 
-
-    /**
-     * @return Collection<int, Posts>
-     */
-    public function getPosts(): Collection
-    {
-        return $this->posts;
-    }
-
-    public function addPost(Posts $post): static
-    {
-        if (!$this->posts->contains($post)) {
-            $this->posts->add($post);
-            $post->setCategoriePosts($this);
-        }
-
-        return $this;
-    }
-
-    public function removePost(Posts $post): static
-    {
-        if ($this->posts->removeElement($post)) {
-            // set the owning side to null (unless already changed)
-            if ($post->getCategoriePosts() === $this) {
-                $post->setCategoriePosts(null);
-            }
-        }
-
-        return $this;
-    }
-
     public function getImageName(): ?string
     {
         return $this->imageName;
@@ -168,6 +141,33 @@ class CategoriePosts
     public function setUpdatedAt(?\DateTimeImmutable $updatedAt): static
     {
         $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Posts>
+     */
+    public function getPosts(): Collection
+    {
+        return $this->posts;
+    }
+
+    public function addPost(Posts $post): static
+    {
+        if (!$this->posts->contains($post)) {
+            $this->posts->add($post);
+            $post->addCategoriePost($this);
+        }
+
+        return $this;
+    }
+
+    public function removePost(Posts $post): static
+    {
+        if ($this->posts->removeElement($post)) {
+            $post->removeCategoriePost($this);
+        }
 
         return $this;
     }

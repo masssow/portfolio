@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\CategoriePosts;
-use App\Form\CategoriePostsType;
+use App\Form\CategoriePosts1Type;
 use App\Repository\CategoriePostsRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -22,11 +22,11 @@ final class AdminCategorieController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'app_admin_categorie_new', methods: ['GET', 'POST'])]
+    #[Route('/admin/categorie/new', name: 'app_admin_categorie_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $categoriePost = new CategoriePosts();
-        $form = $this->createForm(CategoriePostsType::class, $categoriePost);
+        $form = $this->createForm(CategoriePosts1Type::class, $categoriePost);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -42,7 +42,7 @@ final class AdminCategorieController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_admin_categorie_show', methods: ['GET'])]
+    #[Route('/admin/categorie/{id}', name: 'app_admin_categorie_show', methods: ['GET'])]
     public function show(CategoriePosts $categoriePost): Response
     {
         return $this->render('admin_categorie/show.html.twig', [
@@ -50,10 +50,10 @@ final class AdminCategorieController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}/edit', name: 'app_admin_categorie_edit', methods: ['GET', 'POST'])]
+    #[Route('/admin/categorie/edit/{id}', name: 'app_admin_categorie_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, CategoriePosts $categoriePost, EntityManagerInterface $entityManager): Response
     {
-        $form = $this->createForm(CategoriePostsType::class, $categoriePost);
+        $form = $this->createForm(CategoriePosts1Type::class, $categoriePost);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

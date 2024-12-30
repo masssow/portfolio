@@ -1,20 +1,58 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ServicesController!{% endblock %}
+{% block title %}Services - Samba SOW SOW{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+  <section class="features_area">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-8 text-center">
+					<div class="main_title">
+						<h2>Des solutions web taillées pour vos besoins 🎯</h2>
+						<p class="">
+							Dans un monde où tout se joue en ligne, avoir un site performant, visible et bien pensé est essentiel. Développeur web passionné, je vous accompagne pour créer des solutions digitales qui répondent à vos besoins : développement web sur mesure, optimisation SEO pour Google, design UI/UX et création de solutions SaaS pour PME. Ensemble, donnons à votre projet la visibilité qu’il mérite et offrons à vos utilisateurs une expérience qu’ils n’oublieront pas.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="row feature_inner">
+				<div class="col-lg-3 col-md-6">
+					<div class="feature_item">
+						<img src="{{ asset('build/images/img/services/s1m.png')}}" alt="">
+						<h4>Développement web sur mesure : votre projet, votre style, votre succès</h4>
+						<p>Chaque entreprise a son histoire et ses besoins, alors pourquoi se contenter d’un site standard ? Que ce soit pour un site vitrine élégant, une application complexe ou un site e-commerce prêt à conquérir le marché, je conçois chaque ligne de code pour répondre à vos objectifs.</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="feature_item">
+						<img src="{{asset('build/images/img/services/s2.png')}}" alt="">
+						<h4>SaaS pour les PME : des solutions sur mesure pour simplifier votre quotidien</h4>
+						<p>Vous êtes une petite ou moyenne entreprise et vous jonglez entre mille tâches ? Et si une application SaaS (Software as a Service) pouvait vous libérer du temps et vous simplifier la vie ? Je développe des solutions SaaS personnalisées, conçues pour répondre aux défis spécifiques des PME, sans pour autant exploser votre budget. 
+						{# <strong>Voici ce que je propose :</strong><br>
+						<strong>Des outils adaptés à vos besoins :</strong> Gestion des clients, suivi des stocks, planification des projets… chaque fonctionnalité est développée pour coller à votre activité. <br>
+						<strong>Une accessibilité en ligne :</strong> Vos données disponibles partout, tout le temps, sur tous vos appareils. <br>
+						<strong>Une interface simple et intuitive :</strong> Pas besoin d’être un pro de la tech pour utiliser votre application. <br>
+						<strong>Sécurité et évolutivité :</strong> Vos données sont protégées et votre application peut évoluer au fil de vos besoins. #}
+						</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="feature_item">
+						<img src="{{ asset('build/images/img/services/s3.png')}}" alt="">
+						<h4>Référencement SEO et Google : Optimisez votre visibilité !</h4>
+						<p>Parce qu’un beau site qui n’apparaît pas sur Google, c’est comme un café sans croissant. J’optimise votre site pour qu’il grimpe dans les résultats de recherche et attire vos futurs clients.</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="feature_item">
+						<img src="{{ asset('build/images/img/services/s4.png')}}" alt="">
+						<h4>Création d’e-commerce sur mesure : vendez (presque) tout, mais avec style ! 🛒</h4>
+						<p>Votre boutique en ligne mérite mieux qu’un design standardisé ou un chariot à trois roues. Je propose des solutions e-commerce sur mesure, adaptées à vos besoins, pour offrir à vos clients une expérience d’achat agréable et à votre marque une présence en ligne qui fait la différence.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================ End Features Area =================-->
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/xampp/htdocs/portfolio/src/Controller/ServicesController.php</code></li>
-        <li>Your template at <code>C:/xampp/htdocs/portfolio/templates/services/index.html.twig</code></li>
-    </ul>
-</div>
 {% endblock %}

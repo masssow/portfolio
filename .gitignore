@@ -9,6 +9,7 @@
 /var/
 /vendor/
 /src/DataFixtures/
+/uploads/
 ###< symfony/framework-bundle ###
 
 ###> phpunit/phpunit ###

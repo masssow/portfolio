@@ -22,7 +22,7 @@ class MessageFormType extends AbstractType
             ->add('name', TextType::class, [
                 'label' => false, // Supprime le label pour correspondre à l'exemple
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control shadow-sm',
                     'id' => 'name',
                     'placeholder' => 'Votre Nom',
                     'onfocus' => "this.placeholder = ''",
@@ -32,20 +32,20 @@ class MessageFormType extends AbstractType
             ->add('email', EmailType::class, [
                 'label' => false,
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control shadow-sm',
                     'id' => 'email',
                     'placeholder' => 'Votre adresse mail',
                     'onfocus' => "this.placeholder = ''",
                     'onblur' => "this.placeholder = 'Entrez votre adresse mail'",
                 ],
             ])
-            ->remove('subject', TextType::class, [
+            ->add('subject', TextType::class, [
                 'label' => false,
                 'mapped' => false, // Si le champ n'existe pas dans l'entité Messages
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control shadow-sm',
                     'id' => 'subject',
-                    'placeholder' => 'Subject',
+                    'placeholder' => 'Objet',
                     'onfocus' => "this.placeholder = ''",
                     'onblur' => "this.placeholder = 'Subject'",
                 ],
@@ -53,14 +53,31 @@ class MessageFormType extends AbstractType
             ->add('content', TextareaType::class, [
                 'label' => false,
                 'attr' => [
-                    'class' => 'form-control mb-10',
+                    'class' => 'form-control shadow-sm',
                     'rows' => 5,
                     'placeholder' => 'Message',
                     'onfocus' => "this.placeholder = ''",
                     'onblur' => "this.placeholder = 'Message'",
                     'required' => '',
                 ],
-            ]);
+            ])
+
+            ->add('honeypot_field', HiddenType::class, [
+                'mapped' => false,
+                'required' => false,
+                'attr' => [
+                    'style' => 'display:none;',
+                    'autocomplete' => 'off',
+                    ],
+                ])
+
+                ->add('submit', SubmitType::class, [
+                'label' => 'Envoyer',
+                'attr' => [
+                    'class'     => 'primary-btn primary_btn',
+                        ],
+                ]);
+            
     }
 
     public function configureOptions(OptionsResolver $resolver): void
@@ -68,7 +85,10 @@ class MessageFormType extends AbstractType
         $resolver->setDefaults([
             'data_class' => Message::class,
             'attr' => [
-                'class' => 'form-control'
+               'class' => 'comment-form ',
+                'id' => 'comment-form',
+                'method'    =>  'post',
+                'action'    =>   ''
             ]
         ]);
     }

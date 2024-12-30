@@ -1,0 +1,63 @@
+{% extends 'admin-base.html.twig' %}
+
+{% block title %}Posts index{% endblock %}
+
+{% block body %}
+    <h1>Posts index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                {# <th>Id</th> #}
+                <th>Title</th>
+                <th>Content</th>
+                <th>Paragraphe surligné</th>
+                <th>Paragraphe 3</th>
+                <th>CreatedAt</th>
+                <th>UpdatedAt</th>
+                <th>ImageMain</th>
+                <th>ImageTwo</th>
+                <th>ImageThree</th>
+                {# <th>ImageSize</th> #}
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for post in posts %}
+            <tr>
+                {# <td>{{ post.id }}</td> #}
+                <td>{{ post.title }}</td>
+                <td>{{ post.content | slice(0,100) ~ '...' }}</td>
+                <td>{{ post.paragraphe2 | slice(0,100) ~ '...' }}</td>
+                <td>{{ post.paragraphe3 | slice(0,100) ~ '...' }}</td>
+
+                <td>{{ post.createdAt ? post.createdAt|date('d-m-Y') : '' }}</td>
+                <td>{{ post.updatedAt ? post.updatedAt|date('d-m-Y') : '' }}</td>
+                {% if post.imageName %}
+                <td><img src="{{ asset ('images/posts/' ~ post.imageName)}}" style="max-height:50px; width:auto" alt="Image main post"></td>
+                {% endif %}
+
+                {% if post.imageTwoName %}  
+                <td><img src="{{ asset ('images/posts/' ~ post.imageTwoName)}}" style="max-height:50px;"alt="Image two post"></td>
+                {% endif %}
+
+                {% if post.imageThreeName %}
+                <td><img src="{{ asset ('images/posts/' ~ post.imageThreeName)}}" style="max-height:50px;" alt="Image three post"></td>
+                {% endif %}
+
+                {# <td>{{ post.imageSize }}</td> #}
+                <td>
+                    <a href="{{ path('app_admin_posts_show', {'id': post.id}) }}">show</a>
+                    <a href="{{ path('app_admin_posts_edit', {'id': post.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_admin_posts_new') }}">Create new</a>
+{% endblock %}

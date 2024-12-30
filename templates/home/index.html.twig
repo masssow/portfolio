@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Home - Samba SOW SOW{% endblock %}
 
 {% block body %}
 <!--================ Start Home Banner Area =================-->
@@ -22,7 +22,7 @@
 							<h5 class="text-uppercase">C'EST SAMBA SOW SOW👋</h5>
 							<div class="d-flex align-items-center">
 								<a class="primary_btn" href="#"><span>Qui suis-je ?</span></a>
-								<a class="primary_btn tr-bg" href="#"><span>Obtenir mon CV</span></a>
+								<a class="primary_btn tr-bg" href="{{ asset ('build/uploads/cv_dev_samba_sow.pdf') }}" download="cv_dev_samba_sow.pdf"><span>Obtenir mon CV</span></a>
 							</div>
 						</div>
 					</div>
@@ -58,7 +58,7 @@
 							{# En tant que développeur fullstack, je maîtrise un large éventail de technologies. Je suis particulièrement passionné par Symfony et j'utilise également WordPress pour développer des solutions flexibles et efficaces. Mon but est de collaborer étroitement avec mes clients pour bien cerner leurs objectifs et réaliser des projets qui répondent parfaitement à leurs attentes.  #}
 						</p>
 						
-						<a class="primary_btn" href="{{ asset ('build/cv_dev_samba SOWSOW.pdf')}}" download="cv_dev_samba SOWSOW.pdf"><span>Télécharger CV</span></a>
+						<a class="primary_btn" href="{{ asset ('uploads/cv_dev_samba_sowsow.pdf')}}" download="cv_dev_samba SOWSOW.pdf"><span>Télécharger CV</span></a>
 					</div>
 				</div>
 			</div>
@@ -73,17 +73,17 @@
 			<div class="row justify-content-center">
 				<div class="col-lg-6">
 					<div class="row">
-						{# <div class="col-lg-4 col-md-4 col-sm-6">
+						<div class="col-lg-4 col-md-4 col-sm-6">
 							<div class="single-brand-item d-table">
 								<div class="d-table-cell text-center">
 									<img src="{{ asset('build/images/img/brands/logo1.png')}}" alt="">
 								</div>
 							</div>
-						</div> #}
+						</div>
 						<div class="col-lg-4 col-md-4 col-sm-6">
 							<div class="single-brand-item d-table">
 								<div class="d-table-cell text-center">
-									<img src="{{ asset('images/img/brands/logo2.png')}}" alt="">
+									<img src="{{ asset ('build/images/img/brands/dsthermologo.jpg')}}" alt="">
 								</div>
 							</div>
 						</div>

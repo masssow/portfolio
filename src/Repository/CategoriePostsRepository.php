@@ -31,6 +31,21 @@ class CategoriePostsRepository extends ServiceEntityRepository
     //        ;
     //    }
 
+    // /**
+    // * @return CategoriePosts[] Returns an array of CategoriePosts objects
+    // */
+    //     public function findOneCategorieMain()
+    //    {
+    //        return $this->createQueryBuilder('c')
+    //         ->leftJoin('c post', 'p')
+    //         ->addSelect('p')
+    //         ->setMaxResults(3)
+    //         ->orderBy('c.id', 'DESC')
+    //         ->getQuery()
+              
+    //        ;
+    //    }
+
     //    public function findOneBySomeField($value): ?CategoriePosts
     //    {
     //        return $this->createQueryBuilder('c')
