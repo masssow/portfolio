@@ -79,7 +79,7 @@ class SinglePostsController extends AbstractController
 
         $totalPost = $categoriePostsRepository->count();
 
-        // dd($comments);
+        // dd($post);
         return $this->render('single_posts/index.html.twig', [
             'nextPost'      => $nextPost,
             'previusPost'   => $previusPost,

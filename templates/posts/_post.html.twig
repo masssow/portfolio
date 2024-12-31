@@ -1,14 +1,14 @@
 <article class="row blog_item">
         <div class="col-md-3">
             <div class="blog_info text-right">
-                <div class="post_tag">
+                {# <div class="post_tag">
                     {% for categorie in categories %}
                     <a href="{{ path('app_posts_by_categorie', { id: categorie.id }) }}" class="categorie-link {% if categorie.id == app.request.get('categorie_id') %} active {% endif %}" 
                         data-categorie-id="{{ categorie.id }}">{{categorie.name}}
                     </a>{% if not loop.last %}, {% endif %}          
                     {% endfor %}
                     
-                </div>
+                </div> #}
                     <ul class="blog_meta list">
                         <li><a href="#"><i class="lnr lnr-user"></i>  Samba SOW SOW</a></li>
                         <li><a href="#"><i class="lnr lnr-calendar-full"></i>  {{post.createdAt | date('d-m-Y')}}</a></li>

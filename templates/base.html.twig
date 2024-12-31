@@ -9,7 +9,12 @@
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
 
-        
+        <meta property="og:title" content="{{ post.title }}">
+		<meta property="og:description" content="{{ post.content|slice(0, 150) }}">
+		<meta property="og:image" content="{{ asset('images/posts/' ~ post.imageName) }}">
+		<meta property="og:url" content="{{ app.request.uri }}">
+		<meta property="og:type" content="article">
+
     </head>
 <body>
 

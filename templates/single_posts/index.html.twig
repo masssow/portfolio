@@ -52,10 +52,18 @@
                                         {% endif %}
                                     </ul>
                                     <ul class="social-links">
-                                        {# <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-github"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-behance"></i></a></li> #}
+                                        <li>
+                                            <a href="https://www.facebook.com/sharer/sharer.php?u={{ app.request.uri }}&quote={{ post.title }}" target="_blank" class="facebook"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://twitter.com/intent/tweet?url={{ app.request.uri }}&text={{ post.title }}" target="_blank" class="twitter"><i class="fa-brands fa-x-twitter"></i></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ app.request.uri }}&title={{ post.title }}&summary={{ post.content|slice(0, 100) }}" target="_blank" class="linkedin"><i class="fa-brands fa-linkedin"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://api.whatsapp.com/send?text={{ post.title }} {{ app.request.uri }}" target="_blank" class="whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
