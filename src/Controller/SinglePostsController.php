@@ -75,13 +75,15 @@ class SinglePostsController extends AbstractController
         $totalComments =  $messageRepository->countByPost($post);
         // dd($totalComments);
 
+        $popularPosts = $postsRepository->findPopularPost(4);
+
         $totalPost = $categoriePostsRepository->count();
-        // Rendu de la vue
 
         // dd($comments);
         return $this->render('single_posts/index.html.twig', [
             'nextPost'      => $nextPost,
             'previusPost'   => $previusPost,
+            'currentPost'   => $currentPost,
             'messages'      => $messages,
             'form'          => $form->createView(),
             'post'          => $post,
@@ -89,6 +91,7 @@ class SinglePostsController extends AbstractController
             'totalPost'      => $totalPost,
             'categories'     => $categories,
             'postsByCategorie' => $postsByCategorie,
+            'popularPosts'    => $popularPosts,
 
         ]);
     }

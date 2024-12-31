@@ -1,0 +1,34 @@
+<article class="row blog_item">
+        <div class="col-md-3">
+            <div class="blog_info text-right">
+                <div class="post_tag">
+                    {% for categorie in categories %}
+                    <a href="{{ path('app_posts_by_categorie', { id: categorie.id }) }}" class="categorie-link {% if categorie.id == app.request.get('categorie_id') %} active {% endif %}" 
+                        data-categorie-id="{{ categorie.id }}">{{categorie.name}}
+                    </a>{% if not loop.last %}, {% endif %}          
+                    {% endfor %}
+                    
+                </div>
+                    <ul class="blog_meta list">
+                        <li><a href="#"><i class="lnr lnr-user"></i>  Samba SOW SOW</a></li>
+                        <li><a href="#"><i class="lnr lnr-calendar-full"></i>  {{post.createdAt | date('d-m-Y')}}</a></li>
+                        <li><a href="#"><i class="lnr lnr-eye"></i>  111 Vues</a></li>
+                        <li><a href="#">{% if totalComments > 0 %} {{ totalComments }} commentaire{% if totalComments > 1 %}s{% endif %}{% else %} Pas de commentaire {% endif %} totalComments <i class="lnr lnr-bubble"></i>
+                         </a></li>
+                        {% endif %}</a></li>
+                    </ul>
+                </div>    
+        </div>
+        <div class="col-md-9">
+            <div class="blog_post">
+                <img src="{{ asset('images/posts/' ~ post.imageName) }}" alt="" class="img-fluid">
+                <div class="blog_details">
+                    <a href="{{ path('app_single_posts', {'id': post.id}) }}">
+                        <h2>{{ post.title }}</h2>
+                    </a>
+                    <p>{{ post.content|slice(0, 150) }}...</p>
+                    <a href="{{ path('app_single_posts', {'id': post.id}) }}" class="primary_btn"><span>Voir plus</span></a>
+                </div>
+            </div>
+        </div>
+    </article>

@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'blog-base.html.twig' %}
 
 {% block title %}{{post.title}} - Blog Diamono Tech {% endblock %}
 
@@ -34,7 +34,7 @@
                             </div>
                             <div class="col-lg-3  col-md-3">
                                 <div class="blog_info text-right">
-                                    <div class="post_tag">
+                                    {# <div class="post_tag">
                                                 <p>Categories Articles</p>
                                             {% for categorie in categories %}
                                             <span><a href="{{ path        ('app_posts_by_categorie', { id: categorie.id }) }}" class="categorie-link {% if categorie.id == app.request.get('categorie_id') %}active{% endif %}" 
@@ -42,12 +42,14 @@
                                             </a>{% if not loop.last %},
                                             {% endif %}          
                                             {% endfor %}
-                                        </div>
+                                    </div> #}
                                     <ul class="blog_meta list">
-                                        {# <li><a href="#">Mark wiens<i class="lnr lnr-user"></i></a></li> #}
-                                        <li><a href="#">{{post.createdAt | date('d-m-Y')}}<i class="lnr lnr-calendar-full"></i></a></li>
-                                        {# <li><a href="#">1.2M Views<i class="lnr lnr-eye"></i></a></li> #}
-                                        {# <li><a href="#">06 Comments<i class="lnr lnr-bubble"></i></a></li> #}
+                                        <li><a href="#"><i class="lnr lnr-user"></i> Samba </a></li>
+                                        <li><a href="#"><i class="lnr lnr-calendar-full"></i> {{post.createdAt | date('d-m-Y')}}</a></li>
+                                        <li><a href="#"><i class="lnr lnr-eye"></i> 1.2M Vues</a></li>
+                                        {% if totalComments > 0 %}
+                                        <li><a href="#"><i class="lnr lnr-bubble"></i> {{ totalComments }} Comments</a></li>
+                                        {% endif %}
                                     </ul>
                                     <ul class="social-links">
                                         {# <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
@@ -92,7 +94,7 @@
                                 {% if previusPost %}
                                 <div class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
                                     <div class="thumb">
-                                        <a href="{{ path('app_single_posts', { id: previusPost.id }) }}"><img class="img-fluid" src="{{ asset ('images/posts/' ~ post.imageName) }}" alt="" style="max-height:50px; width:auto;"></a>
+                                        <a href="{{ path('app_single_posts', { id: previusPost.id }) }}"><img style="max-height:80px; width:auto" src="{{ asset ('images/posts/' ~ post.imageName) }}" alt=""></a>
                                     </div>
                                     <div class="arrow">
                                         <a href="#"><span class="lnr text-white lnr-arrow-left"></span></a>
@@ -102,6 +104,9 @@
                                         <a href="{{ path('app_single_posts', { id: previusPost.id }) }}"><h4>{{previusPost.title}}</h4></a>
                                     </div>
                                 </div>
+                               {% else %}
+                                <!--espace vide pour maintenir l'équilibre des colonnes -->
+                                <div class="col-lg-6 col-md-6 col-12 nav-left"></div>
                                 {% endif %}
 
                                 {% if nextPost %}
@@ -114,9 +119,12 @@
                                         <a href="#"><span class="lnr text-white lnr-arrow-right"></span></a>
                                     </div>
                                     <div class="thumb">
-                                        <a href="{{ path('app_single_posts', { id: nextPost.id }) }}"><img class="img-fluid" src="{{ asset ('images/posts/' ~ post.imageName) }}" alt="" style="max-height:50px; width:auto"></a>
+                                        <a href="{{ path('app_single_posts', { id: nextPost.id }) }}"><img src="{{ asset ('images/posts/' ~ post.imageName) }}" alt="" style="max-height:80px; width:auto"></a>
                                     </div>										
                                 </div>	
+                                 {% else %}
+                                <!-- Espace vide pour maintenir l'équilibre des colonnes -->
+                                <div class="col-lg-6 col-md-6 col-12 nav-right"></div>
                                 {% endif %}								
                             </div>
                         </div>
@@ -126,7 +134,7 @@
                             {% if totalComments > 0 %}
                             <h4>{{ totalComments }} Commentaire (s)</h4>
                             <div class="comment-list">
-                            {% for message in messages %}
+                                {% for message in messages %}
                                 <div class="single-comment justify-content-between d-flex mb-5">
                                     <div class="user justify-content-between d-flex">
                                         <div class="thumb">
@@ -152,34 +160,29 @@
                         </div>
                     
                         <div class="comment-form">
-                            <h4>Laisser un commentaire</h4>
-                                {# <form id="comment-form" action="{{ path('app_single_posts', { id: post.id }) }}" method="post"> #}
+                                <h4>Laisser un commentaire</h4>
                                 {{ form_start(form) }}
-                                        <div class="form-group form-inline comment-list">
-                                                <div class="form-group col-lg-6 col-md-6 name">
-                                                    {{ form_row(form.name) }}
-                                                </div>                                    
-                                                <div class="form-group col-lg-6 col-md-6 email">
-                                                    {{ form_row(form.email) }}
-                                                </div>
+                                <div class="form-group form-inline comment-list">
+                                        <div class="form-group col-lg-6 col-md-6 name">
+                                            {{ form_row(form.name) }}
+                                        </div>                                    
+                                        <div class="form-group col-lg-6 col-md-6 email">
+                                            {{ form_row(form.email) }}
                                         </div>
-                                        <div class="form-group">
-                                            {{ form_row(form.subject) }}
-                                        </div>      
-                                        <div class="form-group">
-                                            {{ form_row(form.content) }}
-                                        </div>
-                                        <div class="form-group">
-                                            {{ form_row(form.submit) }}
-                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    {{ form_row(form.subject) }}
+                                </div>      
+                                <div class="form-group">
+                                    {{ form_row(form.content) }}
+                                </div>
+                                <div class="form-group">
+                                    {{ form_row(form.submit) }}
+                                </div>
                                 {{ form_end(form) }}                                    
                         </div>					
                 </div>
                 {% include 'posts/_sidebar.html.twig'%}
-
-            </div>
-
-                </div>
             </div>
         </div>
     </section>

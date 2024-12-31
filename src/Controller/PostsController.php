@@ -53,7 +53,9 @@ class PostsController extends AbstractController
         $totalPost = $postsRepository->count([]);
         // $totalComments =  $messageRepository->countByPost($post);
         $postsByCategorieRaw = $postsRepository->countPostsByCategorie();
-        
+
+        $popularPosts = $postsRepository->findPopularPost(4);
+
         $postsByCategorie = [];
         foreach ($postsByCategorieRaw as $item) {
             $postsByCategorie[$item['id']] = $item['postCount'];
@@ -67,6 +69,8 @@ class PostsController extends AbstractController
             'totalPost'     => $totalPost,
             // 'totalCommens'  => $totalComments,
             'postsByCategorie' => $postsByCategorie,
+            'popularPosts'    => $popularPosts,
+
         ]);
     }
 

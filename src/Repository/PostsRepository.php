@@ -99,6 +99,20 @@ class PostsRepository extends ServiceEntityRepository
            ;
        }
 
+    public function findPopularPost(int $limit = 4 ): array
+    {
+        return $this->createQueryBuilder('p')
+            ->select('p, COUNT(m.id) AS HIDDEN commentCount')
+            ->leftJoin('p.messages', 'm') 
+            ->where('p.createdAt <= :now')
+            ->setParameter('now', new \DateTime()) 
+            ->groupBy('p.id')
+            ->orderBy('commentCount', 'DESC')
+            ->setMaxResults($limit)
+            ->getQuery()
+            ->getResult();
+    }
+
 
 
      //    /**
