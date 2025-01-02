@@ -61,6 +61,7 @@
                                         <li>
                                             <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ app.request.uri }}&title={{ post.title }}&summary={{ post.content|slice(0, 100) }}" target="_blank" class="linkedin"><i class="fa-brands fa-linkedin"></i></a>
                                         </li>
+                                        
                                         <li>
                                             <a href="https://api.whatsapp.com/send?text={{ post.title }} {{ app.request.uri }}" target="_blank" class="whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
                                         </li>
