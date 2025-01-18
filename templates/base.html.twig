@@ -9,11 +9,11 @@
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
 
-        <meta property="og:title" content="{{ post.title }}">
+        {# <meta property="og:title" content="{{ post.title }}">
 		<meta property="og:description" content="{{ post.content|slice(0, 150) }}">
 		<meta property="og:image" content="{{ asset('images/posts/' ~ post.imageName) }}">
 		<meta property="og:url" content="{{ app.request.uri }}">
-		<meta property="og:type" content="article">
+		<meta property="og:type" content="article"> #}
 
     </head>
 <body>
@@ -35,10 +35,12 @@
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav justify-content-end">
-							<li class="nav-item active"><a class="nav-link" href="{{ path('app_home')}}">Accueil</a></li>
+							<li class="nav-item active"><a class="nav-link" href="{{ path('app_home')}}">{{ 'menu.home'|trans }}</a></li>
 							{# <li class="nav-item"><a class="nav-link" href="{{ path ('app_about')}}">Qui suis-je</a></li> #}
-							<li class="nav-item"><a class="nav-link" href="{{ path ('app_services')}}">Services</a></li>
+							<li class="nav-item"><a class="nav-link" href="{{ path ('app_services')}}">{{ 'menu.services'|trans }}</a></li>
+						
 							<li class="nav-item"><a class="nav-link" href="{{ path ('app_posts')}}">Blog</a></li>
+
 							{# <li class="nav-item submenu dropdown">
 								<a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">Blog</a>
@@ -55,7 +57,9 @@
 									<li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
 								</ul>
 							</li> #}
-							<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">{{ 'menu.contact'|trans }}</a></li>
+								<li class="nav-item"><a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'fr'})) }}" class="nav-link"><img src="{{ asset('build/images/france.png')}}" alt="" style="max-height: 15px; width: auto;" class="mx-1"></a> <a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'es'})) }}" class="nav-link"><img src="{{ asset('build/images/espagne.png')}}" alt="" style="max-height: 15px; width: auto;" class="mx-1"></a>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -105,7 +109,7 @@
 							<a href="#">
 								<img src="img/logo.png" alt="">
 							</a>
-							<h4>Follow Me</h4>
+							<h4>{{ 'title.fallow'|trans }}</h4>
 						</div>
 						<div class="footer_social">
 							<a href="#"><i class="fa fa-facebook"></i></a>

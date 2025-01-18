@@ -7,7 +7,19 @@
         <h2>{{categorie.name}}</h2>
         <img src="" alt="">
 <!--================Blog Categorie Area =================-->
-    {% include 'posts/_categorie.html.twig'  %}  
+    {# {% include 'posts/_categorie.html.twig'  %}   #}
+    <div class="categories_post">
+                        <img src="{{ asset ('images/categories/' ~ categorie.imageName)}}" alt="post" class="img-fluid">
+                        <div class="categories_details">
+                            <div class="categories_text">
+                                <a href="{{ path ('app_posts_by_categorie', { id: categorie.id }) }}" 
+                                    class="{% if categorie.id == categorie.id %}active{% endif %}" class="categorie-link {% if app.request.get('categorie_id') == categorie.id %}active{% endif %}" data-categorie-id="{{ categorie.id }}"><h5>{{categorie.name}}</h5>
+                                </a>
+                                <div class="border_line"></div>
+                                <p>{{categorie.description}}</p>
+                            </div>
+                        </div>
+                    </div>
     <!--================Blog Categorie Area =================-->
     
  <!--================Blog Area =================-->

@@ -75,7 +75,7 @@ class PostsController extends AbstractController
     }
 
 
-    #[Route('/blog/categorie/{id}/', name: 'app_posts_by_categorie', methods: ['GET'])]
+    #[Route('blog/categorie/{id}/', name: 'app_posts_by_categorie', methods: ['GET'])]
     public function PostsByCategorie(
         int $id,
         Request $request,

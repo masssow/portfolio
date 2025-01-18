@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Home - Samba SOW SOW{% endblock %}
+{% block title %}{{ 'home.titleTab'|trans }}{% endblock %}
 
 {% block body %}
 <!--================ Start Home Banner Area =================-->
@@ -17,12 +17,15 @@
 				<div class="row">
 					<div class="col-lg-7">
 						<div class="banner_content">
-							<h3 class="text-uppercase">Hell0</h3>
+							<h3 class="text-uppercase">{{ 'homepage.salutation'|trans }}</h3>
 							<h2 class="" id=""></h2>
-							<h5 class="text-uppercase">C'EST SAMBA SOW SOW👋</h5>
+
+							<h5 class="text-uppercase">{{ 'homepage.welcome'|trans }}</h5>
+							{# <h5 class="text-uppercase">C'EST SAMBA SOW SOW👋</h5> #}
+
 							<div class="d-flex align-items-center">
-								<a class="primary_btn" href="#"><span>Qui suis-je ?</span></a>
-								<a class="primary_btn tr-bg" href="{{ asset ('build/uploads/cv_dev_samba_sow.pdf') }}" download="cv_dev_samba_sow.pdf"><span>Obtenir mon CV</span></a>
+								<a class="primary_btn" href="#"><span>{{ 'whoami.title'|trans }}</span></a>
+								<a class="primary_btn tr-bg" href="{{ asset ('build/uploads/cv_dev_samba_sow.pdf') }}" download="cv_dev_samba_sow.pdf"><span>{{ 'mycv.title'|trans }}</span></a>
 							</div>
 						</div>
 					</div>
@@ -49,16 +52,16 @@
 
 				<div class="offset-lg-1 col-lg-5">
 					<div class="main_title text-left">
-						<h2>Bienvenue <br>
+						<h2>{{ 'welcome.title'|trans }}<br>
 							<br>
 							</h2>
 						<p>
-							Avec bientôt 4 ans d’expérience dans le développement web, j'ai aidé des entreprises et des entrepreneurs à créer des applications robustes, du back-end au front-end. Passionné par Symfony et toujours en quête de nouvelles solutions, je mets un point d'honneur à livrer des projets de qualité qui répondent aux besoins spécifiques de chaque client.
+							{{ 'home.paragraphIntro'|trans }}
 
 							{# En tant que développeur fullstack, je maîtrise un large éventail de technologies. Je suis particulièrement passionné par Symfony et j'utilise également WordPress pour développer des solutions flexibles et efficaces. Mon but est de collaborer étroitement avec mes clients pour bien cerner leurs objectifs et réaliser des projets qui répondent parfaitement à leurs attentes.  #}
 						</p>
 						
-						<a class="primary_btn" href="{{ asset ('uploads/cv_dev_samba_sowsow.pdf')}}" download="cv_dev_samba SOWSOW.pdf"><span>Télécharger CV</span></a>
+						<a class="primary_btn" href="{{ asset ('uploads/cv_dev_samba_sowsow.pdf')}}" download="cv_dev_samba SOWSOW.pdf"><span>{{ 'download.cv'|trans }}</span></a>
 					</div>
 				</div>
 			</div>
@@ -142,14 +145,14 @@
 					<div class="client-info">
 						<div class="d-flex mb-50">
 							<span class="lage">4</span>
-							<span class="smll">Ans d'expérience Freelance</span>
+							<span class="smll"> {{ 'experiences.title'|trans }}</span>
 						</div>
 						<div class="call-now d-flex">
 							<div>
 								<span class="fa fa-phone"></span>
 							</div>
 							<div class="ml-15">
-								<p>Contact direct</p>
+								<p>{{ 'contact.direct'|trans }}</p>
 								<h3>(+33) 6 05 74 01 78</h3>
 							</div>
 						</div>
@@ -165,9 +168,9 @@
 			<div class="row justify-content-center">
 				<div class="col-lg-8 text-center">
 					<div class="main_title">
-						<h2>Des solutions web taillées pour vos besoins 🎯</h2>
+						<h2>{{ 'slogan.services'|trans }}</h2>
 						<p class="paragrapheBlack">
-							Dans un monde où tout se joue en ligne, avoir un site performant, visible et bien pensé est essentiel. Développeur web passionné, je vous accompagne pour créer des solutions digitales qui répondent à vos besoins : développement web sur mesure, optimisation SEO pour Google, design UI/UX et création de solutions SaaS pour PME. Ensemble, donnons à votre projet la visibilité qu’il mérite et offrons à vos utilisateurs une expérience qu’ils n’oublieront pas.
+							{{ 'paragraph.introServices'|trans }}
 						</p>
 					</div>
 				</div>
@@ -176,15 +179,15 @@
 				<div class="col-lg-3 col-md-6">
 					<div class="feature_item">
 						<img src="{{ asset('build/images/img/services/s1m.png')}}" alt="">
-						<h4>Développement web sur mesure : votre projet, votre style, votre succès</h4>
-						<p>Chaque entreprise a son histoire et ses besoins, alors pourquoi se contenter d’un site standard ? Que ce soit pour un site vitrine élégant, une application complexe ou un site e-commerce prêt à conquérir le marché, je conçois chaque ligne de code pour répondre à vos objectifs.</p>
+						<h4>{{ 'title.serviceDev'|trans }}</h4>
+						<p>{{ 'paragraph.serviceDev'|trans }}</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="feature_item">
 						<img src="{{asset('build/images/img/services/s2.png')}}" alt="">
-						<h4>SaaS pour les PME : des solutions sur mesure pour simplifier votre quotidien</h4>
-						<p>Vous êtes une petite ou moyenne entreprise et vous jonglez entre mille tâches ? Et si une application SaaS (Software as a Service) pouvait vous libérer du temps et vous simplifier la vie ? Je développe des solutions SaaS personnalisées, conçues pour répondre aux défis spécifiques des PME, sans pour autant exploser votre budget. 
+						<h4>{{ 'title.serviceSass'|trans }}</h4>
+						<p>{{ 'paragraph.serviceSass'|trans }}
 						{# <strong>Voici ce que je propose :</strong><br>
 						<strong>Des outils adaptés à vos besoins :</strong> Gestion des clients, suivi des stocks, planification des projets… chaque fonctionnalité est développée pour coller à votre activité. <br>
 						<strong>Une accessibilité en ligne :</strong> Vos données disponibles partout, tout le temps, sur tous vos appareils. <br>
@@ -196,15 +199,15 @@
 				<div class="col-lg-3 col-md-6">
 					<div class="feature_item">
 						<img src="{{ asset('build/images/img/services/s3.png')}}" alt="">
-						<h4>Référencement SEO et Google : Optimisez votre visibilité !</h4>
-						<p>Parce qu’un beau site qui n’apparaît pas sur Google, c’est comme un café sans croissant. J’optimise votre site pour qu’il grimpe dans les résultats de recherche et attire vos futurs clients.</p>
+						<h4>{{ 'title.serviceSEO'|trans }}</h4>
+						<p>{{ 'paragraph.serviceSEO'|trans }}</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="feature_item">
 						<img src="{{ asset('build/images/img/services/s4.png')}}" alt="">
-						<h4>Création d’e-commerce sur mesure : vendez (presque) tout, mais avec style ! 🛒</h4>
-						<p>Votre boutique en ligne mérite mieux qu’un design standardisé ou un chariot à trois roues. Je propose des solutions e-commerce sur mesure, adaptées à vos besoins, pour offrir à vos clients une expérience d’achat agréable et à votre marque une présence en ligne qui fait la différence.</p>
+						<h4>{{ 'title.serviceEcommerce'|trans }}</h4>
+						<p>{{ 'title.serviceEcommerce'|trans }}</p>
 					</div>
 				</div>
 			</div>
