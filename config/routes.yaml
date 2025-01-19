@@ -1,10 +1,29 @@
-_locale_prefix:
-    requirements:
-        _locale: fr|es
-    defaults:
-        _locale: fr
-    type: attribute
+# # _locale_prefix:
+#     # path: /{_locale}  
+#     requirements:
+#         _locale: fr|es
+#     defaults:
+#         _locale: fr
+#         resource: '../src/Controller/'
+#     type: annotation
+#     prefix: /{_locale}
+#     # type: attribute
+#     prefix: /{_locale}
+#     # resource:
+#     controller: App\Controller\RedirectController::redirectToDefaultLocale
+#         # path: ../src/Controller/
+#         # namespace: App\Controller
+
+controllers:
+    resource: '../src/Controller/'
+    type: annotation
+_redirect_to_locale:
+    path: /
+    controller: App\Controller\RedirectController::redirectToDefaultLocale
     prefix: /{_locale}
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
+    
+    # requirements:
+    #     _locale: fr|es
+    # defaults:
+    #     _locale: fr
+
