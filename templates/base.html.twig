@@ -51,7 +51,7 @@
 							</li> #}
 							
 							<li class="nav-item"><a class="nav-link" href="#">{{ 'menu.contact'|trans }}</a></li>
-							<li class="nav-item"><span><a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'fr'})) }}" class="nav-link"><img src="{{ asset('build/images/france.png')}}" alt="" style="max-height: 15px; width: auto;" class="mx-1"></a></span><span><a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'es'})) }}" class="nav-link"><img src="{{ asset('build/images/espagne.png')}}" alt="" style="max-height: 15px; width: auto;" class="mx-1"></a></span>
+							<li class="nav-item"><a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'fr'})) }}" class="nav-link"><img src="{{ asset('images/france.png')}}" alt="" style="max-height: 15px; width: auto;" class="mx-1"></a> <a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'es'})) }}" class="nav-link"><img src="{{ asset('images/espagne.png')}}" alt="" style="max-height: 15px; width: auto;" class="mx-1"></a>
 							</li>
 						</ul>
 					</div>
