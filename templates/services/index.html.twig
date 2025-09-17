@@ -1,58 +1,116 @@
 {% extends 'base.html.twig' %}
+{% trans_default_domain 'messages' %}
 
-{% block title %}Services - Samba SOW SOW{% endblock %}
+{% block title %}{{ 'services2.seo.titleTab'|trans }}{% endblock %}
 
 {% block body %}
-  <section class="features_area">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-lg-8 text-center">
-					<div class="main_title">
-						<h2>{{ 'slogan.services'|trans }}</h2>
-						<p class="">
-							{{ 'paragraph.introServices'|trans }}
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="row feature_inner">
-				<div class="col-lg-3 col-md-6">
-					<div class="feature_item">
-						<img src="{{ asset('build/images/img/services/s1m.png')}}" alt="">
-						<h4>{{ 'title.serviceDev'|trans }}</h4>
-						<p>{{ 'paragraph.serviceDev'|trans }}</p>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="feature_item">
-						<img src="{{asset('build/images/img/services/s2.png')}}" alt="">
-						<h4>{{ 'title.serviceSass'|trans }}</h4>
-						<p>{{ 'paragraph.serviceSass'|trans }}ploser votre budget. 
-						{# <strong>Voici ce que je propose :</strong><br>
-						<strong>Des outils adaptés à vos besoins :</strong> Gestion des clients, suivi des stocks, planification des projets… chaque fonctionnalité est développée pour coller à votre activité. <br>
-						<strong>Une accessibilité en ligne :</strong> Vos données disponibles partout, tout le temps, sur tous vos appareils. <br>
-						<strong>Une interface simple et intuitive :</strong> Pas besoin d’être un pro de la tech pour utiliser votre application. <br>
-						<strong>Sécurité et évolutivité :</strong> Vos données sont protégées et votre application peut évoluer au fil de vos besoins. #}
-						</p>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="feature_item">
-						<img src="{{ asset('build/images/img/services/s3.png')}}" alt="">
-						<h4>{{ 'title.serviceSEO'|trans }}</h4>
-						<p>{{ 'paragraph.serviceSEO'|trans }}</p>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="feature_item">
-						<img src="{{ asset('build/images/img/services/s4.png')}}" alt="">
-						<h4>{{ 'title.serviceEcommerce'|trans }}</h4>
-						<p>{{ 'title.serviceEcommerce'|trans }}</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--================ End Features Area =================-->
+  <!--================ Start Banner Area =================-->
+  <section class="banner_area">
+    <div class="banner_inner d-flex align-items-center">
+      <div class="container">
+        <div class="banner_content text-center">
+          <h2>{{ 'menu.services'|trans }}</h2>
+          <div class="page_link">
+            <a href="{{ path('app_home', {'_locale': app.request.locale}) }}">Home</a>
+            <a href="#">{{ 'menu.services'|trans }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--================ End Banner Area =================-->
 
+  <!--================ Start Services =================-->
+  <section class="features_area section_gap_top">
+    <div class="container">
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <div class="main_title">
+            <h2>{{ 'services2.intro.title'|trans }}</h2>
+            <p>{{ 'services2.intro.subtitle'|trans }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row feature_inner">
+        {# Une carte = un groupe + un panneau repliable #}
+        {% macro card(key, icon, img) %}
+          {% set id = 'svc-' ~ key %}
+          <div class="col-lg-6 col-md-6 mb-4" id="{{ id }}">
+            <div class="feature_item service-card">
+              {% if img %}
+                <img src="{{ asset(img) }}" alt="" class="mb-2">
+              {% endif %}
+              <div class="d-flex align-items-start justify-content-between">
+                <div>
+                  <h4 class="mb-1">{{ ('services2.cards.' ~ key ~ '.title')|trans }}</h4>
+                  <p class="mb-2 text-muted">{{ ('services2.cards.' ~ key ~ '.teaser')|trans }}</p>
+                </div>
+                <button class="btn btn-link p-0 service-toggle" data-toggle="collapse"
+                        data-target="#{{ id }}-collapse" aria-expanded="false"
+                        aria-controls="{{ id }}-collapse" aria-label="{{ 'services2.toggle'|trans }}">
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+              </div>
+
+              <div id="{{ id }}-collapse" class="collapse mt-2">
+                <ul class="mb-3">
+                  {% for i in 1..8 %}
+                    {% set itemKey = 'services2.cards.' ~ key ~ '.items.' ~ i %}
+                    {% if (itemKey|trans) != itemKey %}
+                      <li>{{ (itemKey)|trans }}</li>
+                    {% endif %}
+                  {% endfor %}
+                </ul>
+                <a class="primary_btn tr-bg"
+                      {# TODO
+                        METTRE LE PACK SÉLECTIONNÉ DANS LE FORMULAIRE DE DEVIS SUR LA PAGE DE PACK CHOISIE 
+                        PATH('app_quote', {'_locale': app.request.locale, 'service': key}) 
+                        #}
+                   href="{{ path('app_quote', {'_locale': app.request.locale, 'service': key}) }}">
+                  <span>{{ 'cta.devis'|trans }}</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        {% endmacro %}
+        {% import _self as ui %}
+
+        {{ ui.card('consulting',   'fa-lightbulb', 'build/images/img/services/s1m.png') }}
+        {{ ui.card('identity',     'fa-palette',   'build/images/img/services/s2.png') }}
+        {{ ui.card('platforms',    'fa-window-maximize', 'build/images/img/services/s3.png') }}
+        {{ ui.card('commerce',     'fa-cart-shopping',   'build/images/img/services/s4.png') }}
+        {{ ui.card('booking',      'fa-calendar-check',  'build/images/img/services/s5.png') }}
+        {{ ui.card('content_seo',  'fa-magnifying-glass', 'build/images/img/services/s6.png') }}
+        {{ ui.card('acquisition',  'fa-bullseye',  'build/images/img/services/s7.png') }}
+        {{ ui.card('donations',    'fa-hand-holding-heart', 'build/images/img/services/s8.png') }}
+        {{ ui.card('data_crm',     'fa-database',  'build/images/img/services/s9.png') }}
+        {{ ui.card('ai',           'fa-robot',     'build/images/img/services/s10.png') }}
+        {{ ui.card('accessibility','fa-universal-access', 'build/images/img/services/s11.png') }}
+        {{ ui.card('performance',  'fa-shield-halved', 'build/images/img/services/s12.png') }}
+        {{ ui.card('operations',   'fa-screwdriver-wrench', 'build/images/img/services/s13.png') }}
+        {{ ui.card('creative',     'fa-camera',    'build/images/img/services/s14.png') }}
+
+      </div>
+    </div>
+  </section>
+  <!--================ End Services =================-->
+
+  <style>
+    .service-card .service-toggle i { transition: transform .2s ease; }
+    .service-card .service-toggle[aria-expanded="true"] i { transform: rotate(180deg); }
+    .service-card ul { padding-left: 18px; }
+    .service-card li { margin-bottom: .35rem; }
+  </style>
+
+<script>
+  // Affiche le "Haut" après défilement
+  (function () {
+    var btn = document.getElementById('backToTop');
+    window.addEventListener('scroll', function(){
+      btn.style.display = (window.scrollY > 400) ? 'block' : 'none';
+    });
+  })();
+</script>
 {% endblock %}

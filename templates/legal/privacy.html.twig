@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+{% trans_default_domain 'messages' %}
+{% block title %}{{ 'legal.privacy.seo.titleTab'|trans }}{% endblock %}
+
+{% block body %}
+<section class="about_area section_gap">
+  <div class="container">
+    <h1 class="mb-3">{{ 'legal.privacy.title'|trans }}</h1>
+    <p class="mb-4">{{ 'legal.disclaimer'|trans }}</p>
+
+    <h3>{{ 'legal.privacy.controller.title'|trans }}</h3>
+    <p>{{ 'legal.privacy.controller.value'|trans }}</p>
+
+    <h3 class="mt-3">{{ 'legal.privacy.purposes.title'|trans }}</h3>
+    <ul>
+      <li>{{ 'legal.privacy.purposes.1'|trans }}</li>
+      <li>{{ 'legal.privacy.purposes.2'|trans }}</li>
+      <li>{{ 'legal.privacy.purposes.3'|trans }}</li>
+    </ul>
+
+    <h3 class="mt-3">{{ 'legal.privacy.legalbases.title'|trans }}</h3>
+    <p>{{ 'legal.privacy.legalbases.value'|trans }}</p>
+
+    <h3 class="mt-3">{{ 'legal.privacy.retention.title'|trans }}</h3>
+    <p>{{ 'legal.privacy.retention.value'|trans }}</p>
+
+    <h3 class="mt-3">{{ 'legal.privacy.rights.title'|trans }}</h3>
+    <ul>
+      <li>{{ 'legal.privacy.rights.1'|trans }}</li>
+      <li>{{ 'legal.privacy.rights.2'|trans }}</li>
+      <li>{{ 'legal.privacy.rights.3'|trans }}</li>
+      <li>{{ 'legal.privacy.rights.4'|trans }}</li>
+      <li>{{ 'legal.privacy.rights.5'|trans }}</li>
+    </ul>
+    <p>{{ 'legal.privacy.howto'|trans }}</p>
+
+    <h3 class="mt-3">{{ 'legal.privacy.security.title'|trans }}</h3>
+    <p>{{ 'legal.privacy.security.value'|trans }}</p>
+
+    <h3 class="mt-3">{{ 'legal.privacy.transfers.title'|trans }}</h3>
+    <p>{{ 'legal.privacy.transfers.value'|trans }}</p>
+
+    <p class="mt-4 text-muted">{{ 'legal.lastUpdate'|trans }}</p>
+  </div>
+</section>
+{% endblock %}

@@ -1,218 +1,192 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ 'home.titleTab'|trans }}{% endblock %}
+{% block title %}{{ 'home.seo.titleTab'|trans }}{% endblock %}
 
 {% block body %}
 <!--================ Start Home Banner Area =================-->
-	<section class="home_banner_area">
-		{# {% for type, message in app.flashes %}
-		<div class="alert alert-{{ type }}">
-		{# {% for message in messages %}
-			{{ message }}
-			{% endfor %} 
-		</div>
-		{% endfor %} #}
-		<div class="banner_inner">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-7">
-						<div class="banner_content">
-							<h3 class="text-uppercase">{{ 'homepage.salutation'|trans }}</h3>
-							<h2 class="" id=""></h2>
+<section class="home_banner_area">
+  <div class="banner_inner">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="banner_content">
+            <h3 >{{ 'home.hero.salutation'|trans }}</h3>
+            <h2 >{{ 'home.hero.h1'|trans }}</h2>
+            <h5 >{{ 'home.hero.subtitle'|trans }}</h5>
 
-							<h5 class="text-uppercase">{{ 'homepage.welcome'|trans }}</h5>
-							{# <h5 class="text-uppercase">C'EST SAMBA SOW SOW👋</h5> #}
+            <div class="d-flex align-items-center">
+              <a class="primary_btn" href="/contact"><span>{{ 'cta.devis'|trans }}</span></a>
+              <a class="primary_btn tr-bg" href="/tarifs"><span>{{ 'cta.packs'|trans }}</span></a>
+            </div>
 
-							<div class="d-flex align-items-center">
-								<a class="primary_btn" href="#"><span>{{ 'whoami.title'|trans }}</span></a>
-								<a class="primary_btn tr-bg" href="{{ asset ('build/uploads/cv_dev_samba_sow.pdf') }}" download="cv_dev_samba_sow.pdf"><span>{{ 'mycv.title'|trans }}</span></a>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-5">
-						<div class="home_right_img">
-							<img class="" src="{{ asset('build/images/img/banner/avatar-banner.png') }}" alt="">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--================ End Home Banner Area =================-->
+            <p class="mt-3 mb-0">{{ 'home.hero.proofs'|trans }}</p>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="home_right_img">
+            <img class="" src="{{ asset('build/images/pexels-tranmau.jpg') }}" alt="MassGrafik Web Agency">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--================ End Home Banner Area =================-->
 
-	<!--================ Start About Us Area =================-->
-	<section class="about_area section_gap">
-		<div class="container">
-			<div class="row justify-content-start align-items-center">
-				<div class="col-lg-5">
-					<div class="about_img">
-						<img class="" src="{{ asset('build/images/img/about-us.png')}}" alt="">
-					</div>
-				</div>
+<!--================ Start About/Why Area =================-->
+<section class="about_area section_gap">
+  <div class="container">
+    <div class="row justify-content-start align-items-center">
+      <div class="col-lg-5 mb-4 mb-lg-0">
+        <div class="about_img">
+          <img class="" src="{{ asset('build/images/pexels-fauxels.jpg') }}" alt="">
+        </div>
+      </div>
 
-				<div class="offset-lg-1 col-lg-5">
-					<div class="main_title text-left">
-						<h2>{{ 'welcome.title'|trans }}<br>
-							<br>
-							</h2>
-						<p>
-							{{ 'home.paragraphIntro'|trans }}
+      <div class="offset-lg-1 col-lg-6">
+        <div class="main_title text-left">
+          <h2>{{ 'home.why.title'|trans }}</h2>
+          <p class="mb-3">{{ 'home.why.intro'|trans }}</p>
+          <ul class="mb-3">
+            <li><strong>{{ 'home.why.items.1'|trans }}</strong></li>
+            <li><strong>{{ 'home.why.items.2'|trans }}</strong></li>
+            <li><strong>{{ 'home.why.items.3'|trans }}</strong></li>
+            <li><strong>{{ 'home.why.items.4'|trans }}</strong></li>
+          </ul>
+          <a class="primary_btn" href="{{ path ('app_quote')}}"><span>{{ 'cta.talk'|trans }}</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--================ End About/Why Area =================-->
 
-							{# En tant que développeur fullstack, je maîtrise un large éventail de technologies. Je suis particulièrement passionné par Symfony et j'utilise également WordPress pour développer des solutions flexibles et efficaces. Mon but est de collaborer étroitement avec mes clients pour bien cerner leurs objectifs et réaliser des projets qui répondent parfaitement à leurs attentes.  #}
-						</p>
-						
-						<a class="primary_btn" href="{{ asset ('uploads/cv_dev_samba_sowsow.pdf')}}" download="cv_dev_samba SOWSOW.pdf"><span>{{ 'download.cv'|trans }}</span></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--================ End About Us Area =================-->
+<!--================ Start Brand/Trust Area =================-->
+<section class="brand_area section_gap_bottom">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-6">
+            <div class="single-brand-item d-table">
+              <div class="d-table-cell text-center">
+                <img src="{{ asset('build/images/img/brands/logo1.png') }}" alt="Artisanat">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-6">
+            <div class="single-brand-item d-table">
+              <div class="d-table-cell text-center">
+                <img src="{{ asset('build/images/img/brands/dsthermologo.jpg') }}" alt="Restauration">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-6">
+            <div class="single-brand-item d-table">
+              <div class="d-table-cell text-center">
+                <img src="{{ asset('build/img/brands/logo3.png') }}" alt="Services">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-6">
+            <div class="single-brand-item d-table">
+              <div class="d-table-cell text-center">
+                <img src="{{ asset('build/images/img/brands/logo4.png') }}" alt="Associations">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
+      <div class="offset-lg-2 col-lg-4 col-md-6">
+        <div class="client-info">
+          <div class="d-flex mb-50">
+            <span class="lage">{{ 'home.badge.large'|trans }}</span>
+            <span class="smll"> {{ 'home.badge.small'|trans }}</span>
+          </div>
+          <div class="call-now d-flex">
+            <div>
+              <span class="fa fa-phone"></span>
+            </div>
+            <div class="ml-15">
+              <p>{{ 'contact.direct'|trans }}</p>
+              <h3>(+33) 6 66 11 74 28</h3>
+            </div>
+          </div>
+          <hr>
+          <p class="mb-1"><strong>{{ 'home.zones.title'|trans }}</strong> {{ 'home.zones.list'|trans }}</p>
+          <p class="mb-0"><strong>Email</strong> : contact.massgrafik@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--================ End Brand/Trust Area =================-->
 
-	<!--================ Srart Brand Area =================-->
-	<section class="brand_area section_gap_bottom">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-lg-6">
-					<div class="row">
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="single-brand-item d-table">
-								<div class="d-table-cell text-center">
-									<img src="{{ asset('build/images/img/brands/logo1.png')}}" alt="">
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="single-brand-item d-table">
-								<div class="d-table-cell text-center">
-									<img src="{{ asset ('build/images/img/brands/dsthermologo.jpg')}}" alt="">
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="single-brand-item d-table">
-								<div class="d-table-cell text-center">
-									<img src="{{ asset('build/img/brands/logo3.png')}}" alt="">
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="single-brand-item d-table">
-								<div class="d-table-cell text-center">
-									<img src="{{ asset('build/images/img/brands/logo4.png')}}" alt="">
-								</div>
-							</div>
-						</div>
-						{# <div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="single-brand-item d-table">
-								<div class="d-table-cell text-center">
-									<img src="{{ asset('build/images/img/brands/logo5.png')}}" alt="">
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="single-brand-item d-table">
-								<div class="d-table-cell text-center">
-									<img src="{{ asset('build/images/img/brands/logo6.png')}}" alt="">
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="single-brand-item d-table">
-								<div class="d-table-cell text-center">
-									<img src="{{ asset('build/images/img/brands/logo7.png')}}" alt="">
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="single-brand-item d-table">
-								<div class="d-table-cell text-center">
-									<img src="{{ asset('build/images/img/brands/logo8.png')}}" alt="">
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="single-brand-item d-table">
-								<div class="d-table-cell text-center">
-									<img src="{{asset('build/images/img/brands/logo9.png')}}" alt="">
-								</div>
-							</div>
-						</div> #}
-					</div>
-				</div>
-				<div class="offset-lg-2 col-lg-4 col-md-6">
-					<div class="client-info">
-						<div class="d-flex mb-50">
-							<span class="lage">4</span>
-							<span class="smll"> {{ 'experiences.title'|trans }}</span>
-						</div>
-						<div class="call-now d-flex">
-							<div>
-								<span class="fa fa-phone"></span>
-							</div>
-							<div class="ml-15">
-								<p>{{ 'contact.direct'|trans }}</p>
-								<h3>(+33) 6 05 74 01 78</h3>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--================ End Brand Area =================-->
-	<!--================ Start Features Area =================-->
-	<section class="features_area">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-lg-8 text-center">
-					<div class="main_title">
-						<h2>{{ 'slogan.services'|trans }}</h2>
-						<p class="paragrapheBlack">
-							{{ 'paragraph.introServices'|trans }}
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="row feature_inner">
-				<div class="col-lg-3 col-md-6">
-					<div class="feature_item">
-						<img src="{{ asset('build/images/img/services/s1m.png')}}" alt="">
-						<h4>{{ 'title.serviceDev'|trans }}</h4>
-						<p>{{ 'paragraph.serviceDev'|trans }}</p>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="feature_item">
-						<img src="{{asset('build/images/img/services/s2.png')}}" alt="">
-						<h4>{{ 'title.serviceSass'|trans }}</h4>
-						<p>{{ 'paragraph.serviceSass'|trans }}
-						{# <strong>Voici ce que je propose :</strong><br>
-						<strong>Des outils adaptés à vos besoins :</strong> Gestion des clients, suivi des stocks, planification des projets… chaque fonctionnalité est développée pour coller à votre activité. <br>
-						<strong>Une accessibilité en ligne :</strong> Vos données disponibles partout, tout le temps, sur tous vos appareils. <br>
-						<strong>Une interface simple et intuitive :</strong> Pas besoin d’être un pro de la tech pour utiliser votre application. <br>
-						<strong>Sécurité et évolutivité :</strong> Vos données sont protégées et votre application peut évoluer au fil de vos besoins. #}
-						</p>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="feature_item">
-						<img src="{{ asset('build/images/img/services/s3.png')}}" alt="">
-						<h4>{{ 'title.serviceSEO'|trans }}</h4>
-						<p>{{ 'paragraph.serviceSEO'|trans }}</p>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="feature_item">
-						<img src="{{ asset('build/images/img/services/s4.png')}}" alt="">
-						<h4>{{ 'title.serviceEcommerce'|trans }}</h4>
-						<p>{{ 'title.serviceEcommerce'|trans }}</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--================ End Features Area =================-->
-
+<!--================ Start Features Area (packs) =================-->
+<section class="features_area">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <div class="main_title">
+          <h2>{{ 'home.packs.title'|trans }}</h2>
+          <p class="paragrapheBlack">{{ 'home.packs.intro'|trans }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row feature_inner">
+      <!-- Pack 1 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="feature_item">
+          <img src="{{ asset('build/images/img/services/s1m.png') }}" alt="">
+          <h4>{{ 'packs.local.title'|trans }}</h4>
+          <p class="mb-1">{{ 'packs.local.desc'|trans }}</p>
+          <p class="mb-2"><strong>{{ 'packs.local.price'|trans }}</strong> • {{ 'packs.local.delay'|trans }}</p>
+			<a class="primary_btn tr-bg" href="{{ path('app_quote', {'_locale': app.request.locale, 'pack': 'local'}) }}"><span>{{ 'packs.local.cta'|trans }}</span></a>
+        </div>
+      </div>
+      <!-- Pack 2 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="feature_item">
+          <img src="{{ asset('build/images/img/services/s2.png') }}" alt="">
+          <h4>{{ 'packs.ecom.title'|trans }}</h4>
+          <p class="mb-1">{{ 'packs.ecom.desc'|trans }}</p>
+          <p class="mb-2"><strong>{{ 'packs.ecom.price'|trans }}</strong> • {{ 'packs.ecom.delay'|trans }}</p>
+			<a class="primary_btn tr-bg" href="{{ path('app_quote', {'_locale': app.request.locale, 'pack': 'ecom'}) }}"><span>{{ 'packs.ecom.cta'|trans }}</span></a>
+        </div>
+      </div>
+      <!-- Pack 3 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="feature_item">
+          <img src="{{ asset('build/images/img/services/s3.png') }}" alt="">
+          <h4>{{ 'packs.com.title'|trans }}</h4>
+          <p class="mb-1">{{ 'packs.com.desc'|trans }}</p>
+          <p class="mb-2"><strong>{{ 'packs.com.price'|trans }}</strong> • {{ 'packs.com.delay'|trans }}</p>
+		<a class="primary_btn tr-bg" href="{{ path('app_quote', {'_locale': app.request.locale, 'pack': 'com'}) }}"><span>{{ 'packs.com.cta'|trans }}</span></a>
+        </div>
+      </div>
+      <!-- Pack 4 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="feature_item">
+          <img src="{{ asset('build/images/img/services/s4.png') }}" alt="">
+          <h4>{{ 'packs.maint.title'|trans }}</h4>
+          <p class="mb-1">{{ 'packs.maint.desc'|trans }}</p>
+          <p class="mb-2"><strong>{{ 'packs.maint.price'|trans }}</strong></p>
+		<a class="primary_btn tr-bg" href="{{ path('app_quote', {'_locale': app.request.locale, 'pack': 'maint'}) }}"><span>{{ 'packs.maint.cta'|trans }}</span></a>
+        </div>
+      </div>
+      <!-- Pack 5 (va se mettre à la ligne suivante si besoin) -->
+      <div class="col-lg-3 col-md-6">
+        <div class="feature_item">
+          <img src="{{ asset('build/images/img/services/s5.png') }}" alt="">
+          <h4>{{ 'packs.social.title'|trans }}</h4>
+          <p class="mb-1">{{ 'packs.social.desc'|trans }}</p>
+          <p class="mb-2"><strong>{{ 'packs.social.price'|trans }}</strong></p>
+		<a class="primary_btn tr-bg" href="{{ path('app_quote', {'_locale': app.request.locale, 'pack': 'social'}) }}"><span>{{ 'packs.social.cta'|trans }}</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--================ End Features Area =================-->
 {% endblock %}

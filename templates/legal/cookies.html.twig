@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+{% trans_default_domain 'messages' %}
+{% block title %}{{ 'legal.cookies.seo.titleTab'|trans }}{% endblock %}
+
+{% block body %}
+<section class="about_area section_gap">
+  <div class="container">
+    <h1 class="mb-3">{{ 'legal.cookies.title'|trans }}</h1>
+    <p class="mb-4">{{ 'legal.disclaimer'|trans }}</p>
+
+    <h3>{{ 'legal.cookies.what.title'|trans }}</h3>
+    <p>{{ 'legal.cookies.what.value'|trans }}</p>
+
+    <h3 class="mt-3">{{ 'legal.cookies.types.title'|trans }}</h3>
+    <ul>
+      <li>{{ 'legal.cookies.types.necessary'|trans }}</li>
+      <li>{{ 'legal.cookies.types.analytics'|trans }}</li>
+      <li>{{ 'legal.cookies.types.social'|trans }}</li>
+    </ul>
+
+    <h3 class="mt-3">{{ 'legal.cookies.manage.title'|trans }}</h3>
+    <p>{{ 'legal.cookies.manage.value'|trans }}</p>
+
+    <p class="mt-4 text-muted">{{ 'legal.lastUpdate'|trans }}</p>
+  </div>
+</section>
+{% endblock %}

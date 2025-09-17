@@ -150,7 +150,76 @@ button:focus {
         padding-bottom: 80px;
     }
 }
+@media (prefers-color-scheme: light) {
+    .cookie-banner {
+        background: #222;
+    }
+}
+/* Cookie Banner css
+========================================================================================
 
+
+
+/* Bannière cookies flottante en bas à droite */
+#cookie-banner {
+    position: fixed;
+    z-index: 9999;
+    right: 24px;
+    bottom: max(24px, env(safe-area-inset-bottom));
+    background: #111;
+    color: #fff;
+    max-width: 420px;
+    width: calc(100% - 48px);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .28);
+    padding: 16px 18px;
+    animation: cookie-slide-up .35s ease-out;
+}
+
+#cookie-banner a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+#cookie-banner .cookie-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+@keyframes cookie-slide-up {
+    from {
+        transform: translateY(12px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/*
+--------------------------------page services--------------------------------
+*/
+   .service-card .service-toggle i {
+       transition: transform .2s ease;
+   }
+
+   .service-card .service-toggle[aria-expanded="true"] i {
+       transform: rotate(180deg);
+   }
+
+   .service-card ul {
+       padding-left: 18px;
+   }
+
+   .service-card li {
+       margin-bottom: .35rem;
+   }
 /* Main Title Area css
 ============================================================================================ */
 .main_title {
@@ -183,6 +252,13 @@ button:focus {
         font-size: 30px;
         line-height: 34px;
     }
+        #cookie-banner {
+            left: 12px;
+            right: 12px;
+            bottom: max(12px, env(safe-area-inset-bottom));
+            width: auto;
+            border-radius: 10px;
+        }
 }
 
 .main_title p {
@@ -496,12 +572,10 @@ button:focus {
 /*----------------------------------------------------*/
 /* Home Banner Area css
 ============================================================================================ */
-.home_banner_area {
-    z-index: 1;
-    // background-color: #eabd6f;
-    background-position: center;
-    background-size: cover;
-}
+
+  .home_banner_area {
+      padding: clamp(2.5rem, 6vw, 5rem) 0;
+  }
 
 .home_banner_area .banner_inner {
     width: 100%;
@@ -510,6 +584,50 @@ button:focus {
 .home_banner_area .banner_inner .home_right_img {
     padding-top: 197px;
 }
+
+/*---------------------------------------------------- */
+/*----------------------------------------------------*/
+/* Home Banner Area css CUSTOM
+============================================================================================ */
+.banner_content h3 {
+    font-size: clamp(1rem, 1.4vw, 1.125rem);
+    font-weight: 600;
+    letter-spacing: .2px;
+    margin-bottom: var(--space-2);
+    color: #3b4452;
+}
+
+.banner_content h2 {
+    font-size: clamp(1.9rem, 4.5vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: var(--space-3);
+}
+
+.banner_content h5 {
+    font-size: clamp(1rem, 1.6vw, 1.125rem);
+    font-weight: 500;
+    color: #5b6670;
+    margin-bottom: var(--space-4);
+}
+
+.banner_content p {
+    max-width: 44rem;
+    color: #4b5563;
+}
+
+.home_right_img img {
+    max-width: 100%;
+    height: auto;
+}
+
+.primary_btn {
+    margin-right: .6rem;
+}
+
+
+
+
 
 @media (max-width: 1480px) {
     .home_banner_area .banner_inner .home_right_img img {
@@ -543,13 +661,20 @@ button:focus {
     font-size: 40px;
     margin-bottom: 20px;
     position: relative;
+    text-decoration: none !important;
+    border: 0 !important;
+}
+.home_banner_area .banner_content h3::before,
+.home_banner_area .banner_content h3::after {
+    content: none !important;
+    display: none !important;
 }
 
 .home_banner_area .banner_inner .banner_content h3:after {
     content: '';
     width: 410px;
     height: 2px;
-    position: absolute;
+    // position: absolute;
     top: 50%;
     left: 23%;
     background: #000000;
@@ -3349,45 +3474,49 @@ h6 {
     padding-bottom: 170px;
 }
 
+
+
 @media (max-width: 1199px) {
     .features_area {
         padding-bottom: 50px;
     }
 }
 
-.feature_item {
-    padding: 45px 25px;
-    text-align: center;
-    background: #f9f9fd;
-    cursor: pointer;
-    margin-bottom: 30px;
-    -webkit-transition: all 0.4s ease 0s;
-    -moz-transition: all 0.4s ease 0s;
-    -o-transition: all 0.4s ease 0s;
-    transition: all 0.4s ease 0s;
-}
+ .feature_item {
+     padding: 1.25rem;
+     border: 1px solid #eef1f4;
+     border-radius: 12px;
+     height: 100%;
+     transition: transform .18s ease, box-shadow .18s ease;
+     background: #fff;
+ }
 
 .feature_item img {
     margin-bottom: 35px;
 }
 
 .feature_item h4 {
-    font-size: 20px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-top: .75rem;
 }
 
 .feature_item p {
-    margin-bottom: 0px;
+    font-size: .96rem;
+    color: #4b5563;
 }
 
 .feature_item:hover {
-    box-shadow: 0px 15px 30px rgba(77, 87, 222, 0.3);
-    background: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .06);
 }
-
 /* End Features Area css
 ============================================================================================ */
+
+// Features Area css CUSTOM
+
+
 /* Start Brand Area css
 ============================================================================================ */
 .single-brand-item {
@@ -3492,23 +3621,16 @@ h6 {
     }
 }
 
-.client-info .lage {
-    color: #eabd6f;
-    font-family: "Rubik", sans-serif;
-    font-size: 100px;
-    font-weight: 700;
-    line-height: 85px;
-    position: relative;
-    z-index: 9;
-}
+  .client-info .lage {
+      font-size: 2.75rem;
+      font-weight: 800;
+      line-height: 1;
+  }
 
-.client-info .smll {
-    text-align: left;
-    color: #000000;
-    font-family: "Rubik", sans-serif;
-    font-size: 20px;
-    margin-left: 20px;
-}
+  .client-info .smll {
+      font-size: 1rem;
+      color: #596273;
+  }
 
 .call-now {
     padding-top: 50px;
@@ -4147,6 +4269,7 @@ h6 {
         max-width: 350px;
         margin: auto;
     }
+    
 
     /* Footer Area css
   ============================================================================================ */
@@ -4294,14 +4417,34 @@ h6 {
 
     /* End Home Banner Area css
   ============================================================================================ */
-    .section_gap {
-        padding-top: 70px;
-        padding-bottom: 70px;
-    }
-
+  .section_gap {
+      padding: clamp(2.5rem, 6vw, 5rem) 0;
+  }
     .main_title h2 {
         font-size: 25px;
     }
+    // Section gap CUSTOM
+         .section_gap_top {
+             padding-top: clamp(2.5rem, 6vw, 5rem);
+         }
+    
+         .section_gap_bottom {
+             padding-bottom: clamp(2.5rem, 6vw, 5rem);
+         }
+    
+         .main_title h2 {
+             font-size: clamp(1.4rem, 3vw, 2.1rem);
+             font-weight: 800;
+             line-height: 1.2;
+             margin-bottom: .75rem;
+             text-transform: none;
+         }
+    
+         .main_title p {
+             max-width: 56rem;
+             margin: 0 auto;
+             color: #3f4957;
+         }
 
     /*Recent Update Area css
   ============================================================================================ */

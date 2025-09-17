@@ -2,8 +2,66 @@
 	'use strict';
 
 	var nav_offset_top = $('header').height() + 50;
+
+
+/*-------------------------------------------------------------------------------
+	  LEgal - Cookie Consent
+	-------------------------------------------------------------------------------*/
+(function() {
+  var KEY = 'cookieConsent';
+  var LOCALE = document.documentElement.lang || 'fr';
+  function getCookie(name){ return (document.cookie.match(new RegExp('(?:^|; )'+name+'=([^;]*)'))||[])[1] || null; }
+
+  function sendConsent(status, categories){
+    var consentId = getCookie('consent_id');
+    fetch('/'+LOCALE+'/consent', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ consentId, status, categories })
+    }).catch(()=>{});
+  }
+
+  function loadGA(){
+    var GA_ID = 'G-XXXXXXX'; if(!GA_ID) return;
+    var s1=document.createElement('script'); s1.async=true;
+    s1.src='https://www.googletagmanager.com/gtag/js?id='+GA_ID; document.head.appendChild(s1);
+    window.dataLayer=window.dataLayer||[]; window.gtag=function(){dataLayer.push(arguments);};
+    gtag('js', new Date()); gtag('config', GA_ID, {anonymize_ip:true});
+  }
+
+  var consent = localStorage.getItem(KEY);
+  if(!consent){ document.getElementById('cookie-banner').style.display='block'; }
+  else if(consent==='accepted'){ loadGA(); }
+
+  document.getElementById('cookie-accept')?.addEventListener('click', function(){
+    localStorage.setItem(KEY, 'accepted');
+    document.getElementById('cookie-banner').style.display='none';
+    sendConsent('accepted', {analytics:true, social:true});
+    loadGA();
+  });
+  document.getElementById('cookie-decline')?.addEventListener('click', function(){
+    localStorage.setItem(KEY, 'declined');
+    document.getElementById('cookie-banner').style.display='none';
+    sendConsent('declined', {analytics:false, social:false});
+  });
+})();
+//----------------------------Gerer mes cookies----------------------------
+  window.openCookieBanner = function () {
+    localStorage.removeItem('cookieConsent');
+    document.getElementById('cookie-banner').style.display = 'block';
+    // (optionnel) journaliser le reset côté serveur
+    fetch('/' + (document.documentElement.lang||'fr') + '/consent', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ status:'reset', categories:{} })
+    }).catch(()=>{});
+  };
+
+
+
+
+
 	/*-------------------------------------------------------------------------------
-	  Navbar 
+	--------------------------  Navbar------------------------------------------- 
 	-------------------------------------------------------------------------------*/
 
 	//* Navbar Fixed

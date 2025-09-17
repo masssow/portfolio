@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+{% trans_default_domain 'messages' %}
+{% block title %}{{ 'legal.mentions.seo.titleTab'|trans }}{% endblock %}
+
+{% block body %}
+<section class="about_area section_gap">
+  <div class="container">
+    <h1 class="mb-3">{{ 'legal.mentions.title'|trans }}</h1>
+    <p class="mb-4">{{ 'legal.disclaimer'|trans }}</p>
+
+    <h3>{{ 'legal.mentions.editor.title'|trans }}</h3>
+    <p>{{ 'legal.mentions.editor.name'|trans }}<br>{{ 'legal.mentions.editor.legal'|trans }}<br>{{ 'legal.mentions.editor.id'|trans }}<br>{{ 'legal.mentions.editor.address'|trans }}</p>
+
+    <h3 class="mt-4">{{ 'legal.mentions.dirpub.title'|trans }}</h3>
+    <p>{{ 'legal.mentions.dirpub.value'|trans }}</p>
+
+    <h3 class="mt-4">{{ 'legal.mentions.host.title'|trans }}</h3>
+    <p>{{ 'legal.mentions.host.name'|trans }}<br>{{ 'legal.mentions.host.address'|trans }}</p>
+
+    <h3 class="mt-4">{{ 'legal.mentions.contact.title'|trans }}</h3>
+    <p>{{ 'legal.mentions.contact.value'|trans }}</p>
+
+    <h3 class="mt-4">{{ 'legal.mentions.ipr.title'|trans }}</h3>
+    <p>{{ 'legal.mentions.ipr.value'|trans }}</p>
+
+    <p class="mt-4 text-muted">
+    {{ 'legal.lastUpdate'|trans({'%date%': "now"|date('d-m-Y')}) }}
+    </p>
+
+  </div>
+</section>
+{% endblock %}

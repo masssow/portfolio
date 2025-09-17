@@ -1,0 +1,17 @@
+{# templates/quote/thanks.html.twig #}
+{% extends 'base.html.twig' %}
+{% trans_default_domain 'messages' %}
+
+{% block title %}{{ 'quote.seo.titleThanks'|trans }}{% endblock %}
+
+{% block body %}
+<section class="home_banner_area">
+  <div class="banner_inner">
+    <div class="container">
+      <h2>{{ 'quote.thanks.title'|trans }}</h2>
+      <p>{{ 'quote.thanks.desc'|trans }}</p>
+      <a class="primary_btn" href="/{{ app.request.locale }}"><span>{{ 'quote.thanks.back'|trans }}</span></a>
+    </div>
+  </div>
+</section>
+{% endblock %}

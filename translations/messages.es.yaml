@@ -1,29 +1,206 @@
-home.titleTab: "Samba desarrollador web independiente"
-homepage.title: "Bienvenue sur mon site"
-blog.title: "Articles récents"
+site.title: "MassGrafik Web Agency – Sitios, e-commerce y visibilidad"
 menu.home: "Inicio"
 menu.services: "Servicios"
 menu.blog: "Blog"
-menu.about: "Sobre mí"
-menu.contact: "Contact"
-homepage.salutation: " ¡Hola!"
-homepage.welcome: "Soy Samba, desarrollador web."
-title.fallow: "Sígueme"
-whoami.title: "Quién soy"
-mycv.title: "Mi CV"
-welcome.title: "Bienvenido"
-home.paragraphIntro: "Con casi 4 años de experiencia en desarrollo web, he ayudado a empresas y emprendedores a crear aplicaciones sólidas, desde el back-end hasta el front-end. Apasionado por Symfony y siempre buscando nuevas soluciones, me esfuerzo por entregar proyectos de calidad que se adapten perfectamente a las necesidades específicas de cada cliente."
-download.cv: "Descargar CV"
-experiences.title: "años de experiencia"
-contact.direct: "Contacto directo"
-slogan.services: "Soluciones web a medida para tus necesidades 🎯"
-paragraph.introServices: "En un mundo donde todo se juega en línea, tener un sitio web eficiente, visible y bien pensado es esencial. Como desarrollador web apasionado, te acompaño para crear soluciones digitales que se adapten a tus necesidades: desarrollo web a medida, optimización SEO para Google, diseño UI/UX. Creación de soluciones  y herramientas SaaS para PYMES. Juntos, demos a tu proyecto la visibilidad que se merece y ofrezcamos a tus usuarios una experiencia de usuario de primera."
-title.serviceWeb: "Desarrollo web a medida: tu proyecto, tu estilo, tu éxito"
-paragraph.serviceWeb: "Cada empresa tiene su historia y sus necesidades, entonces, ¿por qué conformarse con un sitio web estándar? Ya sea para una página web elegante, una aplicación compleja o un sitio de comercio electrónico listo para conquistar el mercado, escribo cada línea de código para cumplir con tus objetivos. Con un enfoque centrado en el usuario, me esfuerzo por crear interfaces intuitivas y experiencias de navegación fluidas."
-title.serviceSass: "SaaS para PYMES: soluciones a medida para simplificar tu día a día"
-paragraph.serviceSass: "¿Eres una pequeña o mediana empresa y te ves obligado a hacer malabares con mil tareas a gestionar ? ¿ Y si una aplicación SaaS (Software as a Service) pudiera liberarte tiempo y facilitarte la vida? Desarrollo soluciones SaaS personalizadas, diseñadas para afrontar los desafíos específicos de las PYMES, sin presupuestos desorbitados. Juntos, creemos una herramienta que se adapta perfectamente a tus necesidades y que te permite de concentrarte en lo esencial: hacer crecer tu empresa."
-title.serviceSEO: "SEO y Google: ¡Optimiza tu visibilidad!"
-paragraph.serviceSEO: "Porque una bonita página web que no aparece en Google es como un café sin croissant. Optimizo tu sitio para que suba en los resultados de búsqueda y atraiga a tus futuros clientes."
-title.serviceEcommerce: "Creación de comercio electrónico a medida: ¡vende (casi) todo, pero con estilo!"
-paragraph.serviceEcommerce: "Tu tienda online merece algo más que un diseño estándar o un carrito de la compra con tres ruedas. Ofrezco soluciones de e-commerce a medida, adaptadas a tus necesidades, para ofrecer a tus clientes una experiencia d'usuario agradable y a tu marca una presencia en línea que marca la diferencia. Desde el diseño hasta la puesta en marcha, te acompaño para crear una tienda online que te representara y que te permitira vender tus productos con estilo."
+menu.about: "Sobre nosotros"
+menu.contact: "Contacto"
+title.fallow: "siguenos en las redes sociales"
+home:
+  seo:
+    titleTab: "MassGrafik Web Agency – Sitios, e-commerce y visibilidad "
+  hero:
+    salutation: "MassGrafik Web Agency"
+    h1: "Te encuentran, te contactan, vendes"
+    subtitle: "Sitios claros, tiendas sencillas y visibilidad en Google que genera llamadas y mensajes. Para artesanos, comercios, asociaciones y microempresas — en toda España y en el extranjero."
+    proofs: ✅ "Presupuesto en 24 h ✅ Precios transparentes ✅ Puesta en línea rapida según pack"
+
+  why:
+    title: "¿Por qué MassGrafik?"
+    intro: "Método claro, entregables concretos y resultados medibles — sin complicarte con lo técnico."
+    items:
+      1: "Auditoría exprés (30 min) y plan de acción priorizado: objetivos, páginas, ofertas y plazos."
+      2: "Diseño orientado a conversión: CTA visibles, Llamar/WhatsApp, formularios cortos y confianza (reseñas, garantías)."
+      3: "SEO pragmático: Google Business, estructura Hn, enlazado interno, contenidos útiles y Core Web Vitals."
+      4: "Medición y traspaso: GA4/GTM, panel sencillo y propiedad de accesos y entregables."
+
+  badge:
+    large: "24 h"
+    small: "presupuesto personalizado"
+
+  zones:
+    title: "Zonas"
+    list: "En toda España y a nivel internacional (100 % a distancia y 100% protejido)."
+
+  packs:
+    title: "5 packs para pasar a la acción 🎯"
+    intro: "Elige lo prioritario ahora: que te encuentren, vender, ordenar tu imagen, asegurar tu web o publicar con regularidad."
+
+packs:
+  local:
+    title: "Visibilidad — que te encuentren"
+    desc: "Google Business Profile (creación/optimización), SEO on-page (metas, Hn, enlazado interno), mini-sitio 1–3 páginas orientado a conversión (Llamar/WhatsApp/Cómo llegar), configuración GA4/GTM + informe de rendimiento 30 días."
+    price: ""
+    delay: ""
+    cta: "Quiero ser visible"
+
+  ecom:
+    title: "E-commerce rápido"
+    desc: "Catálogo inicial 5–20 productos (variantes simples), checkout claro con Stripe/PayPal, impuestos/gastos configurados, correos transaccionales, páginas legales básicas (aviso/devoluciones/envíos), guía de uso + mini-formación para ser autónomo desde el día 1."
+    price: ""
+    delay: ""
+    cta: "Lanzar mi tienda"
+
+  com:
+    title: "Comunicación visual"
+    desc: "Logo vectorial + micro-guía (colores/tipografías/usos), 2 piezas impresas (flyer A5 o tarjeta), kit Canva (10 creatividades), plantillas de stories, guía de tono y mensajes, export web/impresión."
+    price: ""
+    delay: ""
+    cta: "Mejorar mi imagen"
+
+  maint:
+    title: "Mantenimiento web"
+    desc: "Actualizaciones de core/plugins/tema, copias de seguridad diarias, monitorización de disponibilidad, correcciones menores incluidas, recuperación ante incidentes, informe mensual (actualizaciones, uptime, seguridad)."
+    price: ""
+    cta: "Proteger mi web"
+
+  social:
+    title: "Redes sociales"
+    desc: "Auditoría de cuentas, línea editorial, calendario de 4 semanas, 5–10 publicaciones/mes (imágenes + textos), programación, respuestas básicas, seguimiento de métricas (alcance, engagement) con mini-informe."
+    price: ""
+    cta: "Animar mis redes"
+
+cta:
+  devis: "Pedir un presupuesto gratis"
+  packs: "Ver nuestros packs"
+  talk: "Cuéntanos tu proyecto"
+
+contact:
+  direct: "Contacto directo"
+
+about:
+  seo:
+    titleTab: "MassGrafik Web Agency – Sobre nosotros"
+services:
+  seo:
+    titleTab: "MassGrafik Web Agency – Servicios"
+
+quote:
+  seo:
+    titleTab: "Pedir presupuesto — MassGrafik"
+    firstTitle: "Pedir presupuesto"
+    titleThanks: "Gracias — MassGrafik"
+  title: "Pedir presupuesto"
+  subtitle: "Cuéntanos lo esencial, te respondemos en 48 h."
+  selected: "Pack preseleccionado"
+  form:
+    titleContact: "Contacto directo"
+    titleFormContact: "Formulario de contacto"
+    country: "España"
+    modeCom: "100% a distancia posible"
+    name: "Tu nombre"
+    company: "Empresa (opcional)"
+    phone: "Teléfono"
+    email: "E-mail"
+    pack: "Pack deseado"
+    pack.placeholder: "Elige un pack"
+    budget: "Presupuesto estimado"
+    budget.placeholder: "Selecciona un rango"
+    budget.1k: "≤ 1 000 €"
+    budget.2k: "1 000 – 2 000 €"
+    budget.5k: "2 000 – 5 000 €"
+    budget.5k+: "5 000 € o más"
+    message: "Tu necesidad en pocas palabras"
+    submit: "Enviar solicitud"
+  flash:
+    ok: "¡Gracias! Tu solicitud se ha enviado correctamente."
+  thanks:
+    title: "¡Gracias por tu solicitud!"
+    desc: "Te contactaremos en 48 h con una primera propuesta."
+    back: "Volver al inicio"
+contactPage:
+  seo:
+    titleTab: "Contacto y presupuesto — MassGrafik"
+
+
+
+legal:
+  disclaimer: "Información general — no constituye asesoramiento jurídico. Adapta los datos a tu situación (razón social, NIF, hosting, etc.)."
+  lastUpdate: "Última actualización: %date%"
+
+  mentions:
+    seo: { titleTab: "Aviso legal — MassGrafik" }
+    title: "Aviso legal"
+    editor:
+      title: "Editor del sitio"
+      name: "[[Tu nombre o razón social]]"
+      legal: "Estatus: autónomo/microempresa"
+      id: "NIF/CIF: [[tu número]]"
+      address: "Dirección: [[tu dirección]]"
+    dirpub:
+      title: "Director de publicación"
+      value: "[[Nombre, cargo]]"
+    host:
+      title: "Alojamiento"
+      name: "[[Nombre del hosting]]"
+      address: "[[Dirección del hosting]]"
+    contact:
+      title: "Contacto"
+      value: "E-mail: contact@massgrafik.com — Tel.: (+33) 6 66 11 74 28"
+    ipr:
+      title: "Propiedad intelectual"
+      value: "Los contenidos (textos, imágenes, logotipos) están protegidos. Cualquier reproducción no autorizada está prohibida."
+
+  privacy:
+    seo: { titleTab: "Política de privacidad — MassGrafik" }
+    title: "Política de privacidad"
+    controller:
+      title: "Responsable del tratamiento"
+      value: "[[Tu nombre / empresa]], contacto: contact@massgrafik.com"
+    purposes:
+      title: "Finalidades"
+      1: "Responder a solicitudes enviadas por el formulario de presupuesto/contacto."
+      2: "Gestión de la relación con clientes y seguimiento de proyectos."
+      3: "Medición de audiencia (si consientes) para mejorar el sitio."
+    legalbases:
+      title: "Bases jurídicas"
+      value: "Ejecución de medidas precontractuales (respuesta a tu solicitud), interés legítimo (seguridad), consentimiento (cookies analíticas)."
+    retention:
+      title: "Plazos de conservación"
+      value: "Solicitudes de presupuesto: máximo 12 meses. Datos de clientes: durante la relación contractual y obligaciones legales. Cookies analíticas: según Google (si consientes)."
+    rights:
+      title: "Tus derechos"
+      1: "Acceso y rectificación"
+      2: "Supresión y limitación"
+      3: "Oposición"
+      4: "Portabilidad"
+      5: "Directrices post mortem"
+    howto: "Para ejercer tus derechos, escribe a contact@massgrafik.com. Responderemos en 30 días."
+    security:
+      title: "Seguridad"
+      value: "Medidas razonables para proteger los datos (actualizaciones, copias de seguridad, accesos limitados)."
+    transfers:
+      title: "Transferencias fuera de la UE"
+      value: "No se prevén transferencias fuera de la UE salvo encargados conformes (p. ej., Google Analytics con cláusulas tipo, si se activa)."
+
+  cookies:
+    seo: { titleTab: "Política de cookies — MassGrafik" }
+    title: "Política de cookies"
+    what:
+      title: "¿Qué es una cookie?"
+      value: "Archivo pequeño que se guarda en tu dispositivo para el funcionamiento del sitio, medición de audiencia o personalización."
+    types:
+      title: "Tipos de cookies utilizadas"
+      necessary: "Necesarias: funcionamiento del sitio (sesión, seguridad)."
+      analytics: "Medición de audiencia: estadísticas anonimizadas (solo con tu consentimiento)."
+      social: "Redes sociales: compartición/lectores externos que pueden establecer cookies."
+    manage:
+      title: "Gestionar tus preferencias"
+      value: "Puedes aceptar o rechazar las cookies analíticas desde el banner. También puedes borrar cookies en la configuración de tu navegador."
+
+cookie:
+  banner:
+    text: "Usamos cookies necesarias y, con tu consentimiento, cookies de medición de audiencia."
+    accept: "Aceptar todo"
+    decline: "Rechazar todo"
+    more: "Más info"
 
