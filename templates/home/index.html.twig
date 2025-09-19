@@ -15,8 +15,8 @@
             <h5 >{{ 'home.hero.subtitle'|trans }}</h5>
 
             <div class="d-flex align-items-center">
-              <a class="primary_btn" href="/contact"><span>{{ 'cta.devis'|trans }}</span></a>
-              <a class="primary_btn tr-bg" href="/tarifs"><span>{{ 'cta.packs'|trans }}</span></a>
+              <a class="primary_btn" href="{{ path ('app_quote')}}"><span>{{ 'cta.devis'|trans }}</span></a>
+              <a class="primary_btn tr-bg" href="{{ path ('app_services')}}"><span>{{ 'cta.packs'|trans }}</span></a>
             </div>
 
             <p class="mt-3 mb-0">{{ 'home.hero.proofs'|trans }}</p>
