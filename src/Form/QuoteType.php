@@ -75,11 +75,18 @@ final class QuoteType extends AbstractType
             ->add('render_ts', HiddenType::class, [
                 'mapped' => false,
                 'data'   => (string)($opt['render_ts'] ?? time()),
-            ])
-            // Honeypot dynamique (nom aléatoire)
-            ->add($opt['honeypot_name'] ?? 'hp_fallback', HiddenType::class, [
+            ]);
+        // Honeypot
+            $hp = $options['honeypot_name'] ?? 'hp_static';
+            $b->add($hp, TextType::class, [
                 'mapped' => false,
-                'attr' => ['autocomplete' => 'off', 'class' => 'hp-field'],
+                'required' => false,
+                'attr' => [
+                    'autocomplete' => 'off',
+                    'tabindex' => '-1',
+                    'style' => 'display:none',
+                    'aria-hidden' => 'true',
+                ],
             ]);
     }
 
@@ -88,7 +95,7 @@ final class QuoteType extends AbstractType
         $r->setDefaults([
             'data_class' => Quote::class,
             'selected_pack' => null,
-            'honeypot_name' => 'hp_fallback',
+            'honeypot_name' => 'hp_static',
             'render_ts'     => null,
             'translation_domain' => 'messages',
             'csrf_protection' => true,
