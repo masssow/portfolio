@@ -112,6 +112,11 @@ quote:
     submit: "Enviar solicitud"
   flash:
     ok: "¡Gracias! Tu solicitud se ha enviado correctamente."
+    invalid_or_csrf: "Error en el formulario, por favor corrige los campos indicados."
+    too_many: "Has enviado demasiadas solicitudes. Por favor, inténtalo más tarde."
+    too_fast: "Has enviado la solicitud demasiado rápido. Por favor, tómate tu tiempo."
+    too_short: "El mensaje es demasiado corto. Por favor, proporciona más detalles."
+    too_many_links: "El mensaje contiene demasiados enlaces. Por favor, reduce el número de enlaces."
   thanks:
     title: "¡Gracias por tu solicitud!"
     desc: "Te contactaremos en 48 h con una primera propuesta."

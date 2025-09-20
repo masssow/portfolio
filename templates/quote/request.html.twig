@@ -1,136 +1,76 @@
-{# templates/quote/request.html.twig #}
-{% extends 'base.html.twig' %}
-{% trans_default_domain 'messages' %}
+{# messages flash #}
+{% for type, messages in app.flashes %}
+  {% for message in messages %}
+    <div class="alert alert-{{ type }}">{{ message|raw }}</div>
+  {% endfor %}
+{% endfor %}
 
-{% block title %}{{ 'quote.seo.titleTab'|trans }}{% endblock %}
+{# erreurs globales du formulaire #}
+{{ form_errors(form) }}
 
-{% block body %}
-<!--================Contact Area =================-->
-<section class="contact_area section_gap">
-  <div class="container">
-  <h1>{{'quote.seo.firstTitle'|trans}}</h1>
-    <div class="row">
-      <!-- Colonne gauche : infos contact -->
-      <div class="col-lg-3">
-        <div class="contact_info">
-        <h2>{{ 'quote.form.titleContact'|trans }}</h2>
-          <div class="info_item">
-            <i class="lnr lnr-home"></i>
-            <h6>{{'quote.form.country'|trans }}</h6>
-            <p>{{ 'quote.form.modeCom'|trans }}</p>
-          </div>
-          <div class="info_item">
-            <i class="lnr lnr-phone-handset"></i>
-            <h6><a href="tel:+33666117428">(+33) 6 66 11 74 28</a></h6>
-            <p>{{ 'home.badge.small'|trans }}</p>
-          </div>
-          <div class="info_item">
-            <i class="lnr lnr-envelope"></i>
-            <h6><a href="mailto:contact.massgrafik@gmail.com">contact.massgrafik@gmail.com</a></h6>
-            <p>{{ 'quote.subtitle'|trans }}</p>
-          </div>
-        </div>
-      </div>
+{{ form_start(form, {
+  action: path('app_quote', {'_locale': app.request.locale}),
+  method: 'POST',
+  attr: {
+    class: 'row contact_form',
+    id: 'quoteForm',            # <— change l’ID pour éviter l’AJAX Colorlib
+    'data-ajax': 'off',
+    novalidate: 'novalidate'
+  }
+}) }}
 
-      <!-- Colonne droite : formulaire -->
-      <div class="col-lg-9">
-        <h2>{{ 'quote.form.titleFormContact'|trans }}</h2>
-      {% for type, messages in app.flashes %}
-        {% for message in messages %}
-          <div class="alert alert-{{ type }}">{{ message|raw }}</div>
-        {% endfor %}
-      {% endfor %}
-
-        {{ form_start(form, {
-          attr: {
-            class: 'row contact_form',
-            id: 'contactForm',
-            novalidate: 'novalidate'
-          }
-        }) }}
-
-          <div class="col-md-6">
-            <div class="form-group">
-              {{ form_widget(form.name, {
-                attr: { class: 'form-control', placeholder: 'quote.form.name'|trans }
-              }) }}
-              {{ form_errors(form.name) }}
-            </div>
-
-            <div class="form-group">
-              {{ form_widget(form.email, {
-                attr: { class: 'form-control', placeholder: 'quote.form.email'|trans }
-              }) }}
-              {{ form_errors(form.email) }}
-            </div>
-
-            <div class="form-group">
-              {{ form_widget(form.phone, {
-                attr: { class: 'form-control', placeholder: 'quote.form.phone'|trans }
-              }) }}
-              {{ form_errors(form.phone) }}
-            </div>
-
-            <div class="form-group">
-              {{ form_widget(form.company, {
-                attr: { class: 'form-control', placeholder: 'quote.form.company'|trans }
-              }) }}
-              {{ form_errors(form.company) }}
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <div class="form-group">
-              {{ form_widget(form.pack, {
-                attr: { class: 'form-control' }
-              }) }}
-              {{ form_errors(form.pack) }}
-            </div>
-
-            <div class="form-group">
-              {{ form_widget(form.budget, {
-                attr: { class: 'form-control' }
-              }) }}
-              {{ form_errors(form.budget) }}
-            </div>
-
-            <div class="form-group">
-              {{ form_widget(form.message, {
-                attr: { class: 'form-control', rows: 4, placeholder: 'quote.form.message'|trans }
-              }) }}
-              {{ form_errors(form.message) }}
-            </div>
-          </div>
-
-          {# champs techniques #}
-          {{ form_widget(form.render_ts) }}
-          <input type="text"
-                name="quote[{{ honeypot_name }}]"
-                value=""
-                style="display:none"
-                tabindex="-1"
-                autocomplete="off"
-                aria-hidden="true">
-          <div class="col-md-12 text-right">
-            <button type="submit" class="primary_btn"><span>{{ 'quote.form.submit'|trans }}</span></button>
-          </div>
-
-        {{ form_end(form) }}
-      </div>
+  <div class="col-md-6">
+    <div class="form-group">
+      {{ form_widget(form.name,    {attr: {class:'form-control', placeholder: 'quote.form.name'|trans }}) }}
+      {{ form_errors(form.name) }}
     </div>
-
-    {# MapBox d'origine (placeholder) #}
-    <div id="mapBox" class="mapBox"
-         data-lat="48.8566"
-         data-lon="2.3522"
-         data-zoom="11"
-         data-info="Contact MassGrafik — France."
-         data-mlat="48.8566"
-         data-mlon="2.3522">
+    <div class="form-group">
+      {{ form_widget(form.email,   {attr: {class:'form-control', placeholder: 'quote.form.email'|trans }}) }}
+      {{ form_errors(form.email) }}
+    </div>
+    <div class="form-group">
+      {{ form_widget(form.phone,   {attr: {class:'form-control', placeholder: 'quote.form.phone'|trans }}) }}
+      {{ form_errors(form.phone) }}
+    </div>
+    <div class="form-group">
+      {{ form_widget(form.company, {attr: {class:'form-control', placeholder: 'quote.form.company'|trans }}) }}
+      {{ form_errors(form.company) }}
     </div>
   </div>
-</section>
-<!--================Contact Area =================-->
 
+  <div class="col-md-6">
+    <div class="form-group">
+      {{ form_widget(form.pack,   {attr: {class:'form-control'}}) }}
+      {{ form_errors(form.pack) }}
+    </div>
+    <div class="form-group">
+      {{ form_widget(form.budget, {attr: {class:'form-control'}}) }}
+      {{ form_errors(form.budget) }}
+    </div>
+    <div class="form-group">
+      {{ form_widget(form.message, {attr: {class:'form-control', rows:4, placeholder: 'quote.form.message'|trans }}) }}
+      {{ form_errors(form.message) }}
+    </div>
+  </div>
 
-{% endblock %}
+  {# champs techniques #}
+  {{ form_widget(form.render_ts) }}
+
+  {# honeypot HTML brut — ne PAS utiliser form_row/form_widget, ni label #}
+  <input type="text"
+         name="quote[{{ honeypot_name }}]"
+         value=""
+         class="hp-trap"
+         autocomplete="off"
+         tabindex="-1"
+         aria-hidden="true" />
+
+  {# CSRF token explicit — indispensable #}
+  {{ form_row(form._token) }}
+
+  <div class="col-md-12 text-right">
+    <button type="submit" class="primary_btn"><span>{{ 'quote.form.submit'|trans }}</span></button>
+  </div>
+
+{# on a déjà rendu le _token → pas de rendu automatique du reste #}
+{{ form_end(form, { render_rest: false }) }}

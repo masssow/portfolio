@@ -35,7 +35,16 @@
 
         {% block body %}{% endblock %}
 </body>
-
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var f = document.getElementById('quoteForm');
+  if (!f) return;
+  // coupe toute interception existante
+  f.addEventListener('submit', function(ev){
+    ev.stopImmediatePropagation(); // laisse passer la soumission native
+  }, true);
+});
+</script>
 {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
             {# {% block importmap %}{{ importmap('app') }}{% endblock %} #}

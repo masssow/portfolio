@@ -115,6 +115,10 @@ quote:
   flash:
     ok: "Merci ! Votre demande a bien été envoyée."
     too_short: "votre message est trop court, merci de rédiriger un message"
+    too_many: "vous avez envoyé trop de demandes. Merci de réessayer plus tard."
+    too_fast: "vous avez envoyé la demande trop rapidement. Merci de prendre votre temps."
+    too_many_links: "votre message contient trop de liens. Merci d’en réduire le nombre."
+    invalid_or_csrf: "Erreur dans le formulaire, merci de corriger les champs indiqués."
     bad_mx: "Merci de rentre un adresse email valide"
   thanks:
     title: "Merci pour votre demande !"
