@@ -23531,10 +23531,12 @@ button:focus {
 
 .service-card ul {
   padding-left: 18px;
+  text-decoration: none;
 }
 
 .service-card li {
   margin-bottom: 0.35rem;
+  text-decoration: none;
 }
 
 /* Main Title Area css
@@ -23862,6 +23864,66 @@ button:focus {
 
 .owl-carousel.off {
   display: flex;
+}
+
+/* Accueil : sections courantes */
+.home_banner_area ul,
+.about_area ul,
+.brand_area ul,
+.features_area ul,
+.main_title ul,
+.feature_item ul {
+  list-style: none !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* Services page (sommaire + blocs) */
+.banner_area + .features_area ul,
+.banner_area + .features_area .feature_item ul {
+  list-style: none !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* Neutralise les bullets ajoutés via pseudo-éléments */
+.home_banner_area li::before,
+.about_area li::before,
+.brand_area li::before,
+.features_area li::before,
+.main_title li::before,
+.feature_item li::before,
+.banner_area + .features_area li::before {
+  content: none !important;
+}
+
+/* Un peu d’air entre les lignes et alignement propre */
+.home_banner_area li,
+.about_area li,
+.brand_area li,
+.features_area li,
+.main_title li,
+.feature_item li,
+.banner_area + .features_area li {
+  margin-bottom: 0.4rem;
+}
+
+/* Si des thèmes mettent des soulignements sur les liens des listes */
+.home_banner_area li a,
+.about_area li a,
+.brand_area li a,
+.features_area li a,
+.feature_item li a {
+  text-decoration: none;
+}
+
+.home_banner_area li a:hover,
+.about_area li a:hover,
+.brand_area li a:hover,
+.features_area li a:hover,
+.feature_item li a:hover {
+  text-decoration: underline;
+  /* facultatif : garder un feedback au hover */
 }
 
 /*---------------------------------------------------- */

@@ -39,34 +39,34 @@ home:
 packs:
   local:
     title: "Visibilité — être trouvé"
-    desc: "Google Business Profile (création/optimisation), SEO on-page (balises, Hn, maillage interne), mini-site 1–3 pages orienté conversion (Appeler/WhatsApp/Itinéraire), configuration GA4/GTM + rapport de performance 30 jours."
+    desc: "Google Business Profile optimisé, SEO on-page clair, mini-site 1 à 3 pages orienté conversion : Appeler, WhatsApp, Itinéraire."
     price: ""
     delay: ""
     cta: "Je veux être visible"
 
   ecom:
     title: "E-commerce rapide"
-    desc: "Catalogue 5–20 produits (variantes basiques), tunnel de commande simple, Stripe/PayPal, réglages TVA/frais, e-mails transactionnels, politique livraison/retours, formation 30–45 min, check-list conformité RGPD."
+    desc: "Catalogue 5 à 20 produits, variantes simples, paiement Stripe ou PayPal. TVA et frais configurés, e-mails transactionnels, livraisons et retours. Formation."
     price: ""
     delay: ""
     cta: "Lancer ma boutique"
 
   com:
     title: "Communication visuelle"
-    desc: "Logo vectoriel + micro-charte (couleurs/typos/usages), 2 supports imprimés (flyer A5 ou carte), kit Canva (10 visuels), modèles stories, guide de ton & messages, exports web/print."
+    desc: "Logo vectoriel et micro-charte : couleurs, typographies, usages. Kit Canva 10 visuels, modèles de stories, guide de ton et messages, exports web et print."
     price: ""
     delay: ""
     cta: "Améliorer mon image"
 
   maint:
     title: "Maintenance site"
-    desc: "Mises à jour core/plugins/thème, sauvegardes quotidiennes, monitoring de disponibilité, correctifs mineurs inclus, reprise en cas d’incident, rapport mensuel (MAJ, uptime, sécurité)."
+    desc: "Mises à jour core, thèmes et plugins, surveillance de disponibilité, correctifs mineurs inclus. Reprise après incident et rapport mensuel : mises à jour, uptime, sécurité."
     price: ""
     cta: "Protéger mon site"
 
   social:
     title: "Réseaux sociaux"
-    desc: "Audit des comptes, ligne éditoriale, calendrier 4 semaines, 5–10 publications/mois (images + textes), programmation, réponses de base, suivi des métriques (portée, engagement) avec mini-rapport."
+    desc: "Audit des comptes et ligne éditoriale. Calendrier 4 semaines, 5 à 10 publications par mois, programmation et réponses de base."
     price: ""
     cta: "Animer mes réseaux"
 
@@ -126,118 +126,102 @@ contactPage:
     titleTab: "Contact & devis — MassGrafik"
 
 services2:
-  seo:
-    titleTab: "Services & expertises — MassGrafik"
   intro:
     title: "Des services clairs, utiles et orientés résultats"
     subtitle: "On conçoit, on mesure, on améliore. Moins de jargon, plus d’appels, de messages et de ventes."
-  toggle: "Afficher/masquer"
-
   cards:
     consulting:
       title: "Conseil & stratégie"
       teaser: "Prioriser ce qui compte, maintenant."
       items:
-        1: "Diagnostic digital 360° : messages, parcours, priorités d’action."
-        2: "Positionnement & offre : clarifier « pour qui, pourquoi, quoi »."
-        3: "Feuille de route : objectifs, jalons, KPI utiles (sans blabla)."
-
+        1: "Diagnostic 360° : messages, parcours, priorités."
+        2: "Positionnement et offre : pour qui, pourquoi, quoi."
+        3: "Feuille de route : objectifs, jalons, KPI utiles."
     identity:
       title: "Identité & design"
       teaser: "Une image nette qui rassure et donne envie d’agir."
       items:
         1: "Identité visuelle : logo, couleurs, typographies, kit social."
-        2: "Design système : styles/blocs réutilisables pour livrer vite."
-        3: "UX writing : messages clairs, appels à l’action efficaces."
-
+        2: "Design system : blocs réutilisables pour livrer vite."
+        3: "UX writing : messages clairs et appels à l’action."
     platforms:
       title: "Sites & plateformes"
       teaser: "Des interfaces utiles : crédibilité, infos, interactions."
       items:
-        1: "Site vitrine / corporate / institutionnel : crédibilité + contacts."
-        2: "Portail événementiel & billetterie : inscriptions, paiements, e-tickets."
-        3: "Intranet / Extranet / Portail adhérents : espace sécurisé & documents."
-        4: "Espace presse / documentation : publier, classer, rechercher."
-
+        1: "Site vitrine, corporate ou institutionnel : crédibilité et contacts."
+        2: "Portail événementiel et billetterie : inscriptions, paiements, e-tickets."
+        3: "Intranet, extranet ou espace adhérents : accès sécurisés et documents."
+        4: "Espace presse et documentation : publier, classer, rechercher."
     commerce:
       title: "Commerce & paiements"
-      teaser: "Vendre simplement, être payé sereinement."
+      teaser: "Vendre simplement, encaisser sereinement."
       items:
-        1: "Boutique en ligne : catalogue, panier, paiement sécurisé (Stripe)."
-        2: "Click-and-collect / commande en ligne : créneaux, retraits, confirmations."
-        3: "Abonnements & adhésions : récurrence, reçus, gestion des membres."
-        4: "Marketplaces (multi-vendeurs) : onboarding, commissions, versements."
-
+        1: "Boutique en ligne : catalogue, panier, paiement sécurisé Stripe."
+        2: "Click-and-collect et commande en ligne : créneaux, retraits, confirmations."
+        3: "Abonnements et adhésions : récurrence, reçus, gestion des membres."
+        4: "Marketplace multi-vendeurs : onboarding, commissions, versements."
     booking:
       title: "Réservations & formulaires"
       teaser: "Moins d’échanges inutiles, plus d’autonomie."
       items:
-        1: "Prise de rendez-vous : agenda, rappels e-mail/SMS, annulations."
-        2: "Billetterie & événements : quotas, tarifs, listes, scan à l’entrée."
-        3: "Dossiers & candidatures : étapes, pièces jointes, workflows simples."
-
+        1: "Prise de rendez-vous : agenda, rappels e-mail et SMS, annulations."
+        2: "Billetterie et événements : quotas, tarifs, listes, scan à l’entrée."
+        3: "Dossiers et candidatures : étapes, pièces jointes, workflows simples."
     content_seo:
       title: "Contenu, SEO & visibilité"
       teaser: "Être trouvé, être compris, être choisi."
       items:
-        1: "SEO technique & éditorial : structure claire, pages locales, rich snippets."
-        2: "Blog / actualités : calendrier éditorial, mise en page propre."
-        3: "Newsletters : gabarits, envois, listes propres (opt-in RGPD)."
-        4: "Réseaux sociaux : planning mensuel, visuels, animation communautaire."
-
+        1: "SEO technique et éditorial : structure claire et données enrichies."
+        2: "Blog et actualités : calendrier éditorial et mise en page propre."
+        3: "Newsletters : gabarits, envois, listes propres, opt-in conforme."
+        4: "Réseaux sociaux : planning mensuel, visuels et animation."
     acquisition:
-      title: "Acquisition & notoriété (option)"
-      teaser: "Aller chercher la demande, sans brûler le budget."
+      title: "Acquisition & notoriété"
+      teaser: "Activer la demande, sans brûler le budget."
       items:
-        1: "Publicité en ligne : Google Ads, Meta Ads, retargeting simple."
-        2: "Landing pages de campagne : conversion, tests A/B raisonnables."
-        3: "Pages « preuve » : cas clients, avis, AVANT/APRÈS."
-
+        1: "Publicité en ligne : Google Ads et Meta Ads, retargeting simple."
+        2: "Landing pages : conversion mesurée et tests A/B raisonnables."
+        3: "Pages preuve : cas clients, avis, avant/après."
     donations:
       title: "Don, mécénat & éducation"
       teaser: "Collecter, sensibiliser, former."
       items:
-        1: "Dons & campagnes : pages dédiées, reçus automatiques, thermomètre."
-        2: "E-learning léger / ressources : parcours simple, quiz."
-        3: "Boutique solidaire / supports : packs, bundles, coupons."
-
+        1: "Dons et campagnes : pages dédiées, reçus automatiques, thermomètre."
+        2: "E-learning léger et ressources : parcours simple et quiz."
+        3: "Boutique solidaire : packs, bundles, coupons."
     data_crm:
       title: "Données, CRM & automatisation"
       teaser: "Voir clair, relancer juste, gagner du temps."
       items:
-        1: "Mini-CRM : centraliser demandes, pipeline, relances."
-        2: "Automatisations : e-mails/SMS d’accueil, relances douces, rappels."
+        1: "Mini-CRM : centraliser demandes, pipeline et relances."
+        2: "Automatisations e-mail et SMS : accueil, relances, rappels."
         3: "Tableaux de bord : trafic, conversions, ventes, formulaires."
     accessibility:
       title: "Accessibilité, langues & international"
       teaser: "Inclure plus de monde, ouvrir plus de marchés."
       items:
-        1: "Accessibilité : bonnes pratiques lisibles et contrastes corrects."
-        2: "Multilingue FR/ES/EN : navigation, contenus, SEO par langue."
-
+        1: "Accessibilité : lisibilité et contrastes corrects."
+        2: "Multilingue FR, ES, EN : navigation, contenus, SEO par langue."
     performance:
       title: "Performance, sécurité & conformité"
       teaser: "Rapide, fiable, conforme."
       items:
-        1: "Performance : mobile-first, médias optimisés, cache."
-        2: "Sécurité & sauvegardes : mises à jour, restauration, surveillance."
-        3: "RGPD : bannières cookies, mentions, formulaires conformes."
-
+        1: "Performance mobile-first : médias optimisés et cache."
+        2: "Sécurité et sauvegardes : mises à jour et restauration."
+        3: "RGPD : bannière cookies, mentions et formulaires conformes."
     operations:
       title: "Exploitation continue"
       teaser: "Un site vivant qui évolue sans douleur."
       items:
-        1: "Maintenance & support : correctifs, petites évolutions, veille."
-        2: "Hébergement & infogérance : SSL, sauvegardes, monitoring."
-        3: "Formation & transfert : prise en main équipe, mini-guides."
-
+        1: "Maintenance et support : correctifs et petites évolutions."
+        2: "Hébergement et infogérance : SSL, sauvegardes, monitoring."
+        3: "Formation et transfert : prise en main et mini-guides."
     creative:
       title: "Production créative"
       teaser: "Montrer le vrai : équipes, produits, lieux."
       items:
-        1: "Photo/vidéo : rassurer, convaincre."
-        2: "Rédaction & traduction : pages clés, fiches produits, communiqués."
-
+        1: "Photo et vidéo pour rassurer et convaincre."
+        2: "Rédaction et traduction : pages clés et fiches produits."
 legal:
   disclaimer: "Informations fournies à titre général — ceci n’est pas un conseil juridique. Adaptez les mentions à votre situation (statut, SIREN/SIRET, hébergeur, etc.)."
   lastUpdate: "Dernière mise à jour : %date%"
