@@ -77,17 +77,7 @@ final class QuoteType extends AbstractType
                 'data'   => (string)($opt['render_ts'] ?? time()),
             ]);
         // Honeypot
-            $hp = $options['honeypot_name'] ?? 'hp_static';
-            $b->add($hp, TextType::class, [
-                'mapped' => false,
-                'required' => false,
-                'attr' => [
-                    'autocomplete' => 'off',
-                    'tabindex' => '-1',
-                    'style' => 'display:none',
-                    'aria-hidden' => 'true',
-                ],
-            ]);
+         
     }
 
     public function configureOptions(OptionsResolver $r): void

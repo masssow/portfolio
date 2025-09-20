@@ -35,10 +35,11 @@
       <!-- Colonne droite : formulaire -->
       <div class="col-lg-9">
         <h2>{{ 'quote.form.titleFormContact'|trans }}</h2>
-
-        {% for type, messages in app.flashes %}
-          <div class="alert alert-{{ type }}">{% for m in messages %}{{ m }}{% endfor %}</div>
+      {% for type, messages in app.flashes %}
+        {% for message in messages %}
+          <div class="alert alert-{{ type }}">{{ message|raw }}</div>
         {% endfor %}
+      {% endfor %}
 
         {{ form_start(form, {
           attr: {

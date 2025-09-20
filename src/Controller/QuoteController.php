@@ -26,22 +26,22 @@ final class QuoteController extends AbstractController
     ) {}
 
 
-    
     #[Route('/{_locale}/devis', name: 'app_quote', requirements: ['_locale' => 'fr|es'], methods: ['GET', 'POST'])]
     public function request(Request $req): Response
     {
         $session = $req->getSession();
 
-        // ——— GET : préparer honeypot & timer ———
+        // GET : préparer honeypot & timer
         if ($req->isMethod('GET')) {
             $session->set('quote_started_at', time());
-            $hp = 'hp_' . bin2hex(random_bytes(4));         // nom de champ aléatoire
+            $hp = 'hp_' . bin2hex(random_bytes(4));     // nom de champ aléatoire
             $session->set('quote_hp_name', $hp);
         }
 
         $selectedPack = $req->query->get('pack'); // local|ecom|com|maint|social
         $honeypotName = $session->get('quote_hp_name', 'hp_fallback');
 
+        // IMPORTANT : ne pas ajouter le honeypot via le FormType
         $form = $this->createForm(QuoteType::class, null, [
             'selected_pack' => $selectedPack,
             'honeypot_name' => $honeypotName,
@@ -49,7 +49,6 @@ final class QuoteController extends AbstractController
         ]);
         $form->handleRequest($req);
 
-        // ——— POST : contrôles anti-spam ———
         if ($form->isSubmitted()) {
             // 1) Rate limiting par IP
             $limiter = $this->quoteFormLimiter->create($req->getClientIp() ?? 'anon');
@@ -58,23 +57,22 @@ final class QuoteController extends AbstractController
                 return $this->redirectToRoute('app_quote', ['_locale' => $req->getLocale()]);
             }
 
-            // 2) Honeypot dynamique
+            // 2) Honeypot dynamique (champ HTML brut caché)
             $hpVal = $req->request->all('quote')[$honeypotName] ?? '';
             if (!empty($hpVal)) {
                 $this->logger->info('Honeypot triggered', ['ip' => $req->getClientIp()]);
-                // on fait comme si tout allait bien
                 $this->addFlash('success', $this->t->trans('quote.flash.ok'));
                 return $this->redirectToRoute('app_quote_thanks', ['_locale' => $req->getLocale()]);
             }
 
             // 3) Time-trap (>= 5s)
-            $startedAt = (int)$session->get('quote_started_at', time());
+            $startedAt = (int) $session->get('quote_started_at', time());
             if ((time() - $startedAt) < 5) {
                 $this->addFlash('warning', $this->t->trans('quote.flash.too_fast'));
                 return $this->redirectToRoute('app_quote', ['_locale' => $req->getLocale(), 'pack' => $selectedPack]);
             }
 
-            // 4) Filtrage contenu basique
+            // 4) Filtrage contenu basique (UTILISER le form, pas $data)
             $message = (string) $form->get('message')->getData();
             if (mb_strlen($message) < 12) {
                 $this->addFlash('warning', $this->t->trans('quote.flash.too_short'));
@@ -86,19 +84,18 @@ final class QuoteController extends AbstractController
                 return $this->redirectToRoute('app_quote', ['_locale' => $req->getLocale(), 'pack' => $selectedPack]);
             }
 
-            // 5) (Optionnel) Vérif MX basique
-            $email = (string)($data['email'] ?? '');
+            // 5) Vérif MX basique (depuis le form)
+            $email = (string) $form->get('email')->getData();
             if ($email && str_contains($email, '@')) {
                 $domain = substr(strrchr($email, '@'), 1);
-                if ($domain && !checkdnsrr($domain, 'MX')) {
+                if ($domain && !@checkdnsrr($domain, 'MX')) {
                     $this->addFlash('warning', $this->t->trans('quote.flash.bad_mx'));
                     return $this->redirectToRoute('app_quote', ['_locale' => $req->getLocale(), 'pack' => $selectedPack]);
                 }
             }
 
-            // 6) Traitement “propre” (TODO: envoi e-mail / stockage)
+            // 6) Traitement “propre”
             if ($form->isValid()) {
-
                 /** @var Quote $entity */
                 $entity = $form->getData();
                 $entity
@@ -109,15 +106,16 @@ final class QuoteController extends AbstractController
                 if (method_exists($entity, 'getStatus') && !$entity->getStatus()) {
                     $entity->setStatus('new');
                 }
+
                 $this->entityManager->persist($entity);
                 $this->entityManager->flush();
+
                 $this->addFlash('success', $this->t->trans('quote.flash.ok'));
                 return $this->redirectToRoute('app_quote_thanks', ['_locale' => $req->getLocale()]);
-
-
-              
-
-                
+            } else {
+                // Ajoute un retour explicite si le form est invalide (CSRF, contraintes, etc.)
+                $this->addFlash('warning', $this->t->trans('quote.flash.invalid_or_csrf'));
+                return $this->redirectToRoute('app_quote', ['_locale' => $req->getLocale(), 'pack' => $selectedPack]);
             }
         }
 
@@ -127,6 +125,7 @@ final class QuoteController extends AbstractController
             'honeypot_name'  => $honeypotName,
         ]);
     }
+
 
     #[Route('/devis', name: 'app_quote_nolocale', methods: ['GET'])]
     public function redirectToLocalized(Request $req): Response
