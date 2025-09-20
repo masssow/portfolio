@@ -1,2 +1,6 @@
+# config/packages/lock.yaml
 framework:
-    lock: '%env(LOCK_DSN)%'
+  lock:
+    # Un store de verrous basé sur des fichiers, fiable en mutualisé
+    resources:
+      default: 'flock://%kernel.project_dir%/var/lock'
