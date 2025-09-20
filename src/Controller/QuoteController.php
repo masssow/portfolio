@@ -58,8 +58,11 @@ final class QuoteController extends AbstractController
             }
 
             // 2) Honeypot dynamique (champ HTML brut caché)
-            $hpVal = $req->request->all('quote')[$honeypotName] ?? '';
-            if (!empty($hpVal)) {
+            $formName = $form->getName(); // ex: "quote" ... ou autre selon prod
+            $posted   = $req->request->get($formName, []); // plus robuste que all('quote')
+            $hpVal    = $posted[$honeypotName] ?? '';
+
+            if ($hpVal !== '') {
                 $this->logger->info('Honeypot triggered', ['ip' => $req->getClientIp()]);
                 $this->addFlash('success', $this->t->trans('quote.flash.ok'));
                 return $this->redirectToRoute('app_quote_thanks', ['_locale' => $req->getLocale()]);
