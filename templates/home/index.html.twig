@@ -15,8 +15,10 @@
             <h5 >{{ 'home.hero.subtitle'|trans }}</h5>
 
             <div class="d-flex align-items-center">
-              <a class="primary_btn" href="{{ path ('app_quote')}}"><span>{{ 'cta.devis'|trans }}</span></a>
-              <a class="primary_btn tr-bg" href="{{ path ('app_services')}}"><span>{{ 'cta.packs'|trans }}</span></a>
+            <a class="primary_btn" href="{{ path('app_quote', {'_locale': app.request.locale}) }}">
+              <span>{{ 'cta.devis'|trans }}</span>
+            </a>
+            <a class="primary_btn tr-bg" href="{{ path ('app_services')}}"><span>{{ 'cta.packs'|trans }}</span></a>
             </div>
 
             <p class="mt-3 mb-0">{{ 'home.hero.proofs'|trans }}</p>
@@ -152,7 +154,7 @@
           <h4>{{ 'packs.ecom.title'|trans }}</h4>
           <p class="mb-1">{{ 'packs.ecom.desc'|trans }}</p>
           <p class="mb-2"><strong>{{ 'packs.ecom.price'|trans }}</strong> • {{ 'packs.ecom.delay'|trans }}</p>
-			<a class="primary_btn tr-bg" href="{{ path('app_quote', {'_locale': app.request.locale, 'pack': 'ecom'}) }}"><span>{{ 'packs.ecom.cta'|trans }}</span></a>
+			<a class="primary_btn tr-bg" href="{{ path('app_quote', {'_locale': app.request.locale, 'pack': 'local'}) }}"><span>{{ 'packs.local.cta'|trans }}</span></a>
         </div>
       </div>
       <!-- Pack 3 -->
@@ -162,7 +164,7 @@
           <h4>{{ 'packs.com.title'|trans }}</h4>
           <p class="mb-1">{{ 'packs.com.desc'|trans }}</p>
           <p class="mb-2"><strong>{{ 'packs.com.price'|trans }}</strong> • {{ 'packs.com.delay'|trans }}</p>
-		<a class="primary_btn tr-bg" href="{{ path('app_quote', {'_locale': app.request.locale, 'pack': 'com'}) }}"><span>{{ 'packs.com.cta'|trans }}</span></a>
+			<a class="primary_btn tr-bg" href="{{ path('app_quote', {'_locale': app.request.locale, 'pack': 'local'}) }}"><span>{{ 'packs.local.cta'|trans }}</span></a>
         </div>
       </div>
       <!-- Pack 4 -->
@@ -172,7 +174,7 @@
           <h4>{{ 'packs.maint.title'|trans }}</h4>
           <p class="mb-1">{{ 'packs.maint.desc'|trans }}</p>
           <p class="mb-2"><strong>{{ 'packs.maint.price'|trans }}</strong></p>
-		<a class="primary_btn tr-bg" href="{{ path('app_quote', {'_locale': app.request.locale, 'pack': 'maint'}) }}"><span>{{ 'packs.maint.cta'|trans }}</span></a>
+			<a class="primary_btn tr-bg" href="{{ path('app_quote', {'_locale': app.request.locale, 'pack': 'local'}) }}"><span>{{ 'packs.local.cta'|trans }}</span></a>
         </div>
       </div>
       <!-- Pack 5 (va se mettre à la ligne suivante si besoin) -->
@@ -182,7 +184,7 @@
           <h4>{{ 'packs.social.title'|trans }}</h4>
           <p class="mb-1">{{ 'packs.social.desc'|trans }}</p>
           <p class="mb-2"><strong>{{ 'packs.social.price'|trans }}</strong></p>
-		<a class="primary_btn tr-bg" href="{{ path('app_quote', {'_locale': app.request.locale, 'pack': 'social'}) }}"><span>{{ 'packs.social.cta'|trans }}</span></a>
+			<a class="primary_btn tr-bg" href="{{ path('app_quote', {'_locale': app.request.locale, 'pack': 'local'}) }}"><span>{{ 'packs.local.cta'|trans }}</span></a>
         </div>
       </div>
     </div>

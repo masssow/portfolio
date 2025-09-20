@@ -25,6 +25,8 @@ final class QuoteController extends AbstractController
 
     ) {}
 
+
+    
     #[Route('/{_locale}/devis', name: 'app_quote', requirements: ['_locale' => 'fr|es'], methods: ['GET', 'POST'])]
     public function request(Request $req): Response
     {
@@ -126,7 +128,14 @@ final class QuoteController extends AbstractController
         ]);
     }
 
+    #[Route('/devis', name: 'app_quote_nolocale', methods: ['GET'])]
+    public function redirectToLocalized(Request $req): Response
+    {
+        // Choix de la locale préférée parmi fr|es
+        $locale = $req->getPreferredLanguage(['fr', 'es']) ?? 'fr';
 
+        return $this->redirectToRoute('app_quote', ['_locale' => $locale], 302);
+    }
 
 
     #[Route('/thank', name: 'app_quote_thanks', requirements: ['_locale' => 'fr|es'], methods: ['GET', 'POST'])]
