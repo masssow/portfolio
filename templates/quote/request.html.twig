@@ -103,8 +103,13 @@
 
           {# champs techniques #}
           {{ form_widget(form.render_ts) }}
-          {{ form_widget(attribute(form, honeypot_name)) }}
-
+          <input type="text"
+                name="quote[{{ honeypot_name }}]"
+                value=""
+                style="display:none"
+                tabindex="-1"
+                autocomplete="off"
+                aria-hidden="true">
           <div class="col-md-12 text-right">
             <button type="submit" class="primary_btn"><span>{{ 'quote.form.submit'|trans }}</span></button>
           </div>
