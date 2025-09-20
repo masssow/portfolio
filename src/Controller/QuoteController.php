@@ -58,9 +58,10 @@ final class QuoteController extends AbstractController
             }
 
             // 2) Honeypot dynamique (champ HTML brut caché)
-            $formName = $form->getName(); // ex: "quote" ... ou autre selon prod
-            $posted   = $req->request->get($formName, []); // plus robuste que all('quote')
-            $hpVal    = $posted[$honeypotName] ?? '';
+            $formName = $form->getName();
+            // OK: all() renvoie un array, pas de default passé à get()
+            $posted   = $req->request->all($formName);
+            $hpVal    = is_array($posted) ? ($posted[$honeypotName] ?? '') : '';
 
             if ($hpVal !== '') {
                 $this->logger->info('Honeypot triggered', ['ip' => $req->getClientIp()]);

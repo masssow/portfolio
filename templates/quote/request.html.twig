@@ -102,7 +102,7 @@
 
           {# Honeypot HTML brut, invisible (pas via le Form) #}
           <input type="text"
-                 name="quote[{{ honeypot_name }}]"
+                 name="{{ form.vars.name }}[{{ honeypot_name }}]"
                  value=""
                  autocomplete="off"
                  tabindex="-1"
