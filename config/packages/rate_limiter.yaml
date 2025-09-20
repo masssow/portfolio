@@ -1,6 +1,6 @@
 framework:
   rate_limiter:
     quote_form_ip:
-      policy: sliding_window
-      limit: 5
+      policy: fixed_window
+      limit: 15
       interval: '1 minute'

@@ -569,6 +569,12 @@ button:focus {
     display: -ms-flexbox;
     display: flex;
 }
+  .contact_form .hp-field,
+  .contact_form [name="{{ honeypot_name }}"] {
+      display: none !important;
+      height: 0;
+      visibility: hidden;
+  }
 /* Accueil : sections courantes */
 .home_banner_area ul,
 .about_area ul,
