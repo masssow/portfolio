@@ -1,28 +1,33 @@
-site.title: "MassGrafik Web Agency – Sites, e-commerce & visibilité (France & international)"
-menu.home: "Accueil"
-menu.services: "Services"
-menu.blog: "Blog"
-menu.about: "À propos"
-menu.contact: "Contact"
-title.fallow: "suivez-nous sur les réseaux sociaux"
+site:
+  title: "MassGrafik Web Agency – Sites, e-commerce et visibilité"
+
+menu:
+  home: "Accueil"
+  services: "Services"
+  blog: "Blog"
+  about: "À propos de nous"
+  contact: "Contact"
+
+title:
+  fallow: "suivez-nous sur les réseaux sociaux"
 
 home:
   seo:
-    titleTab: "MassGrafik Web Agency – Sites, e-commerce & visibilité (France & international)"
+    titleTab: "MassGrafik Web Agency – Sites, e-commerce et visibilité"
   hero:
     salutation: "MassGrafik Web Agency"
     h1: "On vous trouve, on vous contacte, vous vendez"
-    subtitle: "Sites clairs, boutiques simples et visibilité Google qui génère appels et messages. Pensé pour artisans, commerces, associations et TPE — en France et à l’international."
-    proofs: "✅ Devis sous 24 h ✅ Tarifs transparents ✅ Mise en ligne rapide selon pack"
+    subtitle: "Sites clairs, boutiques simples et visibilité sur Google qui génère appels et messages. Pour artisans, commerces, associations et microentreprises — en Espagne et à l’international."
+    proofs: "✅ Devis en 24 h ✅ Prix transparents ✅ Mise en ligne rapide selon le pack"
 
   why:
     title: "Pourquoi MassGrafik ?"
-    intro: "Une méthode claire, des livrables concrets et des résultats mesurables — sans vous noyer dans la technique."
+    intro: "Méthode claire, livrables concrets et résultats mesurables — sans vous compliquer avec la technique."
     items:
-      1: "Audit express (30 min) et plan d’action priorisé : objectifs, pages, offres, délais."
-      2: "Conception orientée conversion : CTA visibles, formulaires, éléments de confiance (avis, garanties)."
-      3: "SEO pragmatique : Google Business, structure Hn, maillage interne, contenus utiles, Core Web Vitals."
-      4: "Mesure & transmission : GA4/GTM, tableau de bord simple, propriété des accès et des livrables."
+      1: "Audit express (30 min) et plan d’action priorisé : objectifs, pages, offres et délais."
+      2: "Design orienté conversion : CTA visibles, Appeler/WhatsApp, formulaires courts et éléments de confiance (avis, garanties)."
+      3: "SEO pragmatique : fiche Google Business, structure Hn, maillage interne, contenus utiles et Core Web Vitals."
+      4: "Mesure et transfert : GA4/GTM, tableau de bord simple et propriété complète des accès et livrables."
 
   badge:
     large: "24 h"
@@ -30,43 +35,43 @@ home:
 
   zones:
     title: "Zones"
-    list: "Partout en France et à l’international (100 % à distance possible)."
+    list: "Dans toute l’Espagne et à l’international (100 % à distance et 100 % sécurisé)."
 
   packs:
-    title: "5 packs concrets pour passer à l’action 🎯"
-    intro: "Choisissez ce qui compte maintenant : être trouvé, vendre, clarifier votre image, sécuriser votre site ou publier régulièrement."
+    title: "5 packs pour passer à l’action 🎯"
+    intro: "Choisissez ce qui est prioritaire maintenant : être trouvé, vendre, structurer votre image, sécuriser votre site ou publier régulièrement."
 
 packs:
   local:
-    title: "Visibilité — être trouvé"
-    desc: "Google Business Profile optimisé, SEO on-page clair, mini-site 1 à 3 pages orienté conversion : Appeler, WhatsApp, Itinéraire."
+    title: "Visibilité — qu’on vous trouve"
+    desc: "Profil Google Business optimisé, SEO on-page clair, mini-site de 1 à 3 pages orienté conversion : Appeler, WhatsApp, Itinéraire."
     price: ""
     delay: ""
     cta: "Je veux être visible"
 
   ecom:
     title: "E-commerce rapide"
-    desc: "Catalogue 5 à 20 produits, variantes simples, paiement Stripe ou PayPal. TVA et frais configurés, e-mails transactionnels, livraisons et retours. Formation."
+    desc: "Catalogue de 5 à 20 produits et variantes simples. Paiement par Stripe ou PayPal, taxes et frais configurés, emails transactionnels, livraisons et retours. Formation incluse."
     price: ""
     delay: ""
     cta: "Lancer ma boutique"
 
   com:
     title: "Communication visuelle"
-    desc: "Logo vectoriel et micro-charte : couleurs, typographies, usages. Kit Canva 10 visuels, modèles de stories, guide de ton et messages, exports web et print."
+    desc: "Logo vectoriel et micro-guide : couleurs, typographies et usages. Kit Canva avec 10 créations, templates de stories, guide de ton et de messages, exports web et impression."
     price: ""
     delay: ""
     cta: "Améliorer mon image"
 
   maint:
-    title: "Maintenance site"
-    desc: "Mises à jour core, thèmes et plugins, surveillance de disponibilité, correctifs mineurs inclus. Reprise après incident et rapport mensuel : mises à jour, uptime, sécurité."
+    title: "Maintenance web"
+    desc: "Mises à jour du cœur, des thèmes et plugins, surveillance de disponibilité, petites corrections incluses. Restauration en cas d’incident et rapport mensuel : mises à jour, uptime, sécurité."
     price: ""
     cta: "Protéger mon site"
 
   social:
     title: "Réseaux sociaux"
-    desc: "Audit des comptes et ligne éditoriale. Calendrier 4 semaines, 5 à 10 publications par mois, programmation et réponses de base."
+    desc: "Audit de comptes et ligne éditoriale. Calendrier de 4 semaines, 5 à 10 publications par mois, programmation et réponses basiques."
     price: ""
     cta: "Animer mes réseaux"
 
@@ -80,164 +85,166 @@ contact:
 
 about:
   seo:
-    titleTab: "MassGrafik Web Agency – À propos"
+    titleTab: "MassGrafik Web Agency – À propos de nous"
+
 services:
   seo:
     titleTab: "MassGrafik Web Agency – Services"
-  
+
 quote:
   seo:
     titleTab: "Demander un devis — MassGrafik"
     firstTitle: "Demander un devis"
     titleThanks: "Merci — MassGrafik"
   title: "Demander un devis"
-  subtitle: "Dites-nous l’essentiel, on revient vers vous sous 48 h."
-  selected: "Pack pré-sélectionné"
+  subtitle: "Dites-nous l’essentiel, nous vous répondons sous 48 h."
+  selected: "Pack présélectionné"
   form:
     titleContact: "Contact direct"
     titleFormContact: "Formulaire de contact"
-    country: "France"
-    modeCom: "100% à distance possible"
+    country: "Espagne"
+    modeCom: "100 % à distance possible"
     name: "Votre nom"
     company: "Entreprise (optionnel)"
     phone: "Téléphone"
     email: "E-mail"
     pack: "Pack souhaité"
     pack.placeholder: "Choisissez un pack"
-    budget: "Budget indicatif"
-    budget.placeholder: "Sélectionnez une fourchette"
+    budget: "Budget estimé"
+    budget.placeholder: "Sélectionnez une tranche"
     budget.1k: "≤ 1 000 €"
     budget.2k: "1 000 – 2 000 €"
     budget.5k: "2 000 – 5 000 €"
-    budget.5k+: "5 000 € et +"
+    budget.5k+: "5 000 € ou plus"
     message: "Votre besoin en quelques mots"
-    submit: "Envoyer ma demande"
+    submit: "Envoyer la demande"
   flash:
-    ok: "Merci ! Votre demande a bien été envoyée."
-    too_short: "votre message est trop court, merci de rédiriger un message"
-    too_many: "vous avez envoyé trop de demandes. Merci de réessayer plus tard."
-    too_fast: "vous avez envoyé la demande trop rapidement. Merci de prendre votre temps."
-    too_many_links: "votre message contient trop de liens. Merci d’en réduire le nombre."
+    ok: "Merci ! Votre demande a été envoyée correctement."
     invalid_or_csrf: "Erreur dans le formulaire, merci de corriger les champs indiqués."
-    bad_mx: "Merci de rentre un adresse email valide"
+    too_many: "Vous avez envoyé trop de demandes. Merci de réessayer plus tard."
+    too_fast: "Vous avez envoyé la demande trop vite. Merci de prendre un peu plus de temps."
+    too_short: "Le message est trop court. Merci de fournir plus de détails."
+    too_many_links: "Le message contient trop de liens. Merci d’en réduire le nombre."
   thanks:
     title: "Merci pour votre demande !"
-    desc: "Nous revenons vers vous sous 48 h avec un premier retour."
+    desc: "Nous vous contacterons sous 48 h avec une première proposition."
     back: "Revenir à l’accueil"
 
 contactPage:
   seo:
-    titleTab: "Contact & devis — MassGrafik"
+    titleTab: "Contact et devis — MassGrafik"
 
 services2:
   intro:
-    title: "Des services clairs, utiles et orientés résultats"
-    subtitle: "On conçoit, on mesure, on améliore. Moins de jargon, plus d’appels, de messages et de ventes."
+    title: "Des services clairs, utiles et mesurables"
+    subtitle: "Nous concevons, mesurons, améliorons. Moins de jargon ; plus d’appels, de messages et de ventes."
   cards:
     consulting:
-      title: "Conseil & stratégie"
+      title: "Conseil et stratégie"
       teaser: "Prioriser ce qui compte, maintenant."
       items:
         1: "Diagnostic 360° : messages, parcours, priorités."
         2: "Positionnement et offre : pour qui, pourquoi, quoi."
-        3: "Feuille de route : objectifs, jalons, KPI utiles."
+        3: "Feuille de route : objectifs, jalons et KPI utiles."
     identity:
-      title: "Identité & design"
-      teaser: "Une image nette qui rassure et donne envie d’agir."
+      title: "Identité et design"
+      teaser: "Une image claire qui inspire confiance."
       items:
         1: "Identité visuelle : logo, couleurs, typographies, kit social."
         2: "Design system : blocs réutilisables pour livrer vite."
         3: "UX writing : messages clairs et appels à l’action."
     platforms:
-      title: "Sites & plateformes"
-      teaser: "Des interfaces utiles : crédibilité, infos, interactions."
+      title: "Sites et plateformes"
+      teaser: "Interfaces utiles : crédibilité, information, interaction."
       items:
         1: "Site vitrine, corporate ou institutionnel : crédibilité et contacts."
-        2: "Portail événementiel et billetterie : inscriptions, paiements, e-tickets."
-        3: "Intranet, extranet ou espace adhérents : accès sécurisés et documents."
-        4: "Espace presse et documentation : publier, classer, rechercher."
+        2: "Portail d’événements et ticketing : inscriptions, paiements et e-tickets."
+        3: "Intranet, extranet ou espace membres : accès sécurisé et documents."
+        4: "Salle de presse et documentation : publier, classer, rechercher."
     commerce:
-      title: "Commerce & paiements"
-      teaser: "Vendre simplement, encaisser sereinement."
+      title: "Commerce et paiements"
+      teaser: "Vendre facilement, encaisser sereinement."
       items:
-        1: "Boutique en ligne : catalogue, panier, paiement sécurisé Stripe."
-        2: "Click-and-collect et commande en ligne : créneaux, retraits, confirmations."
-        3: "Abonnements et adhésions : récurrence, reçus, gestion des membres."
-        4: "Marketplace multi-vendeurs : onboarding, commissions, versements."
+        1: "Boutique en ligne : catalogue, panier et paiement sécurisé avec Stripe."
+        2: "Click-and-collect et commandes en ligne : créneaux, retraits, confirmations."
+        3: "Abonnements et adhésions : récurrence, reçus et gestion de membres."
+        4: "Marketplace multi-vendeurs : onboarding, commissions et paiements."
     booking:
-      title: "Réservations & formulaires"
-      teaser: "Moins d’échanges inutiles, plus d’autonomie."
+      title: "Réservations et formulaires"
+      teaser: "Moins d’allers-retours, plus d’autonomie."
       items:
-        1: "Prise de rendez-vous : agenda, rappels e-mail et SMS, annulations."
-        2: "Billetterie et événements : quotas, tarifs, listes, scan à l’entrée."
-        3: "Dossiers et candidatures : étapes, pièces jointes, workflows simples."
+        1: "Rendez-vous : agenda, rappels par e-mail et SMS, annulations."
+        2: "Ticketing et événements : quotas, tarifs, listes et scan à l’entrée."
+        3: "Dossiers et candidatures : étapes, pièces jointes et flux simples."
     content_seo:
-      title: "Contenu, SEO & visibilité"
-      teaser: "Être trouvé, être compris, être choisi."
+      title: "Contenus, SEO et visibilité"
+      teaser: "Qu’on vous trouve, qu’on vous comprenne et qu’on vous choisisse."
       items:
         1: "SEO technique et éditorial : structure claire et données enrichies."
         2: "Blog et actualités : calendrier éditorial et mise en page propre."
-        3: "Newsletters : gabarits, envois, listes propres, opt-in conforme."
-        4: "Réseaux sociaux : planning mensuel, visuels et animation."
+        3: "Newsletters : templates, envois et listes propres avec opt-in."
+        4: "Réseaux sociaux : calendrier mensuel, créations et animation."
     acquisition:
-      title: "Acquisition & notoriété"
-      teaser: "Activer la demande, sans brûler le budget."
+      title: "Acquisition et notoriété"
+      teaser: "Activer la demande sans brûler le budget."
       items:
         1: "Publicité en ligne : Google Ads et Meta Ads, retargeting simple."
         2: "Landing pages : conversion mesurée et tests A/B raisonnables."
-        3: "Pages preuve : cas clients, avis, avant/après."
+        3: "Pages de preuve : cas, avis et avant/après."
     donations:
-      title: "Don, mécénat & éducation"
+      title: "Dons, mécénat et éducation"
       teaser: "Collecter, sensibiliser, former."
       items:
-        1: "Dons et campagnes : pages dédiées, reçus automatiques, thermomètre."
+        1: "Dons et campagnes : pages dédiées et reçus automatiques."
         2: "E-learning léger et ressources : parcours simple et quiz."
-        3: "Boutique solidaire : packs, bundles, coupons."
+        3: "Boutique solidaire : packs, bundles et coupons."
     data_crm:
-      title: "Données, CRM & automatisation"
+      title: "Données, CRM et automatisation"
       teaser: "Voir clair, relancer juste, gagner du temps."
       items:
-        1: "Mini-CRM : centraliser demandes, pipeline et relances."
-        2: "Automatisations e-mail et SMS : accueil, relances, rappels."
-        3: "Tableaux de bord : trafic, conversions, ventes, formulaires."
+        1: "Mini-CRM : centralisation des demandes, pipeline et suivis."
+        2: "Automatisations e-mail et SMS : bienvenue, relances, rappels."
+        3: "Tableaux de bord : trafic, conversions, ventes et formulaires."
     accessibility:
-      title: "Accessibilité, langues & international"
-      teaser: "Inclure plus de monde, ouvrir plus de marchés."
+      title: "Accessibilité, langues et international"
+      teaser: "Inclure plus de monde et ouvrir plus de marchés."
       items:
-        1: "Accessibilité : lisibilité et contrastes corrects."
-        2: "Multilingue FR, ES, EN : navigation, contenus, SEO par langue."
+        1: "Accessibilité : bonne lisibilité et contrastes adéquats."
+        2: "Multilingue FR, ES, EN : navigation, contenus et SEO par langue."
     performance:
-      title: "Performance, sécurité & conformité"
-      teaser: "Rapide, fiable, conforme."
+      title: "Performance, sécurité et conformité"
+      teaser: "Rapide, fiable et conforme."
       items:
         1: "Performance mobile-first : médias optimisés et cache."
         2: "Sécurité et sauvegardes : mises à jour et restauration."
-        3: "RGPD : bannière cookies, mentions et formulaires conformes."
+        3: "RGPD : bandeau cookies, mentions et formulaires conformes."
     operations:
       title: "Exploitation continue"
       teaser: "Un site vivant qui évolue sans douleur."
       items:
-        1: "Maintenance et support : correctifs et petites évolutions."
-        2: "Hébergement et infogérance : SSL, sauvegardes, monitoring."
-        3: "Formation et transfert : prise en main et mini-guides."
+        1: "Maintenance et support : corrections et petites améliorations."
+        2: "Hébergement et infogérance : SSL, sauvegardes et monitoring."
+        3: "Formation et transfert : onboarding et mini-guides."
     creative:
       title: "Production créative"
-      teaser: "Montrer le vrai : équipes, produits, lieux."
+      teaser: "Montrer le réel : équipes, produits et lieux."
       items:
         1: "Photo et vidéo pour rassurer et convaincre."
-        2: "Rédaction et traduction : pages clés et fiches produits."
+        2: "Rédaction et traduction : pages clés et fiches."
+
 legal:
-  disclaimer: "Informations fournies à titre général — ceci n’est pas un conseil juridique. Adaptez les mentions à votre situation (statut, SIREN/SIRET, hébergeur, etc.)."
+  disclaimer: "Informations générales — ne constitue pas un conseil juridique. Adaptez les données à votre situation (raison sociale, numéro d’identification, hébergeur, etc.)."
   lastUpdate: "Dernière mise à jour : %date%"
 
   mentions:
-    seo: { titleTab: "Mentions légales — MassGrafik" }
+    seo:
+      titleTab: "Mentions légales — MassGrafik"
     title: "Mentions légales"
     editor:
       title: "Éditeur du site"
       name: "[[Votre nom ou raison sociale]]"
-      legal: "Statut : micro-entreprise"
-      id: "SIREN/SIRET : [[votre numéro]]"
+      legal: "Statut : auto-entrepreneur / microentreprise"
+      id: "N° d’identification : [[votre numéro]]"
       address: "Adresse : [[votre adresse]]"
     dirpub:
       title: "Directeur de la publication"
@@ -251,58 +258,93 @@ legal:
       value: "E-mail : contact@massgrafik.com — Tél. : (+33) 6 66 11 74 28"
     ipr:
       title: "Propriété intellectuelle"
-      value: "Les contenus (textes, visuels, logos) sont protégés. Toute reproduction non autorisée est interdite."
+      value: "Les contenus (textes, images, logos) sont protégés. Toute reproduction non autorisée est interdite."
 
   privacy:
-    seo: { titleTab: "Politique de confidentialité — MassGrafik" }
+    seo:
+      titleTab: "Politique de confidentialité — MassGrafik"
     title: "Politique de confidentialité"
     controller:
-      title: "Responsable de traitement"
-      value: "[[Votre nom / société]], contact : contact@massgrafik.com"
+      title: "Responsable du traitement"
+      value: "[[Votre nom / entreprise]], contact : contact@massgrafik.com"
     purposes:
       title: "Finalités"
-      1: "Répondre aux demandes faites via le formulaire de devis / contact."
-      2: "Gestion de la relation client et suivi des projets."
-      3: "Mesures d’audience (si consenties) pour améliorer le site."
+      1: "Répondre aux demandes envoyées via le formulaire de devis/contact."
+      2: "Gestion de la relation clients et suivi des projets."
+      3: "Mesure d’audience (avec votre consentement) pour améliorer le site."
     legalbases:
-      title: "Bases légales"
-      value: "Exécution de mesures précontractuelles (réponse à la demande), intérêt légitime (sécurité), consentement (cookies analytiques)."
+      title: "Bases juridiques"
+      value: "Exécution de mesures précontractuelles (réponse à votre demande), intérêt légitime (sécurité), consentement (cookies analytiques)."
     retention:
       title: "Durées de conservation"
-      value: "Demandes de devis : 12 mois maximum. Données clients : pendant la relation contractuelle et obligations légales. Cookies analytiques : selon paramètres Google (si consentis)."
+      value: "Demandes de devis : 12 mois maximum. Données clients : pendant la relation contractuelle et la durée des obligations légales. Cookies analytiques : selon Google (si vous consentez)."
     rights:
       title: "Vos droits"
       1: "Accès et rectification"
-      2: "Effacement (droit à l’oubli) et limitation"
+      2: "Suppression et limitation"
       3: "Opposition"
       4: "Portabilité"
-      5: "Définir des directives post-mortem"
-    howto: "Pour exercer vos droits, écrivez à contact@massgrafik.com. Nous répondrons sous 30 jours."
+      5: "Directives post-mortem"
+    howto: "Pour exercer vos droits, écrivez à contact@massgrafik.com. Réponse sous 30 jours."
     security:
       title: "Sécurité"
       value: "Mesures raisonnables pour protéger les données (mises à jour, sauvegardes, accès limités)."
     transfers:
       title: "Transferts hors UE"
-      value: "Pas de transfert prévu en dehors de l’UE hors sous-traitants conformes (ex. Google Analytics sous clauses types, si activé)."
+      value: "Aucun transfert hors UE n’est prévu, sauf via des sous-traitants conformes (ex. Google Analytics avec clauses types, si activé)."
 
   cookies:
-    seo: { titleTab: "Politique cookies — MassGrafik" }
+    seo:
+      titleTab: "Politique de cookies — MassGrafik"
     title: "Politique de cookies"
     what:
       title: "Qu’est-ce qu’un cookie ?"
-      value: "Petit fichier déposé sur votre appareil pour faire fonctionner le site, mesurer l’audience ou personnaliser l’expérience."
+      value: "Petit fichier enregistré sur votre appareil pour permettre le fonctionnement du site, la mesure d’audience ou la personnalisation."
     types:
       title: "Types de cookies utilisés"
       necessary: "Nécessaires : fonctionnement du site (session, sécurité)."
-      analytics: "Mesure d’audience : statistiques anonymisées (activées uniquement avec votre consentement)."
+      analytics: "Mesure d’audience : statistiques anonymisées (uniquement avec votre consentement)."
       social: "Réseaux sociaux : partage/lecteurs externes susceptibles de déposer des cookies."
     manage:
       title: "Gérer vos préférences"
-      value: "Vous pouvez accepter ou refuser les cookies analytiques via le bandeau. Vous pouvez aussi supprimer les cookies depuis les paramètres de votre navigateur."
+      value: "Vous pouvez accepter ou refuser les cookies analytiques depuis le bandeau. Vous pouvez aussi supprimer les cookies dans les paramètres de votre navigateur."
 
 cookie:
   banner:
-    text: "Nous utilisons des cookies nécessaires et, avec votre accord, des cookies de mesure d’audience."
+    text: "Nous utilisons des cookies nécessaires et, avec votre consentement, des cookies de mesure d’audience."
     accept: "Tout accepter"
     decline: "Tout refuser"
     more: "En savoir plus"
+
+offers:
+  title: "Nos offres clés"
+  intro: "Des solutions simples et efficaces pour lancer ou moderniser votre présence digitale."
+
+  cta: "Demander un devis"
+
+  ecom:
+    title: "E-commerce Essentiel"
+    price: "À partir de 900 €"
+    items:
+      1: "Boutique en ligne simple, rapide et professionnelle"
+      2: "Paiement sécurisé avec Stripe intégré"
+      3: "Transporteurs configurés"
+      4: "SEO et version mobile optimisés"
+
+  tools:
+    title: "Outils et solutions sur mesure"
+    price: "À partir de 800 €"
+    items:
+      1: "Mini SaaS et mini CRM"
+      2: "Formulaires avancés et espace client"
+      3: "Automatisations simples (rappels, e-mails, etc.)"
+      4: "Fonctionnalités adaptées à votre activité"
+
+  local:
+    title: "Visibilité locale"
+    price: "À partir de 400 €"
+    items:
+      1: "Mini site vitrine moderne"
+      2: "Fiche Google Business créée ou optimisée"
+      3: "Identité visuelle de base"
+      4: "Templates graphiques prêts à l’emploi"

@@ -23946,16 +23946,16 @@ button:focus {
 /*----------------------------------------------------*/
 /* Home Banner Area css
 ============================================================================================ */
-.home_banner_area {
-  padding: clamp(2.5rem, 6vw, 5rem) 0;
-}
-
 .home_banner_area .banner_inner {
   width: 100%;
 }
 
 .home_banner_area .banner_inner .home_right_img {
-  padding-top: 197px;
+  padding-top: 50px;
+}
+
+.hero-salutation {
+  padding-top: 20px;
 }
 
 /*---------------------------------------------------- */
@@ -26730,7 +26730,8 @@ h6 {
 }
 @media (max-width: 991px) {
   .about_area .about_img {
-    display: none;
+    display: block !important;
+    margin-top: 2rem;
   }
 }
 /* End About Us Area css
@@ -26919,6 +26920,103 @@ h6 {
   font-size: 60px;
   font-weight: 700;
   color: #000000;
+}
+
+.offer-card {
+  border-radius: 12px;
+  padding: 25px 20px;
+}
+
+.offer-price {
+  font-size: 1rem;
+}
+
+.offer-ecom {
+  background: #f5791f;
+  /* orange */
+  color: #ffffff;
+}
+
+.offer-tools {
+  background: #0b3c64;
+  /* bleu foncé MassGrafik */
+  color: #ffffff;
+}
+
+.offer-local {
+  background: #0f6c4f;
+  /* vert */
+  color: #ffffff;
+}
+
+.offer-card ul li {
+  color: #ffffff;
+}
+
+.offer-card h4 {
+  color: #ffffff;
+}
+
+.offer-card {
+  border-radius: 12px;
+  padding: 25px 20px;
+}
+
+.offer-price {
+  font-size: 1rem;
+}
+
+.offer-ecom {
+  background: #f5791f;
+  color: #ffffff;
+}
+
+.offer-tools {
+  background: #0b3c64;
+  color: #ffffff;
+}
+
+.offer-local {
+  background: #0f6c4f;
+  color: #ffffff;
+}
+
+.offer-card ul li,
+.offer-card h4 {
+  color: #ffffff;
+}
+
+.offer-card img.offer-thumb {
+  width: 100%;
+  height: 180px;
+  /* ajuste 160–220px selon le rendu */
+  -o-object-fit: cover;
+     object-fit: cover;
+  /* recadre proprement au lieu d’écraser l’image */
+  border-radius: 8px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+/* Empêche les images d'offres de déborder */
+.offer-card img.offer-thumb {
+  width: 100%;
+  max-width: 100%;
+  height: 190px;
+  /* ajuste 160–220px selon le rendu souhaité */
+  -o-object-fit: cover;
+     object-fit: cover;
+  /* recadre sans déformer */
+  display: block;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* Sécurité si d'autres images dans feature_item */
+.feature_item img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* End Brand Area css
@@ -27407,7 +27505,7 @@ h6 {
     margin-top: 0;
   }
   .home_right_img {
-    display: none;
+    display: block !important;
   }
   /* Footer Area css
   ============================================================================================ */

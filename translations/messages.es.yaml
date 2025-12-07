@@ -305,3 +305,35 @@ cookie:
     decline: "Rechazar todo"
     more: "Más info"
 
+offers:
+  title: "Nuestras ofertas clave"
+  intro: "Soluciones sencillas y eficaces para lanzar o modernizar tu presencia digital."
+
+  cta: "Solicitar un presupuesto"
+
+  ecom:
+    title: "E-commerce Esencial"
+    price: "Desde 900 €"
+    items:
+      1: "Tienda online sencilla, rápida y profesional"
+      2: "Pago seguro con Stripe integrado"
+      3: "Transportistas configurados"
+      4: "SEO y versión móvil optimizada"
+
+  tools:
+    title: "Herramientas y soluciones a medida"
+    price: "Desde 800 €"
+    items:
+      1: "Pequeños SaaS y mini CRM"
+      2: "Formularios avanzados y área de clientes"
+      3: "Automatizaciones sencillas (recordatorios, emails, etc.)"
+      4: "Funcionalidades adaptadas a tu actividad"
+
+  local:
+    title: "Visibilidad local"
+    price: "Desde 400 €"
+    items:
+      1: "Mini sitio web vitrina moderno"
+      2: "Ficha de Google Business creada u optimizada"
+      3: "Identidad visual básica"
+      4: "Plantillas gráficas listas para usar"

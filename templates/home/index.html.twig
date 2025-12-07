@@ -10,7 +10,7 @@
       <div class="row">
         <div class="col-lg-7">
           <div class="banner_content">
-            <h3 >{{ 'home.hero.salutation'|trans }}</h3>
+            <h3 class="hero-salutation">{{ 'home.hero.salutation'|trans }}</h3>
             <h2 >{{ 'home.hero.h1'|trans }}</h2>
             <h5 >{{ 'home.hero.subtitle'|trans }}</h5>
 
@@ -125,70 +125,88 @@
 </section>
 <!--================ End Brand/Trust Area =================-->
 
-<!--================ Start Features Area (packs) =================-->
-<section class="features_area">
+<!--================ Start Features Area (Nos offres) =================-->
+<section class="features_area section_gap" id="offers">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-8 text-center">
         <div class="main_title">
-          <h2>{{ 'home.packs.title'|trans }}</h2>
-          <p class="paragrapheBlack">{{ 'home.packs.intro'|trans }}</p>
+          <h2>{{ 'offers.title'|trans }}</h2>
+          <p class="paragrapheBlack">{{ 'offers.intro'|trans }}</p>
         </div>
       </div>
     </div>
+
     <div class="row feature_inner">
-      <!-- Pack 1 -->
-      <div class="col-lg-3 col-md-6">
-        <div class="feature_item">
-          <img src="{{ asset('build/images/img/services/s1m.png') }}" alt="">
-          <h4>{{ 'packs.local.title'|trans }}</h4>
-          <p class="mb-1">{{ 'packs.local.desc'|trans }}</p>
-          <p class="mb-2"><strong>{{ 'packs.local.price'|trans }}</strong> • {{ 'packs.local.delay'|trans }}</p>
-			<a class="primary_btn tr-bg" href="{{ path('app_quote', {'_locale': app.request.locale, 'pack': 'local'}) }}"><span>{{ 'packs.local.cta'|trans }}</span></a>
+      {# E-COMMERCE ESSENTIEL #}
+      <div class="col-lg-4 col-md-6">
+        <div class="feature_item offer-card offer-ecom">
+          <img src="{{ asset('build/images/img/services/Massgrafik packs3,statuswsp.png') }}"
+               alt="{{ 'offers.ecom.title'|trans }}" class="offer-thumb">
+          <h4>{{ 'offers.ecom.title'|trans }}</h4>
+          <p class="mb-1 offer-price">
+            <strong>{{ 'offers.ecom.price'|trans }}</strong>
+          </p>
+          <ul class="mb-3">
+            <li>{{ 'offers.ecom.items.1'|trans }}</li>
+            <li>{{ 'offers.ecom.items.2'|trans }}</li>
+            <li>{{ 'offers.ecom.items.3'|trans }}</li>
+            <li>{{ 'offers.ecom.items.4'|trans }}</li>
+          </ul>
+          <a class="primary_btn tr-bg"
+             href="{{ path('app_quote', {'_locale': app.request.locale, 'pack': 'ecommerce'}) }}">
+            <span>{{ 'offers.cta'|trans }}</span>
+          </a>
         </div>
       </div>
-      <!-- Pack 2 -->
-      <div class="col-lg-3 col-md-6">
-        <div class="feature_item">
-          <img src="{{ asset('build/images/img/services/s2.png') }}" alt="">
-          <h4>{{ 'packs.ecom.title'|trans }}</h4>
-          <p class="mb-1">{{ 'packs.ecom.desc'|trans }}</p>
-          <p class="mb-2"><strong>{{ 'packs.ecom.price'|trans }}</strong> • {{ 'packs.ecom.delay'|trans }}</p>
-			<a class="primary_btn tr-bg" href="{{ path('app_quote', {'_locale': app.request.locale, 'pack': 'local'}) }}"><span>{{ 'packs.local.cta'|trans }}</span></a>
+
+      {# OUTILS & SOLUTIONS SUR MESURE #}
+      <div class="col-lg-4 col-md-6">
+        <div class="feature_item offer-card offer-tools">
+          <img src="{{ asset('build/images/img/services/Massgrafik-packs3-wmnmslm.png') }}"
+               alt="{{ 'offers.tools.title'|trans }}" class="offer-thumb">
+          <h4>{{ 'offers.tools.title'|trans }}</h4>
+          <p class="mb-1 offer-price">
+            <strong>{{ 'offers.tools.price'|trans }}</strong>
+          </p>
+          <ul class="mb-3">
+            <li>{{ 'offers.tools.items.1'|trans }}</li>
+            <li>{{ 'offers.tools.items.2'|trans }}</li>
+            <li>{{ 'offers.tools.items.3'|trans }}</li>
+            <li>{{ 'offers.tools.items.4'|trans }}</li>
+          </ul>
+          <a class="primary_btn tr-bg"
+             href="{{ path('app_quote', {'_locale': app.request.locale, 'pack': 'tools'}) }}">
+            <span>{{ 'offers.cta'|trans }}</span>
+          </a>
         </div>
       </div>
-      <!-- Pack 3 -->
-      <div class="col-lg-3 col-md-6">
-        <div class="feature_item">
-          <img src="{{ asset('build/images/img/services/s3.png') }}" alt="">
-          <h4>{{ 'packs.com.title'|trans }}</h4>
-          <p class="mb-1">{{ 'packs.com.desc'|trans }}</p>
-          <p class="mb-2"><strong>{{ 'packs.com.price'|trans }}</strong> • {{ 'packs.com.delay'|trans }}</p>
-			<a class="primary_btn tr-bg" href="{{ path('app_quote', {'_locale': app.request.locale, 'pack': 'local'}) }}"><span>{{ 'packs.local.cta'|trans }}</span></a>
-        </div>
-      </div>
-      <!-- Pack 4 -->
-      <div class="col-lg-3 col-md-6">
-        <div class="feature_item">
-          <img src="{{ asset('build/images/img/services/s4.png') }}" alt="">
-          <h4>{{ 'packs.maint.title'|trans }}</h4>
-          <p class="mb-1">{{ 'packs.maint.desc'|trans }}</p>
-          <p class="mb-2"><strong>{{ 'packs.maint.price'|trans }}</strong></p>
-			<a class="primary_btn tr-bg" href="{{ path('app_quote', {'_locale': app.request.locale, 'pack': 'local'}) }}"><span>{{ 'packs.local.cta'|trans }}</span></a>
-        </div>
-      </div>
-      <!-- Pack 5 (va se mettre à la ligne suivante si besoin) -->
-      <div class="col-lg-3 col-md-6">
-        <div class="feature_item">
-          <img src="{{ asset('build/images/img/services/s5.png') }}" alt="">
-          <h4>{{ 'packs.social.title'|trans }}</h4>
-          <p class="mb-1">{{ 'packs.social.desc'|trans }}</p>
-          <p class="mb-2"><strong>{{ 'packs.social.price'|trans }}</strong></p>
-			<a class="primary_btn tr-bg" href="{{ path('app_quote', {'_locale': app.request.locale, 'pack': 'local'}) }}"><span>{{ 'packs.local.cta'|trans }}</span></a>
+
+      {# VISIBILITÉ LOCALE #}
+      <div class="col-lg-4 col-md-6">
+        <div class="feature_item offer-card offer-local">
+          <img src="{{ asset('build/images/img/services/Massgrafik-visibit-local-artisan-man.png') }}"
+               alt="{{ 'offers.local.title'|trans }}" class="offer-thumb">
+          <h4>{{ 'offers.local.title'|trans }}</h4>
+          <p class="mb-1 offer-price">
+            <strong>{{ 'offers.local.price'|trans }}</strong>
+          </p>
+          <ul class="mb-3">
+            <li>{{ 'offers.local.items.1'|trans }}</li>
+            <li>{{ 'offers.local.items.2'|trans }}</li>
+            <li>{{ 'offers.local.items.3'|trans }}</li>
+            <li>{{ 'offers.local.items.4'|trans }}</li>
+          </ul>
+          <a class="primary_btn tr-bg"
+             href="{{ path('app_quote', {'_locale': app.request.locale, 'pack': 'local'}) }}">
+            <span>{{ 'offers.cta'|trans }}</span>
+          </a>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!--================ End Features Area =================-->
+
+<!--================ End Features Area (Nos offres) =================-->
+
 {% endblock %}
