@@ -36,17 +36,17 @@
       </div>
 
       <!-- Colonne droite : formulaire -->
-      <div class="col-lg-9">
+      {# <div class="col-lg-9">
         <h2>{{ 'quote.form.titleFormContact'|trans }}</h2>
 
-        {# Messages flash #}
+        {# Messages flash 
         {% for type, messages in app.flashes %}
           {% for message in messages %}
             <div class="alert alert-{{ type }}">{{ message|raw }}</div>
           {% endfor %}
         {% endfor %}
 
-        {# Erreurs globales du formulaire #}
+        {# Erreurs globales du formulaire 
         {{ form_errors(form) }}
 
         {{ form_start(form, {
@@ -97,10 +97,10 @@
             </div>
           </div>
 
-          {# Champs techniques #}
+          {# Champs techniques 
           {{ form_widget(form.render_ts) }}
 
-          {# Honeypot HTML brut, invisible (pas via le Form) #}
+          {# Honeypot HTML brut, invisible (pas via le Form) 
           <input type="text"
                  name="{{ form.vars.name }}[{{ honeypot_name }}]"
                  value=""
@@ -109,7 +109,7 @@
                  aria-hidden="true"
                  style="position:absolute;left:-9999px;width:0;height:0;opacity:0;pointer-events:none" />
 
-          {# CSRF token explicit (important) #}
+          {# CSRF token explicit (important)
           {{ form_widget(form._token) }}
 
           <div class="col-md-12 text-right">
@@ -119,7 +119,7 @@
           </div>
 
         {{ form_end(form, { render_rest: false }) }}
-      </div>
+      </div> #}
     </div>
 
     {# Map placeholder (facultatif) #}
