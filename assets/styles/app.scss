@@ -675,6 +675,9 @@ button:focus {
     margin-bottom: var(--space-2);
     color: #3b4452;
 }
+.blog_area {
+    padding-top: 120px;
+}
 
 .banner_content h2 {
     font-size: clamp(1.9rem, 4.5vw, 3.2rem);

@@ -20,18 +20,24 @@
     </section> #}
     <!--================ End Banner Area =================-->
         
-    <!--================Blog Categorie Area =================-->
-    {% include 'posts/_categorie.html.twig'  %}  
-    <!--================Blog Categorie Area =================-->
     
     <!--================Blog Area =================-->
+                
     <section class="blog_area">
         <div class="container" id="posts-container">
+        <div class="mb-4">
+              <h1 class="mt-4">
+              Bienvenue sur notre blog Massgrafik</h1>
+                </div>
             <div class="row">
                 <div class="col-lg-8">{#col-lg-8 left sidebar  #}
                     <div class="blog_left_sidebar">
+                  
                      {% include 'posts/_pagination.html.twig' with { 'pagination': pagination } %}
                     </div>
+                     <!--================Blog Categorie Area =================-->
+                    {% include 'posts/_categorie.html.twig'  %}  
+                    <!--================Blog Categorie Area =================-->
                 </div>{#col-lg-8 left sidebar  #}
                 {% include 'posts/_sidebar.html.twig' %}
             </div>
