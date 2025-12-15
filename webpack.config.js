@@ -74,6 +74,12 @@ Encore
         config.corejs = '3.38';
     })
 
+    // ✅ évite EAGAIN (threads)
+      .configureTerserPlugin((options) => {
+        options.parallel = false; 
+        })
+    
+
     // enables Sass/SCSS support
     .enableSassLoader()
 
