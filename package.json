@@ -25,6 +25,7 @@
         "axios": "^1.7.8",
         "bootstrap": "^4.6.2",
         "choices.js": "^11.0.2",
+        "ckeditor4": "^4.13.0",
         "jquery": "^3.7.1",
         "jquery-nice-select": "^1.1.0",
         "linearicons": "^1.0.2",

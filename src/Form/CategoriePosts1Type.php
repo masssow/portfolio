@@ -4,7 +4,9 @@ namespace App\Form;
 
 use App\Entity\Posts;
 use App\Entity\CategoriePosts;
+use FOS\CKEditorBundle\Config\CKEditorConfigurationInterface;
 use Symfony\Component\Form\AbstractType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Vich\UploaderBundle\Form\Type\VichImageType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -15,8 +17,14 @@ class CategoriePosts1Type extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('name')
-            ->add('description')
+            ->add('name', CKEditorType::class, [
+            'config_name' => 'default',
+            'required' => false,
+            ])
+            ->add('description', CKEditorType::class, [
+            'config_name' => 'default',
+            'required' => false,
+            ])
             ->add('imageName')
             ->add('imageSize')
             ->add('updatedAt', null, [

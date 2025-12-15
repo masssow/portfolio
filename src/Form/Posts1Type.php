@@ -11,23 +11,33 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 
 class Posts1Type extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('title')
-            ->add('content')
-            ->add('paragraphe2', TextType::class,[
+            ->add('title', CKeditorType::class, [
+            'config_name' => 'default',
+            'required' => false,
+            ])
+            ->add('content', CKEditorType::class)
+            ->add('paragraphe2',CKEditorType::class,
+            [
+                'config_name' => 'default',
+                'required' => false,
                 'attr' => [
-                        'placeholder' => 'Paragraphe surligné'
+                    'placeholder' => 'Paragraphe surligné'
 
                 ]
-            ]
+            ],
                         
             )
-            ->add('paragraphe3')
+            ->add('paragraphe3', CKEditorType::class, [
+            'config_name' => 'default',
+            'required' => false,
+            ])
 
             ->add('createdAt', null, [
                 'widget' => 'single_text',
@@ -35,23 +45,23 @@ class Posts1Type extends AbstractType
             ->add('updatedAt', null, [
                 'widget' => 'single_text',
             ])
-            ->add('imageName',TextType::class, [
+            ->remove('imageName',TextType::class, [
             'attr' => [
                 'class' => 'img-fluid '
             ],
                 ])
-            ->add('imageTwoName', TextType::class, [
+            ->remove('imageTwoName', TextType::class, [
                 'attr' => [
                     'class' => 'img-fluid '
                 ],
             ])
-            ->add('imageThreeName', TextType::class, [
+            ->remove('imageThreeName', TextType::class, [
                 'attr' => [
                     'class' => 'img-fluid '
                 ],
             ])
             
-            ->add('imageSize')
+            ->remove('imageSize')
             ->add('categoriePosts', EntityType::class, [
                 'class' => CategoriePosts::class,
                 'choice_label' => 'name',
