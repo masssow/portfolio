@@ -76,7 +76,7 @@ Encore
 
     // ✅ évite EAGAIN (threads)
       .configureTerserPlugin((options) => {
-        options.parallel = false; 
+        options.parallel = 1;
         })
     
 

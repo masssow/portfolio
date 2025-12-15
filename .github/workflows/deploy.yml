@@ -30,7 +30,7 @@ jobs:
 
       - name: Deploy to Hostinger (code + assets)
         run: |
-          ssh -o StrictHostKeyChecking=no hostinger << 'EOF'
+          ssh -tt -o StrictHostKeyChecking=no hostinger << 'EOF'
             set -e
             cd /home/u791166429/domains/massgrafik.com/public_html
 
