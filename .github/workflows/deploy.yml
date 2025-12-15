@@ -2,19 +2,16 @@ name: Deploy to Production
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # Étape 1 : Récupérer le code source
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Étape 2 : Configurer la connexion SSH
       - name: Set up SSH connection
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
@@ -30,30 +27,21 @@ jobs:
             IdentityFile ~/.ssh/id_rsa
             StrictHostKeyChecking no
           EOF
-      # Étape 3 : Déployer le projet Symfony via SSH
-      - name: Deploy to Hostinger
+
+      - name: Deploy to Hostinger (code + assets)
         run: |
           ssh -o StrictHostKeyChecking=no hostinger << 'EOF'
+            set -e
             cd /home/u791166429/domains/massgrafik.com/public_html
+
             git pull origin main
-            composer install --no-dev --optimize-autoloader
+
+            composer install --no-dev --prefer-dist --no-interaction --optimize-autoloader
+
+            # ✅ build assets SUR LE SERVEUR
+            npm ci || npm install
+            npm run build
+
             php bin/console cache:clear --env=prod
             php bin/console doctrine:migrations:migrate --no-interaction --allow-no-migration --env=prod
           EOF
-
-       # Étape 3 : Mettre en cache les dépendances npm
-      - name: Cache npm dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      # Étape 4 : Installer les dépendances npm (si non en cache)
-      - name: Install dependencies
-        run: npm install
-
-      # Étape 5 : Compiler les assets avec Webpack Encore
-      - name: Build assets with Webpack Encore
-        run: npm run build
