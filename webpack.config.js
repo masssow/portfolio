@@ -73,14 +73,7 @@ Encore
         config.useBuiltIns = 'usage';
         config.corejs = '3.38';
     })
-
-    Encore.configureCssMinimizerPlugin((options) => {
-        options.parallel = false; // ✅ évite EAGAIN sur serveurs limités
-        })
-
-    Encore.configureTerserPlugin((options) => {
-    options.parallel = false;
-    })
+  
 
     // enables Sass/SCSS support
     .enableSassLoader()
