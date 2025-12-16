@@ -14,6 +14,7 @@ use Symfony\Component\Routing\Attribute\Route;
 #[Route('/admin/categorie')]
 final class AdminCategorieController extends AbstractController
 {
+    
     #[Route(name: 'app_admin_categorie_index', methods: ['GET'])]
     public function index(CategoriePostsRepository $categoriePostsRepository): Response
     {

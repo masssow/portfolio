@@ -18,7 +18,7 @@ home:
     salutation: "MassGrafik Web Agency"
     h1: "On vous trouve, on vous contacte, vous vendez"
     subtitle: "Sites clairs, boutiques simples et visibilité sur Google qui génère appels et messages. Pour artisans, commerces, associations et microentreprises — en Espagne et à l’international."
-    proofs: "✅ Devis en 24 h ✅ Prix transparents ✅ Mise en ligne rapide selon le pack"
+    proofs: "✅ Devis en 48 h ✅ Prix transparents ✅ Mise en ligne rapide selon le pack"
 
   why:
     title: "Pourquoi MassGrafik ?"
@@ -30,12 +30,12 @@ home:
       4: "Mesure et transfert : GA4/GTM, tableau de bord simple et propriété complète des accès et livrables."
 
   badge:
-    large: "24 h"
+    large: "48 h"
     small: "devis personnalisé"
 
   zones:
     title: "Zones"
-    list: "Dans toute l’Espagne et à l’international (100 % à distance et 100 % sécurisé)."
+    list: "Dans toute la Frace et à l’international (100 % à distance et 100 % sécurisé)."
 
   packs:
     title: "5 packs pour passer à l’action 🎯"
@@ -102,7 +102,7 @@ quote:
   form:
     titleContact: "Contact direct"
     titleFormContact: "Formulaire de contact"
-    country: "Espagne"
+    country: "France"
     modeCom: "100 % à distance possible"
     name: "Votre nom"
     company: "Entreprise (optionnel)"
