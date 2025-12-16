@@ -57,3 +57,9 @@ jobs:
       # Étape 5 : Compiler les assets avec Webpack Encore
       - name: Build assets with Webpack Encore
         run: npm run build
+
+      # Étape 6 : Transférer les assets compilés vers le serveur
+      - name: Upload built assets to Hostinger (SCP)
+        run: |
+          scp -r -P 65002 -o StrictHostKeyChecking=no public/build \
+            u791166429@178.16.128.226:/home/u791166429/domains/massgrafik.com/public_html/public/
