@@ -80,7 +80,7 @@ Encore
 
     Encore.configureTerserPlugin((options) => {
     options.parallel = false;
-    })
+    }) // ✅ évite EAGAIN sur serveurs limités
 
     // enables Sass/SCSS support
     .enableSassLoader()
