@@ -57,4 +57,3 @@ jobs:
       # Étape 5 : Compiler les assets avec Webpack Encore
       - name: Build assets with Webpack Encore
         run: npm run build
-      
