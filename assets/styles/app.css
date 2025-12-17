@@ -23440,6 +23440,47 @@ button:focus {
   margin-top: 50px;
 }
 
+/* ===== Header: réduire la hauteur + le logo ===== */
+.header_area .navbar {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+/* cas fréquent : logo en <img> dans .navbar-brand */
+.header_area .navbar-brand img {
+  max-height: 42px;
+  /* ajuste: 36–48px selon rendu */
+  width: auto;
+}
+
+/* mobile encore plus compact */
+@media (max-width: 991px) {
+  .header_area .navbar {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+  .header_area .navbar-brand img {
+    max-height: 34px;
+  }
+}
+/* ===== CTA STICKY MOBILE ===== */
+.mobile-sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 15px;
+  background: #fff;
+  box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.08);
+  z-index: 9999;
+}
+
+/* éviter que le sticky cache le contenu */
+@media (max-width: 991px) {
+  body {
+    padding-bottom: 80px;
+  }
+}
 /*---------------------------------------------------- */
 /*----------------------------------------------------*/
 .section_gap {
@@ -23472,6 +23513,13 @@ button:focus {
 @media (prefers-color-scheme: light) {
   .cookie-banner {
     background: #222;
+  }
+}
+@media (max-width: 991px) {
+  .home_banner_area {
+    height: auto;
+    min-height: unset;
+    padding-bottom: 60px;
   }
 }
 /* Cookie Banner css

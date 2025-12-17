@@ -1,35 +1,39 @@
-site.title: "MassGrafik Web Agency – Sitios, e-commerce y visibilidad"
-menu.home: "Inicio"
-menu.services: "Servicios"
-menu.blog: "Blog"
-menu.about: "Sobre nosotros"
-menu.contact: "Contacto"
+site:
+  title: "MassGrafik Web Agency — Web y visibilidad en Google para conseguir clientes"
+
+menu:
+  home: "Inicio"
+  services: "Servicios"
+  blog: "Blog"
+  about: "Sobre nosotros"
+  contact: "Contacto"
 title.fallow: "siguenos en "
 home:
   seo:
-    titleTab: "MassGrafik Web Agency – Sitios, e-commerce y visibilidad "
+    titleTab: "MassGrafik — Web y visibilidad en Google para autónomos y pymes"
+
   hero:
     salutation: "MassGrafik Web Agency"
-    h1: "Te encuentran, te contactan, vendes"
-    subtitle: "Sitios claros, tiendas sencillas y visibilidad en Google que genera llamadas y mensajes. Para artesanos, comercios, asociaciones y microempresas — en toda España y en el extranjero."
-    proofs: ✅ "Presupuesto en 24 h ✅ Precios transparentes ✅ Puesta en línea rapida según pack"
+    h1: "Tu web debe traerte clientes."
+    subtitle: "Web clara, tienda simple y visibilidad en Google que genera llamadas y mensajes — para autónomos, comercios, asociaciones y microempresas."
+    proofs: "✅ Auditoría express (30 min) • ✅ Respuesta en 48 h • ✅ Sin jerga • ✅ Sin compromiso"
 
   why:
     title: "¿Por qué MassGrafik?"
-    intro: "Método claro, entregables concretos y resultados medibles — sin complicarte con lo técnico."
+    intro: "Método claro, entregables concretos y resultados medibles — sin complicarte con la parte técnica."
     items:
-      1: "Auditoría exprés (30 min) y plan de acción priorizado: objetivos, páginas, ofertas y plazos."
-      2: "Diseño orientado a conversión: CTA visibles, Llamar/WhatsApp, formularios cortos y confianza (reseñas, garantías)."
-      3: "SEO pragmático: Google Business, estructura Hn, enlazado interno, contenidos útiles y Core Web Vitals."
-      4: "Medición y traspaso: GA4/GTM, panel sencillo y propiedad de accesos y entregables."
+      1: "Auditoría express (30 min) + plan priorizado: objetivos, páginas clave, oferta y próximos pasos."
+      2: "Diseño para convertir: CTA visibles, formularios cortos y elementos de confianza (reseñas, garantías, pruebas)."
+      3: "Visibilidad en Google práctica: Google Business Profile, estructura SEO limpia, contenido útil, rendimiento móvil."
+      4: "Medición y traspaso: GA4/GTM si hace falta, panel simple y propiedad total de accesos y entregables."
 
   badge:
-    large: "24 h"
-    small: "presupuesto personalizado"
+    large: "48 h"
+    small: "respuesta y presupuesto"
 
   zones:
     title: "Zonas"
-    list: "En toda España y a nivel internacional (100 % a distancia y 100% protejido)."
+    list: "Francia • España • Internacional (100 % remoto, seguro)."
 
   packs:
     title: "5 packs para pasar a la acción 🎯"

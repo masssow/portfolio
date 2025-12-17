@@ -1,11 +1,11 @@
 site:
-  title: "MassGrafik Web Agency – Sites, e-commerce et visibilité"
+  title: "MassGrafik Web Agency — Sites & visibilité Google qui génèrent des clients"
 
 menu:
   home: "Accueil"
   services: "Services"
   blog: "Blog"
-  about: "À propos de nous"
+  about: "À propos"
   contact: "Contact"
 
 title:
@@ -17,9 +17,22 @@ home:
   hero:
     salutation: "MassGrafik Web Agency"
     h1: "On vous trouve, on vous contacte, vous vendez"
-    subtitle: "Sites clairs, boutiques simples et visibilité sur Google qui génère appels et messages. Pour artisans, commerces, associations et microentreprises — en Espagne et à l’international."
+    subtitle: "Sites web & visibilité Google pour artisans et petites entreprises"
     proofs: "✅ Devis en 48 h ✅ Prix transparents ✅ Mise en ligne rapide selon le pack"
+  mirror:
+    title: "Vous vous reconnaissez ?"
+    subtitle: "Si oui, on peut améliorer ça rapidement."
+    items:
+      1: { title: "Votre site ne génère pas de demandes", text: "Vous avez des visites, mais peu d’appels, peu de messages." }
+      2: { title: "Google vous affiche, mais ça n’appelle pas", text: "Votre fiche n’est pas optimisée ou manque d’éléments de confiance." }
+      3: { title: "Votre offre n’est pas claire", text: "Le visiteur ne comprend pas quoi faire ni pourquoi vous choisir." }
+      4: { title: "Trop technique, pas assez utile", text: "Vous voulez du concret : un plan clair et des actions efficaces." }
 
+  cta_center:
+    title: "Avant de parler de budget, faisons le point."
+    subtitle: "30 minutes pour clarifier votre objectif, vos priorités et les actions utiles."
+    button: "Demander un audit gratuit"
+    proof: "Sans engagement · Conseils actionnables · Réponse sous 48 h"
   why:
     title: "Pourquoi MassGrafik ?"
     intro: "Méthode claire, livrables concrets et résultats mesurables — sans vous compliquer avec la technique."
@@ -137,7 +150,7 @@ contactPage:
 services2:
   intro:
     title: "Des services clairs, utiles et mesurables"
-    subtitle: "Nous concevons, mesurons, améliorons. Moins de jargon ; plus d’appels, de messages et de ventes."
+    subtitle: "Nous concevons, mesurons, améliorons. Moins de jargon plus d’appels, de messages et de ventes."
   cards:
     consulting:
       title: "Conseil et stratégie"
