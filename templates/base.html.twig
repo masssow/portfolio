@@ -18,35 +18,27 @@
 		<meta property="og:type" content="article"> #}
 
     </head>
+<body>
+
 	<div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" style="display:none">
-  		<div class="cookie-content">
+		<div class="cookie-content">
 			<p class="mb-2">
 				{{ 'cookie.banner.text'|trans }}
 				<a href="{{ path('app_legal_cookies', {'_locale': app.request.locale}) }}">{{ 'cookie.banner.more'|trans }}</a>
 			</p>
-    		<div class="cookie-actions">
-      			<button id="cookie-accept" class="primary_btn"><span>{{ 'cookie.banner.accept'|trans }}</span></button>
-      			<button id="cookie-decline" class="primary_btn tr-bg"><span>{{ 'cookie.banner.decline'|trans }}</span></button>
-    		</div>
-  		</div>
-	</div>
-
-	{# <div id="cookie-banner" class="cookie-banner" style="display:none">
-		<div class="container">
-			<p class="mb-2">{{ 'cookie.banner.text'|trans }} <a href="{{ path('app_legal_cookies', {'_locale': app.request.locale}) }}">{{ 'cookie.banner.more'|trans }}</a></p>
-			<div class="d-flex gap-2">
+			<div class="cookie-actions">
 				<button id="cookie-accept" class="primary_btn"><span>{{ 'cookie.banner.accept'|trans }}</span></button>
 				<button id="cookie-decline" class="primary_btn tr-bg"><span>{{ 'cookie.banner.decline'|trans }}</span></button>
 			</div>
 		</div>
-	</div> #}
+	</div>
+
 	<div class="mobile-sticky-cta d-lg-none">
-  <a href="{{ path('app_quote', {'_locale': app.request.locale}) }}"
-     class="primary_btn w-100 text-center">
-    {{ 'cta.devis'|trans }}
-  </a>
-</div>
-<body>
+		<a href="{{ path('app_quote', {'_locale': app.request.locale}) }}"
+		   class="primary_btn w-100 text-center">
+			{{ 'cta.devis'|trans }}
+		</a>
+	</div>
 
          <!--================ Start Header Area =================-->
 	<header class="header_area">
@@ -65,21 +57,11 @@
 					
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav justify-content-end">
-							<li class="nav-item active"><a class="nav-link" href="{{ path('app_home')}}">{{ 'menu.home'|trans }}</a></li>
-							<li class="nav-item"><a class="nav-link" href="{{ path ('app_services')}}">{{ 'menu.services'|trans }}</a></li>
-						
-							<li class="nav-item"><a class="nav-link" href="{{ path ('app_posts')}}">Blog</a></li>
-
-							{# <li class="nav-item submenu dropdown">
-								<a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								 aria-expanded="false">Blog</a>
-								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
-									{# <li class="nav-item"><a class="nav-link" href="portfolio-details.html">Portfolio Details</a></li> 
-								</ul>
-							</li> #}
-							
-							<li class="nav-item"><a class="nav-link" href="{{ path ('app_quote')}}">{{ 'menu.contact'|trans }}</a></li>
+							<li class="nav-item active"><a class="nav-link" href="{{ path('app_home', {'_locale': app.request.locale}) }}">{{ 'menu.home'|trans }}</a></li>
+							<li class="nav-item"><a class="nav-link" href="{{ path('app_services', {'_locale': app.request.locale}) }}">{{ 'menu.services'|trans }}</a></li>
+							<li class="nav-item"><a class="nav-link" href="{{ path('app_about', {'_locale': app.request.locale}) }}">{{ 'menu.about'|trans }}</a></li>
+							<li class="nav-item"><a class="nav-link" href="{{ path('app_posts') }}">Blog</a></li>
+							<li class="nav-item"><a class="nav-link" href="{{ path('app_quote', {'_locale': app.request.locale}) }}">{{ 'menu.contact'|trans }}</a></li>
 							<li class="nav-item"><a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'fr'})) }}" class="nav-link"><img src="{{ asset('images/france.png')}}" alt="" style="max-height: 15px; width: auto;" class="mx-1"></a> <a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'es'})) }}" class="nav-link"><img src="{{ asset('images/espagne.png')}}" alt="" style="max-height: 15px; width: auto;" class="mx-1"></a>
 							</li>
 						</ul>
@@ -98,8 +80,8 @@
 				<div class="col-lg-12">
 					<div class="footer_top flex-column">
 						<div class="footer_logo">
-							<a href="#">
-								<img src="img/logo.png" alt="">
+							<a href="{{ path('app_home', {'_locale': app.request.locale}) }}">
+								<img src="{{ asset('build/images/logo-trans-re.png') }}" alt="MassGrafik" style="max-height:60px;width:auto;">
 							</a>
 							<h4>{{ 'title.fallow'|trans }}</h4>
 						</div>

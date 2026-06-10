@@ -1,6 +1,6 @@
 site:
-  title: "MassGrafik Web Agency — Sites & visibilité Google qui génèrent des clients"
-
+  title: "MassGrafik — Studio web & outils digitaux"
+  subtitle: "Sites internet, e-commerce, outils de gestion et supports visuels, pensés pour les petites entreprises."
 menu:
   home: "Accueil"
   services: "Services"
@@ -8,16 +8,16 @@ menu:
   about: "À propos"
   contact: "Contact"
 
-title:
+title: 
   fallow: "suivez-nous sur "
 
 home:
   seo:
-    titleTab: "MassGrafik Web Agency – Sites, e-commerce et visibilité"
+    titleTab: "MassGrafik — Studio web, e-commerce et outils métiers"
   hero:
-    salutation: "MassGrafik Web Agency"
-    h1: "On vous trouve, on vous contacte, vous vendez"
-    subtitle: "Sites web & visibilité Google pour artisans et petites entreprises"
+    salutation: "MassGrafik Studio Web"
+    h1: "Studio web pour sites internet, e-commerce et outils métiers"
+    subtitle: "Conception de sites web, boutiques en ligne et outils de gestion pour artisans, commerçants et petites entreprises."
     proofs: "✅ Devis en 48 h ✅ Prix transparents ✅ Mise en ligne rapide selon le pack"
   mirror:
     title: "Vous vous reconnaissez ?"
@@ -54,39 +54,6 @@ home:
     title: "5 packs pour passer à l’action 🎯"
     intro: "Choisissez ce qui est prioritaire maintenant : être trouvé, vendre, structurer votre image, sécuriser votre site ou publier régulièrement."
 
-packs:
-  local:
-    title: "Visibilité — qu’on vous trouve"
-    desc: "Profil Google Business optimisé, SEO on-page clair, mini-site de 1 à 3 pages orienté conversion : Appeler, WhatsApp, Itinéraire."
-    price: ""
-    delay: ""
-    cta: "Je veux être visible"
-
-  ecom:
-    title: "E-commerce rapide"
-    desc: "Catalogue de 5 à 20 produits et variantes simples. Paiement par Stripe ou PayPal, taxes et frais configurés, emails transactionnels, livraisons et retours. Formation incluse."
-    price: ""
-    delay: ""
-    cta: "Lancer ma boutique"
-
-  com:
-    title: "Communication visuelle"
-    desc: "Logo vectoriel et micro-guide : couleurs, typographies et usages. Kit Canva avec 10 créations, templates de stories, guide de ton et de messages, exports web et impression."
-    price: ""
-    delay: ""
-    cta: "Améliorer mon image"
-
-  maint:
-    title: "Maintenance web"
-    desc: "Mises à jour du cœur, des thèmes et plugins, surveillance de disponibilité, petites corrections incluses. Restauration en cas d’incident et rapport mensuel : mises à jour, uptime, sécurité."
-    price: ""
-    cta: "Protéger mon site"
-
-  social:
-    title: "Réseaux sociaux"
-    desc: "Audit de comptes et ligne éditoriale. Calendrier de 4 semaines, 5 à 10 publications par mois, programmation et réponses basiques."
-    price: ""
-    cta: "Animer mes réseaux"
 
 cta:
   devis: "Demander un devis gratuit"
@@ -361,3 +328,60 @@ offers:
       2: "Fiche Google Business créée ou optimisée"
       3: "Identité visuelle de base"
       4: "Templates graphiques prêts à l’emploi"
+
+  poles:
+    web:
+      title: "Web & plateformes"
+      desc: "Sites vitrines, sites institutionnels et plateformes web professionnelles."
+    tools:
+      title: "Outils de gestion"
+      desc: "Devis, facturation, formulaires métier et suivi client."
+    design:
+      title: "Design & communication"
+      desc: "Logo, cartes de visite, flyers et supports imprimés."
+    support:
+      title: "Accompagnement"
+      desc: "Conseil, maintenance et évolutions continues."
+
+  commerce:
+    title: "MassGrafik Commerce"
+    desc: "Des boutiques en ligne simples, fiables et faciles à gérer."
+    items:
+      1: "Catalogue produits clair"
+      2: "Paiement sécurisé"
+      3: "Gestion des commandes"
+      4: "Optimisé mobile"
+    cta: "Créer ma boutique"
+
+
+packs:
+  local:
+    title: "Site vitrine"
+    desc: "Création d’un site vitrine professionnel pour présenter votre activité et vos services."
+    cta: "Créer mon site"
+
+  ecom:
+    title: "Boutique en ligne"
+    desc: "Mise en place d’une boutique e-commerce simple avec paiement sécurisé et gestion des commandes."
+    cta: "Créer ma boutique"
+
+  com:
+    title: "Identité & communication"
+    desc: "Création ou refonte de votre identité visuelle et supports de communication."
+    cta: "Améliorer mon image"
+
+  maint:
+    title: "Maintenance web"
+    desc: "Maintenance technique, mises à jour et suivi pour assurer la stabilité et la sécurité de votre site."
+    cta: "Assurer la maintenance"
+
+  social:
+    title: "Communication digitale"
+    desc: "Accompagnement à la communication sur les réseaux sociaux et présence en ligne."
+    cta: "Développer ma communication"
+
+# cta:
+#   devis: "Demander un devis"
+#   packs: "Voir les packs"
+#   talk: "Parlons de votre projet"
+

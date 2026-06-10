@@ -7,59 +7,52 @@
 <section class="home_banner_area">
   <div class="banner_inner">
     <div class="container">
-      <div class="row">
+      <div class="row align-items-center">
         <div class="col-lg-7">
           <div class="banner_content">
             <h3 class="hero-salutation">{{ 'home.hero.salutation'|trans }}</h3>
-            <h2 >{{ 'home.hero.h1'|trans }}</h2>
-            <h5 >{{ 'home.hero.subtitle'|trans }}</h5>
+            <h2>{{ 'home.hero.h1'|trans }}</h2>
+            <h5>{{ 'home.hero.subtitle'|trans }}</h5>
 
-            <div class="d-flex align-items-center">
-            <a class="primary_btn" href="{{ path('app_quote', {'_locale': app.request.locale}) }}">
+            <a class="primary_btn mt-3"
+               href="{{ path('app_quote', {'_locale': app.request.locale}) }}">
               <span>{{ 'cta.devis'|trans }}</span>
             </a>
-            {# <a class="primary_btn tr-bg" href="{{ path ('app_services')}}"><span>{{ 'cta.packs'|trans }}</span></a> #}
-            </div>
+
             <p class="mt-3 mb-0">{{ 'home.hero.proofs'|trans }}</p>
           </div>
         </div>
-        <div class="col-lg-5">
-          <div class="home_right_img">
-            <img class="" src="{{ asset('build/images/pexels-tranmau.jpg') }}" alt="MassGrafik Web Agency">
-          </div>
-        </div>
       </div>
     </div>
   </div>
 </section>
+
+
+
 <!--============ End Home Banner Area =================-->
 
 <!--================ Start About/Why Area =================-->
+
 <section class="about_area section_gap">
   <div class="container">
     <div class="row justify-content-start align-items-center">
-      <div class="col-lg-5 mb-4 mb-lg-0">
-        <div class="about_img">
-          <img class="" src="{{ asset('build/images/pexels-fauxels.jpg') }}" alt="">
-        </div>
-      </div>
-
-      <div class="offset-lg-1 col-lg-6">
+      <div class="col-lg-6">
         <div class="main_title text-left">
-          <h2>{{ 'home.why.title'|trans }}</h2>
-          <p class="mb-3">{{ 'home.why.intro'|trans }}</p>
-          <ul class="mb-3">
-            <li><strong>{{ 'home.why.items.1'|trans }}</strong></li>
-            <li><strong>{{ 'home.why.items.2'|trans }}</strong></li>
-            <li><strong>{{ 'home.why.items.3'|trans }}</strong></li>
-            <li><strong>{{ 'home.why.items.4'|trans }}</strong></li>
+          <h2>Pourquoi MassGrafik ?</h2>
+          <p>Méthode claire, livrables concrets et résultats mesurables.</p>
+
+          <ul>
+            <li>Audit express (30 min)</li>
+            <li>Plan d’action priorisé</li>
+            <li>Design orienté conversion</li>
+            <li>Sites rapides, mobiles et évolutifs</li>
           </ul>
-          <a class="primary_btn" href="{{ path ('app_quote')}}"><span>{{ 'cta.talk'|trans }}</span></a>
         </div>
       </div>
     </div>
   </div>
 </section>
+
 <!--================ End About/Why Area =================-->
 
 <!--================ Start Brand/Trust Area =================-->
@@ -125,87 +118,77 @@
 <!--================ End Brand/Trust Area =================-->
 
 <!--================ Start Features Area (Nos offres) =================-->
-<section class="features_area section_gap" id="offers">
+
+<section class="about_area section_gap">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <img class="img-fluid"
+             src="{{ asset('build/images/massgrafik-commerce-composite.png') }}"
+             alt="MassGrafik Commerce">
+      </div>
+
+      <div class="col-lg-5 offset-lg-1">
+        <div class="main_title text-left">
+          <h2>{{ 'home.commerce.title'|trans }}</h2>
+          <p>{{ 'home.commerce.desc'|trans }}</p>
+
+          <ul>
+            <li>{{ 'home.commerce.items.1'|trans }}</li>
+            <li>{{ 'home.commerce.items.2'|trans }}</li>
+            <li>{{ 'home.commerce.items.3'|trans }}</li>
+            <li>{{ 'home.commerce.items.4'|trans }}</li>
+          </ul>
+
+          <a class="primary_btn mt-3"
+             href="{{ path('app_quote', {'_locale': app.request.locale, 'pack': 'ecom'}) }}">
+            <span>{{ 'home.commerce.cta'|trans }}</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!--================ End Features Area (Nos offres) =================-->
+<section class="features_area section_gap" id="packs">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-8 text-center">
         <div class="main_title">
-          <h2>{{ 'offers.title'|trans }}</h2>
-          <p class="paragrapheBlack">{{ 'offers.intro'|trans }}</p>
+          <h2>{{ 'home.packs.title'|trans }}</h2>
+          <p>{{ 'home.packs.intro'|trans }}</p>
         </div>
       </div>
     </div>
 
     <div class="row feature_inner">
-      {# E-COMMERCE ESSENTIEL #}
-      <div class="col-lg-4 col-md-6">
-        <div class="feature_item offer-card offer-ecom">
-          <img src="{{ asset('build/images/img/services/service2.png') }}"
-               alt="{{ 'offers.ecom.title'|trans }}" class="offer-thumb">
-          <h4>{{ 'offers.ecom.title'|trans }}</h4>
-          <p class="mb-1 offer-price">
-            <strong>{{ 'offers.ecom.price'|trans }}</strong>
-          </p>
-          <ul class="mb-3">
-            <li>{{ 'offers.ecom.items.1'|trans }}</li>
-            <li>{{ 'offers.ecom.items.2'|trans }}</li>
-            <li>{{ 'offers.ecom.items.3'|trans }}</li>
-            <li>{{ 'offers.ecom.items.4'|trans }}</li>
-          </ul>
-          <a class="primary_btn tr-bg"
-             href="{{ path('app_quote', {'_locale': app.request.locale, 'pack': 'ecommerce'}) }}">
-            <span>{{ 'offers.cta'|trans }}</span>
-          </a>
+      {% for key in ['local','ecom','com','maint','social'] %}
+        <div class="col-lg-4 col-md-6">
+          <div class="feature_item">
+            <h4>{{ ('packs.' ~ key ~ '.title')|trans }}</h4>
+            <p>{{ ('packs.' ~ key ~ '.desc')|trans }}</p>
+            <a class="primary_btn tr-bg"
+               href="{{ path('app_quote', {'_locale': app.request.locale, 'pack': key}) }}">
+              <span>{{ ('packs.' ~ key ~ '.cta')|trans }}</span>
+            </a>
+          </div>
         </div>
-      </div>
-
-      {# OUTILS & SOLUTIONS SUR MESURE #}
-      <div class="col-lg-4 col-md-6">
-        <div class="feature_item offer-card offer-tools">
-          <img src="{{ asset('build/images/img/services/service1.png') }}"
-               alt="{{ 'offers.tools.title'|trans }}" class="offer-thumb">
-          <h4>{{ 'offers.tools.title'|trans }}</h4>
-          <p class="mb-1 offer-price">
-            <strong>{{ 'offers.tools.price'|trans }}</strong>
-          </p>
-          <ul class="mb-3">
-            <li>{{ 'offers.tools.items.1'|trans }}</li>
-            <li>{{ 'offers.tools.items.2'|trans }}</li>
-            <li>{{ 'offers.tools.items.3'|trans }}</li>
-            <li>{{ 'offers.tools.items.4'|trans }}</li>
-          </ul>
-          <a class="primary_btn tr-bg"
-             href="{{ path('app_quote', {'_locale': app.request.locale, 'pack': 'tools'}) }}">
-            <span>{{ 'offers.cta'|trans }}</span>
-          </a>
-        </div>
-      </div>
-
-      {# VISIBILITÉ LOCALE #}
-      <div class="col-lg-4 col-md-6">
-        <div class="feature_item offer-card offer-local">
-          <img src="{{ asset('build/images/img/services/service3.png') }}"
-               alt="{{ 'offers.local.title'|trans }}" class="offer-thumb">
-          <h4>{{ 'offers.local.title'|trans }}</h4>
-          <p class="mb-1 offer-price">
-            <strong>{{ 'offers.local.price'|trans }}</strong>
-          </p>
-          <ul class="mb-3">
-            <li>{{ 'offers.local.items.1'|trans }}</li>
-            <li>{{ 'offers.local.items.2'|trans }}</li>
-            <li>{{ 'offers.local.items.3'|trans }}</li>
-            <li>{{ 'offers.local.items.4'|trans }}</li>
-          </ul>
-          <a class="primary_btn tr-bg"
-             href="{{ path('app_quote', {'_locale': app.request.locale, 'pack': 'local'}) }}">
-            <span>{{ 'offers.cta'|trans }}</span>
-          </a>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </section>
 
-<!--================ End Features Area (Nos offres) =================-->
+<section class="section_gap text-center">
+  <a class="primary_btn"
+     href="{{ path('app_quote', {'_locale': app.request.locale}) }}">
+    <span>{{ 'cta.talk'|trans }}</span>
+  </a>
+</section>
+
 
 {% endblock %}

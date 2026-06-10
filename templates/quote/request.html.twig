@@ -9,7 +9,14 @@
   <div class="container">
     <h1>{{ 'quote.seo.firstTitle'|trans }}</h1>
 
+    {% for type, messages in app.flashes %}
+      {% for message in messages %}
+        <div class="alert alert-{{ type == 'success' ? 'success' : 'warning' }} mb-3">{{ message|raw }}</div>
+      {% endfor %}
+    {% endfor %}
+
     <div class="row">
+
       <!-- Colonne gauche : infos contact -->
       <div class="col-lg-3">
         <div class="contact_info">
@@ -34,86 +41,11 @@
           </div>
         </div>
       </div>
-{# ... tes 3 info_item #}
-
-    <section class="features_area section_gap_top mt-4">
-      <div class="container p-0">
-
-        <div class="row justify-content-center">
-          <div class="col-12 text-center">
-            <div class="main_title">
-              <h2 class="mb-2">{{ 'services2.intro.title'|trans }}</h2>
-              <p class="mb-0">{{ 'services2.intro.subtitle'|trans }}</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="row feature_inner">
-          {% macro card(key, icon, img) %}
-            {% set id = 'svc-' ~ key %}
-            <div class="col-12 mb-3" id="{{ id }}">
-              <div class="feature_item service-card">
-                {% if img %}
-                  <img src="{{ asset(img) }}" alt="" class="mb-2 img-fluid">
-                {% endif %}
-
-                <div class="d-flex align-items-start justify-content-between">
-                  <div>
-                    <h4 class="mb-1">{{ ('services2.cards.' ~ key ~ '.title')|trans }}</h4>
-                    <p class="mb-2 text-muted">{{ ('services2.cards.' ~ key ~ '.teaser')|trans }}</p>
-                  </div>
-
-                  <button class="btn btn-link p-0 service-toggle"
-                          data-toggle="collapse"
-                          data-target="#{{ id }}-collapse"
-                          aria-expanded="false"
-                          aria-controls="{{ id }}-collapse"
-                          aria-label="{{ 'services2.toggle'|trans }}">
-                    <i class="fa-solid fa-chevron-down"></i>
-                  </button>
-                </div>
-
-                <div id="{{ id }}-collapse" class="collapse mt-2">
-                  <ul class="mb-3">
-                    {% for i in 1..8 %}
-                      {% set itemKey = 'services2.cards.' ~ key ~ '.items.' ~ i %}
-                      {% if (itemKey|trans) != itemKey %}
-                        <li>{{ itemKey|trans }}</li>
-                      {% endif %}
-                    {% endfor %}
-                  </ul>
-
-                  <a class="primary_btn tr-bg"
-                    href="{{ path('app_quote', {'_locale': app.request.locale, 'service': key}) }}">
-                    <span>{{ 'cta.devis'|trans }}</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          {% endmacro %}
-          {% import _self as ui %}
-
-          {{ ui.card('consulting',   'fa-lightbulb', 'build/images/img/services/s1m.png') }}
-          {{ ui.card('identity',     'fa-palette',   'build/images/img/services/s2.png') }}
-          {{ ui.card('platforms',    'fa-window-maximize', 'build/images/img/services/s3.png') }}
-          {{ ui.card('commerce',     'fa-cart-shopping',   'build/images/img/services/s4.png') }}
-        </div>
-
-      </div>
-    </section>
 
       <!-- Colonne droite : formulaire -->
-      {# <div class="col-lg-9">
+      <div class="col-lg-9">
         <h2>{{ 'quote.form.titleFormContact'|trans }}</h2>
 
-        {# Messages flash 
-        {% for type, messages in app.flashes %}
-          {% for message in messages %}
-            <div class="alert alert-{{ type }}">{{ message|raw }}</div>
-          {% endfor %}
-        {% endfor %}
-
-        {# Erreurs globales du formulaire 
         {{ form_errors(form) }}
 
         {{ form_start(form, {
@@ -121,23 +53,23 @@
           method: 'POST',
           attr: {
             class: 'row contact_form',
-            id: 'contactForm',             
+            id: 'quoteForm'
           }
         }) }}
 
           <div class="col-md-6">
             <div class="form-group">
-              {{ form_widget(form.name,    { attr: { class: 'form-control', placeholder: 'quote.form.name'|trans } }) }}
+              {{ form_widget(form.name, { attr: { class: 'form-control', placeholder: 'quote.form.name'|trans } }) }}
               {{ form_errors(form.name) }}
             </div>
 
             <div class="form-group">
-              {{ form_widget(form.email,   { attr: { class: 'form-control', placeholder: 'quote.form.email'|trans } }) }}
+              {{ form_widget(form.email, { attr: { class: 'form-control', placeholder: 'quote.form.email'|trans } }) }}
               {{ form_errors(form.email) }}
             </div>
 
             <div class="form-group">
-              {{ form_widget(form.phone,   { attr: { class: 'form-control', placeholder: 'quote.form.phone'|trans } }) }}
+              {{ form_widget(form.phone, { attr: { class: 'form-control', placeholder: 'quote.form.phone'|trans } }) }}
               {{ form_errors(form.phone) }}
             </div>
 
@@ -149,7 +81,7 @@
 
           <div class="col-md-6">
             <div class="form-group">
-              {{ form_widget(form.pack,   { attr: { class: 'form-control' } }) }}
+              {{ form_widget(form.pack, { attr: { class: 'form-control' } }) }}
               {{ form_errors(form.pack) }}
             </div>
 
@@ -164,10 +96,9 @@
             </div>
           </div>
 
-          {# Champs techniques 
           {{ form_widget(form.render_ts) }}
 
-          {# Honeypot HTML brut, invisible (pas via le Form) 
+          {# Honeypot HTML brut, invisible #}
           <input type="text"
                  name="{{ form.vars.name }}[{{ honeypot_name }}]"
                  value=""
@@ -176,7 +107,6 @@
                  aria-hidden="true"
                  style="position:absolute;left:-9999px;width:0;height:0;opacity:0;pointer-events:none" />
 
-          {# CSRF token explicit (important)
           {{ form_widget(form._token) }}
 
           <div class="col-md-12 text-right">
@@ -186,10 +116,10 @@
           </div>
 
         {{ form_end(form, { render_rest: false }) }}
-      </div> #}
+      </div>
+
     </div>
 
-    {# Map placeholder (facultatif) #}
     <div id="mapBox" class="mapBox"
          data-lat="48.8566"
          data-lon="2.3522"
@@ -200,25 +130,4 @@
     </div>
   </div>
 </section>
-
-{# Neutraliser le JS Colorlib qui intercepte #contactForm (si mail-script.js est chargé) #}
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  var f = document.getElementById('contactForm');
-  if (!f) return;
-
-  // Désactive les handlers jQuery qui ciblent #contactForm (souvent dans mail-script.js)
-  if (window.jQuery && typeof jQuery === 'function') {
-    try {
-      jQuery('#contactForm').off('submit');
-      jQuery(document).off('submit', '#contactForm');
-    } catch(e) {}
-  }
-
-  // Empêche tout autre handler en capture de bloquer la soumission native
-  f.addEventListener('submit', function (ev) {
-    ev.stopImmediatePropagation();
-  }, true);
-});
-</script>
 {% endblock %}
