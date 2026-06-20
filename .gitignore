@@ -11,6 +11,7 @@
 /src/DataFixtures/
 /public/uploads/
 /DataFixtures/
+/docs/
 ###< symfony/framework-bundle ###
 
 ###> phpunit/phpunit ###
