@@ -553,7 +553,11 @@ $accent-blue-bg:   #EEF4FB; $accent-blue-fg:   #2F5F8A;
     background-image: none !important;
     background-attachment: unset !important;
 }
-.home_banner_area .banner_inner { padding: 110px 0 90px; }
+.home_banner_area .banner_inner {
+    padding: 110px 0 90px;
+    @media (max-width: 991px) { padding: 60px 0 40px; }
+    @media (max-width: 575px) { padding: 40px 0 30px; }
+}
 .home_banner_area .banner_content h2 { color: #1e2d3e; }
 .home_banner_area .banner_content h5 { color: #4a6280; }
 

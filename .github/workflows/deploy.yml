@@ -35,17 +35,7 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no hostinger << 'EOF'
             cd /home/u791166429/domains/massgrafik.com/public_html
-            echo "=== Git status ==="
-            git status
-            echo "=== Git remote ==="
-            git remote -v
-            echo "=== Git branch ==="
-            git branch
-            echo "=== Git stash ==="
-            git stash
-            echo "=== Git pull ==="
             git pull origin main
-            echo "=== Pull done ==="
             composer install --no-dev --optimize-autoloader
             php bin/console cache:clear --env=prod
             php bin/console doctrine:migrations:migrate --no-interaction --allow-no-migration --env=prod
