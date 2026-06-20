@@ -1,0 +1,291 @@
+// =============================================================================
+// MassGrafik — Offer Cards
+// Fichier : assets/styles/components/_offer_cards.scss
+// Note    : la grille est gérée par Bootstrap (col-lg-4 col-md-6)
+//           ce fichier ne gère que le style des cartes elles-mêmes
+// =============================================================================
+
+// --- Variables (surchargeables avant l'import) --------------------------------
+
+// =============================================================================
+// MassGrafik — Offer Cards
+$mg-font-sans:          inherit !default;   // hérite de Bootstrap/projet
+$mg-radius-card:        14px !default;
+$mg-radius-badge:       99px !default;
+$mg-radius-btn:         8px !default;
+$mg-transition:         0.18s ease !default;
+
+$mg-color-text-primary:   #1a1a18 !default;
+$mg-color-text-secondary: #5a5a56 !default;
+$mg-color-text-tertiary:  #8a8a85 !default;
+$mg-color-border:         rgba(0, 0, 0, 0.10) !default;
+$mg-color-border-strong:  rgba(0, 0, 0, 0.22) !default;
+$mg-color-bg:             #ffffff !default;
+$mg-color-bg-surface:     #f7f6f2 !default;
+$mg-color-check:          #1D9E75 !default;
+$mg-featured-accent:      #534AB7 !default;
+
+// =============================================================================
+// Section wrapper
+// (section_gap est déjà défini dans ton projet, on n'y touche pas)
+// =============================================================================
+
+.mg-offers {
+  // Rien ici — section_gap + container viennent de Bootstrap/ton thème
+}
+
+// Assure l'alignement vertical des cartes dans la row Bootstrap
+.mg-offers__grid {
+  align-items: stretch; // les cartes de la même ligne ont la même hauteur
+
+  > [class*="col-"] {
+    display: flex;
+    margin-bottom: 24px;
+  }
+}
+
+// =============================================================================
+// Carte
+// =============================================================================
+
+.mg-offer-card {
+  background:    $mg-color-bg;
+  border:        0.5px solid $mg-color-border;
+  border-radius: $mg-radius-card;
+  padding:       24px;
+  display:       flex;
+  flex-direction: column;
+  gap:           20px;
+  width:         100%;               // prend toute la largeur de sa col-
+  transition:    box-shadow $mg-transition, transform $mg-transition;
+  position:      relative;
+
+  &:hover {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    transform:  translateY(-2px);
+  }
+
+  // Carte mise en avant
+  &--featured {
+    border-color: $mg-color-border-strong;
+    box-shadow:   0 4px 20px rgba(0, 0, 0, 0.07);
+
+    &::before {
+      content:       '';
+      position:      absolute;
+      inset:         0;
+      border-radius: $mg-radius-card;
+      border:        1.5px solid $mg-featured-accent;
+      pointer-events: none;
+    }
+  }
+}
+
+// =============================================================================
+// Top
+// =============================================================================
+
+.mg-offer-card__top {
+  display:        flex;
+  flex-direction: column;
+  gap:            8px;
+}
+
+// Badge
+.mg-offer-card__badge {
+  display:       inline-block;
+  font-size:     10px;
+  font-weight:   500;
+  letter-spacing: 0.04em;
+  padding:       3px 10px;
+  border-radius: $mg-radius-badge;
+  align-self:    flex-start;
+
+  &--teal   { background: #E1F5EE; color: #0F6E56; }
+  &--purple { background: #EEEDFE; color: #3C3489; }
+  &--coral  { background: #FAECE7; color: #993C1D; }
+}
+
+// Nom
+.mg-offer-card__name {
+  font-size:   16px;
+  font-weight: 500;
+  margin:      0;
+  color:       $mg-color-text-primary;
+}
+
+// Description
+.mg-offer-card__desc {
+  font-size:   13px;
+  color:       $mg-color-text-secondary;
+  line-height: 1.55;
+  margin:      0;
+}
+
+// =============================================================================
+// Prix
+// =============================================================================
+
+.mg-offer-card__pricing {
+  display:        flex;
+  flex-direction: column;
+  gap:            4px;
+}
+
+.mg-offer-card__price {
+  font-size:   28px;
+  font-weight: 500;
+  color:       $mg-color-text-primary;
+  line-height: 1;
+
+  span {
+    font-size:   13px;
+    font-weight: 400;
+    color:       $mg-color-text-secondary;
+  }
+}
+
+.mg-offer-card__market {
+  font-size: 11px;
+  color:     $mg-color-text-tertiary;
+
+  s {
+    color:           $mg-color-text-tertiary;
+    text-decoration: line-through;
+  }
+}
+
+// =============================================================================
+// Liste inclus
+// =============================================================================
+
+.mg-offer-card__includes {
+  list-style: none;
+  margin:     0;
+  padding:    0;
+  display:    flex;
+  flex-direction: column;
+  gap:        6px;
+  flex:       1; // pousse le footer vers le bas
+}
+
+.mg-offer-card__includes-item {
+  display:     flex;
+  gap:         8px;
+  align-items: flex-start;
+  font-size:   13px;
+  color:       $mg-color-text-secondary;
+  line-height: 1.5;
+}
+
+.mg-offer-card__check {
+  color:       $mg-color-check;
+  font-weight: 500;
+  flex-shrink: 0;
+  line-height: 1.5;
+}
+
+// =============================================================================
+// CTA
+// =============================================================================
+
+.mg-offer-card__footer {
+  padding-top: 4px;
+}
+
+.mg-offer-card__cta {
+  display:         block;
+  width:           100%;
+  text-align:      center;
+  padding:         11px 16px;
+  border-radius:   $mg-radius-btn;
+  font-size:       13px;
+  font-weight:     500;
+  text-decoration: none;
+  border:          1px solid $mg-color-border-strong;
+  color:           $mg-color-text-primary;
+  background:      transparent;
+  transition:      background $mg-transition, color $mg-transition, border-color $mg-transition;
+  cursor:          pointer;
+
+  &:hover {
+    background: $mg-color-bg-surface;
+    color:      $mg-color-text-primary;
+    text-decoration: none;
+  }
+
+  // Featured — bouton plein
+  &--featured {
+    background:   $mg-featured-accent;
+    border-color: $mg-featured-accent;
+    color:        #ffffff;
+
+    &:hover {
+      background:   darken($mg-featured-accent, 8%);
+      border-color: darken($mg-featured-accent, 8%);
+      color:        #ffffff;
+    }
+  }
+}
+
+// =============================================================================
+// Dark mode
+// =============================================================================
+
+@media (prefers-color-scheme: dark) {
+  .mg-offer-card {
+    background:   #1e1e1c;
+    border-color: rgba(255, 255, 255, 0.10);
+
+    &--featured::before { border-color: #AFA9EC; }
+
+    &:hover { box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35); }
+  }
+
+  .mg-offer-card__name          { color: #e8e6de; }
+  .mg-offer-card__desc          { color: #9a9890; }
+  .mg-offer-card__price         { color: #e8e6de; }
+  .mg-offer-card__price span,
+  .mg-offer-card__market        { color: #6a6a65; }
+  .mg-offer-card__includes-item { color: #9a9890; }
+  .mg-offer-card__market s      { color: #6a6a65; }
+
+  .mg-offer-card__cta {
+    border-color: rgba(255, 255, 255, 0.18);
+    color:        #e8e6de;
+
+    &:hover { background: rgba(255, 255, 255, 0.06); }
+
+    &--featured {
+      background:   #AFA9EC;
+      border-color: #AFA9EC;
+      color:        #26215C;
+
+      &:hover {
+        background:   #CEC8F6;
+        border-color: #CEC8F6;
+      }
+    }
+  }
+
+  .mg-offer-card__badge {
+    &--teal   { background: #085041; color: #9FE1CB; }
+    &--purple { background: #26215C; color: #CEC8F6; }
+    &--coral  { background: #4A1B0C; color: #F0997B; }
+  }
+}
+
+// =============================================================================
+// Reduced motion
+// =============================================================================
+
+@media (prefers-reduced-motion: reduce) {
+  .mg-offer-card,
+  .mg-offer-card__cta {
+    transition: none;
+  }
+
+  .mg-offer-card:hover {
+    transform: none;
+  }
+}

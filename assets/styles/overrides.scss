@@ -1,0 +1,852 @@
+// =======================================================================
+//  OVERRIDES REFONTE MASSGRAFIK
+// =======================================================================
+@import "scss/offer_cards";
+
+
+$blue:    #6192be;
+$gold:    #eabd6f;
+$dark:    #dfdfdf;
+$text:    #555;
+$light-bg:#f5f8fc;
+
+// ----- Espacements verticaux ------------------------------------------
+.section_gap        { padding: 70px 0; }
+.section_gap_top    { padding-top: 70px; }
+.section_gap_bottom { padding-bottom: 70px; }
+
+@media (max-width: 1199px) {
+    .section_gap        { padding: 52px 0; }
+    .section_gap_top    { padding-top: 52px; }
+    .section_gap_bottom { padding-bottom: 52px; }
+}
+@media (max-width: 767px) {
+    .section_gap        { padding: 36px 0; }
+    .section_gap_top    { padding-top: 36px; }
+    .section_gap_bottom { padding-bottom: 36px; }
+}
+
+// ----- Titres de section -----------------------------------------------
+.main_title { margin-bottom: 40px; }
+@media (max-width: 1199px) { .main_title { margin-bottom: 28px; } }
+
+.main_title h2 {
+    font-size: 1.85rem;
+    font-weight: 700;
+    color: $dark;
+    position: relative;
+    padding-bottom: 18px;
+    margin-bottom: 8px;
+}
+.main_title h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 44px;
+    height: 3px;
+    background: $gold;
+    border-radius: 2px;
+}
+.main_title.text-left h2::after { left: 0; transform: none; }
+.main_title p {
+    font-size: .95rem;
+    color: #777;
+    margin-top: 14px;
+    margin-bottom: 0;
+    line-height: 1.7;
+}
+
+// ----- Feature items (cards) ------------------------------------------
+.feature_item {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 32px 26px;
+    height: 100%;
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.feature_item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 36px rgba(97, 146, 190, .13);
+    border-color: #bad2e9;
+}
+.feature_item h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: .5rem;
+    color: $dark;
+}
+.feature_item p { font-size: .9rem; color: $text; line-height: 1.7; }
+
+// ----- Gutters entre cartes -------------------------------------------
+.feature_inner { margin-bottom: -22px; }
+.feature_inner > [class*="col-"] { margin-bottom: 22px; }
+
+// ----- Pack cards (Nos offres) ----------------------------------------
+.pack-card {
+    border-top: 3px solid $blue;
+    display: flex;
+    flex-direction: column;
+}
+.pack-card .pack-cta { margin-top: auto; padding-top: 1rem; }
+
+.pack-icon {
+    width: 54px;
+    height: 54px;
+    background: linear-gradient(135deg, #eef4fb 0%, #d8e9f6 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    color: $blue;
+}
+
+// ----- Section méthode (numéros) --------------------------------------
+.method-num {
+    display: block;
+    font-size: 4rem;
+    font-weight: 800;
+    font-family: "Rubik", sans-serif;
+    color: transparent;
+    -webkit-text-stroke: 2px $blue;
+    line-height: 1;
+    margin-bottom: .5rem;
+    opacity: .2;
+}
+
+// ----- Header position -----------------------------------------------
+.header_area {
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+// ----- Header logo ----------------------------------------------------
+.header_area .navbar-brand img {
+    max-height: 44px;
+    width: auto;
+    transition: opacity .2s;
+}
+.header_area .navbar-brand img:hover { opacity: .85; }
+
+// ----- Lien actif nav -------------------------------------------------
+.header_area .navbar .nav .nav-item.active .nav-link { color: $blue; }
+
+// ----- Sélecteur de langue (drapeaux) ---------------------------------
+.nav-lang { display: flex; align-items: center; gap: 2px; }
+.nav-lang .nav-link { padding: 0 4px !important; line-height: 100px; }
+.flag-icon {
+    height: 18px !important;
+    width: auto !important;
+    max-width: 26px !important;
+    vertical-align: middle !important;
+    border-radius: 2px;
+    display: inline-block !important;
+}
+
+@media (max-width: 991px) {
+    .nav-lang .nav-link { line-height: 36px !important; }
+
+    // Header mobile compact
+    .navbar-toggler {
+        margin-top: 13px !important;
+        margin-bottom: 13px !important;
+    }
+    .header_area .navbar-brand {
+        padding-top: 9px;
+        padding-bottom: 9px;
+    }
+    .header_area .navbar-brand img { max-height: 34px !important; }
+    .header_area + section,
+    .header_area + row,
+    .header_area + div { margin-top: 64px !important; }
+}
+
+// ----- Navbar sticky --------------------------------------------------
+.header_area.navbar_fixed .main_menu {
+    box-shadow: 0 2px 18px rgba(0, 0, 0, .09);
+}
+.header_area.navbar_fixed .main_menu .navbar .nav .nav-item .nav-link {
+    line-height: 60px;
+}
+
+// ----- Scroll to top --------------------------------------------------
+#scroll-top {
+    position: fixed;
+    bottom: 28px;
+    right: 22px;
+    width: 40px;
+    height: 40px;
+    background: $blue;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s ease, transform .3s ease;
+    z-index: 999;
+    box-shadow: 0 4px 14px rgba(97, 146, 190, .4);
+}
+#scroll-top.visible { opacity: 1; pointer-events: auto; }
+#scroll-top:hover { background: #4a7aaa; transform: translateY(-2px); color: #fff; }
+
+// ----- Footer ---------------------------------------------------------
+.footer_area { padding: 0; background: #1e2d3e; }
+.footer_area::before { display: none; }
+.footer_top_row { border-bottom: 1px solid rgba(255, 255, 255, .08); }
+.footer-tagline { font-size: .85rem; color: rgba(255, 255, 255, .52); line-height: 1.65; max-width: 280px; }
+.footer-col-title {
+    font-size: .7rem;
+    text-transform: uppercase;
+    letter-spacing: .13em;
+    color: rgba(255, 255, 255, .35);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+.footer-links { list-style: none; padding: 0; margin: 0; }
+.footer-links li { margin-bottom: .45rem; }
+.footer-links a { font-size: .87rem; color: rgba(255, 255, 255, .6); transition: color .2s; }
+.footer-links a:hover { color: $gold; }
+.footer_social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border: 1px solid rgba(255, 255, 255, .18);
+    border-radius: 50%;
+    color: rgba(255, 255, 255, .6);
+    font-size: 13px;
+    margin-right: 6px;
+    transition: background .2s, border-color .2s, color .2s;
+}
+.footer_social a:hover { background: $blue; border-color: $blue; color: #fff; }
+.footer-zone { font-size: .78rem; color: rgba(255, 255, 255, .35); line-height: 1.55; }
+.footer_bottom { padding: 18px 0; }
+.footer-copy { font-size: .78rem; color: rgba(255, 255, 255, .28); margin: 0; }
+.footer-copy a { color: rgba(255, 255, 255, .28); }
+.footer-copy a:hover { color: $gold; }
+.footer-colorlib { font-size: .7rem; opacity: .55; }
+
+@media (max-width: 991px) {
+    .footer_top_row { padding-top: 2.25rem !important; padding-bottom: .75rem !important; }
+}
+
+// ----- Section de fond clair ------------------------------------------
+.bg-light-section { background: $light-bg; }
+
+// ----- CTA final sombre -----------------------------------------------
+.cta-final-section {
+    padding: 64px 0;
+    background: linear-gradient(135deg, #1e2d3e 0%, #252547 100%);
+    text-align: center;
+    color: #fff;
+
+    p { color: rgba(255,255,255,.80); }
+
+    .primary_btn.tr-bg {
+        border-color: rgba(255,255,255,.70);
+        color: #fff !important;
+        span { color: #fff; }
+        &:hover {
+            background: rgba(255,255,255,.15);
+            border-color: #fff;
+        }
+    }
+}
+.cta-final-section .main_title h2 { color: #fff; }
+.cta-final-section .main_title p  { color: rgba(255,255,255,.80); }
+.cta-final-section .main_title h2::after { background: $gold; }
+
+// ----- Client info block ----------------------------------------------
+.client-info {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 28px 24px;
+}
+.client-info .call-now { align-items: center; }
+.client-info .call-now .fa-phone { color: $blue; font-size: 1.4rem; }
+.client-info .call-now h3 { font-size: 1.25rem; font-weight: 700; color: $dark; margin: 0; }
+.client-info .call-now p { font-size: .8rem; color: #888; margin: 0; text-transform: uppercase; letter-spacing: .06em; }
+.client-info hr { border-color: #e8ecf0; }
+.client-info p { font-size: .88rem; color: #666; }
+
+// =======================================================================
+//  PLACEHOLDERS IMAGES
+// =======================================================================
+
+// Conteneur générique
+.img-ph {
+    position: relative;
+    background: linear-gradient(135deg, #eef4fb 0%, #dbe9f6 100%);
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 2;
+        border-radius: 14px;
+    }
+
+    &__fallback {
+        text-align: center;
+        color: $blue;
+        padding: 2rem 1.5rem;
+        z-index: 1;
+        pointer-events: none;
+        font-size: .8rem;
+        line-height: 1.6;
+
+        i { opacity: .55; margin-bottom: .5rem; display: block; }
+        small { color: #a0b4c8; font-size: .7rem; }
+    }
+}
+
+// Variantes dimensionnelles
+.img-ph--hero    { aspect-ratio: 6/5; border-radius: 18px; }
+.img-ph--method  { aspect-ratio: 5/6; border-radius: 18px; }
+.img-ph--portrait {
+    aspect-ratio: 5/6;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    max-width: 200px;
+    margin: 0 auto;
+}
+.img-ph--about   { aspect-ratio: 4/3; border-radius: 14px; }
+.img-ph--forwho  { aspect-ratio: 5/6; border-radius: 14px; }
+
+// =======================================================================
+//  PACK CARD AVEC IMAGE
+// =======================================================================
+.pack-card {
+    padding: 0;
+    overflow: hidden;
+}
+
+.pack-card-img {
+    position: relative;
+    height: 150px;
+    background: linear-gradient(135deg, #ddeaf8 0%, #c5d9f0 100%);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 2;
+    }
+
+    &__fallback {
+        text-align: center;
+        color: $blue;
+        font-size: .75rem;
+        z-index: 1;
+        pointer-events: none;
+        padding: 0 1rem;
+        line-height: 1.6;
+
+        i { font-size: 1.6rem; opacity: .45; display: block; margin-bottom: .35rem; }
+        small { color: #a0b4c8; }
+    }
+}
+
+.pack-card-body {
+    padding: 24px 22px;
+}
+.pack-card .pack-cta { margin-top: auto; padding-top: 1rem; }
+
+// =======================================================================
+//  MIRROR CARDS (numéro + texte)
+// =======================================================================
+.feature_item--mirror { position: relative; padding-left: 70px; }
+
+.mirror-num {
+    position: absolute;
+    top: 28px;
+    left: 20px;
+    font-size: 2.2rem;
+    font-weight: 800;
+    font-family: "Rubik", sans-serif;
+    color: transparent;
+    -webkit-text-stroke: 1.5px $blue;
+    opacity: .2;
+    line-height: 1;
+}
+
+// =======================================================================
+//  MÉTHODE STEPS (layout split)
+// =======================================================================
+.method-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e8ecf0;
+
+    &:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+    .method-num {
+        flex-shrink: 0;
+        font-size: 2.5rem;
+        font-weight: 800;
+        font-family: "Rubik", sans-serif;
+        color: transparent;
+        -webkit-text-stroke: 1.5px $blue;
+        opacity: .3;
+        line-height: 1;
+        min-width: 60px;
+        margin-bottom: 0;
+        display: block;
+    }
+
+    h4 {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: $dark;
+        margin-bottom: .35rem;
+    }
+
+    p { font-size: .9rem; color: $text; line-height: 1.7; margin: 0; }
+}
+
+// =======================================================================
+//  POUR QUI — liste à coches
+// =======================================================================
+.forwho-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1.5rem;
+
+    li {
+        padding: .55rem 0;
+        border-bottom: 1px solid #edf1f5;
+        font-size: .95rem;
+        color: #444;
+        display: flex;
+        align-items: baseline;
+        gap: .5rem;
+    }
+
+    li:last-child { border-bottom: none; }
+
+    i { color: $blue; flex-shrink: 0; }
+}
+
+// =======================================================================
+//  HERO — petites retouches
+// =======================================================================
+.hero-proofs {
+    font-size: .83rem;
+    color: rgba(255, 255, 255, .65);
+    letter-spacing: .01em;
+}
+
+@media (max-width: 991px) {
+    .feature_item--mirror { padding-left: 52px; }
+    .mirror-num { font-size: 1.8rem; left: 14px; }
+}
+
+// =======================================================================
+//  COULEURS ACCENT — inspirées offer cards
+// =======================================================================
+
+$accent-teal-bg:   #E1F5EE; $accent-teal-fg:   #0F6E56;
+$accent-purple-bg: #EEEDFE; $accent-purple-fg: #534AB7;
+$accent-coral-bg:  #FAECE7; $accent-coral-fg:  #C0522A;
+$accent-gold-bg:   #FEF7E0; $accent-gold-fg:   #8B6914;
+$accent-green-bg:  #E8F5E9; $accent-green-fg:  #2E7D32;
+$accent-blue-bg:   #EEF4FB; $accent-blue-fg:   #2F5F8A;
+
+// ----- Pack icons colorés -------------------------------------------------
+.pack-icon--teal   { background: $accent-teal-bg;   color: $accent-teal-fg;   }
+.pack-icon--purple { background: $accent-purple-bg; color: $accent-purple-fg; }
+.pack-icon--coral  { background: $accent-coral-bg;  color: $accent-coral-fg;  }
+.pack-icon--gold   { background: $accent-gold-bg;   color: $accent-gold-fg;   }
+.pack-icon--green  { background: $accent-green-bg;  color: $accent-green-fg;  }
+.pack-icon--blue   { background: $accent-blue-bg;   color: $accent-blue-fg;   }
+
+// ----- Feature items — bordure top colorée --------------------------------
+.feature_item--teal   { border-top: 3px solid $accent-teal-fg;   }
+.feature_item--purple { border-top: 3px solid $accent-purple-fg; }
+.feature_item--coral  { border-top: 3px solid $accent-coral-fg;  }
+.feature_item--gold   { border-top: 3px solid $accent-gold-fg;   }
+.feature_item--green  { border-top: 3px solid $accent-green-fg;  }
+.feature_item--blue   { border-top: 3px solid $accent-blue-fg;   }
+
+// Hover : couleur de bordure matching l'accent
+.feature_item--teal:hover   { border-color: $accent-teal-fg;   box-shadow: 0 14px 36px rgba(15, 110, 86, .10); }
+.feature_item--purple:hover { border-color: $accent-purple-fg; box-shadow: 0 14px 36px rgba(83, 74, 183, .10); }
+.feature_item--coral:hover  { border-color: $accent-coral-fg;  box-shadow: 0 14px 36px rgba(192, 82, 42, .10); }
+.feature_item--gold:hover   { border-color: $accent-gold-fg;   box-shadow: 0 14px 36px rgba(139, 105, 20, .10); }
+.feature_item--green:hover  { border-color: $accent-green-fg;  box-shadow: 0 14px 36px rgba(46, 125, 50, .10); }
+.feature_item--blue:hover   { border-color: $accent-blue-fg;   box-shadow: 0 14px 36px rgba(47, 95, 138, .10); }
+
+// =======================================================================
+//  SERVICE CARDS — accent gauche coloré
+// =======================================================================
+.service-card {
+    border-left: 3px solid transparent;
+    padding-left: 22px !important;
+
+    h4 { font-size: .98rem; font-weight: 700; color: #1e2d3e; }
+
+    .text-muted {
+        font-size: .87rem;
+        font-style: italic;
+        color: #5a6a7a !important;
+    }
+
+    ul { padding-left: 1.2rem; }
+    ul li { font-size: .88rem; color: #555; margin-bottom: .3rem; }
+
+    .service-toggle {
+        color: $blue;
+        transition: transform .25s ease;
+        &[aria-expanded="true"] i { transform: rotate(180deg); }
+    }
+}
+
+// Couleurs par position (ordre fixe des 6 familles)
+.feature_inner > .col-lg-6:nth-child(1) .service-card { border-left-color: $accent-teal-fg; }
+.feature_inner > .col-lg-6:nth-child(1) .service-card .fa-solid { color: $accent-teal-fg !important; }
+
+.feature_inner > .col-lg-6:nth-child(2) .service-card { border-left-color: $accent-purple-fg; }
+.feature_inner > .col-lg-6:nth-child(2) .service-card .fa-solid { color: $accent-purple-fg !important; }
+
+.feature_inner > .col-lg-6:nth-child(3) .service-card { border-left-color: $accent-coral-fg; }
+.feature_inner > .col-lg-6:nth-child(3) .service-card .fa-solid { color: $accent-coral-fg !important; }
+
+.feature_inner > .col-lg-6:nth-child(4) .service-card { border-left-color: $accent-gold-fg; }
+.feature_inner > .col-lg-6:nth-child(4) .service-card .fa-solid { color: $accent-gold-fg !important; }
+
+.feature_inner > .col-lg-6:nth-child(5) .service-card { border-left-color: $accent-green-fg; }
+.feature_inner > .col-lg-6:nth-child(5) .service-card .fa-solid { color: $accent-green-fg !important; }
+
+.feature_inner > .col-lg-6:nth-child(6) .service-card { border-left-color: $accent-blue-fg; }
+.feature_inner > .col-lg-6:nth-child(6) .service-card .fa-solid { color: $accent-blue-fg !important; }
+
+// =======================================================================
+//  HERO — gradient et ambiance
+// =======================================================================
+.home_banner_area {
+    background: linear-gradient(135deg, #edf3fb 0%, #f6f9fd 60%, #fff 100%) !important;
+    background-image: none !important;
+    background-attachment: unset !important;
+}
+.home_banner_area .banner_inner { padding: 110px 0 90px; }
+.home_banner_area .banner_content h2 { color: #1e2d3e; }
+.home_banner_area .banner_content h5 { color: #4a6280; }
+
+// Banners pages internes
+.banner_area {
+    background: linear-gradient(135deg, #eef4fb 0%, #f5f9fd 100%) !important;
+}
+.banner_area .banner_inner .banner_content h2 { color: #1e2d3e !important; }
+.banner_area .banner_inner .page_link a { color: $blue !important; }
+
+// =======================================================================
+//  TYPOGRAPHIE — hiérarchie renforcée
+// =======================================================================
+.main_title h2 { color: #1e2d3e; font-size: 2rem; }
+
+.feature_item h4 { color: #1e2d3e; font-size: 1rem; font-weight: 700; text-transform: none; }
+.feature_item p  { color: #4a5568; font-size: .9rem; }
+
+// Corps de texte général
+p { color: #4a5568; }
+
+.method-step h4 { color: #1e2d3e; }
+.method-step p  { color: #4a5568; }
+
+.client-info .call-now h3 { color: #1e2d3e !important; }
+
+// =======================================================================
+//  BOUTONS — 2 variantes standardisées
+// =======================================================================
+.primary_btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    background: $blue;
+    color: #fff !important;
+    border: 2px solid $blue;
+    border-radius: 8px;
+    font-size: .9rem;
+    font-weight: 600;
+    transition: background .2s ease, border-color .2s ease, transform .15s ease;
+    text-decoration: none;
+
+    span { color: inherit; }
+
+    &:hover {
+        background: darken(#6192be, 10%);
+        border-color: darken(#6192be, 10%);
+        transform: translateY(-1px);
+        color: #fff !important;
+    }
+}
+
+.primary_btn.tr-bg {
+    background: transparent;
+    color: $blue !important;
+    border-color: $blue;
+
+    span { color: $blue; }
+
+    &:hover {
+        background: $blue;
+        color: #fff !important;
+        span { color: #fff; }
+    }
+}
+
+// =======================================================================
+//  FEATURE ITEM CLIQUABLE (lien)
+// =======================================================================
+a.feature_item--link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+
+    &:hover { color: inherit; text-decoration: none; }
+}
+
+// =======================================================================
+//  DETAIL SERVICE — liste inclus
+// =======================================================================
+.lead-teaser {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #1e2d3e;
+    margin-bottom: .5rem;
+}
+
+.svc-includes {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.svc-includes__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: .93rem;
+    color: #4a5568;
+    line-height: 1.55;
+}
+
+.svc-includes__check {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .72rem;
+    font-weight: 700;
+    margin-top: 1px;
+}
+
+.svc-check--teal   { background: $accent-teal-bg;   color: $accent-teal-fg;   }
+.svc-check--purple { background: $accent-purple-bg; color: $accent-purple-fg; }
+.svc-check--coral  { background: $accent-coral-bg;  color: $accent-coral-fg;  }
+.svc-check--gold   { background: $accent-gold-bg;   color: $accent-gold-fg;   }
+.svc-check--green  { background: $accent-green-bg;  color: $accent-green-fg;  }
+.svc-check--blue   { background: $accent-blue-bg;   color: $accent-blue-fg;   }
+
+// CTA featured (violet offer cards) — classe optionnelle
+.primary_btn--featured {
+    background: #534AB7;
+    border-color: #534AB7;
+    color: #fff !important;
+    &:hover { background: darken(#534AB7, 8%); border-color: darken(#534AB7, 8%); }
+}
+
+// =======================================================================
+//  PAGE TARIFS
+// =======================================================================
+
+// Eyebrow label au-dessus des titres de section
+.main_title__eyebrow {
+    display: inline-block;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: $blue;
+    margin-bottom: 8px;
+}
+
+// Tableau comparatif
+.tarifs-compare-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(0,0,0,.07);
+    background: #fff;
+
+    thead tr:first-child th {
+        padding: 20px 16px 8px;
+        font-size: .8rem;
+        border-bottom: none;
+        background: #fff;
+    }
+
+    &__price-row td {
+        padding: 4px 16px 16px;
+        background: #fff;
+        border-bottom: 2px solid #eef4fb;
+        font-size: 1rem;
+    }
+
+    tbody tr {
+        &:nth-child(even) { background: #f8fafd; }
+        td {
+            padding: 12px 16px;
+            font-size: .9rem;
+            color: #444;
+            border-top: 1px solid #eef4fb;
+            vertical-align: middle;
+            &:first-child { font-weight: 500; color: #1e2d3e; }
+        }
+    }
+
+    &__featured {
+        background: lighten(#EEEDFE, 3%) !important;
+        font-weight: 600;
+        color: #534AB7 !important;
+    }
+}
+
+// FAQ accordéon
+.tarifs-faq {
+    &__item {
+        border-bottom: 1px solid #eef4fb;
+        &:first-child { border-top: 1px solid #eef4fb; }
+    }
+
+    &__question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 18px 0;
+        background: none;
+        border: none;
+        text-align: left;
+        font-size: 1rem;
+        font-weight: 500;
+        color: #1e2d3e;
+        cursor: pointer;
+        gap: 12px;
+
+        &[aria-expanded="true"] .tarifs-faq__icon {
+            transform: rotate(180deg);
+        }
+    }
+
+    &__icon {
+        flex-shrink: 0;
+        color: $blue;
+        transition: transform .2s ease;
+    }
+
+    &__answer {
+        padding: 0 0 18px;
+        color: #555;
+        font-size: .95rem;
+        line-height: 1.7;
+    }
+}
+
+// =======================================================================
+//  PAGE SERVICES — grille cartes (mg-service-card)
+// =======================================================================
+.mg-service-grid { align-items: stretch; }
+
+.mg-service-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 24px;
+    border-radius: 14px;
+    border: 0.5px solid rgba(0,0,0,.10);
+    background: #fff;
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow .18s ease, transform .18s ease;
+
+    &:hover {
+        box-shadow: 0 8px 32px rgba(0,0,0,.08);
+        transform: translateY(-2px);
+        text-decoration: none;
+        color: inherit;
+    }
+
+    &__badge {
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 500;
+        margin-bottom: 14px;
+        width: fit-content;
+    }
+
+    &__title {
+        font-size: 1.05rem;
+        font-weight: 500;
+        color: #1e2d3e;
+        margin-bottom: 10px;
+    }
+
+    &__desc {
+        font-size: 13px;
+        color: #5a5a56;
+        flex: 1;
+        margin-bottom: 16px;
+        line-height: 1.6;
+    }
+
+    &__cta {
+        font-size: 13px;
+        font-weight: 500;
+        border: 1px solid currentColor;
+        border-radius: 8px;
+        padding: 7px 14px;
+        width: fit-content;
+        transition: background .15s ease;
+    }
+
+    // Variantes couleur — bordure gauche + badge teinté
+    &--teal   { border-left: 3px solid $accent-teal-fg;   .mg-service-card__badge { background: $accent-teal-bg;   color: $accent-teal-fg;   } .mg-service-card__cta { color: $accent-teal-fg;   } }
+    &--purple { border-left: 3px solid $accent-purple-fg; .mg-service-card__badge { background: $accent-purple-bg; color: $accent-purple-fg; } .mg-service-card__cta { color: $accent-purple-fg; } }
+    &--coral  { border-left: 3px solid $accent-coral-fg;  .mg-service-card__badge { background: $accent-coral-bg;  color: $accent-coral-fg;  } .mg-service-card__cta { color: $accent-coral-fg;  } }
+    &--gold   { border-left: 3px solid $accent-gold-fg;   .mg-service-card__badge { background: $accent-gold-bg;   color: $accent-gold-fg;   } .mg-service-card__cta { color: $accent-gold-fg;   } }
+    &--green  { border-left: 3px solid $accent-green-fg;  .mg-service-card__badge { background: $accent-green-bg;  color: $accent-green-fg;  } .mg-service-card__cta { color: $accent-green-fg;  } }
+    &--blue   { border-left: 3px solid $accent-blue-fg;   .mg-service-card__badge { background: $accent-blue-bg;   color: $accent-blue-fg;   } .mg-service-card__cta { color: $accent-blue-fg;   } }
+}

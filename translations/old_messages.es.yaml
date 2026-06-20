@@ -86,8 +86,8 @@ home:
     small: "plazo de respuesta"
 
   zones:
-    title: "Zonas de intervención:"
-    list: "París / Île-de-France · España · Senegal — 100 % en remoto posible."
+    title: "Zonas de intervención"
+    list: "Francia, España e internacional — 100 % en remoto, 100 % seguro."
 
   packs:
     title: "Nuestras ofertas"
@@ -215,19 +215,6 @@ about:
       5: "Estructuras con equipos de campo"
       6: "Emprendedores que quieren estructurar su presencia digital"
 
-  zones:
-    title: "Dónde intervenimos"
-    subtitle: "MassGrafik está basado en París e interviene a distancia en tres zonas principales."
-    paris:
-      title: "París & Île-de-France"
-      desc: "Con sede en París, MassGrafik acompaña prioritariamente a autónomos, comerciantes, micropymes y asociaciones de Île-de-France. Las reuniones presenciales son posibles bajo solicitud. La mayoría de los proyectos se desarrollan íntegramente a distancia, sin pérdida de calidad ni de seguimiento."
-    spain:
-      title: "España"
-      desc: "MassGrafik acompaña a emprendedores, comerciantes y pequeñas estructuras establecidas en España — en particular en las comunidades de África Occidental presentes en Madrid, Barcelona y Valencia. Todas las intervenciones son a distancia, en francés, español o wolof según la necesidad."
-    senegal:
-      title: "Senegal"
-      desc: "Una estructura SUARL está en proceso de formalización en Senegal, con el objetivo de acompañar a las pymes locales y responder a licitaciones públicas (ARMP). Mientras tanto, MassGrafik ya puede intervenir en proyectos senegaleses impulsados desde la diáspora o localmente."
-
   cta:
     title: "¿Tienes un proyecto en mente?"
     subtitle: "Describe tu necesidad en pocas palabras. Te respondemos en 48 h con una primera orientación."
@@ -306,39 +293,6 @@ services2:
         4: "Hoja de ruta progresiva: etapas, prioridades y plazos claros."
         5: "Formación sencilla sobre las herramientas entregadas."
         6: "Mantenimiento y evoluciones continuas según tus necesidades."
-    booking:
-      title: "Reservas y formularios online"
-      teaser: "Tus clientes reservan, tú gestionas."
-      intro: "Permite que tus clientes reserven una cita o rellenen un formulario estructurado — sin intercambio de mensajes ni pérdida de tiempo."
-      items:
-        1: "Formulario de reserva de cita integrado en tu web."
-        2: "Elección de franjas horarias y confirmación automática por e-mail."
-        3: "Recordatorios automáticos antes de la cita."
-        4: "Gestión de cancelaciones y cambios desde un panel admin sencillo."
-        5: "Sincronización con tu agenda (Google Calendar o equivalente)."
-        6: "Resumen diario/semanal de reservas enviado automáticamente."
-    content_seo:
-      title: "Contenidos, SEO y visibilidad"
-      teaser: "Que tus clientes te encuentren antes que a tu competencia."
-      intro: "Una buena web también debe ser visible. Optimizamos tu presencia en buscadores y te ayudamos a producir contenido que atrae, informa y convierte."
-      items:
-        1: "Auditoría SEO técnica de tu web existente."
-        2: "Optimización de etiquetas, URLs y estructura de página."
-        3: "Ficha de Google Business creada u optimizada."
-        4: "Redacción de páginas o artículos orientados a palabras clave locales."
-        5: "Estrategia de contenido adaptada a tu sector y público."
-        6: "Seguimiento de posiciones y recomendaciones de mejora."
-    operations:
-      title: "Seguimiento y mantenimiento continuo"
-      teaser: "Tu web siempre activa, actualizada y con buen rendimiento."
-      intro: "Una vez entregada tu solución, nos encargamos del seguimiento técnico, las actualizaciones y las pequeñas mejoras. Tú gestionas tu actividad — nosotros el resto."
-      items:
-        1: "Actualizaciones regulares de componentes y seguridad."
-        2: "Copias de seguridad automáticas y restauración rápida."
-        3: "Monitorización de disponibilidad y rendimiento."
-        4: "Correcciones rápidas ante cualquier fallo."
-        5: "Pequeñas mejoras y ajustes de contenido incluidos."
-        6: "Informe mensual de seguimiento enviado por e-mail."
 
 # ===================================================================
 # PÁGINA PRECIOS
@@ -466,20 +420,20 @@ legal:
     title: "Aviso legal"
     editor:
       title: "Editor del sitio"
-      name: "Samba SOW, operando bajo la marca MassGrafik"
-      legal: "Estatus: autónomo (microempresa, Francia)"
-      id: "N.º SIRET: [A COMPLETAR]"
-      address: "Dirección: 132 boulevard Jean Mermoz, 93380 Saint-Denis, Francia"
+      name: "[[Tu nombre o razón social]]"
+      legal: "Estatus: autónomo / microempresa"
+      id: "NIF/CIF: [[tu número]]"
+      address: "Dirección: [[tu dirección]]"
     dirpub:
       title: "Director de publicación"
-      value: "Samba SOW"
+      value: "[[Nombre, cargo]]"
     host:
       title: "Alojamiento"
-      name: "Hostinger International Ltd"
-      address: "61 Lordou Vironos Street, 6023 Lárnaca, Chipre — hostinger.com"
+      name: "[[Nombre del hosting]]"
+      address: "[[Dirección del hosting]]"
     contact:
       title: "Contacto"
-      value: "E-mail: contact.massgrafik@gmail.com — Tel.: (+33) 6 66 11 74 28"
+      value: "E-mail: contact@massgrafik.com — Tel.: (+33) 6 66 11 74 28"
     ipr:
       title: "Propiedad intelectual"
       value: "Los contenidos (textos, imágenes, logotipos) están protegidos. Cualquier reproducción no autorizada está prohibida."
@@ -490,82 +444,48 @@ legal:
     title: "Política de privacidad"
     controller:
       title: "Responsable del tratamiento"
-      value: "Samba SOW — MassGrafik, 132 boulevard Jean Mermoz, 93380 Saint-Denis, Francia. Contacto: contact.massgrafik@gmail.com"
-    commitment:
-      title: "Nuestro compromiso"
-      value: "La información que nos transmites solo se utiliza para tramitar tu solicitud de presupuesto y realizar la prestación acordada. No se utiliza con fines de prospección comercial, no se revende y no se transmite a terceros con fines comerciales. Cualquier acción posterior (seguimiento del proyecto, envío de documentos, facturación) se realiza con tu acuerdo explícito."
+      value: "[[Tu nombre / empresa]], contacto: contact@massgrafik.com"
     purposes:
-      title: "Datos recogidos y finalidades"
-      1: "Nombre, apellidos, e-mail, teléfono, empresa — para responder a tu solicitud y contactarte."
-      2: "Descripción de tu proyecto (campo mensaje) — para preparar una propuesta adaptada."
-      3: "Dirección IP y User-Agent — únicamente con fines de seguridad (antispam, protección del formulario)."
-      4: "Cookies de sesión — necesarias para el funcionamiento técnico del sitio (navegación, seguridad de formularios)."
-      5: "Cookies analíticas (solo con tu consentimiento) — para medir la audiencia y mejorar el sitio."
+      title: "Finalidades"
+      1: "Responder a solicitudes enviadas por el formulario de presupuesto/contacto."
+      2: "Gestión de la relación con clientes y seguimiento de proyectos."
+      3: "Medición de audiencia (si consientes) para mejorar el sitio."
     legalbases:
-      title: "Bases jurídicas (RGPD)"
-      value: "Art. 6.1.b — medidas precontractuales (respuesta a tu solicitud). Art. 6.1.f — interés legítimo (seguridad, antispam). Art. 6.1.a — consentimiento (cookies analíticas, si las aceptas)."
-    notused:
-      title: "Lo que no hacemos"
-      1: "No vendemos tus datos."
-      2: "No te añadimos a ninguna lista de marketing sin tu acuerdo."
-      3: "No compartimos tu información con anunciantes ni socios comerciales."
-      4: "Solo te contactamos en el marco de tu solicitud o de la prestación en curso."
+      title: "Bases jurídicas"
+      value: "Ejecución de medidas precontractuales (respuesta a tu solicitud), interés legítimo (seguridad), consentimiento (cookies analíticas)."
     retention:
       title: "Plazos de conservación"
-      value: "Solicitudes de presupuesto sin continuidad: eliminación a los 12 meses. Datos vinculados a una prestación activa: conservados durante la duración del contrato y los 5 años siguientes (obligaciones contables legales). Datos de seguridad (logs): máximo 30 días. Cookies analíticas: según la herramienta utilizada, máximo 13 meses."
+      value: "Solicitudes de presupuesto: máximo 12 meses. Datos de clientes: durante la relación contractual y obligaciones legales. Cookies analíticas: según Google (si consientes)."
     rights:
-      title: "Tus derechos (RGPD)"
-      1: "Acceso: obtener una copia de tus datos."
-      2: "Rectificación: corregir datos inexactos."
-      3: "Supresión: solicitar el borrado de tus datos."
-      4: "Limitación: suspender el tratamiento en caso de impugnación."
-      5: "Oposición: oponerte a un tratamiento basado en interés legítimo."
-      6: "Portabilidad: recibir tus datos en un formato estructurado."
-    howto: "Para ejercer tus derechos, escribe a contact.massgrafik@gmail.com indicando tu solicitud. Respuesta en 30 días. En caso de desacuerdo, puedes recurrir a la CNIL (cnil.fr) o la AEPD (aepd.es)."
+      title: "Tus derechos"
+      1: "Acceso y rectificación"
+      2: "Supresión y limitación"
+      3: "Oposición"
+      4: "Portabilidad"
+      5: "Directrices post mortem"
+    howto: "Para ejercer tus derechos, escribe a contact@massgrafik.com. Responderemos en 30 días."
     security:
       title: "Seguridad"
-      value: "El formulario está protegido contra el spam (honeypot, tiempo de envío, limitación de intentos). Los datos se almacenan en servidores alojados por Hostinger (Chipre, UE). El acceso está restringido a Samba SOW, responsable del tratamiento."
+      value: "Medidas razonables para proteger los datos (actualizaciones, copias de seguridad, accesos limitados)."
     transfers:
-      title: "Subencargados y transferencias"
-      value: "Hostinger International Ltd (alojamiento, Chipre — UE): tratamiento de datos del servidor. Gmail/Google (envío de confirmaciones por e-mail): los datos transitan por servidores de Google, cubiertos por las cláusulas contractuales tipo UE. Ningún otro tercero tiene acceso a tus datos."
+      title: "Transferencias fuera de la UE"
+      value: "No se prevén transferencias fuera de la UE salvo encargados conformes (p. ej., Google Analytics con cláusulas tipo, si se activa)."
 
   cookies:
     seo:
       titleTab: "Política de cookies — MassGrafik"
     title: "Política de cookies"
-    intro: "Esta página explica qué cookies se depositan en tu dispositivo cuando visitas massgrafik.com, por qué y cómo controlarlas."
-    commitment:
-      title: "Nuestra posición sobre las cookies"
-      value: "Usamos lo estrictamente necesario. Sin cookies publicitarias, sin seguimiento entre sitios, sin compartición con redes publicitarias. Las únicas cookies analíticas que pueden depositarse lo son únicamente con tu consentimiento explícito, y sirven exclusivamente para mejorar este sitio."
     what:
       title: "¿Qué es una cookie?"
-      value: "Una cookie es un pequeño archivo de texto guardado en tu dispositivo por el navegador al visitar un sitio. Puede servir para mantener una sesión, recordar preferencias o medir la audiencia del sitio."
+      value: "Archivo pequeño que se guarda en tu dispositivo para el funcionamiento del sitio, medición de audiencia o personalización."
     types:
-      title: "Cookies utilizadas en este sitio"
-      necessary_title: "Cookies estrictamente necesarias (sin consentimiento)"
-      necessary_1: "Cookie de sesión Symfony (PHPSESSID) — mantiene tu sesión de navegación (formulario, seguridad CSRF). Duración: sesión (se elimina al cerrar el navegador). Ningún dato personal transmitido a terceros."
-      necessary_2: "Cookie de consentimiento de cookies (mg_cookie_consent) — recuerda tu elección (aceptar/rechazar). Duración: 6 meses."
-      analytics_title: "Cookies analíticas (solo con tu consentimiento)"
-      analytics_1: "Si aceptas, puede activarse una herramienta de medición de audiencia para contar visitas y páginas de forma anonimizada. No se crea ningún perfil individual. Puedes rechazar o retirar tu consentimiento en cualquier momento."
-      social_title: "Cookies de terceros (botones de compartir)"
-      social_1: "Los enlaces de compartir (LinkedIn, X/Twitter, Facebook, WhatsApp) son simples enlaces de texto — no se deposita ninguna cookie de terceros hasta que hagas clic. Al hacer clic, serás redirigido al servicio correspondiente, que puede depositar sus propias cookies según su política."
-    notdeposited:
-      title: "Lo que NO depositamos"
-      1: "Ninguna cookie publicitaria (retargeting, seguimiento entre sitios)."
-      2: "Ninguna cookie de perfilado o personalización comercial."
-      3: "Ninguna cookie compartida con redes publicitarias o anunciantes."
+      title: "Tipos de cookies utilizadas"
+      necessary: "Necesarias: funcionamiento del sitio (sesión, seguridad)."
+      analytics: "Medición de audiencia: estadísticas anonimizadas (solo con tu consentimiento)."
+      social: "Redes sociales: compartición/lectores externos que pueden establecer cookies."
     manage:
       title: "Gestionar tus preferencias"
-      banner: "En tu primera visita, un banner te pide tu acuerdo para las cookies analíticas. Puedes aceptar o rechazar con un clic."
-      browser: "También puedes eliminar o bloquear todas las cookies desde la configuración de tu navegador:"
-      browser_1: "Chrome: Configuración → Privacidad → Cookies"
-      browser_2: "Firefox: Opciones → Privacidad → Cookies"
-      browser_3: "Safari: Preferencias → Privacidad"
-      browser_4: "Edge: Configuración → Cookies y permisos del sitio"
-      note: "Bloquear las cookies necesarias puede afectar al funcionamiento del formulario de contacto."
-    contact:
-      title: "¿Alguna pregunta?"
-      value: "Para cualquier consulta sobre las cookies de este sitio, escribe a contact.massgrafik@gmail.com."
+      value: "Puedes aceptar o rechazar las cookies analíticas desde el banner. También puedes borrar cookies en la configuración de tu navegador."
 
 cookie:
   banner:

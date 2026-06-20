@@ -4,43 +4,52 @@
 
 {% block body %}
 <section class="about_area section_gap">
-  <div class="container">
+  <div class="container" style="max-width:780px;">
     <h1 class="mb-3">{{ 'legal.privacy.title'|trans }}</h1>
-    <p class="mb-4">{{ 'legal.disclaimer'|trans }}</p>
 
-    <h3>{{ 'legal.privacy.controller.title'|trans }}</h3>
+    <h3 class="mt-4">{{ 'legal.privacy.controller.title'|trans }}</h3>
     <p>{{ 'legal.privacy.controller.value'|trans }}</p>
 
-    <h3 class="mt-3">{{ 'legal.privacy.purposes.title'|trans }}</h3>
+    <h3 class="mt-4">{{ 'legal.privacy.commitment.title'|trans }}</h3>
+    <p class="alert" style="background:#eef6ff;border-left:4px solid #6192be;padding:16px 20px;border-radius:6px;">
+      {{ 'legal.privacy.commitment.value'|trans }}
+    </p>
+
+    <h3 class="mt-4">{{ 'legal.privacy.purposes.title'|trans }}</h3>
     <ul>
-      <li>{{ 'legal.privacy.purposes.1'|trans }}</li>
-      <li>{{ 'legal.privacy.purposes.2'|trans }}</li>
-      <li>{{ 'legal.privacy.purposes.3'|trans }}</li>
+      {% for i in 1..5 %}
+        <li class="mb-1">{{ ('legal.privacy.purposes.' ~ i)|trans }}</li>
+      {% endfor %}
     </ul>
 
-    <h3 class="mt-3">{{ 'legal.privacy.legalbases.title'|trans }}</h3>
+    <h3 class="mt-4">{{ 'legal.privacy.legalbases.title'|trans }}</h3>
     <p>{{ 'legal.privacy.legalbases.value'|trans }}</p>
 
-    <h3 class="mt-3">{{ 'legal.privacy.retention.title'|trans }}</h3>
+    <h3 class="mt-4">{{ 'legal.privacy.notused.title'|trans }}</h3>
+    <ul>
+      {% for i in 1..4 %}
+        <li class="mb-1"><strong>{{ ('legal.privacy.notused.' ~ i)|trans }}</strong></li>
+      {% endfor %}
+    </ul>
+
+    <h3 class="mt-4">{{ 'legal.privacy.retention.title'|trans }}</h3>
     <p>{{ 'legal.privacy.retention.value'|trans }}</p>
 
-    <h3 class="mt-3">{{ 'legal.privacy.rights.title'|trans }}</h3>
+    <h3 class="mt-4">{{ 'legal.privacy.rights.title'|trans }}</h3>
     <ul>
-      <li>{{ 'legal.privacy.rights.1'|trans }}</li>
-      <li>{{ 'legal.privacy.rights.2'|trans }}</li>
-      <li>{{ 'legal.privacy.rights.3'|trans }}</li>
-      <li>{{ 'legal.privacy.rights.4'|trans }}</li>
-      <li>{{ 'legal.privacy.rights.5'|trans }}</li>
+      {% for i in 1..6 %}
+        <li class="mb-1">{{ ('legal.privacy.rights.' ~ i)|trans }}</li>
+      {% endfor %}
     </ul>
     <p>{{ 'legal.privacy.howto'|trans }}</p>
 
-    <h3 class="mt-3">{{ 'legal.privacy.security.title'|trans }}</h3>
+    <h3 class="mt-4">{{ 'legal.privacy.security.title'|trans }}</h3>
     <p>{{ 'legal.privacy.security.value'|trans }}</p>
 
-    <h3 class="mt-3">{{ 'legal.privacy.transfers.title'|trans }}</h3>
+    <h3 class="mt-4">{{ 'legal.privacy.transfers.title'|trans }}</h3>
     <p>{{ 'legal.privacy.transfers.value'|trans }}</p>
 
-    <p class="mt-4 text-muted">{{ 'legal.lastUpdate'|trans }}</p>
+    <p class="mt-5 text-muted small">{{ 'legal.lastUpdate'|trans({'%date%': "now"|date('d/m/Y')}) }}</p>
   </div>
 </section>
 {% endblock %}

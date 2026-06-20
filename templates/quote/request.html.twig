@@ -3,16 +3,15 @@
 {% trans_default_domain 'messages' %}
 
 {% block title %}{{ 'quote.seo.titleTab'|trans }}{% endblock %}
+{% block meta_description %}{{ 'quote.seo.metaDesc'|trans }}{% endblock %}
 
 {% block body %}
 <section class="contact_area section_gap">
   <div class="container">
     <h1>{{ 'quote.seo.firstTitle'|trans }}</h1>
 
-    {% for type, messages in app.flashes %}
-      {% for message in messages %}
-        <div class="alert alert-{{ type == 'success' ? 'success' : 'warning' }} mb-3">{{ message|raw }}</div>
-      {% endfor %}
+    {% for message in app.flashes('warning') %}
+      <div class="alert alert-warning mb-3">{{ message|raw }}</div>
     {% endfor %}
 
     <div class="row">
@@ -81,17 +80,13 @@
 
           <div class="col-md-6">
             <div class="form-group">
+              <label class="form-label" for="{{ form.pack.vars.id }}">{{ 'quote.form.pack'|trans }}</label>
               {{ form_widget(form.pack, { attr: { class: 'form-control' } }) }}
               {{ form_errors(form.pack) }}
             </div>
 
             <div class="form-group">
-              {{ form_widget(form.budget, { attr: { class: 'form-control' } }) }}
-              {{ form_errors(form.budget) }}
-            </div>
-
-            <div class="form-group">
-              {{ form_widget(form.message, { attr: { class: 'form-control', rows: 4, placeholder: 'quote.form.message'|trans } }) }}
+              {{ form_widget(form.message, { attr: { class: 'form-control', rows: 6, placeholder: 'quote.form.message'|trans } }) }}
               {{ form_errors(form.message) }}
             </div>
           </div>

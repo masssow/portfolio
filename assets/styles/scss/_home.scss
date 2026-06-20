@@ -1,4 +1,4 @@
-/* Start About Us Area css
+﻿/* Start About Us Area css
 ============================================================================================ */
 .about_area {
 	position: relative;
@@ -129,7 +129,7 @@
 		position: absolute;
 		top: -25px;
 		left: -50px;
-		background: url(../images/img/client-info-bg.png) no-repeat;
+		background: none;
 		height: 175px;
 		width: 175px;
 		@media (max-width: 575px) {
@@ -405,7 +405,7 @@
 }
 
 .subscription_box {
-	background: url(../images/img/subscribe-bg.png) no-repeat center;
+	background: none;
 	padding: 150px 0px;
 	@media (max-width: 767px) {
 		padding: 50px 20px;

@@ -1,7 +1,178 @@
 {% extends 'base.html.twig' %}
+{% trans_default_domain 'messages' %}
 
 {% block title %}{{ 'about.seo.titleTab'|trans }}{% endblock %}
+{% block meta_description %}{{ 'about.seo.metaDesc'|trans }}{% endblock %}
 
 {% block body %}
+
+{# ===== BANNER ===== #}
+<section class="banner_area">
+  <div class="banner_inner d-flex align-items-center">
+    <div class="container">
+      <div class="banner_content text-center">
+        <h2>{{ 'about.hero.title'|trans }}</h2>
+        <div class="page_link">
+          <a href="{{ path('app_home', {'_locale': app.request.locale}) }}">{{ 'menu.home'|trans }}</a>
+          <a href="#">{{ 'menu.about'|trans }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ===== PHILOSOPHIE ===== #}
+<section class="about_area section_gap">
+  <div class="container">
+    <div class="row align-items-center">
+
+      {# REMPLACER : photo travail / bureau / collaboration — 560×420 px #}
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <div class="img-ph img-ph--about">
+          <img src="{{ asset('build/images/about-philosophie.jpg') }}"
+               alt="MassGrafik — approche digitale"
+               class="img-ph__img"
+               onerror="this.remove()">
+          <div class="img-ph__fallback">
+            <i class="fa-solid fa-image fa-2x"></i>
+            <span>Photo : bureau / collaboration<br><small>560 × 420 px</small></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-5 offset-lg-1">
+        <div class="main_title text-left">
+          <h2>{{ 'about.philosophy.title'|trans }}</h2>
+          <p>{{ 'about.philosophy.text1'|trans }}</p>
+          <p>{{ 'about.philosophy.text2'|trans }}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{# ===== VALEURS ===== #}
+<section class="features_area section_gap" style="background:#f9f9ff;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <div class="main_title">
+          <h2>{{ 'about.values.title'|trans }}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row feature_inner">
+      {% set val_colors = ['teal', 'purple', 'coral', 'gold'] %}
+      {% for i in 1..4 %}
+        <div class="col-lg-3 col-md-6">
+          <div class="feature_item text-center feature_item--{{ val_colors[i-1] }}">
+            <div class="pack-icon pack-icon--{{ val_colors[i-1] }} mx-auto mb-3">
+              <i class="fa-solid {{ ('about.values.items.' ~ i ~ '.icon')|trans }}"></i>
+            </div>
+            <h4>{{ ('about.values.items.' ~ i ~ '.title')|trans }}</h4>
+            <p>{{ ('about.values.items.' ~ i ~ '.desc')|trans }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ===== POUR QUI ===== #}
+<section class="about_area section_gap">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <div class="col-lg-6">
+        <div class="main_title text-left">
+          <h2>{{ 'about.forwho.title'|trans }}</h2>
+          <p>{{ 'about.forwho.intro'|trans }}</p>
+          <ul class="forwho-list">
+            {% for i in 1..6 %}
+              <li><i class="fa-solid fa-check mr-2" style="color:#6192be;"></i>{{ ('about.forwho.items.' ~ i)|trans }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+
+      {# REMPLACER : photo entrepreneur / petite structure / TPE — 500×520 px #}
+      <div class="col-lg-5 offset-lg-1 mt-4 mt-lg-0">
+        <div class="img-ph img-ph--forwho">
+          <img src="{{ asset('build/images/about-forwho.jpg') }}"
+               alt="Pour qui — MassGrafik"
+               class="img-ph__img"
+               onerror="this.remove()">
+          <div class="img-ph__fallback">
+            <i class="fa-solid fa-image fa-2x"></i>
+            <span>Photo : entrepreneur / TPE<br><small>500 × 520 px</small></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{# ===== ZONES D'INTERVENTION ===== #}
+<section class="about_area section_gap">
+  <div class="container">
+    <div class="row justify-content-center mb-4">
+      <div class="col-lg-8 text-center">
+        <div class="main_title">
+          <h2>{{ 'about.zones.title'|trans }}</h2>
+          <p>{{ 'about.zones.subtitle'|trans }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="col-lg-4 mb-4">
+        <div class="feature_item feature_item--teal">
+          <div class="pack-icon pack-icon--teal mb-3">
+            <i class="fa-solid fa-tower-broadcast"></i>
+          </div>
+          <h4>{{ 'about.zones.paris.title'|trans }}</h4>
+          <p>{{ 'about.zones.paris.desc'|trans }}</p>
+        </div>
+      </div>
+
+      <div class="col-lg-4 mb-4">
+        <div class="feature_item feature_item--purple">
+          <div class="pack-icon pack-icon--purple mb-3">
+            <i class="fa-solid fa-earth-europe"></i>
+          </div>
+          <h4>{{ 'about.zones.spain.title'|trans }}</h4>
+          <p>{{ 'about.zones.spain.desc'|trans }}</p>
+        </div>
+      </div>
+
+      <div class="col-lg-4 mb-4">
+        <div class="feature_item feature_item--gold">
+          <div class="pack-icon pack-icon--gold mb-3">
+            <i class="fa-solid fa-sun"></i>
+          </div>
+          <h4>{{ 'about.zones.senegal.title'|trans }}</h4>
+          <p>{{ 'about.zones.senegal.desc'|trans }}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{# ===== CTA ===== #}
+<section class="cta-final-section">
+  <div class="container text-center">
+    <div class="main_title">
+      <h2>{{ 'about.cta.title'|trans }}</h2>
+      <p>{{ 'about.cta.subtitle'|trans }}</p>
+    </div>
+    <a class="primary_btn"
+       href="{{ path('app_quote', {'_locale': app.request.locale}) }}">
+      <span>{{ 'about.cta.button'|trans }}</span>
+    </a>
+  </div>
+</section>
 
 {% endblock %}

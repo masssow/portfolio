@@ -1,120 +1,85 @@
 
-<div class="col-lg-4">{#col-lg-4 right sidebar  #}
-    <div class="blog_right_sidebar">
-        {# <aside class="single_sidebar_widget search_widget">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search Posts">
-                <span class="input-group-btn">
-                    <button class="btn btn-default" type="button"><i class="lnr lnr-magnifier"></i></button>
-                </span>
-            </div><!-- /input-group -->
-            <div class="br"></div>
-        </aside> #}
-        <aside class="single_sidebar_widget author_widget">
-            <img class="author_img rounded-circle" src="img/blog/author.png" alt="">
-            <h4>Samba SOW SOW</h4>
-            <p>passionné du web et partageur de tech !</p>
-            <div class="social_icon">
-                <a href="https://www.facebook.com/sharer/sharer.php?u=URL"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="https://twitter.com/intent/tweet?url=URL&text=TITLE"><i class="fa-brands fa-x-twitter"></i></i></a>
-                <a href="https://www.linkedin.com/shareArticle?mini=true&url=URL&title=TITLE"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://api.whatsapp.com/send?text=URL"><i class="fa-brands fa-whatsapp"></i></a>
+<div class="col-lg-4">
+  <div class="blog_right_sidebar">
 
-            </div>
-            <p>Bienvenue dans mon petit coin de partage numérique ! Je suis un développeur web passionné, jonglant entre Symfony, WordPress et un peu tout ce qui touche au web. Autodidacte dans l'âme, je débroussaille le vaste monde de l'informatique avec curiosité et un brin de folie.</p>
-            <div class="br"></div>
-        </aside>
-        <aside class="single_sidebar_widget popular_post_widget">
-            <h3 class="widget_title">Popular Posts</h3>
-            {% for popularPost in popularPosts %}
-            <div class="media post_item">
-                <img src="{{ asset('images/posts/' ~ popularPost.imageName)}}" alt="{{ popularPost.title }}" style="max-width: 100px; height: auto;">
-                <div class="media-body">
-                    <a href="{{ path('app_single_posts', {'id' : popularPost.id }) }}"><h3>{{popularPost.title}}</h3></a>
-                    {% if popularPost.createdAt > (date()|date_modify('-1 month')) %}
-                    <p>Publié il y a {{ popularPost.createdAt|time_ago }}</p>
-                    {% else %}
-                    <p>Publié le {{ popularPost.createdAt|date('d M Y') }}</p>
-                    {% endif %}
-                </div>
-            </div>
-            {% endfor %}
-            {# <div class="media post_item">
-                <img src="img/blog/popular-post/post2.jpg" alt="post">
-                <div class="media-body">
-                    <a href="single-blog.html"><h3>The Amazing Hubble</h3></a>
-                    <p>02 Hours ago</p>
-                </div>
-            </div>
-            <div class="media post_item">
-                <img src="img/blog/popular-post/post3.jpg" alt="post">
-                <div class="media-body">
-                    <a href="single-blog.html"><h3>Astronomy Or Astrology</h3></a>
-                    <p>03 Hours ago</p>
-                </div>
-            </div>
-            <div class="media post_item">
-                <img src="img/blog/popular-post/post4.jpg" alt="post">
-                <div class="media-body">
-                    <a href="single-blog.html"><h3>Asteroids telescope</h3></a>
-                    <p>01 Hours ago</p>
-                </div>
-            </div> #}
-            <div class="br"></div>
-        </aside>
-        <aside class="single_sidebar_widget ads_widget">
-            <a href="#"><img class="img-fluid" src="img/blog/add.jpg" alt=""></a>
-            <div class="br"></div>
-        </aside>
-        <aside class="single_sidebar_widget post_category_widget">
-            <h4 class="widget_title">Post Categories</h4>
-            <ul class="list cat-list">
-                {% for categorie in categories %}
-                    <li>
-                        <a href="{{ path ('app_posts_by_categorie', { id: categorie.id }) }}" 
-                            class="{% if categorie.id == categorie.id %}active{% endif %} categorie-link {% if app.request.get('categorie_id') == categorie.id %}active{% endif %} d-flex justify-content-between" data-categorie-id="{{ categorie.id }}">
-                            <p>{{ categorie.name }}</p>
-                            <p>{{ postsByCategorie[categorie.id] ?? 0 }}</p>
-                        </a>
-                    </li>
-                    {% endfor %}
-                </ul>
-            {# <div class="br"></div> #}
-        </aside>
-        {# <aside class="single-sidebar-widget newsletter_widget">
-            <h4 class="widget_title">Newsletter</h4>
-            <p>
-            Here, I focus on a range of items and features that we use in life without
-            giving them a second thought.
-            </p>
-            <div class="form-group d-flex flex-row">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text"><i class="fa fa-envelope" aria-hidden="true"></i></div>
-                    </div>
-                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Enter email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email'">
-                </div>
-                <a href="#" class="bbtns">Subcribe</a>
-            </div>	
-            <p class="text-bottom">You can unsubscribe at any time</p>	
-            <div class="br"></div>							
-        </aside> #}
-        {# <aside class="single-sidebar-widget tag_cloud_widget">
-            <h4 class="widget_title">Tag Clouds</h4>
-            <ul class="list">
-                <li><a href="#">Technology</a></li>
-                <li><a href="#">Fashion</a></li>
-                <li><a href="#">Architecture</a></li>
-                <li><a href="#">Fashion</a></li>
-                <li><a href="#">Food</a></li>
-                <li><a href="#">Technology</a></li>
-                <li><a href="#">Lifestyle</a></li>
-                <li><a href="#">Art</a></li>
-                <li><a href="#">Adventure</a></li>
-                <li><a href="#">Food</a></li>
-                <li><a href="#">Lifestyle</a></li>
-                <li><a href="#">Adventure</a></li>
-            </ul>
-        </aside> #}
-    </div>
-</div>{#col-lg-4 right sidebar  #}
+    {# ── Bio auteur ── #}
+    <aside class="single_sidebar_widget author_widget">
+      <h4 class="mb-0">Samba SOW</h4>
+      <p class="text-muted small mb-2">Fondateur — MassGrafik</p>
+      <p>Développeur web indépendant basé à Paris, Samba accompagne artisans, commerçants et petites structures dans leur transformation digitale. Spécialisé en sites professionnels, outils de gestion sur mesure et automatisations métier, il intervient en France (IDF), en Espagne et au Sénégal.</p>
+      <div class="social_icon mt-2">
+        {% set _shareUrl = app.request.uri|escape('url') %}
+        {% set _shareTitle = (post.title is defined ? post.title : 'Ressources MassGrafik')|escape('url') %}
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ _shareUrl }}"
+           target="_blank" rel="noopener" aria-label="Partager sur Facebook">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="https://twitter.com/intent/tweet?url={{ _shareUrl }}&text={{ _shareTitle }}"
+           target="_blank" rel="noopener" aria-label="Partager sur X">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ _shareUrl }}&title={{ _shareTitle }}"
+           target="_blank" rel="noopener" aria-label="Partager sur LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="https://api.whatsapp.com/send?text={{ _shareTitle }}%20{{ _shareUrl }}"
+           target="_blank" rel="noopener" aria-label="Partager sur WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+      </div>
+      <div class="br"></div>
+    </aside>
+
+    {# ── Catégories ── #}
+    <aside class="single_sidebar_widget post_category_widget">
+      <h4 class="widget_title">Catégories</h4>
+      <ul class="list cat-list">
+        {% for categorie in categories %}
+          <li>
+            <a href="{{ path('app_posts_by_categorie', { id: categorie.id }) }}"
+               class="categorie-link d-flex justify-content-between{% if app.request.get('id') == categorie.id %} active{% endif %}"
+               data-categorie-id="{{ categorie.id }}">
+              <p>{{ categorie.name }}</p>
+              <p>{{ postsByCategorie[categorie.id] ?? 0 }}</p>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+      <div class="br"></div>
+    </aside>
+
+    {# ── Articles récents ── #}
+    {% if popularPosts is defined and popularPosts|length > 0 %}
+    <aside class="single_sidebar_widget popular_post_widget">
+      <h3 class="widget_title">Articles récents</h3>
+      {% for popularPost in popularPosts %}
+        <div class="media post_item">
+          {% if popularPost.imageName %}
+            <img src="{{ asset('images/posts/' ~ popularPost.imageName) }}"
+                 alt="{{ popularPost.title }}"
+                 style="max-width:80px;height:60px;object-fit:cover;border-radius:4px;">
+          {% endif %}
+          <div class="media-body">
+            <a href="{{ path('app_single_posts', { id: popularPost.id }) }}">
+              <h3>{{ popularPost.title }}</h3>
+            </a>
+            <p>{{ popularPost.createdAt|date('d M Y') }}</p>
+          </div>
+        </div>
+      {% endfor %}
+      <div class="br"></div>
+    </aside>
+    {% endif %}
+
+    {# ── CTA devis ── #}
+    <aside class="single_sidebar_widget" style="background:#eef6ff;border-radius:10px;padding:24px 20px;text-align:center;">
+      <h4 style="color:#1e2d3e;">Un projet digital ?</h4>
+      <p class="small mb-3">Parlez-nous de votre besoin — réponse sous 48 h, sans engagement.</p>
+      <a class="primary_btn" style="font-size:.85rem;padding:10px 20px;"
+         href="{{ path('app_quote', {'_locale': app.request.locale ?? 'fr'}) }}">
+        <span>Demander un devis</span>
+      </a>
+    </aside>
+
+  </div>
+</div>

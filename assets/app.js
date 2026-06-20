@@ -17,6 +17,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './vendors/vendors';
 import './js/stellar.js';
 import './js/theme.js';
+import './js/offer_cards.js';
 import $ from 'jquery';
 window.$ = $;
 window.jQuery = $;
@@ -26,7 +27,8 @@ window.jQuery = $;
  * This file will be included onto the page via the importmap() Twig function,
  * which should already be in your base.html.twig.
  */
-import './styles/app.css';
+import './styles/app.scss';
+import './styles/overrides.scss';
 
 const pexelsClient = createClient('YOUR_PEXELS_API_KEY');
 

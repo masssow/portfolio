@@ -1,0 +1,242 @@
+{% extends 'base.html.twig' %}
+{% trans_default_domain 'messages' %}
+
+{% block title %}{{ 'tarifs.seo.titleTab'|trans }}{% endblock %}
+{% block meta_description %}{{ 'tarifs.seo.metaDesc'|trans }}{% endblock %}
+
+{% block body %}
+
+{# ===== BANNER ===== #}
+<section class="banner_area">
+  <div class="banner_inner d-flex align-items-center">
+    <div class="container">
+      <div class="banner_content text-center">
+        <h1>{{ 'tarifs.hero.title'|trans }}</h1>
+        <p class="mb-0">{{ 'tarifs.hero.subtitle'|trans }}</p>
+        <div class="page_link mt-2">
+          <a href="{{ path('app_home', {'_locale': app.request.locale}) }}">{{ 'menu.home'|trans }}</a>
+          <a href="#">{{ 'menu.tarifs'|trans }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ===== 3 CARTES OFFRES ===== #}
+<section class="mg-offers section_gap" id="offres">
+  <div class="container">
+
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <div class="main_title">
+          <span class="main_title__eyebrow">{{ 'tarifs.hero.eyebrow'|trans }}</span>
+          <h2>{{ 'offers_cards.header.title'|trans }}</h2>
+          <p>{{ 'offers_cards.header.subtitle'|trans }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center mg-offers__grid">
+
+      {# ── Starter ── #}
+      <div class="col-lg-4 col-md-6">
+        <article class="mg-offer-card" aria-label="{{ 'offers_cards.starter.name'|trans }}">
+          <div class="mg-offer-card__top">
+            <span class="mg-offer-card__badge mg-offer-card__badge--teal">{{ 'offers_cards.starter.badge'|trans }}</span>
+            <h3 class="mg-offer-card__name">{{ 'offers_cards.starter.name'|trans }}</h3>
+            <p class="mg-offer-card__desc">{{ 'offers_cards.starter.description'|trans }}</p>
+          </div>
+          <div class="mg-offer-card__pricing">
+            <div class="mg-offer-card__price">{{ 'offers_cards.starter.price'|trans }} € <span>HT</span></div>
+            <div class="mg-offer-card__market">{{ 'offers_cards.market_label'|trans }} <s>{{ 'offers_cards.starter.market'|trans }}</s></div>
+          </div>
+          <ul class="mg-offer-card__includes">
+            {% for i in 1..6 %}
+              <li class="mg-offer-card__includes-item">
+                <span class="mg-offer-card__check" aria-hidden="true">✓</span>
+                {{ ('offers_cards.starter.includes.' ~ i)|trans }}
+              </li>
+            {% endfor %}
+          </ul>
+          <div class="mg-offer-card__footer">
+            <a class="mg-offer-card__cta"
+               href="{{ path('app_quote', {'_locale': app.request.locale, 'pack': 'web'}) }}">
+              {{ 'offers_cards.cta_label'|trans }}
+            </a>
+          </div>
+        </article>
+      </div>
+
+      {# ── Pro PME (featured) ── #}
+      <div class="col-lg-4 col-md-6">
+        <article class="mg-offer-card mg-offer-card--featured" aria-label="{{ 'offers_cards.pro.name'|trans }}">
+          <div class="mg-offer-card__top">
+            <span class="mg-offer-card__badge mg-offer-card__badge--purple">{{ 'offers_cards.pro.badge'|trans }}</span>
+            <h3 class="mg-offer-card__name">{{ 'offers_cards.pro.name'|trans }}</h3>
+            <p class="mg-offer-card__desc">{{ 'offers_cards.pro.description'|trans }}</p>
+          </div>
+          <div class="mg-offer-card__pricing">
+            <div class="mg-offer-card__price">{{ 'offers_cards.pro.price'|trans }} € <span>HT</span></div>
+            <div class="mg-offer-card__market">{{ 'offers_cards.market_label'|trans }} <s>{{ 'offers_cards.pro.market'|trans }}</s></div>
+          </div>
+          <ul class="mg-offer-card__includes">
+            {% for i in 1..6 %}
+              <li class="mg-offer-card__includes-item">
+                <span class="mg-offer-card__check" aria-hidden="true">✓</span>
+                {{ ('offers_cards.pro.includes.' ~ i)|trans }}
+              </li>
+            {% endfor %}
+          </ul>
+          <div class="mg-offer-card__footer">
+            <a class="mg-offer-card__cta mg-offer-card__cta--featured"
+               href="{{ path('app_quote', {'_locale': app.request.locale, 'pack': 'tools'}) }}">
+              {{ 'offers_cards.cta_label'|trans }}
+            </a>
+          </div>
+        </article>
+      </div>
+
+      {# ── Business Tool ── #}
+      <div class="col-lg-4 col-md-6">
+        <article class="mg-offer-card" aria-label="{{ 'offers_cards.business.name'|trans }}">
+          <div class="mg-offer-card__top">
+            <span class="mg-offer-card__badge mg-offer-card__badge--coral">{{ 'offers_cards.business.badge'|trans }}</span>
+            <h3 class="mg-offer-card__name">{{ 'offers_cards.business.name'|trans }}</h3>
+            <p class="mg-offer-card__desc">{{ 'offers_cards.business.description'|trans }}</p>
+          </div>
+          <div class="mg-offer-card__pricing">
+            <div class="mg-offer-card__price">{{ 'offers_cards.business.price'|trans }} € <span>HT</span></div>
+            <div class="mg-offer-card__market">{{ 'offers_cards.market_label'|trans }} <s>{{ 'offers_cards.business.market'|trans }}</s></div>
+          </div>
+          <ul class="mg-offer-card__includes">
+            {% for i in 1..6 %}
+              <li class="mg-offer-card__includes-item">
+                <span class="mg-offer-card__check" aria-hidden="true">✓</span>
+                {{ ('offers_cards.business.includes.' ~ i)|trans }}
+              </li>
+            {% endfor %}
+          </ul>
+          <div class="mg-offer-card__footer">
+            <a class="mg-offer-card__cta"
+               href="{{ path('app_quote', {'_locale': app.request.locale, 'pack': 'automation'}) }}">
+              {{ 'offers_cards.cta_label'|trans }}
+            </a>
+          </div>
+        </article>
+      </div>
+
+    </div>
+
+    <div class="row justify-content-center mt-4">
+      <div class="col-auto text-center">
+        <a class="primary_btn" href="{{ path('app_quote', {'_locale': app.request.locale}) }}">
+          <span>{{ 'tarifs.cta_all'|trans }}</span>
+        </a>
+        <p class="mt-3 text-muted small">Sans engagement · Réponse sous 48 h</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{# ===== TABLEAU COMPARATIF ===== #}
+<section class="section_gap bg-light-section">
+  <div class="container">
+    <div class="row justify-content-center mb-4">
+      <div class="col-lg-8 text-center">
+        <div class="main_title">
+          <h2>{{ 'tarifs.compare.title'|trans }}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="table-responsive">
+          <table class="table tarifs-compare-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th class="text-center">
+                  <span class="mg-offer-card__badge mg-offer-card__badge--teal">{{ 'tarifs.compare.col1'|trans }}</span>
+                </th>
+                <th class="text-center">
+                  <span class="mg-offer-card__badge mg-offer-card__badge--purple">{{ 'tarifs.compare.col2'|trans }}</span>
+                </th>
+                <th class="text-center">
+                  <span class="mg-offer-card__badge mg-offer-card__badge--coral">{{ 'tarifs.compare.col3'|trans }}</span>
+                </th>
+              </tr>
+              <tr class="tarifs-compare-table__price-row">
+                <td></td>
+                <td class="text-center"><strong>{{ 'offers_cards.starter.price'|trans }} €</strong> <small>HT</small></td>
+                <td class="text-center"><strong>{{ 'offers_cards.pro.price'|trans }} €</strong> <small>HT</small></td>
+                <td class="text-center"><strong>{{ 'offers_cards.business.price'|trans }} €</strong> <small>HT</small></td>
+              </tr>
+            </thead>
+            <tbody>
+              {% for i in 1..6 %}
+                <tr>
+                  <td>{{ ('tarifs.compare.rows.' ~ i ~ '.label')|trans }}</td>
+                  <td class="text-center">{{ ('tarifs.compare.rows.' ~ i ~ '.v1')|trans }}</td>
+                  <td class="text-center tarifs-compare-table__featured">{{ ('tarifs.compare.rows.' ~ i ~ '.v2')|trans }}</td>
+                  <td class="text-center">{{ ('tarifs.compare.rows.' ~ i ~ '.v3')|trans }}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ===== FAQ ===== #}
+<section class="section_gap">
+  <div class="container">
+    <div class="row justify-content-center mb-4">
+      <div class="col-lg-8 text-center">
+        <div class="main_title">
+          <h2>{{ 'tarifs.faq.title'|trans }}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="tarifs-faq" id="tarifsAccordion">
+          {% for i in 1..5 %}
+            <div class="tarifs-faq__item">
+              <button class="tarifs-faq__question" type="button"
+                      data-toggle="collapse"
+                      data-target="#faq-{{ i }}"
+                      aria-expanded="{{ i == 1 ? 'true' : 'false' }}"
+                      aria-controls="faq-{{ i }}">
+                {{ ('tarifs.faq.items.' ~ i ~ '.q')|trans }}
+                <i class="fa-solid fa-chevron-down tarifs-faq__icon"></i>
+              </button>
+              <div id="faq-{{ i }}" class="collapse {{ i == 1 ? 'show' : '' }}">
+                <div class="tarifs-faq__answer">
+                  {{ ('tarifs.faq.items.' ~ i ~ '.a')|trans }}
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ===== CTA FINAL ===== #}
+<section class="cta-final-section">
+  <div class="container text-center">
+    <div class="main_title">
+      <h2>{{ 'cta.talk'|trans }}</h2>
+      <p>{{ 'services2.cta.subtitle'|trans }}</p>
+    </div>
+    <a class="primary_btn" href="{{ path('app_quote', {'_locale': app.request.locale}) }}">
+      <span>{{ 'cta.devis'|trans }}</span>
+    </a>
+  </div>
+</section>
+
+{% endblock %}

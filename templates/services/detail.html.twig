@@ -1,0 +1,134 @@
+{% extends 'base.html.twig' %}
+{% trans_default_domain 'messages' %}
+
+{% block title %}{{ ('services2.cards.' ~ yaml_key ~ '.title')|trans }} — MassGrafik{% endblock %}
+{% block meta_description %}{{ ('services2.cards.' ~ yaml_key ~ '.desc')|trans }} MassGrafik — solution digitale pour petites structures, artisans et commerçants.{% endblock %}
+
+{% block schema_org %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "{{ ('services2.cards.' ~ yaml_key ~ '.title')|trans|e('js') }}",
+  "description": "{{ ('services2.cards.' ~ yaml_key ~ '.desc')|trans|e('js') }}",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "MassGrafik",
+    "url": "{{ absolute_url(path('app_home', {'_locale': 'fr'})) }}"
+  },
+  "areaServed": ["Paris", "Île-de-France", "Espagne", "Sénégal"],
+  "url": "{{ app.request.uri }}"
+}
+</script>
+{% endblock %}
+
+{% block body %}
+
+{# ===== BANNER ===== #}
+<section class="banner_area">
+  <div class="banner_inner d-flex align-items-center">
+    <div class="container">
+      <div class="banner_content text-center">
+        <h1>{{ ('services2.cards.' ~ yaml_key ~ '.title')|trans }}</h1>
+        <div class="page_link">
+          <a href="{{ path('app_home',     {'_locale': app.request.locale}) }}">{{ 'menu.home'|trans }}</a>
+          <a href="{{ path('app_services', {'_locale': app.request.locale}) }}">{{ 'menu.services'|trans }}</a>
+          <a href="#">{{ ('services2.cards.' ~ yaml_key ~ '.title')|trans }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ===== HERO SERVICE ===== #}
+<section class="about_area section_gap">
+  <div class="container">
+    <div class="row align-items-center">
+
+      {# Colonne gauche — accroche #}
+      <div class="col-lg-5 mb-5 mb-lg-0">
+        <span class="mg-offer-card__badge mg-offer-card__badge--{{ color }} mb-4 d-inline-block">
+          {{ ('services2.cards.' ~ yaml_key ~ '.teaser')|trans }}
+        </span>
+        <div class="main_title text-left">
+          <h2>{{ ('services2.cards.' ~ yaml_key ~ '.title')|trans }}</h2>
+          <p>{{ ('services2.cards.' ~ yaml_key ~ '.intro')|trans }}</p>
+        </div>
+        <a class="primary_btn mt-3"
+           href="{{ path('app_quote', {'_locale': app.request.locale, 'service': slug}) }}">
+          <span>{{ 'cta.devis'|trans }}</span>
+        </a>
+        <a class="primary_btn tr-bg mt-3 ml-2"
+           href="{{ path('app_tarifs', {'_locale': app.request.locale}) }}">
+          <span>{{ 'menu.tarifs'|trans }}</span>
+        </a>
+      </div>
+
+      {# Colonne droite — liste des inclus #}
+      <div class="col-lg-6 offset-lg-1">
+        <div class="svc-includes">
+          {% for i in 1..8 %}
+            {% set itemKey = 'services2.cards.' ~ yaml_key ~ '.items.' ~ i %}
+            {% if (itemKey|trans) != itemKey %}
+              <div class="svc-includes__item">
+                <span class="svc-includes__check svc-check--{{ color }}" aria-hidden="true">✓</span>
+                <span>{{ itemKey|trans }}</span>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{# ===== CTA FINAL ===== #}
+<section class="cta-final-section">
+  <div class="container text-center">
+    <div class="main_title">
+      <h2>{{ 'cta.talk'|trans }}</h2>
+      <p>{{ 'services2.cta.subtitle'|trans }}</p>
+    </div>
+    <a class="primary_btn"
+       href="{{ path('app_quote', {'_locale': app.request.locale, 'service': slug}) }}">
+      <span>{{ 'cta.devis'|trans }}</span>
+    </a>
+  </div>
+</section>
+
+{# ===== AUTRES SERVICES ===== #}
+<section class="features_area section_gap bg-light-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <div class="main_title">
+          <h2>{{ 'services2.others.title'|trans }}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row feature_inner justify-content-center">
+      {% for svcSlug, svc in others|slice(0, 4) %}
+        <div class="col-lg-3 col-md-6 mb-4">
+          <a href="{{ path('app_service_detail', {'_locale': app.request.locale, 'slug': svcSlug}) }}"
+             class="feature_item text-center feature_item--{{ svc.color }} feature_item--link">
+            <span class="mg-offer-card__badge mg-offer-card__badge--{{ svc.color }} mb-3 d-inline-block">
+              {{ ('services2.cards.' ~ svc.key ~ '.teaser')|trans }}
+            </span>
+            <h4>{{ ('services2.cards.' ~ svc.key ~ '.title')|trans }}</h4>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="row justify-content-center mt-2">
+      <div class="col-auto">
+        <a class="primary_btn tr-bg"
+           href="{{ path('app_services', {'_locale': app.request.locale}) }}">
+          <span>{{ 'services2.others.all'|trans }}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,6 +1,9 @@
 {% extends 'blog-base.html.twig' %}
 
-{% block title %}{{post.title}} - Blog Diamono Tech {% endblock %}
+{% block title %}{{ post.title }} — Ressources MassGrafik{% endblock %}
+{% block meta_description %}{{ post.content|striptags|slice(0, 155)|trim }}…{% endblock %}
+{% block og_title %}{{ post.title }} — MassGrafik{% endblock %}
+{% block og_description %}{{ post.content|striptags|slice(0, 155)|trim }}…{% endblock %}
 
 {% block body %}
 

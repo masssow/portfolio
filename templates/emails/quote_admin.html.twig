@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f7fb; margin: 0; padding: 0; }
+    .wrap { max-width: 600px; margin: 32px auto; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+    .header { background: #1e2d3e; padding: 24px 32px; }
+    .header h1 { color: #fff; font-size: 18px; margin: 0; }
+    .header p  { color: #6192be; margin: 4px 0 0; font-size: 13px; }
+    .body { padding: 32px; }
+    .field { margin-bottom: 20px; }
+    .field label { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: #888; margin-bottom: 4px; }
+    .field p { margin: 0; font-size: 15px; color: #1e2d3e; }
+    .message-box { background: #f4f7fb; border-left: 4px solid #6192be; padding: 16px 20px; border-radius: 0 6px 6px 0; font-size: 15px; color: #333; white-space: pre-wrap; }
+    .badge { display: inline-block; background: #eef4fb; color: #2F5F8A; padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 600; }
+    .footer { background: #f4f7fb; padding: 16px 32px; font-size: 12px; color: #999; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <h1>Nouvelle demande de devis</h1>
+      <p>Reçue le {{ "now"|date("d/m/Y à H:i") }}</p>
+    </div>
+    <div class="body">
+      <div class="field">
+        <label>Nom</label>
+        <p>{{ quote.name }}</p>
+      </div>
+      {% if quote.company %}
+      <div class="field">
+        <label>Entreprise / Projet</label>
+        <p>{{ quote.company }}</p>
+      </div>
+      {% endif %}
+      <div class="field">
+        <label>Email</label>
+        <p><a href="mailto:{{ quote.email }}" style="color:#6192be">{{ quote.email }}</a></p>
+      </div>
+      <div class="field">
+        <label>Téléphone</label>
+        <p>{{ quote.phone }}</p>
+      </div>
+      {% if quote.pack %}
+      <div class="field">
+        <label>Type de besoin</label>
+        <p><span class="badge">{{ quote.pack }}</span></p>
+      </div>
+      {% endif %}
+      <div class="field">
+        <label>Message</label>
+        <div class="message-box">{{ quote.message }}</div>
+      </div>
+      <div class="field">
+        <label>IP / Locale</label>
+        <p>{{ quote.ip }} — {{ quote.locale }}</p>
+      </div>
+    </div>
+    <div class="footer">MassGrafik · Notification automatique — ne pas répondre à cet email</div>
+  </div>
+</body>
+</html>

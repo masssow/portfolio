@@ -1,137 +1,221 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1.0">
-		{% trans_default_domain 'messages' %}
+<html lang="{{ app.request.locale }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% trans_default_domain 'messages' %}
 
-        <title>{% block title %}{{ 'site.seo.titleTab'|trans }}{% endblock %}</title>
-		 <link rel="icon" type="image/png" sizes="22x22" href="{{ asset('build/images/fullLogo.png') }}">
+    <title>{% block title %}{{ 'site.title'|trans }}{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}{{ 'site.subtitle'|trans }}{% endblock %}">
 
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
+    {# Open Graph #}
+    <meta property="og:title"       content="{% block og_title %}{{ 'site.title'|trans }}{% endblock %}">
+    <meta property="og:description" content="{{ 'site.subtitle'|trans }}">
+    <meta property="og:url"         content="{{ app.request.uri }}">
+    <meta property="og:type"        content="website">
+    <meta property="og:image"       content="{{ absolute_url(asset('build/images/massgrafik-logo-re.png')) }}">
 
-        {# <meta property="og:title" content="{{ post.title }}">
-		<meta property="og:description" content="{{ post.content|slice(0, 150) }}">
-		<meta property="og:image" content="{{ asset('images/posts/' ~ post.imageName) }}">
-		<meta property="og:url" content="{{ app.request.uri }}">
-		<meta property="og:type" content="article"> #}
+    <link rel="icon" type="image/png" sizes="96x96"   href="{{ asset('build/images/my-logo-favicon/favicon-96x96.png') }}">
+    <link rel="icon" type="image/svg+xml"              href="{{ asset('build/images/my-logo-favicon/favicon.svg') }}">
+    <link rel="shortcut icon"                          href="{{ asset('build/images/my-logo-favicon/favicon.ico') }}">
+    <link rel="apple-touch-icon" sizes="180x180"       href="{{ asset('build/images/my-logo-favicon/apple-touch-icon.png') }}">
+    <link rel="manifest"                               href="{{ asset('build/images/my-logo-favicon/site.webmanifest') }}">
 
-    </head>
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+
+    {% block schema_org %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "MassGrafik",
+      "description": "Solutions digitales pour petites structures : sites web, e-commerce, outils de gestion, automatisations.",
+      "url": "{{ absolute_url(path('app_home', {'_locale': 'fr'})) }}",
+      "telephone": "+33666117428",
+      "email": "contact.massgrafik@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "132 boulevard Jean Mermoz",
+        "addressLocality": "Saint-Denis",
+        "postalCode": "93380",
+        "addressCountry": "FR"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Samba SOW"
+      },
+      "areaServed": ["Paris", "Île-de-France", "Espagne", "Sénégal"],
+      "priceRange": "€€",
+      "logo": "{{ absolute_url(asset('build/images/massgrafik-logo-re.png')) }}"
+    }
+    </script>
+    {% endblock %}
+</head>
 <body>
 
-	<div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" style="display:none">
-		<div class="cookie-content">
-			<p class="mb-2">
-				{{ 'cookie.banner.text'|trans }}
-				<a href="{{ path('app_legal_cookies', {'_locale': app.request.locale}) }}">{{ 'cookie.banner.more'|trans }}</a>
-			</p>
-			<div class="cookie-actions">
-				<button id="cookie-accept" class="primary_btn"><span>{{ 'cookie.banner.accept'|trans }}</span></button>
-				<button id="cookie-decline" class="primary_btn tr-bg"><span>{{ 'cookie.banner.decline'|trans }}</span></button>
-			</div>
-		</div>
-	</div>
+{# ===== COOKIE BANNER ===== #}
+<div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" style="display:none">
+    <div class="cookie-content">
+        <p class="mb-2">
+            {{ 'cookie.banner.text'|trans }}
+            <a href="{{ path('app_legal_cookies', {'_locale': app.request.locale}) }}">{{ 'cookie.banner.more'|trans }}</a>
+        </p>
+        <div class="cookie-actions">
+            <button id="cookie-accept" class="primary_btn"><span>{{ 'cookie.banner.accept'|trans }}</span></button>
+            <button id="cookie-decline" class="primary_btn tr-bg"><span>{{ 'cookie.banner.decline'|trans }}</span></button>
+        </div>
+    </div>
+</div>
 
-	<div class="mobile-sticky-cta d-lg-none">
-		<a href="{{ path('app_quote', {'_locale': app.request.locale}) }}"
-		   class="primary_btn w-100 text-center">
-			{{ 'cta.devis'|trans }}
-		</a>
-	</div>
+{# ===== CTA STICKY MOBILE ===== #}
+<div class="mobile-sticky-cta d-lg-none">
+    <a href="{{ path('app_quote', {'_locale': app.request.locale}) }}"
+       class="primary_btn w-100 text-center">
+        {{ 'cta.devis'|trans }}
+    </a>
+</div>
 
-         <!--================ Start Header Area =================-->
-	<header class="header_area">
-		<div class="main_menu">
-				<div class="">
-			<nav class="navbar navbar-expand-lg navbar-light">
-				<div class="container">
-					<!-- Brand and toggle get grouped for better mobile di -->
-					<a class="navbar-brand logo_h mt-2" href="{{path ('app_home')}}"><img src="{{ asset('build/images/logo-trans-re.png')}}" style="max-height:100px; width:auto;"alt=""></a>
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-					 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					
-					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-						<ul class="nav navbar-nav menu_nav justify-content-end">
-							<li class="nav-item active"><a class="nav-link" href="{{ path('app_home', {'_locale': app.request.locale}) }}">{{ 'menu.home'|trans }}</a></li>
-							<li class="nav-item"><a class="nav-link" href="{{ path('app_services', {'_locale': app.request.locale}) }}">{{ 'menu.services'|trans }}</a></li>
-							<li class="nav-item"><a class="nav-link" href="{{ path('app_about', {'_locale': app.request.locale}) }}">{{ 'menu.about'|trans }}</a></li>
-							<li class="nav-item"><a class="nav-link" href="{{ path('app_posts') }}">Blog</a></li>
-							<li class="nav-item"><a class="nav-link" href="{{ path('app_quote', {'_locale': app.request.locale}) }}">{{ 'menu.contact'|trans }}</a></li>
-							<li class="nav-item"><a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'fr'})) }}" class="nav-link"><img src="{{ asset('images/france.png')}}" alt="" style="max-height: 15px; width: auto;" class="mx-1"></a> <a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'es'})) }}" class="nav-link"><img src="{{ asset('images/espagne.png')}}" alt="" style="max-height: 15px; width: auto;" class="mx-1"></a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</nav>
-		</div>
-	</header>
-	<!--================ End Header Area ======== -->
-    
-        {% block body %}{% endblock %}
-		<!--================Footer Area =================-->
-	<footer class="footer_area">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-lg-12">
-					<div class="footer_top flex-column">
-						<div class="footer_logo">
-							<a href="{{ path('app_home', {'_locale': app.request.locale}) }}">
-								<img src="{{ asset('build/images/logo-trans-re.png') }}" alt="MassGrafik" style="max-height:60px;width:auto;">
-							</a>
-							<h4>{{ 'title.fallow'|trans }}</h4>
-						</div>
-						<div class="footer_social">
-						{# https://www.facebook.com/TON_IDENTIFIANT" target="_blank" rel="noopener #}
-							{# <a href="#">
-  								<i class="fa-brands fa-facebook-f" aria-label="Facebook"></i>
-							</a> #}
-							<a href="https://www.linkedin.com/in/massgrafik-web" target="_blank" rel="noopener">
-							
-  								<i class="fa-brands fa-linkedin-in" aria-label="LinkedIn"></i>
-							</a>
-							{# <a href="#"> #}
-							{# https://www.tiktok.com/@TON_IDENTIFIANT" target="_blank" rel="noopener #}
-  								{# <i class="fa-brands fa-tiktok" aria-label="TikTok"></i>
-							</a><br> #}
+{# ===== HEADER ===== #}
+{% set currentRoute = app.request.attributes.get('_route') %}
+<header class="header_area">
+    <div class="main_menu">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand logo_h" href="{{ path('app_home', {'_locale': app.request.locale}) }}">
+                    <img src="{{ asset('build/images/logo-trans-re.png') }}" alt="MassGrafik">
+                </a>
+                <button class="navbar-toggler" type="button"
+                        data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav menu_nav justify-content-end">
+                        <li class="nav-item{% if currentRoute == 'app_home' %} active{% endif %}">
+                            <a class="nav-link" href="{{ path('app_home', {'_locale': app.request.locale}) }}">{{ 'menu.home'|trans }}</a>
+                        </li>
+                        <li class="nav-item{% if currentRoute starts with 'app_service' %} active{% endif %}">
+                            <a class="nav-link" href="{{ path('app_services', {'_locale': app.request.locale}) }}">{{ 'menu.services'|trans }}</a>
+                        </li>
+                        <li class="nav-item{% if currentRoute == 'app_tarifs' %} active{% endif %}">
+                            <a class="nav-link" href="{{ path('app_tarifs', {'_locale': app.request.locale}) }}">{{ 'menu.tarifs'|trans }}</a>
+                        </li>
+                        <li class="nav-item{% if currentRoute == 'app_about' %} active{% endif %}">
+                            <a class="nav-link" href="{{ path('app_about', {'_locale': app.request.locale}) }}">{{ 'menu.about'|trans }}</a>
+                        </li>
+                        <li class="nav-item{% if currentRoute == 'app_posts' %} active{% endif %}">
+                            <a class="nav-link" href="{{ path('app_posts') }}">{{ 'menu.blog'|trans }}</a>
+                        </li>
+                        <li class="nav-item{% if currentRoute in ['app_quote', 'app_contact'] %} active{% endif %}">
+                            <a class="nav-link" href="{{ path('app_quote', {'_locale': app.request.locale}) }}">{{ 'menu.contact'|trans }}</a>
+                        </li>
+                        <li class="nav-item nav-lang">
+                            <a href="{{ path(currentRoute, app.request.attributes.get('_route_params')|merge({'_locale': 'fr'})) }}" class="nav-link">
+                                <img src="{{ asset('images/france.png') }}" alt="FR" class="flag-icon">
+                            </a>
+                            <a href="{{ path(currentRoute, app.request.attributes.get('_route_params')|merge({'_locale': 'es'})) }}" class="nav-link">
+                                <img src="{{ asset('images/espagne.png') }}" alt="ES" class="flag-icon">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
 
-<a href="#" onclick="window.openCookieBanner?.(); return false;">Gérer mes cookies</a>
- 					
+{# ===== CONTENU ===== #}
+{% block body %}{% endblock %}
 
-							</div>
-					</div>
-				</div>
-			</div>
-			<div class="row footer_bottom justify-content-center">
-				<p class="col-lg-8 col-sm-12 footer-text">
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-				Massgrafik &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <br>
-			
-			<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --><a href="https://colorlib.com" target="_blank">Template by Colorlib</a></p>
-			</div>
-		</div>
-	</footer>
-	<!--================End Footer Area =================-->
+{# ===== FOOTER ===== #}
+<footer class="footer_area">
+    <div class="container">
+        <div class="row footer_top_row py-5">
 
-</body>
+            {# Colonne 1 : logo + tagline + réseaux #}
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="footer_logo mb-3">
+                    <a href="{{ path('app_home', {'_locale': app.request.locale}) }}">
+                        <img src="{{ asset('build/images/logo-trans-re.png') }}" alt="MassGrafik" style="max-height:50px;width:auto;">
+                    </a>
+                </div>
+                <p class="footer-tagline">{{ 'site.subtitle'|trans }}</p>
+                <div class="footer_social mt-3">
+                    <a href="https://www.linkedin.com/in/massgrafik-web" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+
+            {# Colonne 2 : navigation #}
+            <div class="col-lg-2 col-md-3 col-6 mb-4">
+                <h6 class="footer-col-title">Navigation</h6>
+                <ul class="footer-links">
+                    <li><a href="{{ path('app_home', {'_locale': app.request.locale}) }}">{{ 'menu.home'|trans }}</a></li>
+                    <li><a href="{{ path('app_services', {'_locale': app.request.locale}) }}">{{ 'menu.services'|trans }}</a></li>
+                    <li><a href="{{ path('app_tarifs', {'_locale': app.request.locale}) }}">{{ 'menu.tarifs'|trans }}</a></li>
+                    <li><a href="{{ path('app_about', {'_locale': app.request.locale}) }}">{{ 'menu.about'|trans }}</a></li>
+                    <li><a href="{{ path('app_posts') }}">{{ 'menu.blog'|trans }}</a></li>
+                    <li><a href="{{ path('app_quote', {'_locale': app.request.locale}) }}">{{ 'menu.contact'|trans }}</a></li>
+                </ul>
+            </div>
+
+            {# Colonne 3 : contact #}
+            <div class="col-lg-3 col-md-3 col-6 mb-4">
+                <h6 class="footer-col-title">Contact</h6>
+                <ul class="footer-links">
+                    <li><a href="tel:+33666117428">(+33) 6 66 11 74 28</a></li>
+                    <li><a href="mailto:contact.massgrafik@gmail.com">contact.massgrafik@gmail.com</a></li>
+                </ul>
+                <p class="footer-zone mt-2">France &amp; International<br>100 % à distance</p>
+            </div>
+
+            {# Colonne 4 : légal #}
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h6 class="footer-col-title">Légal</h6>
+                <ul class="footer-links">
+                    <li><a href="{{ path('app_legal_mentions', {'_locale': app.request.locale}) }}">Mentions légales</a></li>
+                    <li><a href="{{ path('app_legal_privacy', {'_locale': app.request.locale}) }}">Politique de confidentialité</a></li>
+                    <li><a href="{{ path('app_legal_cookies', {'_locale': app.request.locale}) }}">Politique de cookies</a></li>
+                    <li><a href="#" onclick="window.openCookieBanner?.(); return false;">Gérer mes cookies</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="row footer_bottom">
+            <div class="col-12 text-center">
+                <p class="footer-copy">
+                    MassGrafik &copy; <span id="footer-year"></span> — Tous droits réservés
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+{# ===== SCROLL TO TOP ===== #}
+<a href="#" id="scroll-top" aria-label="Retour en haut" title="Haut de page">
+    <i class="fa-solid fa-chevron-up"></i>
+</a>
+
+<script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  var f = document.getElementById('quoteForm');
-  if (!f) return;
-  // coupe toute interception existante
-  f.addEventListener('submit', function(ev){
-    ev.stopImmediatePropagation(); // laisse passer la soumission native
-  }, true);
+    var f = document.getElementById('quoteForm');
+    if (!f) return;
+    f.addEventListener('submit', function(ev){ ev.stopImmediatePropagation(); }, true);
 });
 </script>
 
-		{% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-            {# {% block importmap %}{{ importmap('app') }}{% endblock %} #}
-        {% endblock %}	
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}
+
+</body>
 </html>

@@ -1,9 +1,9 @@
-/* Home Banner Area css
+﻿/* Home Banner Area css
 ============================================================================================ */
 
 .home_banner_area {
 	z-index: 1;
-	background: url(../images/img/banner/home-banner.png) no-repeat top center;
+	background: none;
 	background-position: center;
 	background-size: cover;
 	.banner_inner {
@@ -81,7 +81,7 @@
 		overflow: hidden;
 		width: 100%;
 		min-height: 485px;
-		background: url(../images/img/banner/common-banner.png) no-repeat right bottom;
+		background: no-repeat right bottom;
 		background-size: 90% 85%;
 		width: 98%;
 		z-index: 1;

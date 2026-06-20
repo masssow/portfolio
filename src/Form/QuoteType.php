@@ -22,11 +22,12 @@ final class QuoteType extends AbstractType
     public function buildForm(FormBuilderInterface $b, array $opt): void
     {
         $packChoices = [
-            'local'  => 'packs.local.title',
-            'ecom'   => 'packs.ecom.title',
-            'com'    => 'packs.com.title',
-            'maint'  => 'packs.maint.title',
-            'social' => 'packs.social.title',
+            'web'        => 'services2.cards.web.title',
+            'ecommerce'  => 'services2.cards.ecommerce.title',
+            'tools'      => 'services2.cards.tools.title',
+            'automation' => 'services2.cards.automation.title',
+            'terrain'    => 'services2.cards.terrain.title',
+            'support'    => 'services2.cards.support.title',
         ];
 
         $b->add('name', TextType::class, [
@@ -46,25 +47,13 @@ final class QuoteType extends AbstractType
                 'constraints' => [new Assert\NotBlank(), new Assert\Email(mode: Assert\Email::VALIDATION_MODE_STRICT)],
             ])
             ->add('pack', ChoiceType::class, [
-                'label' => 'quote.form.pack',
-                'placeholder' => 'quote.form.pack.placeholder',
-                'choices' => array_keys($packChoices),
+                'label'        => 'quote.form.pack',
+                'placeholder'  => 'quote.form.pack.placeholder',
+                'choices'      => array_keys($packChoices),
                 'choice_label' => fn(string $v) => $this->t->trans($packChoices[$v]),
                 'choice_value' => fn(?string $v) => $v,
-                'data' => $opt['selected_pack'] ?? null,
-                'constraints' => [new Assert\NotBlank()],
-            ])
-            ->add('budget', ChoiceType::class, [
-                'label' => 'quote.form.budget',
-                'required' => false,
-                'placeholder' => 'quote.form.budget.placeholder',
-                'choices' => [
-                    'quote.form.budget.1k'  => '≤1k',
-                    'quote.form.budget.2k'  => '1–2k',
-                    'quote.form.budget.5k'  => '2–5k',
-                    'quote.form.budget.5k+' => '5k+',
-                ],
-                'choice_label' => fn(string $k) => $this->t->trans($k),
+                'data'         => $opt['selected_pack'] ?? null,
+                'required'     => false,
             ])
             ->add('message', TextareaType::class, [
                 'label' => 'quote.form.message',
@@ -83,13 +72,13 @@ final class QuoteType extends AbstractType
     public function configureOptions(OptionsResolver $r): void
     {
         $r->setDefaults([
-            'data_class' => Quote::class,
-            'selected_pack' => null,
-            'honeypot_name' => 'hp_static',
-            'render_ts'     => null,
+            'data_class'         => Quote::class,
+            'selected_pack'      => null,
+            'honeypot_name'      => 'hp_static',
+            'render_ts'          => null,
             'translation_domain' => 'messages',
-            'csrf_protection' => true,
-            
+            'csrf_protection'    => true,
+            'allow_extra_fields' => true,
         ]);
     }
 }

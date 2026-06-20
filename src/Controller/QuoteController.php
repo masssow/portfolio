@@ -11,18 +11,22 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\RateLimiter\RateLimiterFactory;
 use Symfony\Contracts\Translation\TranslatorInterface;
-use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
+use Symfony\Component\Mime\Address;
 
 final class QuoteController extends AbstractController
 {
+    private const ADMIN_EMAIL = 'contact.massgrafik@gmail.com';
+    private const ADMIN_NAME  = 'MassGrafik';
+
     public function __construct(
         private RateLimiterFactory $quoteFormLimiter,
         private TranslatorInterface $t,
         private LoggerInterface $logger,
-        private EntityManagerInterface $entityManager
-
+        private EntityManagerInterface $entityManager,
+        private MailerInterface $mailer,
     ) {}
 
 
@@ -38,7 +42,7 @@ final class QuoteController extends AbstractController
             $session->set('quote_hp_name', $hp);
         }
 
-        $selectedPack = $req->query->get('pack'); // local|ecom|com|maint|social
+        $selectedPack = $req->query->get('pack') ?? $req->query->get('service');
         $honeypotName = $session->get('quote_hp_name', 'hp_fallback');
 
         // IMPORTANT : ne pas ajouter le honeypot via le FormType
@@ -104,7 +108,7 @@ final class QuoteController extends AbstractController
                 $entity = $form->getData();
                 $entity
                     ->setLocale($req->getLocale())
-                    ->setIp($req->getClientIp() ?: null)
+                    ->setIp($req->getClientIp() ?? 'unknown')
                     ->setUserAgent($req->headers->get('User-Agent'))
                     ->setCreatedAt(new \DateTimeImmutable('now'));
                 if (method_exists($entity, 'getStatus') && !$entity->getStatus()) {
@@ -114,12 +118,16 @@ final class QuoteController extends AbstractController
                 $this->entityManager->persist($entity);
                 $this->entityManager->flush();
 
-                $this->addFlash('success', $this->t->trans('quote.flash.ok'));
+                $this->sendAdminNotification($entity);
+                $this->sendUserConfirmation($entity);
+
                 return $this->redirectToRoute('app_quote_thanks', ['_locale' => $req->getLocale()]);
-            } else {
-                // Ajoute un retour explicite si le form est invalide (CSRF, contraintes, etc.)
-                $this->addFlash('warning', $this->t->trans('quote.flash.invalid_or_csrf'));
-                return $this->redirectToRoute('app_quote', ['_locale' => $req->getLocale(), 'pack' => $selectedPack]);
+            }
+            // Formulaire invalide : log les erreurs et ré-affiche avec les messages sur les champs
+            foreach ($form->getErrors(true) as $error) {
+                $this->logger->warning('Quote form error: ' . $error->getMessage(), [
+                    'field' => $error->getOrigin()?->getName(),
+                ]);
             }
         }
 
@@ -130,6 +138,37 @@ final class QuoteController extends AbstractController
         ]);
     }
 
+
+    private function sendAdminNotification(Quote $quote): void
+    {
+        try {
+            $html = $this->renderView('emails/quote_admin.html.twig', ['quote' => $quote]);
+            $email = (new Email())
+                ->from(new Address(self::ADMIN_EMAIL, self::ADMIN_NAME))
+                ->to(new Address(self::ADMIN_EMAIL, self::ADMIN_NAME))
+                ->replyTo(new Address($quote->getEmail(), $quote->getName()))
+                ->subject('Nouvelle demande de devis — ' . $quote->getName())
+                ->html($html);
+            $this->mailer->send($email);
+        } catch (\Throwable $e) {
+            $this->logger->error('Admin email failed: ' . $e->getMessage());
+        }
+    }
+
+    private function sendUserConfirmation(Quote $quote): void
+    {
+        try {
+            $html = $this->renderView('emails/quote_user.html.twig', ['quote' => $quote]);
+            $email = (new Email())
+                ->from(new Address(self::ADMIN_EMAIL, self::ADMIN_NAME))
+                ->to(new Address($quote->getEmail(), $quote->getName()))
+                ->subject('Votre demande a bien été reçue — MassGrafik')
+                ->html($html);
+            $this->mailer->send($email);
+        } catch (\Throwable $e) {
+            $this->logger->error('User confirmation email failed: ' . $e->getMessage());
+        }
+    }
 
     #[Route('/devis', name: 'app_quote_nolocale', methods: ['GET'])]
     public function redirectToLocalized(Request $req): Response

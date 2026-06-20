@@ -1,4 +1,4 @@
-@import '~bootstrap/scss/bootstrap';
+﻿@import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/css/all.min.css';
 @import '~owl.carousel/dist/assets/owl.carousel.css';
 @import '~owl.carousel/dist/assets/owl.theme.default.css';
@@ -8,6 +8,7 @@
 @import '~@fortawesome/fontawesome-free/scss/solid.scss';
 @import '~@fortawesome/fontawesome-free/scss/brands.scss';
 @import '~@fortawesome/fontawesome-free/scss/regular.scss';
+
 @font-face {
     font-family: 'Linearicons';
     src: url('../fonts/Linearicons-Free.eot');
@@ -18,6 +19,7 @@
 // @import'./css/bootstrap.css';
 // @import'./css/magnific-popup.css';
 @import './scss/style.scss';
+
 }
 
 /*----------------------------------------------------
@@ -54,7 +56,7 @@ body {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     color: #777777;
-    background: url(../images/img/body-bg.png) no-repeat center;
+    background: none;
 }
 
 h1,
@@ -3279,7 +3281,6 @@ h6 {
 }
 
 .primary-checkbox input:checked+label {
-    background: url(../images/img/elements/primary-check.png) no-repeat center center/cover;
     border: none;
 }
 
@@ -3317,7 +3318,6 @@ h6 {
 }
 
 .confirm-checkbox input:checked+label {
-    background: url(../images/img/elements/success-check.png) no-repeat center center/cover;
     border: none;
 }
 
@@ -3360,7 +3360,6 @@ h6 {
 }
 
 .disabled-checkbox input:checked+label {
-    background: url(../images/img/elements/disabled-check.png) no-repeat center center/cover;
     border: none;
 }
 
@@ -3398,7 +3397,6 @@ h6 {
 }
 
 .primary-radio input:checked+label {
-    background: url(../images/img/elements/primary-radio.png) no-repeat center center/cover;
     border: none;
 }
 
@@ -3436,7 +3434,6 @@ h6 {
 }
 
 .confirm-radio input:checked+label {
-    background: url(../images/img/elements/success-radio.png) no-repeat center center/cover;
     border: none;
 }
 
@@ -3490,7 +3487,6 @@ h6 {
 }
 
 .disabled-radio input:checked+label {
-    background: url(../images/img/elements/disabled-radio.png) no-repeat center center/cover;
     border: none;
 }
 
@@ -3806,7 +3802,7 @@ h6 {
     position: absolute;
     top: -25px;
     left: -50px;
-    background: url(../images/img/client-info-bg.png) no-repeat;
+    background: none;
     height: 175px;
     width: 175px;
 }
@@ -4249,7 +4245,7 @@ h6 {
 }
 
 .subscription_box {
-    background: url(../images/img/subscribe-bg.png) no-repeat center;
+    background: none;
     padding: 150px 0px;
 }
 
@@ -4938,4 +4934,266 @@ h6 {
 ============================================================================================ */
 /*---------------------------------------------------- */
 
-/*# sourceMappingURL=style.css.map */
+/* =======================================================================
+   OVERRIDES REFONTE MASSGRAFIK
+   ======================================================================= */
+
+/* ----- Variables -------------------------------------------------------- */
+$blue:   #6192be;
+$gold:   #eabd6f;
+$dark:   #1a1a2e;
+$text:   #555;
+$light-bg: #f5f8fc;
+
+/* ----- Espacements verticaux ------------------------------------------ */
+.section_gap          { padding: 70px 0; }
+.section_gap_top      { padding-top: 70px; }
+.section_gap_bottom   { padding-bottom: 70px; }
+
+@media (max-width: 1199px) {
+    .section_gap          { padding: 52px 0; }
+    .section_gap_top      { padding-top: 52px; }
+    .section_gap_bottom   { padding-bottom: 52px; }
+}
+@media (max-width: 767px) {
+    .section_gap          { padding: 36px 0; }
+    .section_gap_top      { padding-top: 36px; }
+    .section_gap_bottom   { padding-bottom: 36px; }
+}
+
+/* ----- Titres de section --------------------------------------------- */
+.main_title {
+    margin-bottom: 40px;
+}
+@media (max-width: 1199px) { .main_title { margin-bottom: 28px; } }
+
+.main_title h2 {
+    font-size: 1.85rem;
+    font-weight: 700;
+    color: $dark;
+    position: relative;
+    padding-bottom: 18px;
+    margin-bottom: 8px;
+}
+.main_title h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 44px;
+    height: 3px;
+    background: $gold;
+    border-radius: 2px;
+}
+.main_title.text-left h2::after { left: 0; transform: none; }
+.main_title p {
+    font-size: .95rem;
+    color: #777;
+    margin-top: 14px;
+    margin-bottom: 0;
+    line-height: 1.7;
+}
+
+/* ----- Feature items (cards) ------------------------------------------ */
+.feature_item {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 32px 26px;
+    height: 100%;
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.feature_item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 36px rgba(97, 146, 190, .13);
+    border-color: #bad2e9;
+}
+.feature_item h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: .5rem;
+    color: $dark;
+}
+.feature_item p { font-size: .9rem; color: $text; line-height: 1.7; }
+
+/* ----- Gutters uniformes entre cartes --------------------------------- */
+.feature_inner { margin-bottom: -22px; }
+.feature_inner > [class*="col-"] { margin-bottom: 22px; }
+
+/* ----- Pack cards (Nos offres) --------------------------------------- */
+.pack-card {
+    border-top: 3px solid $blue;
+    display: flex;
+    flex-direction: column;
+}
+.pack-card .pack-cta { margin-top: auto; padding-top: 1rem; }
+.pack-icon {
+    width: 54px;
+    height: 54px;
+    background: linear-gradient(135deg, #eef4fb 0%, #d8e9f6 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    color: $blue;
+}
+
+/* ----- Section méthode (numéros) -------------------------------------- */
+.method-num {
+    display: block;
+    font-size: 4rem;
+    font-weight: 800;
+    font-family: "Rubik", sans-serif;
+    color: transparent;
+    -webkit-text-stroke: 2px $blue;
+    line-height: 1;
+    margin-bottom: .5rem;
+    opacity: .2;
+}
+
+/* ----- Header logo ---------------------------------------------------- */
+.header_area .navbar-brand img {
+    max-height: 44px;
+    width: auto;
+    transition: opacity .2s;
+}
+.header_area .navbar-brand img:hover { opacity: .85; }
+
+/* ----- Lien actif nav ------------------------------------------------- */
+.header_area .navbar .nav .nav-item.active .nav-link { color: $blue; }
+
+/* ----- Sélecteur de langue -------------------------------------------- */
+.nav-lang { display: flex; align-items: center; gap: 2px; }
+.nav-lang .nav-link { padding: 0 4px !important; line-height: 100px; }
+.flag-icon {
+    height: 18px !important;
+    width: auto !important;
+    max-width: 26px !important;
+    vertical-align: middle !important;
+    border-radius: 2px;
+    display: inline-block !important;
+}
+
+@media (max-width: 991px) {
+    .nav-lang .nav-link { line-height: 36px !important; }
+    /* header mobile plus compact */
+    .navbar-toggler {
+        margin-top: 13px !important;
+        margin-bottom: 13px !important;
+    }
+    .header_area .navbar-brand {
+        padding-top: 9px;
+        padding-bottom: 9px;
+    }
+    .header_area .navbar-brand img {
+        max-height: 34px !important;
+    }
+    .header_area + section,
+    .header_area + row,
+    .header_area + div {
+        margin-top: 64px !important;
+    }
+}
+
+/* ----- Navbar sticky -------------------------------------------------- */
+.header_area.navbar_fixed .main_menu {
+    box-shadow: 0 2px 18px rgba(0,0,0,.09);
+}
+.header_area.navbar_fixed .main_menu .navbar .nav .nav-item .nav-link {
+    line-height: 60px;
+}
+
+/* ----- Scroll to top -------------------------------------------------- */
+#scroll-top {
+    position: fixed;
+    bottom: 28px;
+    right: 22px;
+    width: 40px;
+    height: 40px;
+    background: $blue;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s ease, transform .3s ease;
+    z-index: 999;
+    box-shadow: 0 4px 14px rgba(97,146,190,.4);
+}
+#scroll-top.visible { opacity: 1; pointer-events: auto; }
+#scroll-top:hover { background: #4a7aaa; transform: translateY(-2px); color: #fff; }
+
+/* ----- Footer restructuré --------------------------------------------- */
+.footer_area { padding: 0; background: $dark; }
+.footer_area:before { display: none; }
+.footer_top_row { border-bottom: 1px solid rgba(255,255,255,.08); }
+.footer-tagline { font-size: .85rem; color: rgba(255,255,255,.52); line-height: 1.65; max-width: 280px; }
+.footer-col-title {
+    font-size: .7rem;
+    text-transform: uppercase;
+    letter-spacing: .13em;
+    color: rgba(255,255,255,.35);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+.footer-links { list-style: none; padding: 0; margin: 0; }
+.footer-links li { margin-bottom: .45rem; }
+.footer-links a { font-size: .87rem; color: rgba(255,255,255,.6); transition: color .2s; }
+.footer-links a:hover { color: $gold; }
+.footer_social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 50%;
+    color: rgba(255,255,255,.6);
+    font-size: 13px;
+    margin-right: 6px;
+    transition: background .2s, border-color .2s, color .2s;
+}
+.footer_social a:hover { background: $blue; border-color: $blue; color: #fff; }
+.footer-zone { font-size: .78rem; color: rgba(255,255,255,.35); line-height: 1.55; }
+.footer_bottom { padding: 18px 0; }
+.footer-copy { font-size: .78rem; color: rgba(255,255,255,.28); margin: 0; }
+.footer-copy a { color: rgba(255,255,255,.28); }
+.footer-copy a:hover { color: $gold; }
+.footer-colorlib { font-size: .7rem; opacity: .55; }
+
+@media (max-width: 991px) {
+    .footer_top_row { padding-top: 2.25rem !important; padding-bottom: .75rem !important; }
+}
+
+/* ----- Séparateur visuel entre sections qui se touchent --------------- */
+.bg-light-section { background: $light-bg; }
+
+/* ----- CTA final minimaliste ------------------------------------------ */
+.cta-final-section {
+    padding: 52px 0;
+    background: linear-gradient(135deg, $dark 0%, #252547 100%);
+    text-align: center;
+}
+.cta-final-section h2 { color: #fff; }
+.cta-final-section h2::after { background: $gold; }
+
+/* ----- Client info block ---------------------------------------------- */
+.client-info {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 28px 24px;
+}
+.client-info .call-now { align-items: center; }
+.client-info .call-now .fa-phone { color: $blue; font-size: 1.4rem; }
+.client-info .call-now h3 { font-size: 1.25rem; font-weight: 700; color: $dark; margin: 0; }
+.client-info .call-now p { font-size: .8rem; color: #888; margin: 0; text-transform: uppercase; letter-spacing: .06em; }
+.client-info hr { border-color: #e8ecf0; }
+.client-info p { font-size: .88rem; color: #666; }
+

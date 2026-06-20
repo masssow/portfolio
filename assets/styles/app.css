@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /*!
  * Bootstrap v4.6.2 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
@@ -3593,14 +3593,16 @@ input[type=button].btn-block {
   border-radius: 1rem;
   -webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  -webkit-appearance: none;
-          appearance: none;
 }
 @media (prefers-reduced-motion: reduce) {
   .custom-range::-webkit-slider-thumb {
     -webkit-transition: none;
     transition: none;
   }
+}
+.custom-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+          appearance: none;
 }
 .custom-range::-webkit-slider-thumb:active {
   background-color: rgb(178.5, 215.4, 255);
@@ -3622,14 +3624,16 @@ input[type=button].btn-block {
   border-radius: 1rem;
   -moz-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  -moz-appearance: none;
-       appearance: none;
 }
 @media (prefers-reduced-motion: reduce) {
   .custom-range::-moz-range-thumb {
     -moz-transition: none;
     transition: none;
   }
+}
+.custom-range::-moz-range-thumb {
+  -moz-appearance: none;
+       appearance: none;
 }
 .custom-range::-moz-range-thumb:active {
   background-color: rgb(178.5, 215.4, 255);
@@ -3654,13 +3658,15 @@ input[type=button].btn-block {
   border-radius: 1rem;
   -ms-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  appearance: none;
 }
 @media (prefers-reduced-motion: reduce) {
   .custom-range::-ms-thumb {
     -ms-transition: none;
     transition: none;
   }
+}
+.custom-range::-ms-thumb {
+  appearance: none;
 }
 .custom-range::-ms-thumb:active {
   background-color: rgb(178.5, 215.4, 255);
@@ -4061,10 +4067,6 @@ input[type=button].btn-block {
     display: none;
   }
 }
-.navbar-expand {
-  flex-flow: row nowrap;
-  justify-content: flex-start;
-}
 .navbar-expand > .container,
 .navbar-expand > .container-fluid,
 .navbar-expand > .container-sm,
@@ -4073,6 +4075,10 @@ input[type=button].btn-block {
 .navbar-expand > .container-xl {
   padding-right: 0;
   padding-left: 0;
+}
+.navbar-expand {
+  flex-flow: row nowrap;
+  justify-content: flex-start;
 }
 .navbar-expand .navbar-nav {
   flex-direction: row;
@@ -5242,12 +5248,14 @@ a.close.disabled {
 }
 .modal.fade .modal-dialog {
   transition: transform 0.3s ease-out;
-  transform: translate(0, -50px);
 }
 @media (prefers-reduced-motion: reduce) {
   .modal.fade .modal-dialog {
     transition: none;
   }
+}
+.modal.fade .modal-dialog {
+  transform: translate(0, -50px);
 }
 .modal.show .modal-dialog {
   transform: none;
@@ -17533,8 +17541,8 @@ readers do not read off random characters that represent icons */
  * Copyright 2024 Fonticons, Inc.
  */
 :root, :host {
-  --fa-style-family-classic: "Font Awesome 6 Free";
-  --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free";
+  --fa-style-family-classic: 'Font Awesome 6 Free';
+  --fa-font-solid: normal 900 1em/1 'Font Awesome 6 Free';
 }
 
 @font-face {
@@ -17555,8 +17563,8 @@ readers do not read off random characters that represent icons */
  * Copyright 2024 Fonticons, Inc.
  */
 :root, :host {
-  --fa-style-family-brands: "Font Awesome 6 Brands";
-  --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
+  --fa-style-family-brands: 'Font Awesome 6 Brands';
+  --fa-font-brands: normal 400 1em/1 'Font Awesome 6 Brands';
 }
 
 @font-face {
@@ -19697,8 +19705,8 @@ readers do not read off random characters that represent icons */
  * Copyright 2024 Fonticons, Inc.
  */
 :root, :host {
-  --fa-style-family-classic: "Font Awesome 6 Free";
-  --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Free";
+  --fa-style-family-classic: 'Font Awesome 6 Free';
+  --fa-font-regular: normal 400 1em/1 'Font Awesome 6 Free';
 }
 
 @font-face {
@@ -19750,7 +19758,7 @@ readers do not read off random characters that represent icons */
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     color: #777777;
-    background: url(../images/img/body-bg.png) no-repeat center;
+    background: none;
   }
   h1,
   h2,
@@ -20105,7 +20113,7 @@ readers do not read off random characters that represent icons */
   ============================================================================================ */
   .home_banner_area {
     z-index: 1;
-    background: url(../images/img/banner/home-banner.png) no-repeat top center;
+    background: none;
     background-position: center;
     background-size: cover;
   }
@@ -20195,7 +20203,7 @@ readers do not read off random characters that represent icons */
     overflow: hidden;
     width: 100%;
     min-height: 485px;
-    background: url(../images/img/banner/common-banner.png) no-repeat right bottom;
+    background: no-repeat right bottom;
     background-size: 90% 85%;
     width: 98%;
     z-index: 1;
@@ -22082,7 +22090,7 @@ readers do not read off random characters that represent icons */
     color: #000000;
   }
   .primary-checkbox input:checked + label {
-    background: url(../images/img/elements/primary-check.png) no-repeat center center/cover;
+    background: none;
     border: none;
   }
   .confirm-checkbox {
@@ -22116,7 +22124,7 @@ readers do not read off random characters that represent icons */
     border: 1px solid #f1f1f1;
   }
   .confirm-checkbox input:checked + label {
-    background: url(../images/img/elements/success-check.png) no-repeat center center/cover;
+    background: none;
     border: none;
   }
   .disabled-checkbox {
@@ -22154,7 +22162,7 @@ readers do not read off random characters that represent icons */
     z-index: 3;
   }
   .disabled-checkbox input:checked + label {
-    background: url(../images/img/elements/disabled-check.png) no-repeat center center/cover;
+    background: none;
     border: none;
   }
   .primary-radio {
@@ -22188,7 +22196,7 @@ readers do not read off random characters that represent icons */
     border: 1px solid #f1f1f1;
   }
   .primary-radio input:checked + label {
-    background: url(../images/img/elements/primary-radio.png) no-repeat center center/cover;
+    background: none;
     border: none;
   }
   .confirm-radio {
@@ -22222,7 +22230,7 @@ readers do not read off random characters that represent icons */
     border: 1px solid #f1f1f1;
   }
   .confirm-radio input:checked + label {
-    background: url(../images/img/elements/success-radio.png) no-repeat center center/cover;
+    background: none;
     border: none;
   }
   .disabled-radio {
@@ -22269,7 +22277,7 @@ readers do not read off random characters that represent icons */
     padding: 0px;
   }
   .disabled-radio input:checked + label {
-    background: url(../images/img/elements/disabled-radio.png) no-repeat center center/cover;
+    background: none;
     border: none;
   }
   .default-select {
@@ -22518,7 +22526,7 @@ readers do not read off random characters that represent icons */
     position: absolute;
     top: -25px;
     left: -50px;
-    background: url(../images/img/client-info-bg.png) no-repeat;
+    background: none;
     height: 175px;
     width: 175px;
   }
@@ -22696,8 +22704,6 @@ readers do not read off random characters that represent icons */
   }
   .portfolio_details_inner .portfolio_right_text .list li {
     margin-bottom: 7px;
-    font-weight: normal;
-    font-size: 14px;
   }
   .portfolio_details_inner .portfolio_right_text .list li span {
     font-family: "Rubik", sans-serif;
@@ -22706,6 +22712,10 @@ readers do not read off random characters that represent icons */
     font-weight: 500;
     width: 97px;
     display: inline-block;
+  }
+  .portfolio_details_inner .portfolio_right_text .list li {
+    font-weight: normal;
+    font-size: 14px;
   }
   .portfolio_details_inner .portfolio_right_text .list li:last-child {
     margin-bottom: 0px;
@@ -22792,7 +22802,7 @@ readers do not read off random characters that represent icons */
     color: #ffffff;
   }
   .subscription_box {
-    background: url(../images/img/subscribe-bg.png) no-repeat center;
+    background: none;
     padding: 150px 0px;
   }
   @media (max-width: 767px) {
@@ -23342,6 +23352,228 @@ readers do not read off random characters that represent icons */
   /* End Footer Area css
   ============================================================================================ */
   /*---------------------------------------------------- */
+  .mg-offers__grid {
+    align-items: stretch;
+  }
+  .mg-offers__grid > [class*=col-] {
+    display: flex;
+    margin-bottom: 24px;
+  }
+  .mg-offer-card {
+    background: #ffffff;
+    border: 0.5px solid rgba(0, 0, 0, 0.1);
+    border-radius: 14px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    transition: box-shadow 0.18s ease, transform 0.18s ease;
+    position: relative;
+  }
+  .mg-offer-card:hover {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+  }
+  .mg-offer-card--featured {
+    border-color: rgba(0, 0, 0, 0.22);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+  }
+  .mg-offer-card--featured::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 14px;
+    border: 1.5px solid #534AB7;
+    pointer-events: none;
+  }
+  .mg-offer-card__top {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .mg-offer-card__badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 3px 10px;
+    border-radius: 99px;
+    align-self: flex-start;
+  }
+  .mg-offer-card__badge--teal {
+    background: #E1F5EE;
+    color: #0F6E56;
+  }
+  .mg-offer-card__badge--purple {
+    background: #EEEDFE;
+    color: #3C3489;
+  }
+  .mg-offer-card__badge--coral {
+    background: #FAECE7;
+    color: #993C1D;
+  }
+  .mg-offer-card__name {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: #1a1a18;
+  }
+  .mg-offer-card__desc {
+    font-size: 13px;
+    color: #5a5a56;
+    line-height: 1.55;
+    margin: 0;
+  }
+  .mg-offer-card__pricing {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .mg-offer-card__price {
+    font-size: 28px;
+    font-weight: 500;
+    color: #1a1a18;
+    line-height: 1;
+  }
+  .mg-offer-card__price span {
+    font-size: 13px;
+    font-weight: 400;
+    color: #5a5a56;
+  }
+  .mg-offer-card__market {
+    font-size: 11px;
+    color: #8a8a85;
+  }
+  .mg-offer-card__market s {
+    color: #8a8a85;
+    text-decoration: line-through;
+  }
+  .mg-offer-card__includes {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+  }
+  .mg-offer-card__includes-item {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    font-size: 13px;
+    color: #5a5a56;
+    line-height: 1.5;
+  }
+  .mg-offer-card__check {
+    color: #1D9E75;
+    font-weight: 500;
+    flex-shrink: 0;
+    line-height: 1.5;
+  }
+  .mg-offer-card__footer {
+    padding-top: 4px;
+  }
+  .mg-offer-card__cta {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 11px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid rgba(0, 0, 0, 0.22);
+    color: #1a1a18;
+    background: transparent;
+    transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+    cursor: pointer;
+  }
+  .mg-offer-card__cta:hover {
+    background: #f7f6f2;
+    color: #1a1a18;
+    text-decoration: none;
+  }
+  .mg-offer-card__cta--featured {
+    background: #534AB7;
+    border-color: #534AB7;
+    color: #ffffff;
+  }
+  .mg-offer-card__cta--featured:hover {
+    background: rgb(69.2181818182, 61.5272727273, 154.6727272727);
+    border-color: rgb(69.2181818182, 61.5272727273, 154.6727272727);
+    color: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    .mg-offer-card {
+      background: #1e1e1c;
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+    .mg-offer-card--featured::before {
+      border-color: #AFA9EC;
+    }
+    .mg-offer-card:hover {
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+    }
+    .mg-offer-card__name {
+      color: #e8e6de;
+    }
+    .mg-offer-card__desc {
+      color: #9a9890;
+    }
+    .mg-offer-card__price {
+      color: #e8e6de;
+    }
+    .mg-offer-card__price span,
+    .mg-offer-card__market {
+      color: #6a6a65;
+    }
+    .mg-offer-card__includes-item {
+      color: #9a9890;
+    }
+    .mg-offer-card__market s {
+      color: #6a6a65;
+    }
+    .mg-offer-card__cta {
+      border-color: rgba(255, 255, 255, 0.18);
+      color: #e8e6de;
+    }
+    .mg-offer-card__cta:hover {
+      background: rgba(255, 255, 255, 0.06);
+    }
+    .mg-offer-card__cta--featured {
+      background: #AFA9EC;
+      border-color: #AFA9EC;
+      color: #26215C;
+    }
+    .mg-offer-card__cta--featured:hover {
+      background: #CEC8F6;
+      border-color: #CEC8F6;
+    }
+    .mg-offer-card__badge--teal {
+      background: #085041;
+      color: #9FE1CB;
+    }
+    .mg-offer-card__badge--purple {
+      background: #26215C;
+      color: #CEC8F6;
+    }
+    .mg-offer-card__badge--coral {
+      background: #4A1B0C;
+      color: #F0997B;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .mg-offer-card,
+    .mg-offer-card__cta {
+      transition: none;
+    }
+    .mg-offer-card:hover {
+      transform: none;
+    }
+  }
+  /*----------------------------------------------------*/
 }
 /*----------------------------------------------------
 @File: Default Styles
@@ -23375,7 +23607,7 @@ body {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   color: #777777;
-  background: url(../images/img/body-bg.png) no-repeat center;
+  background: none;
 }
 
 h1,
@@ -26479,7 +26711,6 @@ h6 {
 }
 
 .primary-checkbox input:checked + label {
-  background: url(../images/img/elements/primary-check.png) no-repeat center center/cover;
   border: none;
 }
 
@@ -26517,7 +26748,6 @@ h6 {
 }
 
 .confirm-checkbox input:checked + label {
-  background: url(../images/img/elements/success-check.png) no-repeat center center/cover;
   border: none;
 }
 
@@ -26560,7 +26790,6 @@ h6 {
 }
 
 .disabled-checkbox input:checked + label {
-  background: url(../images/img/elements/disabled-check.png) no-repeat center center/cover;
   border: none;
 }
 
@@ -26598,7 +26827,6 @@ h6 {
 }
 
 .primary-radio input:checked + label {
-  background: url(../images/img/elements/primary-radio.png) no-repeat center center/cover;
   border: none;
 }
 
@@ -26636,7 +26864,6 @@ h6 {
 }
 
 .confirm-radio input:checked + label {
-  background: url(../images/img/elements/success-radio.png) no-repeat center center/cover;
   border: none;
 }
 
@@ -26690,7 +26917,6 @@ h6 {
 }
 
 .disabled-radio input:checked + label {
-  background: url(../images/img/elements/disabled-radio.png) no-repeat center center/cover;
   border: none;
 }
 
@@ -26978,7 +27204,7 @@ h6 {
   position: absolute;
   top: -25px;
   left: -50px;
-  background: url(../images/img/client-info-bg.png) no-repeat;
+  background: none;
   height: 175px;
   width: 175px;
 }
@@ -27384,7 +27610,7 @@ h6 {
 }
 
 .subscription_box {
-  background: url(../images/img/subscribe-bg.png) no-repeat center;
+  background: none;
   padding: 150px 0px;
 }
 
@@ -27969,4 +28195,427 @@ h6 {
 /* End Footer Area css
 ============================================================================================ */
 /*---------------------------------------------------- */
-/*# sourceMappingURL=app.css.map */
+/* =======================================================================
+   OVERRIDES REFONTE MASSGRAFIK
+   ======================================================================= */
+/* ----- Variables -------------------------------------------------------- */
+/* ----- Espacements verticaux ------------------------------------------ */
+.section_gap {
+  padding: 70px 0;
+}
+
+.section_gap_top {
+  padding-top: 70px;
+}
+
+.section_gap_bottom {
+  padding-bottom: 70px;
+}
+
+@media (max-width: 1199px) {
+  .section_gap {
+    padding: 52px 0;
+  }
+  .section_gap_top {
+    padding-top: 52px;
+  }
+  .section_gap_bottom {
+    padding-bottom: 52px;
+  }
+}
+@media (max-width: 767px) {
+  .section_gap {
+    padding: 36px 0;
+  }
+  .section_gap_top {
+    padding-top: 36px;
+  }
+  .section_gap_bottom {
+    padding-bottom: 36px;
+  }
+}
+/* ----- Titres de section --------------------------------------------- */
+.main_title {
+  margin-bottom: 40px;
+}
+
+@media (max-width: 1199px) {
+  .main_title {
+    margin-bottom: 28px;
+  }
+}
+.main_title h2 {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  position: relative;
+  padding-bottom: 18px;
+  margin-bottom: 8px;
+}
+
+.main_title h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 44px;
+  height: 3px;
+  background: #eabd6f;
+  border-radius: 2px;
+}
+
+.main_title.text-left h2::after {
+  left: 0;
+  transform: none;
+}
+
+.main_title p {
+  font-size: 0.95rem;
+  color: #777;
+  margin-top: 14px;
+  margin-bottom: 0;
+  line-height: 1.7;
+}
+
+/* ----- Feature items (cards) ------------------------------------------ */
+.feature_item {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 32px 26px;
+  height: 100%;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.feature_item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 36px rgba(97, 146, 190, 0.13);
+  border-color: #bad2e9;
+}
+
+.feature_item h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #1a1a2e;
+}
+
+.feature_item p {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* ----- Gutters uniformes entre cartes --------------------------------- */
+.feature_inner {
+  margin-bottom: -22px;
+}
+
+.feature_inner > [class*=col-] {
+  margin-bottom: 22px;
+}
+
+/* ----- Pack cards (Nos offres) --------------------------------------- */
+.pack-card {
+  border-top: 3px solid #6192be;
+  display: flex;
+  flex-direction: column;
+}
+
+.pack-card .pack-cta {
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.pack-icon {
+  width: 54px;
+  height: 54px;
+  background: linear-gradient(135deg, #eef4fb 0%, #d8e9f6 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  color: #6192be;
+}
+
+/* ----- Section méthode (numéros) -------------------------------------- */
+.method-num {
+  display: block;
+  font-size: 4rem;
+  font-weight: 800;
+  font-family: "Rubik", sans-serif;
+  color: transparent;
+  -webkit-text-stroke: 2px #6192be;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  opacity: 0.2;
+}
+
+/* ----- Header logo ---------------------------------------------------- */
+.header_area .navbar-brand img {
+  max-height: 44px;
+  width: auto;
+  transition: opacity 0.2s;
+}
+
+.header_area .navbar-brand img:hover {
+  opacity: 0.85;
+}
+
+/* ----- Lien actif nav ------------------------------------------------- */
+.header_area .navbar .nav .nav-item.active .nav-link {
+  color: #6192be;
+}
+
+/* ----- Sélecteur de langue -------------------------------------------- */
+.nav-lang {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.nav-lang .nav-link {
+  padding: 0 4px !important;
+  line-height: 100px;
+}
+
+.flag-icon {
+  height: 18px !important;
+  width: auto !important;
+  max-width: 26px !important;
+  vertical-align: middle !important;
+  border-radius: 2px;
+  display: inline-block !important;
+}
+
+@media (max-width: 991px) {
+  .nav-lang .nav-link {
+    line-height: 36px !important;
+  }
+  /* header mobile plus compact */
+  .navbar-toggler {
+    margin-top: 13px !important;
+    margin-bottom: 13px !important;
+  }
+  .header_area .navbar-brand {
+    padding-top: 9px;
+    padding-bottom: 9px;
+  }
+  .header_area .navbar-brand img {
+    max-height: 34px !important;
+  }
+  .header_area + section,
+  .header_area + row,
+  .header_area + div {
+    margin-top: 64px !important;
+  }
+}
+/* ----- Navbar sticky -------------------------------------------------- */
+.header_area.navbar_fixed .main_menu {
+  box-shadow: 0 2px 18px rgba(0, 0, 0, 0.09);
+}
+
+.header_area.navbar_fixed .main_menu .navbar .nav .nav-item .nav-link {
+  line-height: 60px;
+}
+
+/* ----- Scroll to top -------------------------------------------------- */
+#scroll-top {
+  position: fixed;
+  bottom: 28px;
+  right: 22px;
+  width: 40px;
+  height: 40px;
+  background: #6192be;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 999;
+  box-shadow: 0 4px 14px rgba(97, 146, 190, 0.4);
+}
+
+#scroll-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#scroll-top:hover {
+  background: #4a7aaa;
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+/* ----- Footer restructuré --------------------------------------------- */
+.footer_area {
+  padding: 0;
+  background: #1a1a2e;
+}
+
+.footer_area:before {
+  display: none;
+}
+
+.footer_top_row {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-tagline {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.52);
+  line-height: 1.65;
+  max-width: 280px;
+}
+
+.footer-col-title {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: rgba(255, 255, 255, 0.35);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.45rem;
+}
+
+.footer-links a {
+  font-size: 0.87rem;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: #eabd6f;
+}
+
+.footer_social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+  margin-right: 6px;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.footer_social a:hover {
+  background: #6192be;
+  border-color: #6192be;
+  color: #fff;
+}
+
+.footer-zone {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.35);
+  line-height: 1.55;
+}
+
+.footer_bottom {
+  padding: 18px 0;
+}
+
+.footer-copy {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.28);
+  margin: 0;
+}
+
+.footer-copy a {
+  color: rgba(255, 255, 255, 0.28);
+}
+
+.footer-copy a:hover {
+  color: #eabd6f;
+}
+
+.footer-colorlib {
+  font-size: 0.7rem;
+  opacity: 0.55;
+}
+
+@media (max-width: 991px) {
+  .footer_top_row {
+    padding-top: 2.25rem !important;
+    padding-bottom: 0.75rem !important;
+  }
+}
+/* ----- Séparateur visuel entre sections qui se touchent --------------- */
+.bg-light-section {
+  background: #f5f8fc;
+}
+
+/* ----- CTA final minimaliste ------------------------------------------ */
+.cta-final-section {
+  padding: 52px 0;
+  background: linear-gradient(135deg, #1a1a2e 0%, #252547 100%);
+  text-align: center;
+}
+
+.cta-final-section h2 {
+  color: #fff;
+}
+
+.cta-final-section h2::after {
+  background: #eabd6f;
+}
+
+/* ----- Client info block ---------------------------------------------- */
+.client-info {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 28px 24px;
+}
+
+.client-info .call-now {
+  align-items: center;
+}
+
+.client-info .call-now .fa-phone {
+  color: #6192be;
+  font-size: 1.4rem;
+}
+
+.client-info .call-now h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0;
+}
+
+.client-info .call-now p {
+  font-size: 0.8rem;
+  color: #888;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.client-info hr {
+  border-color: #e8ecf0;
+}
+
+.client-info p {
+  font-size: 0.88rem;
+  color: #666;
+}/*# sourceMappingURL=app.css.map */

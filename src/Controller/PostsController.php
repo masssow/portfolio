@@ -107,13 +107,22 @@ class PostsController extends AbstractController
 
         $totalComments = $categoriePostsRepository->count([]);
 
+        $popularPosts = $postsRepository->findPopularPost(4);
+        $postsByCategorieRaw = $postsRepository->countPostsByCategorie();
+        $postsByCategorie = [];
+        foreach ($postsByCategorieRaw as $item) {
+            $postsByCategorie[$item['id']] = $item['postCount'];
+        }
+
         // Renvoyer la vue
         return $this->render('posts/categorie.html.twig', [
-            'categorie'    => $categorie,
-            'pagination'   => $pagination,
-            'categories'   => $categories,
-            'totalPosts'   => $totalPosts,
-            'totalComments' => $totalComments,
+            'categorie'        => $categorie,
+            'pagination'       => $pagination,
+            'categories'       => $categories,
+            'totalPosts'       => $totalPosts,
+            'totalComments'    => $totalComments,
+            'popularPosts'     => $popularPosts,
+            'postsByCategorie' => $postsByCategorie,
         ]);
     }
 
