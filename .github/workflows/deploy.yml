@@ -10,12 +10,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Étape 1 : Récupérer le code source
+      # 1 — Code source
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Étape 2 : Configurer la connexion SSH
-      - name: Set up SSH connection
+      # 2 — Cache npm
+      - name: Cache npm dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      # 3 — Build assets AVANT le déploiement
+      - name: Install npm dependencies
+        run: npm ci
+
+      - name: Build assets with Webpack Encore
+        run: npm run build
+
+      # 4 — Configurer SSH
+      - name: Set up SSH
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         run: |
@@ -30,10 +46,11 @@ jobs:
             IdentityFile ~/.ssh/id_rsa
             StrictHostKeyChecking no
           EOF
-      # Étape 3 : Déployer le projet Symfony via SSH
-      - name: Deploy to Hostinger
+
+      # 5 — Déployer le code PHP
+      - name: Deploy PHP code
         run: |
-          ssh -o StrictHostKeyChecking=no hostinger << 'EOF'
+          ssh hostinger << 'EOF'
             cd /home/u791166429/domains/massgrafik.com/public_html
             git pull origin main
             composer install --no-dev --optimize-autoloader
@@ -41,19 +58,7 @@ jobs:
             php bin/console doctrine:migrations:migrate --no-interaction --allow-no-migration --env=prod
           EOF
 
-       # Étape 3 : Mettre en cache les dépendances npm
-      - name: Cache npm dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      # Étape 4 : Installer les dépendances npm (si non en cache)
-      - name: Install dependencies
-        run: npm install
-
-      # Étape 5 : Compiler les assets avec Webpack Encore
-      - name: Build assets with Webpack Encore
-        run: npm run build
+      # 6 — Envoyer les assets compilés (public/build/) sur le serveur
+      - name: Upload built assets
+        run: |
+          scp -P 65002 -r public/build/ u791166429@178.16.128.226:/home/u791166429/domains/massgrafik.com/public_html/public/
