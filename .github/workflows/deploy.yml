@@ -41,6 +41,8 @@ jobs:
             git remote -v
             echo "=== Git branch ==="
             git branch
+            echo "=== Git stash ==="
+            git stash
             echo "=== Git pull ==="
             git pull origin main
             echo "=== Pull done ==="
