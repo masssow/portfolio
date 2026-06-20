@@ -15,11 +15,9 @@
     <meta property="og:type"        content="website">
     <meta property="og:image"       content="{{ absolute_url(asset('build/images/massgrafik-logo-re.png')) }}">
 
-    <link rel="icon" type="image/png" sizes="96x96"   href="{{ asset('build/images/my-logo-favicon/favicon-96x96.png') }}">
-    <link rel="icon" type="image/svg+xml"              href="{{ asset('build/images/my-logo-favicon/favicon.svg') }}">
-    <link rel="shortcut icon"                          href="{{ asset('build/images/my-logo-favicon/favicon.ico') }}">
-    <link rel="apple-touch-icon" sizes="180x180"       href="{{ asset('build/images/my-logo-favicon/apple-touch-icon.png') }}">
-    <link rel="manifest"                               href="{{ asset('build/images/my-logo-favicon/site.webmanifest') }}">
+    <link rel="icon" type="image/svg+xml"   href="{{ asset('favicon.svg') }}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('favicon.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180"    href="{{ asset('apple-touch-icon.png') }}">
 
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}

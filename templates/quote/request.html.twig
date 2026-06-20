@@ -8,7 +8,13 @@
 {% block body %}
 <section class="contact_area section_gap">
   <div class="container">
-    <h1>{{ 'quote.seo.firstTitle'|trans }}</h1>
+
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-8 text-center">
+        <h1 class="mb-2">{{ 'quote.seo.firstTitle'|trans }}</h1>
+        <p class="text-muted">{{ 'quote.subtitle'|trans }}</p>
+      </div>
+    </div>
 
     {% for message in app.flashes('warning') %}
       <div class="alert alert-warning mb-3">{{ message|raw }}</div>
@@ -17,9 +23,9 @@
     <div class="row">
 
       <!-- Colonne gauche : infos contact -->
-      <div class="col-lg-3">
-        <div class="contact_info">
-          <h2>{{ 'quote.form.titleContact'|trans }}</h2>
+      <div class="col-lg-4 mb-4 mb-lg-0">
+        <div class="contact_info" style="background:#f9f9ff;border-radius:12px;padding:32px 28px;">
+          <h2 class="mb-4">{{ 'quote.form.titleContact'|trans }}</h2>
 
           <div class="info_item">
             <i class="lnr lnr-home"></i>
@@ -27,23 +33,22 @@
             <p>{{ 'quote.form.modeCom'|trans }}</p>
           </div>
 
-          <div class="info_item">
+          <div class="info_item mt-3">
             <i class="lnr lnr-phone-handset"></i>
             <h6><a href="tel:+33666117428">(+33) 6 66 11 74 28</a></h6>
             <p>{{ 'home.badge.small'|trans }}</p>
           </div>
 
-          <div class="info_item">
+          <div class="info_item mt-3">
             <i class="lnr lnr-envelope"></i>
-            <h6><a href="mailto:contact.massgrafik@gmail.com">contact.massgrafik@gmail.com</a></h6>
-            <p>{{ 'quote.subtitle'|trans }}</p>
+            <h6 style="word-break:break-all;"><a href="mailto:contact.massgrafik@gmail.com">contact.massgrafik@gmail.com</a></h6>
           </div>
         </div>
       </div>
 
       <!-- Colonne droite : formulaire -->
-      <div class="col-lg-9">
-        <h2>{{ 'quote.form.titleFormContact'|trans }}</h2>
+      <div class="col-lg-8">
+        <h2 class="mb-4">{{ 'quote.form.titleFormContact'|trans }}</h2>
 
         {{ form_errors(form) }}
 
@@ -51,49 +56,47 @@
           action: path('app_quote', {'_locale': app.request.locale}),
           method: 'POST',
           attr: {
-            class: 'row contact_form',
+            class: 'contact_form',
             id: 'quoteForm'
           }
         }) }}
 
-          <div class="col-md-6">
-            <div class="form-group">
-              {{ form_widget(form.name, { attr: { class: 'form-control', placeholder: 'quote.form.name'|trans } }) }}
-              {{ form_errors(form.name) }}
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                {{ form_widget(form.name, { attr: { class: 'form-control', placeholder: 'quote.form.name'|trans } }) }}
+                {{ form_errors(form.name) }}
+              </div>
+              <div class="form-group">
+                {{ form_widget(form.email, { attr: { class: 'form-control', placeholder: 'quote.form.email'|trans } }) }}
+                {{ form_errors(form.email) }}
+              </div>
+              <div class="form-group">
+                {{ form_widget(form.phone, { attr: { class: 'form-control', placeholder: 'quote.form.phone'|trans } }) }}
+                {{ form_errors(form.phone) }}
+              </div>
+              <div class="form-group">
+                {{ form_widget(form.company, { attr: { class: 'form-control', placeholder: 'quote.form.company'|trans } }) }}
+                {{ form_errors(form.company) }}
+              </div>
             </div>
 
-            <div class="form-group">
-              {{ form_widget(form.email, { attr: { class: 'form-control', placeholder: 'quote.form.email'|trans } }) }}
-              {{ form_errors(form.email) }}
-            </div>
-
-            <div class="form-group">
-              {{ form_widget(form.phone, { attr: { class: 'form-control', placeholder: 'quote.form.phone'|trans } }) }}
-              {{ form_errors(form.phone) }}
-            </div>
-
-            <div class="form-group">
-              {{ form_widget(form.company, { attr: { class: 'form-control', placeholder: 'quote.form.company'|trans } }) }}
-              {{ form_errors(form.company) }}
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <div class="form-group">
-              <label class="form-label" for="{{ form.pack.vars.id }}">{{ 'quote.form.pack'|trans }}</label>
-              {{ form_widget(form.pack, { attr: { class: 'form-control' } }) }}
-              {{ form_errors(form.pack) }}
-            </div>
-
-            <div class="form-group">
-              {{ form_widget(form.message, { attr: { class: 'form-control', rows: 6, placeholder: 'quote.form.message'|trans } }) }}
-              {{ form_errors(form.message) }}
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="form-label" for="{{ form.pack.vars.id }}">{{ 'quote.form.pack'|trans }}</label>
+                {{ form_widget(form.pack, { attr: { class: 'form-control' } }) }}
+                {{ form_errors(form.pack) }}
+              </div>
+              <div class="form-group">
+                {{ form_widget(form.message, { attr: { class: 'form-control', rows: 6, placeholder: 'quote.form.message'|trans } }) }}
+                {{ form_errors(form.message) }}
+              </div>
             </div>
           </div>
 
           {{ form_widget(form.render_ts) }}
 
-          {# Honeypot HTML brut, invisible #}
+          {# Honeypot invisible #}
           <input type="text"
                  name="{{ form.vars.name }}[{{ honeypot_name }}]"
                  value=""
@@ -104,7 +107,7 @@
 
           {{ form_widget(form._token) }}
 
-          <div class="col-md-12 text-right">
+          <div class="text-right mt-3">
             <button type="submit" class="primary_btn">
               <span>{{ 'quote.form.submit'|trans }}</span>
             </button>
@@ -123,6 +126,7 @@
          data-mlat="48.8566"
          data-mlon="2.3522">
     </div>
+
   </div>
 </section>
 {% endblock %}
