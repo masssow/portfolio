@@ -24,6 +24,18 @@
 
 {% block body %}
 
+{# Map slug → image (ajouter le nom de fichier quand l'image est prête) #}
+{% set svc_images = {
+  'e-commerce':      'massgrafik-commerce-composite.png',
+  'sites-web':       null,
+  'outils-gestion':  null,
+  'reservations':    null,
+  'seo-contenu':     null,
+  'automatisations': null,
+  'maintenance':     null
+} %}
+{% set svc_image = svc_images[slug] ?? null %}
+
 {# ===== BANNER ===== #}
 <section class="banner_area">
   <div class="banner_inner d-flex align-items-center">
@@ -45,7 +57,7 @@
   <div class="container">
     <div class="row align-items-center">
 
-      {# Colonne gauche — accroche #}
+      {# Colonne gauche — accroche + CTA #}
       <div class="col-lg-5 mb-5 mb-lg-0">
         <span class="mg-offer-card__badge mg-offer-card__badge--{{ color }} mb-4 d-inline-block">
           {{ ('services2.cards.' ~ yaml_key ~ '.teaser')|trans }}
@@ -64,21 +76,48 @@
         </a>
       </div>
 
-      {# Colonne droite — liste des inclus #}
+      {# Colonne droite — image ou placeholder #}
       <div class="col-lg-6 offset-lg-1">
-        <div class="svc-includes">
-          {% for i in 1..8 %}
-            {% set itemKey = 'services2.cards.' ~ yaml_key ~ '.items.' ~ i %}
-            {% if (itemKey|trans) != itemKey %}
-              <div class="svc-includes__item">
-                <span class="svc-includes__check svc-check--{{ color }}" aria-hidden="true">✓</span>
-                <span>{{ itemKey|trans }}</span>
-              </div>
-            {% endif %}
-          {% endfor %}
+        <div class="img-ph img-ph--service">
+          {% if svc_image %}
+            <img src="{{ asset('build/images/' ~ svc_image) }}"
+                 alt="{{ ('services2.cards.' ~ yaml_key ~ '.title')|trans }} — MassGrafik"
+                 class="img-ph__img"
+                 onerror="this.closest('.img-ph').classList.add('img-ph--show-fallback')">
+          {% endif %}
+          <div class="img-ph__fallback{% if not svc_image %} img-ph__fallback--visible{% endif %}">
+            <i class="fa-solid fa-image fa-2x"></i>
+            <span>Illustration à venir</span>
+          </div>
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+{# ===== CE QUI EST INCLUS ===== #}
+<section class="features_area section_gap" style="background:#f9f9ff;">
+  <div class="container">
+    <div class="row justify-content-center mb-4">
+      <div class="col-lg-8 text-center">
+        <div class="main_title">
+          <h2>{{ 'services2.includes.title'|trans }}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      {% for i in 1..8 %}
+        {% set itemKey = 'services2.cards.' ~ yaml_key ~ '.items.' ~ i %}
+        {% if (itemKey|trans) != itemKey %}
+          <div class="col-lg-5 col-md-6 mb-3">
+            <div class="svc-includes__item">
+              <span class="svc-includes__check svc-check--{{ color }}" aria-hidden="true">✓</span>
+              <span>{{ itemKey|trans }}</span>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
     </div>
   </div>
 </section>

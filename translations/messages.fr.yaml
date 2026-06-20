@@ -319,6 +319,8 @@ services2:
     title: "Des solutions claires, utiles et adaptées"
     subtitle: "MassGrafik ne vend pas seulement des prestations techniques. Chaque solution est conçue pour répondre à un besoin métier précis."
   toggle: "Voir le détail"
+  includes:
+    title: "Ce qui est inclus"
   cards:
     web:
       title: "Sites professionnels et présence digitale"

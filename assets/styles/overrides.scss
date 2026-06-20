@@ -328,6 +328,20 @@ $light-bg:#f5f8fc;
 }
 .img-ph--about   { aspect-ratio: 4/3; border-radius: 14px; }
 .img-ph--forwho  { aspect-ratio: 5/6; border-radius: 14px; }
+.img-ph--service {
+    aspect-ratio: 1/1;
+    border-radius: 18px;
+    box-shadow: 0 12px 40px rgba(97,146,190,.18);
+
+    // Quand l'image charge correctement, on cache le fallback
+    &:has(.img-ph__img:not([data-error])) .img-ph__fallback { display: none; }
+}
+// Fallback visible par défaut quand pas d'image définie
+.img-ph__fallback--visible { display: flex; flex-direction: column; align-items: center; }
+
+// Fallback déclenché par onerror JS
+.img-ph--show-fallback .img-ph__img { display: none; }
+.img-ph--show-fallback .img-ph__fallback { display: flex; flex-direction: column; align-items: center; }
 
 // =======================================================================
 //  PACK CARD AVEC IMAGE
