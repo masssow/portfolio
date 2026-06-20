@@ -25,7 +25,7 @@ jobs:
 
       # 3 — Build assets AVANT le déploiement
       - name: Install npm dependencies
-        run: npm ci
+        run: npm install
 
       - name: Build assets with Webpack Encore
         run: npm run build
@@ -61,4 +61,4 @@ jobs:
       # 6 — Envoyer les assets compilés (public/build/) sur le serveur
       - name: Upload built assets
         run: |
-          scp -P 65002 -r public/build/ u791166429@178.16.128.226:/home/u791166429/domains/massgrafik.com/public_html/public/
+          scp -r public/build/ hostinger:/home/u791166429/domains/massgrafik.com/public_html/public/
