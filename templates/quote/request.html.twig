@@ -72,7 +72,35 @@
                 {{ form_errors(form.email) }}
               </div>
               <div class="form-group">
-                {{ form_widget(form.phone, { attr: { class: 'form-control', placeholder: 'quote.form.phone'|trans } }) }}
+                <div class="phone-prefix-group input-group">
+                  <div class="input-group-prepend">
+                    <select id="phonePrefixSelect" class="form-control phone-prefix-select" aria-label="{{ 'quote.form.phone_prefix'|trans }}">
+                      <option value="+33"  data-flag="🇫🇷">🇫🇷 +33</option>
+                      <option value="+34"  data-flag="🇪🇸">🇪🇸 +34</option>
+                      <option value="+221" data-flag="🇸🇳">🇸🇳 +221</option>
+                      <option value="+32"  data-flag="🇧🇪">🇧🇪 +32</option>
+                      <option value="+41"  data-flag="🇨🇭">🇨🇭 +41</option>
+                      <option value="+49"  data-flag="🇩🇪">🇩🇪 +49</option>
+                      <option value="+44"  data-flag="🇬🇧">🇬🇧 +44</option>
+                      <option value="+1"   data-flag="🇺🇸">🇺🇸 +1</option>
+                      <option value="+1"   data-flag="🇨🇦">🇨🇦 +1</option>
+                      <option value="+212" data-flag="🇲🇦">🇲🇦 +212</option>
+                      <option value="+225" data-flag="🇨🇮">🇨🇮 +225</option>
+                      <option value="+237" data-flag="🇨🇲">🇨🇲 +237</option>
+                      <option value="+223" data-flag="🇲🇱">🇲🇱 +223</option>
+                      <option value="+224" data-flag="🇬🇳">🇬🇳 +224</option>
+                      <option value="+213" data-flag="🇩🇿">🇩🇿 +213</option>
+                      <option value="+216" data-flag="🇹🇳">🇹🇳 +216</option>
+                      <option value="+222" data-flag="🇲🇷">🇲🇷 +222</option>
+                      <option value="+351" data-flag="🇵🇹">🇵🇹 +351</option>
+                      <option value="+39"  data-flag="🇮🇹">🇮🇹 +39</option>
+                      <option value="+31"  data-flag="🇳🇱">🇳🇱 +31</option>
+                      <option value="+52"  data-flag="🇲🇽">🇲🇽 +52</option>
+                      <option value="+55"  data-flag="🇧🇷">🇧🇷 +55</option>
+                    </select>
+                  </div>
+                  {{ form_widget(form.phone, { attr: { class: 'form-control', placeholder: 'quote.form.phone'|trans, id: 'phoneNumber' } }) }}
+                </div>
                 {{ form_errors(form.phone) }}
               </div>
               <div class="form-group">
@@ -129,4 +157,23 @@
 
   </div>
 </section>
+
+{% block javascripts %}
+{{ parent() }}
+<script>
+(function () {
+  var form   = document.getElementById('quoteForm');
+  var select = document.getElementById('phonePrefixSelect');
+  var phone  = document.getElementById('phoneNumber');
+  if (!form || !select || !phone) return;
+  form.addEventListener('submit', function () {
+    var raw = phone.value.trim().replace(/^\+\d+\s*/, '');
+    if (raw && !phone.value.trim().startsWith('+')) {
+      phone.value = select.value + ' ' + raw;
+    }
+  });
+})();
+</script>
+{% endblock %}
+
 {% endblock %}

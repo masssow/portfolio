@@ -868,3 +868,50 @@ a.feature_item--link {
     &--green  { border-left: 3px solid $accent-green-fg;  .mg-service-card__badge { background: $accent-green-bg;  color: $accent-green-fg;  } .mg-service-card__cta { color: $accent-green-fg;  } }
     &--blue   { border-left: 3px solid $accent-blue-fg;   .mg-service-card__badge { background: $accent-blue-bg;   color: $accent-blue-fg;   } .mg-service-card__cta { color: $accent-blue-fg;   } }
 }
+
+// =======================================================================
+//  CHAMP TÉLÉPHONE — sélecteur d'indicatif pays
+// =======================================================================
+.phone-prefix-group {
+    display: flex;
+    align-items: stretch;
+
+    .input-group-prepend {
+        flex-shrink: 0;
+    }
+
+    .phone-prefix-select {
+        height: 100%;
+        min-width: 115px;
+        max-width: 130px;
+        border-radius: 8px 0 0 8px !important;
+        border-right: none !important;
+        border: 1px solid #ced4da;
+        background: #f5f8fc;
+        font-size: .88rem;
+        font-family: inherit;
+        color: #1e2d3e;
+        padding: 0 8px;
+        cursor: pointer;
+        appearance: auto;
+
+        &:focus {
+            outline: none;
+            border-color: $blue;
+            box-shadow: 0 0 0 2px rgba(97,146,190,.18);
+        }
+    }
+
+    // Le vrai input phone vient juste après
+    input[type="tel"],
+    input[type="text"] {
+        border-radius: 0 8px 8px 0 !important;
+        border-left: none !important;
+        flex: 1;
+
+        &:focus {
+            border-color: $blue;
+            box-shadow: 0 0 0 2px rgba(97,146,190,.18);
+        }
+    }
+}

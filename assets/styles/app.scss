@@ -242,6 +242,12 @@ button:focus {
     margin-top: 8px;
 }
 
+#cookie-banner .cookie-actions .primary_btn {
+    padding: 7px 16px;
+    font-size: .82rem;
+    border-radius: 6px;
+}
+
 @keyframes cookie-slide-up {
     from {
         transform: translateY(12px);
