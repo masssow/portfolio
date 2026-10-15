@@ -82,7 +82,41 @@ main > .about_area:first-child { padding-top: 145px; }
   body { padding-bottom: 82px; }
   .home_banner_area { padding-top: 120px; }
   .banner_area .banner_inner { padding-top: 125px; }
-  .nav-lang { margin: 8px 0 16px; }
+  .header_area .navbar-collapse {
+    max-height: calc(100vh - 80px);
+    max-height: calc(100dvh - 80px);
+    overflow-y: auto;
+  }
+  .header_area .navbar-collapse.show,
+  .header_area .navbar-collapse.collapsing {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .header_area .nav-lang {
+    order: -1;
+    flex-shrink: 0;
+    gap: 12px;
+    margin: 0 0 8px;
+    padding: 12px 0;
+    border-bottom: 1px solid #66717e;
+  }
+  .header_area .nav-lang .nav-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 6px 16px !important;
+    line-height: 1.5 !important;
+    color: #fff;
+    border: 1px solid #a8c6df;
+    border-radius: 8px;
+  }
+  .header_area .nav-lang .is-current {
+    color: $ink;
+    background: #fff;
+    text-decoration: none;
+  }
   .mobile-sticky-cta { padding-bottom: max(12px, env(safe-area-inset-bottom)); z-index: 1000; }
   .blog_area, .blog_area.single-post-area, .contact_area { padding-top: 125px; }
 }

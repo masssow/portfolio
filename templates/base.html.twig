@@ -51,9 +51,9 @@
         <li class="nav-item{{ active ? ' active' : '' }}"><a class="nav-link" href="{{ path(route, route == 'app_posts' ? {} : {'_locale':locale}) }}"{% if active %} aria-current="page"{% endif %}>{{ ('menu.' ~ label)|trans }}</a></li>
       {% endfor %}
     </ul>
-    <div class="nav-lang" aria-label="{{ 'site.languages'|trans }}">
+    <div class="nav-lang" role="group" aria-label="{{ 'site.languages'|trans }}">
       {% for language in ['fr','es'] %}
-        <a class="nav-link{{ locale == language ? ' is-current' : '' }}" href="{{ bilingual ? path(currentRoute, routeParams|merge(app.request.query.all|filter((value, key) => key in ['pack', 'service']))|merge({'_locale':language})) : (language == 'fr' ? path(currentRoute, canonicalParams) : path('app_home', {'_locale':'es'})) }}" lang="{{ language }}" hreflang="{{ language }}"{% if locale == language %} aria-current="true"{% endif %}>{{ language|upper }}</a>
+        <a class="nav-link{{ locale == language ? ' is-current' : '' }}" href="{{ bilingual ? path(currentRoute, routeParams|merge(app.request.query.all|filter((value, key) => key in ['pack', 'service']))|merge({'_locale':language})) : (language == 'fr' ? path(currentRoute, canonicalParams) : path('app_home', {'_locale':'es'})) }}" lang="{{ language }}" hreflang="{{ language }}"{% if locale == language %} aria-current="true"{% endif %}><span class="d-none d-lg-inline">{{ language|upper }}</span><span class="d-lg-none">{{ language == 'fr' ? 'Français' : 'Español' }}</span></a>
       {% endfor %}
     </div></div>
   </div></nav></div>
