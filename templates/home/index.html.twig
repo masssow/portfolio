@@ -4,7 +4,7 @@
 {% block body %}
 <section class="home_banner_area"><div class="banner_inner"><div class="container"><div class="row align-items-center">
   <div class="col-lg-7"><div class="banner_content"><p class="hero-salutation">{{ 'home.hero.salutation'|trans }}</p><h1>{{ 'home.hero.h1'|trans }}</h1><p class="hero-intro">{{ 'home.hero.subtitle'|trans }}</p><div class="mg-actions"><a class="primary_btn" href="{{ path('app_quote', {'_locale':app.request.locale}) }}">{{ 'cta.devis'|trans }}</a><a class="primary_btn tr-bg" href="{{ path('app_services', {'_locale':app.request.locale}) }}">{{ 'cta.discover'|trans }}</a></div><p class="hero-proofs mt-4">{{ 'home.hero.proofs'|trans }}</p></div></div>
-  <div class="col-lg-5 mt-4 mt-lg-0"><figure class="mg-portrait"><img src="{{ asset('build/images/portrait-fondat-samba.png') }}" alt="{{ 'site.portrait'|trans }}" width="560" height="620" fetchpriority="high"><figcaption>{{ 'site.role'|trans }}</figcaption></figure></div>
+  <div class="col-lg-5 mt-4 mt-lg-0"><figure class="mg-portrait"><img src="{{ asset('build/images/portrait%20pro-mass.png') }}" alt="{{ 'site.portrait'|trans }}" width="918" height="1713" fetchpriority="high"><figcaption>{{ 'site.role'|trans }}</figcaption></figure></div>
 </div></div></div></section>
 <section class="section_gap"><div class="container"><div class="main_title text-center"><h2>{{ 'home.mirror.title'|trans }}</h2><p>{{ 'home.mirror.subtitle'|trans }}</p></div><div class="row">{% for i in 1..4 %}<div class="col-md-6 mb-4"><article class="feature_item feature_item--mirror"><h3>{{ ('home.mirror.items.' ~ i ~ '.title')|trans }}</h3><p>{{ ('home.mirror.items.' ~ i ~ '.text')|trans }}</p></article></div>{% endfor %}</div></div></section>
 {% include 'partials/_services.html.twig' %}

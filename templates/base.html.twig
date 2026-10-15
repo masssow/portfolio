@@ -26,13 +26,13 @@
   <meta property="og:url" content="{{ canonical }}">
   <meta property="og:type" content="{% block og_type %}website{% endblock %}">
   <meta property="og:locale" content="{{ locale == 'es' ? 'es_ES' : 'fr_FR' }}">
-  <meta property="og:image" content="{{ absolute_url(asset('build/images/portrait-fondat-samba.png')) }}">
+  <meta property="og:image" content="{{ absolute_url(asset('build/images/portrait%20pro-mass.png')) }}">
   <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
   <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}">
   {% block stylesheets %}{{ encore_entry_link_tags('app') }}{% endblock %}
   {% block schema_org %}
     {% set schema = {'@context':'https://schema.org', '@graph':[
-      {'@type':'Person', '@id':personId, 'name':'Samba Sow', 'jobTitle':('site.role'|trans), 'url':url('app_about', {'_locale':locale}), 'image':absolute_url(asset('build/images/portrait-fondat-samba.png')), 'email':'contact.massgrafik@gmail.com', 'sameAs':['https://www.linkedin.com/in/massgrafik-web'], 'knowsLanguage':['fr','es']},
+      {'@type':'Person', '@id':personId, 'name':'Samba Sow', 'jobTitle':('site.role'|trans), 'url':url('app_about', {'_locale':locale}), 'image':absolute_url(asset('build/images/portrait%20pro-mass.png')), 'email':'contact.massgrafik@gmail.com', 'sameAs':['https://www.linkedin.com/in/massgrafik-web'], 'knowsLanguage':['fr','es']},
       {'@type':'WebSite', '@id':absolute_url(path('app_home', {'_locale':'fr'})) ~ '#website', 'name':'Massgrafik', 'url':url('app_home', {'_locale':locale}), 'description':('site.subtitle'|trans), 'inLanguage':locale, 'publisher':{'@id':personId}}
     ]} %}
     <script type="application/ld+json">{{ schema|json_encode(15)|raw }}</script>
