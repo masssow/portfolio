@@ -17,7 +17,7 @@
     </div>
 
     {% for message in app.flashes('warning') %}
-      <div class="alert alert-warning mb-3">{{ message|raw }}</div>
+      <div class="alert alert-warning mb-3" role="alert">{{ message }}</div>
     {% endfor %}
 
     <div class="row">
@@ -36,7 +36,7 @@
           <div class="info_item mt-3">
             <i class="lnr lnr-phone-handset"></i>
             <h6><a href="tel:+33666117428">(+33) 6 66 11 74 28</a></h6>
-            <p>{{ 'home.badge.small'|trans }}</p>
+            <p>{{ 'site.role'|trans }}</p>
           </div>
 
           <div class="info_item mt-3">
@@ -48,12 +48,13 @@
 
       <!-- Colonne droite : formulaire -->
       <div class="col-lg-8">
+        <p class="mb-4">{{ 'quote.next'|trans }}</p>
         <h2 class="mb-4">{{ 'quote.form.titleFormContact'|trans }}</h2>
 
         {{ form_errors(form) }}
 
         {{ form_start(form, {
-          action: path('app_quote', {'_locale': app.request.locale}),
+          action: path('app_quote', {'_locale': app.request.locale, 'pack':selected_pack}),
           method: 'POST',
           attr: {
             class: 'contact_form',
@@ -64,19 +65,22 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                {{ form_widget(form.name, { attr: { class: 'form-control', placeholder: 'quote.form.name'|trans } }) }}
+                {{ form_label(form.name) }}
+                {{ form_widget(form.name, { attr: { class: 'form-control', autocomplete:'name' } }) }}
                 {{ form_errors(form.name) }}
               </div>
               <div class="form-group">
-                {{ form_widget(form.email, { attr: { class: 'form-control', placeholder: 'quote.form.email'|trans } }) }}
+                {{ form_label(form.email) }}
+                {{ form_widget(form.email, { attr: { class: 'form-control', autocomplete:'email' } }) }}
                 {{ form_errors(form.email) }}
               </div>
               <div class="form-group">
+                {{ form_label(form.phone) }}
                 <div class="phone-prefix-group input-group">
                   <div class="input-group-prepend">
                     <select id="phonePrefixSelect" class="form-control phone-prefix-select" aria-label="{{ 'quote.form.phone_prefix'|trans }}">
-                      <option value="+33"  data-flag="🇫🇷">🇫🇷 +33</option>
-                      <option value="+34"  data-flag="🇪🇸">🇪🇸 +34</option>
+                      <option value="+33"{% if app.request.locale == 'fr' %} selected{% endif %}>🇫🇷 +33</option>
+                      <option value="+34"{% if app.request.locale == 'es' %} selected{% endif %}>🇪🇸 +34</option>
                       <option value="+221" data-flag="🇸🇳">🇸🇳 +221</option>
                       <option value="+32"  data-flag="🇧🇪">🇧🇪 +32</option>
                       <option value="+41"  data-flag="🇨🇭">🇨🇭 +41</option>
@@ -99,12 +103,13 @@
                       <option value="+55"  data-flag="🇧🇷">🇧🇷 +55</option>
                     </select>
                   </div>
-                  {{ form_widget(form.phone, { attr: { class: 'form-control', placeholder: 'quote.form.phone'|trans, id: 'phoneNumber' } }) }}
+                  {{ form_widget(form.phone, { attr: { class: 'form-control', autocomplete:'tel-national' } }) }}
                 </div>
                 {{ form_errors(form.phone) }}
               </div>
               <div class="form-group">
-                {{ form_widget(form.company, { attr: { class: 'form-control', placeholder: 'quote.form.company'|trans } }) }}
+                {{ form_label(form.company) }}
+                {{ form_widget(form.company, { attr: { class: 'form-control', autocomplete:'organization' } }) }}
                 {{ form_errors(form.company) }}
               </div>
             </div>
@@ -116,7 +121,8 @@
                 {{ form_errors(form.pack) }}
               </div>
               <div class="form-group">
-                {{ form_widget(form.message, { attr: { class: 'form-control', rows: 6, placeholder: 'quote.form.message'|trans } }) }}
+                {{ form_label(form.message) }}
+                {{ form_widget(form.message, { attr: { class: 'form-control', rows: 6 } }) }}
                 {{ form_errors(form.message) }}
               </div>
             </div>
@@ -146,17 +152,11 @@
 
     </div>
 
-    <div id="mapBox" class="mapBox"
-         data-lat="48.8566"
-         data-lon="2.3522"
-         data-zoom="11"
-         data-info="Contact MassGrafik — France."
-         data-mlat="48.8566"
-         data-mlon="2.3522">
-    </div>
 
   </div>
 </section>
+
+{% endblock %}
 
 {% block javascripts %}
 {{ parent() }}
@@ -164,7 +164,7 @@
 (function () {
   var form   = document.getElementById('quoteForm');
   var select = document.getElementById('phonePrefixSelect');
-  var phone  = document.getElementById('phoneNumber');
+  var phone  = document.getElementById('{{ form.phone.vars.id }}');
   if (!form || !select || !phone) return;
   form.addEventListener('submit', function () {
     var raw = phone.value.trim().replace(/^\+\d+\s*/, '');
@@ -174,6 +174,4 @@
   });
 })();
 </script>
-{% endblock %}
-
 {% endblock %}

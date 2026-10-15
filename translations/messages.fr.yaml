@@ -1,598 +1,503 @@
 site:
-  title: "MassGrafik — Solutions digitales pour petites structures"
-  subtitle: "Sites web, e-commerce, outils de gestion et automatisations — conçus pour les petites entreprises, artisans et associations."
-
+  title: 'Samba Sow, développeur indépendant — Massgrafik'
+  subtitle: 'Massgrafik, mon accompagnement numérique pour les petites structures et associations en France et en Espagne.'
+  role: 'Samba Sow · Développeur indépendant'
+  portrait: 'Samba Sow, développeur indépendant et créateur de Massgrafik'
+  zone: 'France et Espagne · Accompagnement à distance'
+  rights: 'Tous droits réservés'
+  skip: 'Aller au contenu'
+  navigation: Navigation
+  legal: 'Informations légales'
+  mentions: 'Mentions légales'
+  privacy: Confidentialité
+  cookies: 'Politique de cookies'
+  manage_cookies: 'Gérer mes cookies'
+  top: 'Retour en haut'
+  menu_toggle: 'Ouvrir le menu'
+  languages: 'Choisir la langue'
+  email: E-mail
 menu:
-  home: "Accueil"
-  services: "Services"
-  tarifs: "Tarifs"
-  about: "À propos"
-  blog: "Ressources"
-  contact: "Contact"
-
-title:
-  fallow: "Suivez-nous sur"
-
-# ===================================================================
-# ACCUEIL
-# ===================================================================
+  home: Accueil
+  services: Accompagnements
+  tarifs: Tarifs
+  about: 'À propos'
+  blog: Ressources
+  contact: 'Mon projet'
+cta:
+  devis: 'Parler de mon projet'
+  talk: 'Parlons de votre projet'
+  discover: 'Découvrir les accompagnements'
+  packs: 'Voir les tarifs'
+  contact: 'Me contacter'
+  details: 'Découvrir ce service'
+  about: 'Faire connaissance'
 home:
   seo:
-    titleTab: "MassGrafik — Solutions digitales pour petites structures"
-    metaDesc: "Sites professionnels, e-commerce, outils de gestion et automatisations pour artisans, commerçants et petites structures. Basé à Paris, intervient en IDF, Espagne et Sénégal."
-
+    titleTab: 'Développeur indépendant pour petites structures — Massgrafik'
+    metaDesc: 'Samba Sow accompagne les petites entreprises et associations : création de sites web, outils de gestion et automatisations en France et en Espagne.'
   hero:
-    salutation: "MassGrafik"
-    h1: "On construit votre présence en ligne, vous gérez votre activité"
-    subtitle: "Sites professionnels, e-commerce, outils de gestion et automatisations — conçus pour les artisans, commerçants et petites structures."
-    proofs: "✅ Réponse sous 48 h ✅ Approche personnalisée ✅ Solutions adaptées à votre budget"
-
+    salutation: 'Samba Sow · Développeur indépendant'
+    h1: 'Un site utile. Des outils simples. Un accompagnement à votre rythme.'
+    subtitle: 'Avec Massgrafik, j’aide les petites structures et les associations à être visibles et à mieux s’organiser. Nous partons de votre quotidien pour construire ce qui vous sera vraiment utile.'
+    proofs: 'Un interlocuteur direct · Des priorités claires · Un projet progressif'
   mirror:
-    title: "Vous vous reconnaissez ?"
-    subtitle: "Si oui, MassGrafik peut vous aider à changer ça."
+    title: 'Votre quotidien est le point de départ'
+    subtitle: 'Pas besoin d’avoir déjà la solution : décrivez-moi ce qui vous freine.'
     items:
       1:
-        title: "Pas de site, ou un site qui ne génère aucun contact"
-        text: "Vos clients potentiels ne vous trouvent pas — ou repartent sans agir."
+        title: 'Votre activité manque de visibilité'
+        text: 'Votre site ne présente plus vos services, vos actions ou les informations que vos visiteurs cherchent.'
       2:
-        title: "Des outils dispersés qui font perdre du temps"
-        text: "Excel, WhatsApp, papier... les informations se perdent et la coordination est difficile."
+        title: 'Vos informations sont dispersées'
+        text: 'Tableurs, messages, documents : retrouver une demande ou suivre une inscription devient compliqué.'
       3:
-        title: "Vous voulez vendre en ligne mais ne savez pas par où commencer"
-        text: "La mise en place semble compliquée, coûteuse, et vous ne savez pas quoi prioriser."
+        title: 'Vous souhaitez lancer un nouveau service'
+        text: 'Vente en ligne, réservation, adhésions : vous avez besoin de savoir par où commencer.'
       4:
-        title: "Des équipes terrain difficiles à coordonner"
-        text: "Le suivi des interventions, des statuts et des échanges est difficile à centraliser."
-
-  solutions:
-    title: "Ce que MassGrafik peut faire pour vous"
-    subtitle: "Des solutions concrètes, adaptées à votre réalité."
-    web:
-      title: "Sites professionnels"
-      desc: "Un site clair pour présenter votre activité, rassurer vos clients et générer des contacts."
-    ecom:
-      title: "E-commerce"
-      desc: "Une boutique en ligne simple pour vendre vos produits ou services facilement."
-    tools:
-      title: "Outils de gestion"
-      desc: "Des outils sur mesure pour mieux suivre votre activité, vos clients et vos interventions."
-    auto:
-      title: "Automatisations"
-      desc: "Simplifiez les tâches répétitives : confirmations, notifications, suivi de statut."
-    terrain:
-      title: "Suivi terrain"
-      desc: "Créez, affectez et suivez vos interventions entre bureau et équipes en temps réel."
-    accomp:
-      title: "Accompagnement digital"
-      desc: "Clarifiez votre besoin, priorisez les actions et construisez progressivement."
-    booking:
-      title: "Réservations en ligne"
-      desc: "Vos clients prennent rendez-vous directement — confirmations et rappels automatiques."
-    operations:
-      title: "Maintenance & suivi"
-      desc: "Votre site toujours en ligne, à jour et performant — on s'occupe du reste."
-
+        title: 'Vous avez peu de temps et un budget à respecter'
+        text: 'Vous cherchez une première étape réaliste, puis des améliorations au fil des besoins.'
   method:
-    title: "Comment on travaille"
+    title: 'Une démarche simple, du besoin à la prise en main'
     steps:
       1:
-        num: "01"
-        title: "On comprend votre activité"
-        desc: "Un échange de 30 minutes pour comprendre votre contexte, vos contraintes et vos priorités — avant de parler de budget."
+        num: '01'
+        title: 'Je vous écoute'
+        desc: 'Nous faisons le point sur votre activité, vos publics, vos contraintes et vos priorités.'
       2:
-        num: "02"
-        title: "On propose une solution claire"
-        desc: "Une proposition lisible et honnête. Ce qui est inclus, ce qui ne l'est pas, et un délai réaliste."
+        num: '02'
+        title: 'Je propose un cadre clair'
+        desc: 'Je vous présente une solution et un devis : périmètre, budget, étapes et suivi envisagé.'
       3:
-        num: "03"
-        title: "On construit et on accompagne"
-        desc: "Livraison progressive, transfert de propriété complet, formation simple si besoin."
-
-  badge:
-    large: "48 h"
-    small: "délai de réponse"
-
-  zones:
-    title: "Zones d'intervention :"
-    list: "Paris / Île-de-France · Espagne · Sénégal — 100 % à distance possible."
-
-  packs:
-    title: "Nos offres"
-    intro: "Des points de départ clairs pour avancer sans hésiter."
-
+        num: '03'
+        title: 'Je développe et je vous accompagne'
+        desc: 'Vous suivez les avancées. Je vous aide à prendre en main votre outil et nous définissons les prochaines évolutions.'
+  personal:
+    title: 'Derrière Massgrafik, il y a Samba'
+    text: 'Je suis développeur indépendant. Massgrafik est le nom que j’ai donné à ma démarche : comprendre votre réalité, créer des outils utiles et vous aider à les utiliser avec autonomie.'
   cta_center:
-    title: "Avant de parler de budget, faisons le point."
-    subtitle: "30 minutes pour clarifier votre objectif, vos priorités et les premières actions utiles."
-    button: "Demander un échange gratuit"
-    proof: "Sans engagement · Conseils actionnables · Réponse sous 48 h"
-
-# ===================================================================
-# CTA GLOBAUX
-# ===================================================================
-cta:
-  devis: "Demander un devis gratuit"
-  packs: "Voir les offres"
-  talk: "Parler de mon projet"
-  contact: "Nous contacter"
-  discover: "Découvrir les services"
-
-contact:
-  direct: "Contact direct"
-
-# ===================================================================
-# OFFRES / PACKS
-# ===================================================================
-offers_cards:
-
-  header:
-    eyebrow:  "Tarifs"
-    title:    "Des solutions adaptées à votre budget"
-    subtitle: "Positionnés en dessous des agences franciliennes, avec la même qualité de livraison."
-
-  market_label: "Marché :"
-  cta_label:    "Demander un devis"
-
-  starter:
-    badge:       "Entrée de gamme"
-    name:        "Starter Digital"
-    description: "Site vitrine 5 pages + identité visuelle de base + formulaire de contact + hébergement 1 an"
-    price:       "990"
-    market:      "1 500 – 3 000 €"
-    includes:
-      1: "5 pages responsive mobile-first"
-      2: "Design à partir d'un template personnalisé"
-      3: "SEO de base (balises, vitesse)"
-      4: "Formulaire de contact"
-      5: "Hébergement + domaine 1 an inclus"
-      6: "Formation utilisation (1h)"
-
-  pro:
-    badge:       "Best seller"
-    name:        "Pro PME"
-    description: "Site vitrine + outil de gestion simple (demandes clients, suivi, tableau de bord) — la combinaison qui fait la différence"
-    price:       "1 890"
-    market:      "4 000 – 7 000 €"
-    includes:
-      1: "Tout le Starter +"
-      2: "Module gestion demandes clients"
-      3: "Tableau de bord simple (statuts)"
-      4: "Export PDF devis/facture"
-      5: "Espace client sécurisé"
-      6: "Formation complète (2h)"
-
-  business:
-    badge:       "Sur mesure"
-    name:        "Business Tool"
-    description: "Application métier complète avec workflows, multi-utilisateurs, notifications — pour structures avec process internes"
-    price:       "3 200"
-    market:      "6 000 – 12 000 €"
-    includes:
-      1: "Application web sur mesure"
-      2: "Multi-utilisateurs + rôles"
-      3: "Notifications automatiques"
-      4: "Reporting & tableaux de bord"
-      5: "Intégrations (email, PDF, agenda)"
-      6: "Formation + documentation (4h)"
-# ===================================================================
-# PAGE TARIFS
-# ===================================================================
-tarifs:
-  seo:
-    titleTab: "Tarifs — MassGrafik"
-    metaDesc: "Offres claires et transparentes : Starter Digital dès 990 €, Pro PME, Business Tool sur mesure. Positionnés bien en dessous des agences, avec la même qualité."
-  hero:
-    eyebrow: "Tarifs transparents"
-    title: "Des offres claires, sans mauvaise surprise"
-    subtitle: "Positionnés bien en dessous des agences franciliennes, avec la même qualité de livraison. Vous savez ce que vous payez avant de commencer."
-  cta_all: "Demander un devis personnalisé"
-  compare:
-    title: "Ce qui est inclus dans chaque offre"
-    col1: "Starter Digital"
-    col2: "Pro PME"
-    col3: "Business Tool"
-    rows:
-      1:
-        label: "Nombre de pages"
-        v1: "5 pages"
-        v2: "5 pages +"
-        v3: "Sur mesure"
-      2:
-        label: "Module de gestion clients"
-        v1: "Non"
-        v2: "Oui"
-        v3: "Oui (avancé)"
-      3:
-        label: "Espace client sécurisé"
-        v1: "Non"
-        v2: "Oui"
-        v3: "Oui"
-      4:
-        label: "Formation incluse"
-        v1: "1 h"
-        v2: "2 h"
-        v3: "4 h + doc."
-      5:
-        label: "Délai de livraison"
-        v1: "2 – 3 sem."
-        v2: "3 – 5 sem."
-        v3: "5 – 10 sem."
-      6:
-        label: "Maintenance incluse"
-        v1: "Non"
-        v2: "En option"
-        v3: "Oui (6 mois)"
-  faq:
-    title: "Questions fréquentes sur les tarifs"
-    items:
-      1:
-        q: "Le prix affiché est-il vraiment tout compris ?"
-        a: "Oui. Le prix indiqué comprend la conception, le développement, l'hébergement la première année et la formation. Aucun surcoût caché. Si votre besoin dépasse le cadre du pack, on vous le dit avant de commencer."
-      2:
-        q: "Que se passe-t-il si mon besoin dépasse le pack choisi ?"
-        a: "On commence par un échange de diagnostic pour cerner précisément votre besoin. Si le pack standard ne suffit pas, on établit un devis sur mesure. Vous restez toujours informé et en maîtrise du budget."
-      3:
-        q: "Proposez-vous des facilités de paiement ?"
-        a: "Oui. Un acompte de 30 % est demandé au démarrage, le solde à la livraison. Pour les projets Business Tool, un paiement en 3 fois peut être envisagé. Demandez-le lors de votre échange de diagnostic."
-      4:
-        q: "La maintenance est-elle obligatoire ?"
-        a: "Non. Les packs Starter et Pro PME ne l'incluent pas par défaut. On peut néanmoins vous proposer un contrat de maintenance mensuel si vous souhaitez déléguer les mises à jour et le suivi technique."
-      5:
-        q: "Travaillez-vous avec des associations à budget limité ?"
-        a: "Oui. On adapte notre approche aux structures à but non lucratif. N'hésitez pas à nous en parler lors de votre prise de contact — des ajustements sont possibles selon le contexte."
-
-# ===================================================================
-# PAGE À PROPOS
-# ===================================================================
+    title: 'Commençons par votre besoin'
+    subtitle: 'Un site à créer, un outil à améliorer ou une idée encore floue ? Racontez-moi votre projet et vos contraintes.'
+    button: 'Parler de mon projet'
+    proof: 'Les modalités de réalisation seront précisées dans votre devis.'
 about:
   seo:
-    titleTab: "À propos — MassGrafik"
-    metaDesc: "Samba SOW, fondateur de MassGrafik, accompagne les artisans, commerçants et petites structures dans leur transformation digitale depuis Paris. Zones : IDF, Espagne, Sénégal."
-
+    titleTab: 'Samba Sow et la démarche Massgrafik'
+    metaDesc: 'Découvrez Samba Sow, développeur indépendant, et Massgrafik : une démarche de proximité pour les petites structures et associations en France et en Espagne.'
   hero:
-    title: "À propos de MassGrafik"
-    subtitle: "Un projet né d'une conviction simple : les petites structures méritent des solutions digitales vraiment adaptées à leur réalité."
-
+    title: 'Samba Sow, votre interlocuteur du début à la suite'
+    subtitle: 'Développeur indépendant, j’ai créé Massgrafik pour accompagner les petites structures dans leurs projets numériques.'
   philosophy:
-    title: "La philosophie MassGrafik"
-    text1: "MassGrafik est né de l'observation d'un problème récurrent : beaucoup de petites entreprises, d'artisans, d'associations et de structures de terrain ont des besoins digitaux réels — mais peu de solutions concrètes, abordables et adaptées à leur fonctionnement quotidien."
-    text2: "L'objectif n'est pas de vendre des sites ou des visuels. C'est d'aider les petites structures à mieux s'organiser, à gagner en visibilité et à avancer dans leur transformation digitale — à leur rythme, selon leurs priorités et leurs contraintes réelles."
-
+    title: 'Massgrafik, une démarche d’accompagnement'
+    text1: 'Un site ou une application a de la valeur lorsqu’il répond à un besoin concret. Je prends le temps de comprendre votre fonctionnement avant de proposer une solution technique.'
+    text2: 'Mon objectif : vous aider à présenter votre activité, simplifier votre organisation et utiliser vos outils avec confiance. Nous avançons par étapes adaptées à vos moyens.'
   values:
-    title: "Ce qui guide notre approche"
+    title: 'Ce qui guide mon travail'
     items:
       1:
-        title: "Proximité"
-        desc: "On prend le temps de comprendre votre activité avant de proposer quoi que ce soit."
-        icon: "fa-handshake"
+        title: Écoute
+        desc: 'Comprendre votre activité, vos publics et vos contraintes avant de développer.'
+        icon: fa-handshake
       2:
-        title: "Simplicité"
-        desc: "Pas de jargon, pas de complexité inutile. Des solutions compréhensibles et maintenables."
-        icon: "fa-circle-check"
+        title: Clarté
+        desc: 'Expliquer les choix et les étapes avec des mots simples.'
+        icon: fa-circle-check
       3:
-        title: "Utilité"
-        desc: "Chaque livrable répond à un besoin réel. On ne construit pas pour construire."
-        icon: "fa-bullseye"
+        title: Utilité
+        desc: 'Relier chaque fonctionnalité à un usage concret.'
+        icon: fa-bullseye
       4:
-        title: "Progressivité"
-        desc: "Commencer simple, livrer utile, améliorer selon les retours et les besoins réels."
-        icon: "fa-stairs"
-
+        title: Autonomie
+        desc: 'Vous aider à prendre en main ce qui a été construit pour vous.'
+        icon: fa-stairs
   forwho:
-    title: "Pour qui ?"
-    intro: "MassGrafik travaille avec des structures de toutes tailles, tant qu'elles ont un besoin concret à résoudre :"
+    title: 'Pour les structures qui font beaucoup avec peu'
+    intro: 'J’accompagne en priorité les personnes qui ont besoin d’un partenaire technique accessible.'
     items:
-      1: "Petites entreprises et PME"
-      2: "Artisans et indépendants"
-      3: "Commerçants et e-commerçants"
-      4: "Associations et petites institutions"
-      5: "Structures avec équipes terrain"
-      6: "Porteurs de projet qui veulent structurer leur présence digitale"
-
+      1: 'Associations et collectifs'
+      2: 'Très petites entreprises'
+      3: 'Artisans et commerçants'
+      4: 'Indépendants et prestataires'
+      5: 'Petites équipes de terrain'
+      6: 'Porteurs de projets locaux'
   zones:
-    title: "Où on intervient"
-    subtitle: "MassGrafik est basé à Paris et intervient à distance sur trois zones principales."
+    title: 'France et Espagne, avec un suivi à distance'
+    subtitle: 'Nous pouvons échanger et travailler en français ou en espagnol.'
     paris:
-      title: "Paris & Île-de-France"
-      desc: "Basé à Paris, MassGrafik accompagne en priorité les artisans, commerçants, TPE et associations d'Île-de-France. Des rendez-vous en présentiel sont possibles sur demande. La majorité des projets se déroule entièrement à distance, sans perte de qualité ni de suivi."
+      title: France
+      desc: 'Un accompagnement pour les petites structures et associations, en Île-de-France comme ailleurs en France. Les modalités de rencontre sont convenues ensemble.'
     spain:
-      title: "Espagne"
-      desc: "MassGrafik accompagne les porteurs de projet, commerçants et petites structures établis en Espagne Toutes les interventions se font à distance, en français, espagnol ou wolof selon le besoin."
-    senegal:
-      title: "Sénégal"
-      desc: "Sénégal, avec pour objectif d'accompagner les PME locales et de répondre aux appels d'offres publics (ARMP). En attendant, MassGrafik intervient déjà dans des projets sénégalais portés depuis la diaspora ou localement."
-
+      title: Espagne
+      desc: 'J’accompagne aussi les projets établis en Espagne, avec des échanges en espagnol et une organisation du projet à distance.'
   cta:
-    title: "Un projet en tête ?"
-    subtitle: "Décrivez votre besoin en quelques mots. On vous répond sous 48 h avec une première orientation."
-    button: "Parler de mon projet"
-
-# ===================================================================
-# PAGE SERVICES
-# ===================================================================
+    title: 'Faisons connaissance'
+    subtitle: 'Présentez-moi votre structure et ce que vous souhaitez améliorer.'
+    button: 'Parler de mon projet'
 services:
   seo:
-    titleTab: "Services — MassGrafik"
-    metaDesc: "Sites web, e-commerce, outils de gestion, réservations en ligne, automatisations, SEO et maintenance. Des solutions digitales sur mesure pour les petites structures."
-
+    titleTab: 'Sites web et outils pour petites structures — Massgrafik'
+    metaDesc: 'Un développeur indépendant pour votre site, vos réservations, vos outils de gestion et votre suivi technique. Accompagnement des associations et petites entreprises.'
 services2:
   intro:
-    title: "Des solutions claires, utiles et adaptées"
-    subtitle: "MassGrafik ne vend pas seulement des prestations techniques. Chaque solution est conçue pour répondre à un besoin métier précis."
-  toggle: "Voir le détail"
+    title: 'Des accompagnements pour vos besoins concrets'
+    subtitle: 'Je vous aide à choisir une première étape utile. Les services ci-dessous sont des possibilités à adapter à votre activité, votre budget et vos priorités.'
   includes:
-    title: "Ce qui est inclus"
+    title: 'Ce que nous pouvons construire'
+  cta:
+    subtitle: 'Décrivez-moi votre besoin. Je vous proposerai une première orientation et un cadre adapté.'
+  others:
+    title: 'Pour aller plus loin'
+    all: 'Voir les accompagnements'
+  example_title: 'Un exemple d’usage'
+  audience_title: 'Pour qui ?'
+  scope: 'Le périmètre, les intégrations et le suivi sont définis dans le devis.'
+  groups:
+    visibility: 'Être visible et présenter son activité'
+    organisation: 'Mieux organiser le quotidien'
+    evolution: 'Faire évoluer ses outils'
   cards:
     web:
-      title: "Sites professionnels et présence digitale"
-      teaser: "Être trouvé, compris et contacté."
-      intro: "On conçoit votre site en partant de votre activité réelle — pas d'un modèle générique. Résultat : un site que vos clients comprennent dès la première visite, qui rassure et qui génère de vrais contacts."
+      title: 'Site web et présence en ligne'
+      teaser: 'Présenter votre activité clairement.'
+      intro: 'Je crée ou améliore votre site pour aider vos visiteurs à comprendre votre activité et à vous contacter.'
+      audience: 'Petites entreprises, indépendants et associations.'
+      example: 'Une association présente ses actions, ses événements et les façons de la rejoindre.'
+      desc: 'Je crée ou améliore votre site pour aider vos visiteurs à comprendre votre activité et à vous contacter.'
       items:
-        1: "Site vitrine pour présenter clairement votre activité et vos services."
-        2: "Refonte d'un site existant pour améliorer l'image et la lisibilité."
-        3: "Pages bien structurées : accueil, services, à propos, contact."
-        4: "Design propre, mobile-first et rapide à charger."
-        5: "Formulaire de contact et prise de rendez-vous intégrés."
-        6: "Fiche Google Business créée ou optimisée."
+        1: 'Présentation de votre activité'
+        2: 'Pages adaptées à vos publics'
+        3: 'Navigation sur mobile et ordinateur'
+        4: 'Formulaire de contact'
+        5: 'Structure et balises SEO'
+        6: 'Prise en main des contenus'
     ecommerce:
-      title: "E-commerce et vente en ligne"
-      teaser: "Vendre simplement, encaisser sereinement."
-      intro: "Vendre en ligne ne devrait pas être compliqué. On met en place une boutique adaptée à votre catalogue, avec un paiement simple et une gestion des commandes sans prise de tête."
+      title: 'Boutique et vente en ligne'
+      teaser: 'Passer de votre catalogue aux commandes.'
+      intro: 'Je vous accompagne dans la mise en place d’une boutique adaptée à votre catalogue et à votre organisation.'
+      audience: 'Commerçants, créateurs et structures souhaitant vendre en ligne.'
+      example: 'Un artisan propose une sélection de produits avec retrait sur place.'
+      desc: 'Je vous accompagne dans la mise en place d’une boutique adaptée à votre catalogue et à votre organisation.'
       items:
-        1: "Boutique en ligne adaptée à votre catalogue et votre secteur."
-        2: "Paiement sécurisé avec Stripe ou solution équivalente."
-        3: "Gestion des commandes, des stocks et des transporteurs."
-        4: "Click-and-collect et commandes avec créneaux de retrait."
-        5: "Abonnements, adhésions ou achats récurrents."
-        6: "Mise en ligne progressive et accompagnement au démarrage."
+        1: 'Catalogue de produits ou services'
+        2: 'Parcours de commande'
+        3: 'Intégration du paiement selon la solution retenue'
+        4: 'Suivi des commandes'
+        5: 'Options de livraison ou de retrait'
+        6: 'Accompagnement à la gestion de la boutique'
     tools:
-      title: "Outils de gestion simples"
-      teaser: "Mieux organiser, mieux suivre, gagner du temps."
-      intro: "Excel, post-its et messagerie instantanée ont leurs limites. On construit des outils simples qui centralisent vos données et automatisent les petites tâches qui font perdre du temps."
+      title: 'Outils de gestion sur mesure'
+      teaser: 'Retrouver vos informations au même endroit.'
+      intro: 'Je développe des outils simples pour suivre vos demandes, vos adhérents ou vos interventions selon votre fonctionnement.'
+      audience: 'Associations, petites équipes et prestataires de terrain.'
+      example: 'Une petite équipe suit les demandes reçues et l’avancement de chaque intervention.'
+      desc: 'Je développe des outils simples pour suivre vos demandes, vos adhérents ou vos interventions selon votre fonctionnement.'
       items:
-        1: "Suivi des demandes clients et pipeline de gestion."
-        2: "Outil de suivi des réservations ou des prestations."
-        3: "Formulaires métier internes avec traitement automatisé."
-        4: "Tableaux de bord simples pour visualiser votre activité."
-        5: "Historique des interventions ou des échanges clients."
-        6: "Espace de gestion accessible depuis n'importe quel appareil."
-    automation:
-      title: "Automatisations"
-      teaser: "Moins de tâches manuelles, plus de temps utile."
-      intro: "Certaines tâches se répètent tous les jours sans vraiment apporter de valeur. On identifie ces points de friction et on les élimine avec des automatisations légères, sans complexité technique de votre côté."
-      items:
-        1: "Réception et traitement de demandes via formulaire intelligent."
-        2: "Confirmation automatique par e-mail ou SMS."
-        3: "Notifications internes lors de nouvelles demandes."
-        4: "Suivi de statut automatisé : nouveau, en cours, traité."
-        5: "Centralisation et organisation de données récurrentes."
-        6: "Simplification de processus manuels et répétitifs."
-    terrain:
-      title: "Suivi des interventions terrain"
-      teaser: "Coordonner bureau et terrain sans friction."
-      intro: "Coordonner bureau et équipes mobiles sans perdre d'information, c'est possible. On crée des outils adaptés à votre façon de travailler sur le terrain, accessibles depuis n'importe quel appareil."
-      items:
-        1: "Création et affectation d'interventions depuis un espace dédié."
-        2: "Suivi du statut en temps réel : à faire, en cours, terminé."
-        3: "Centralisation des informations : lieu, technicien, notes, pièces jointes."
-        4: "Visibilité complète sur le travail réalisé et en attente."
-        5: "Réduction des échanges dispersés par téléphone ou messagerie."
-        6: "Adapté aux petites structures avec équipes mobiles ou prestataires."
-    support:
-      title: "Accompagnement digital"
-      teaser: "Clarifier le besoin avant de construire la solution."
-      intro: "Avant de construire quoi que ce soit, on prend le temps de comprendre votre activité, vos contraintes et vos priorités réelles. Vous repartez avec une feuille de route claire, pas un devis à l'aveugle."
-      items:
-        1: "Échange de diagnostic pour comprendre votre activité et vos contraintes."
-        2: "Identification des problèmes simples à résoudre en priorité."
-        3: "Proposition d'une solution réaliste adaptée à votre budget."
-        4: "Feuille de route progressive : étapes, priorités et délais clairs."
-        5: "Formation simple sur les outils livrés."
-        6: "Maintenance et évolutions continues selon vos besoins."
+        1: 'Centralisation des informations utiles'
+        2: 'Suivi de demandes ou d’inscriptions'
+        3: 'Statuts et étapes adaptés à votre activité'
+        4: 'Tableau de bord simple'
+        5: 'Accès selon les rôles nécessaires'
+        6: 'Exports définis ensemble'
     booking:
-      title: "Réservations et formulaires en ligne"
-      teaser: "Vos clients réservent, vous gérez."
-      intro: "Permettre à vos clients de réserver un créneau, soumettre une demande ou remplir un formulaire structuré — sans échange de messages, sans perte de temps. On met en place un système adapté à votre activité."
+      title: 'Réservations et inscriptions'
+      teaser: 'Faciliter les demandes de vos publics.'
+      intro: 'Je mets en place un parcours de réservation ou d’inscription pour limiter les échanges et structurer les informations reçues.'
+      audience: 'Prestataires, associations et organisateurs d’ateliers.'
+      example: 'Une association recueille les inscriptions à un atelier et retrouve la liste des participants.'
+      desc: 'Je mets en place un parcours de réservation ou d’inscription pour limiter les échanges et structurer les informations reçues.'
       items:
-        1: "Formulaire de prise de rendez-vous intégré à votre site."
-        2: "Choix de créneaux disponibles et confirmation automatique par e-mail."
-        3: "Rappels automatiques avant le rendez-vous (e-mail ou SMS)."
-        4: "Gestion des annulations et reports depuis un espace admin simple."
-        5: "Synchronisation avec votre agenda (Google Agenda ou équivalent)."
-        6: "Récapitulatif des réservations du jour / de la semaine envoyé automatiquement."
+        1: 'Formulaire adapté à votre activité'
+        2: 'Choix d’un créneau ou d’un événement'
+        3: 'Confirmation selon les besoins'
+        4: 'Suivi des inscriptions ou réservations'
+        5: 'Gestion des changements à définir'
+        6: 'Connexion à un agenda selon faisabilité'
     content_seo:
-      title: "Contenus, SEO et visibilité"
-      teaser: "Être trouvé par vos clients avant vos concurrents."
-      intro: "Un bon site doit aussi être visible. On optimise votre présence sur les moteurs de recherche et on vous aide à produire du contenu qui attire, informe et convertit vos visiteurs en clients."
+      title: 'Contenus et référencement naturel'
+      teaser: 'Aider vos visiteurs à vous trouver.'
+      intro: 'Je travaille la structure technique et les contenus de votre site pour rendre votre activité plus lisible et faciliter sa découverte.'
+      audience: 'Petites structures disposant d’un site ou préparant sa création.'
+      example: 'Un commerce clarifie ses pages de services et ses informations pratiques locales.'
+      desc: 'Je travaille la structure technique et les contenus de votre site pour rendre votre activité plus lisible et faciliter sa découverte.'
       items:
-        1: "Audit SEO technique de votre site existant."
-        2: "Optimisation des balises, URLs et structure de page."
-        3: "Fiche Google Business créée ou optimisée."
-        4: "Rédaction de pages ou d'articles orientés mots-clés locaux."
-        5: "Stratégie de contenu adaptée à votre secteur et votre cible."
-        6: "Suivi des positions et recommandations d'amélioration continues."
+        1: 'Analyse de la structure existante'
+        2: 'Titres et descriptions des pages'
+        3: 'Organisation des contenus'
+        4: 'Navigation et liens entre les pages'
+        5: 'Recommandations de performance'
+        6: 'Conseils pour vos informations locales'
+    automation:
+      title: 'Automatisations utiles'
+      teaser: 'Réduire les tâches qui se répètent.'
+      intro: 'Je repère avec vous les étapes répétitives et propose des automatisations adaptées aux outils que vous utilisez.'
+      audience: 'Petites équipes et associations avec des tâches administratives récurrentes.'
+      example: 'Une demande reçue par formulaire est enregistrée et signalée à la personne qui la traite.'
+      desc: 'Je repère avec vous les étapes répétitives et propose des automatisations adaptées aux outils que vous utilisez.'
+      items:
+        1: 'Analyse d’un processus existant'
+        2: 'Collecte structurée par formulaire'
+        3: 'Notifications ciblées'
+        4: 'Mise à jour de statuts'
+        5: 'Transfert de données selon les outils'
+        6: 'Documentation du fonctionnement'
     operations:
-      title: "Suivi et maintenance continue"
-      teaser: "Votre site toujours en ligne, à jour et performant."
-      intro: "Une fois votre solution livrée, on assure le suivi technique, les mises à jour, les sauvegardes et les petites évolutions. Vous gérez votre activité — on s'occupe du reste."
+      title: 'Maintenance et évolutions'
+      teaser: 'Faire vivre votre site dans la durée.'
+      intro: 'Je peux assurer le suivi technique et les améliorations de votre solution selon un périmètre convenu ensemble.'
+      audience: 'Structures souhaitant un interlocuteur technique pour leur site ou outil.'
+      example: 'Une association fait évoluer les informations et fonctionnalités de son site au fil de ses actions.'
+      desc: 'Je peux assurer le suivi technique et les améliorations de votre solution selon un périmètre convenu ensemble.'
       items:
-        1: "Mises à jour régulières des composants et de la sécurité."
-        2: "Sauvegardes automatiques et restauration rapide en cas de problème."
-        3: "Surveillance de la disponibilité et des performances."
-        4: "Correctifs rapides en cas de dysfonctionnement."
-        5: "Petites évolutions et ajustements de contenu inclus."
-        6: "Rapport mensuel de suivi envoyé par e-mail."
-  cta:
-    subtitle: "Décrivez votre besoin en quelques mots. On vous répond sous 48 h, sans engagement."
-  others:
-    title: "Nos autres solutions"
-    all: "Voir tous les services"
-
-# ===================================================================
-# PAGE DEVIS
-# ===================================================================
+        1: 'État des lieux technique'
+        2: 'Mises à jour prévues au contrat'
+        3: 'Sauvegardes selon l’hébergement'
+        4: 'Diagnostic et corrections convenus'
+        5: 'Évolutions de fonctionnalités'
+        6: 'Suivi et modalités de réponse définis ensemble'
+    terrain:
+      title: 'Outils de gestion sur mesure'
+      teaser: 'Retrouver vos informations au même endroit.'
+      intro: 'Je développe des outils simples pour suivre vos demandes, vos adhérents ou vos interventions selon votre fonctionnement.'
+      audience: 'Associations, petites équipes et prestataires de terrain.'
+      example: 'Une petite équipe suit les demandes reçues et l’avancement de chaque intervention.'
+      desc: 'Je développe des outils simples pour suivre vos demandes, vos adhérents ou vos interventions selon votre fonctionnement.'
+      items:
+        1: 'Centralisation des informations utiles'
+        2: 'Suivi de demandes ou d’inscriptions'
+        3: 'Statuts et étapes adaptés à votre activité'
+        4: 'Tableau de bord simple'
+        5: 'Accès selon les rôles nécessaires'
+        6: 'Exports définis ensemble'
+    support:
+      title: 'Faire le point sur mon besoin'
+offers_cards:
+  header:
+    eyebrow: 'Repères de budget'
+    title: 'Un point de départ pour votre projet'
+    subtitle: 'Ces montants donnent un ordre de grandeur. Le devis précise les fonctionnalités, les délais et les frais éventuels de services tiers.'
+  from: 'À partir de'
+  tax: HT
+  cta_label: 'Discuter de cette offre'
+  note: 'Hébergement, domaine, formation et maintenance : modalités et coûts précisés au devis.'
+  starter:
+    badge: 'Présence en ligne'
+    name: 'Starter Digital'
+    description: 'Présenter votre activité avec un site vitrine clair et facile à consulter.'
+    price: '990'
+    includes:
+      1: 'Site vitrine jusqu’à 5 pages selon le besoin'
+      2: 'Présentation adaptée à votre identité'
+      3: 'Affichage mobile et ordinateur'
+      4: 'Structure et balises pour le référencement'
+      5: 'Formulaire de contact'
+      6: 'Prise en main définie ensemble'
+  pro:
+    badge: 'Site et organisation'
+    name: 'Pro PME'
+    description: 'Associer votre site à un outil simple pour suivre les demandes et votre activité.'
+    price: '1 890'
+    includes:
+      1: 'Base de site vitrine'
+      2: 'Suivi de demandes clients ou adhérents'
+      3: 'Tableau de bord et statuts'
+      4: 'Exports selon le périmètre convenu'
+      5: 'Accès sécurisé selon les usages'
+      6: 'Accompagnement à la prise en main'
+  business:
+    badge: 'Outil sur mesure'
+    name: 'Business Tool'
+    description: 'Construire une application web adaptée à un processus précis de votre structure.'
+    price: '3 200'
+    includes:
+      1: 'Application web adaptée à votre besoin'
+      2: 'Accès et rôles définis ensemble'
+      3: 'Automatisations ciblées'
+      4: 'Indicateurs utiles à votre activité'
+      5: 'Intégrations selon faisabilité'
+      6: 'Documentation et suivi à définir'
+tarifs:
+  seo:
+    titleTab: 'Tarifs développeur indépendant — Massgrafik'
+    metaDesc: 'Repères de budget : site vitrine dès 990 €, site et outil de gestion dès 1 890 €, application sur mesure dès 3 200 €. Devis adapté à votre besoin.'
+  hero:
+    title: 'Un budget cadré, un projet adapté'
+    subtitle: 'Je vous aide à prioriser ce qui compte et à construire un périmètre réaliste.'
+  faq:
+    title: 'Vos questions sur le budget'
+    items:
+      1:
+        q: 'Que signifient les prix affichés ?'
+        a: 'Ce sont des prix de départ hors taxes. Le montant final dépend du périmètre. Votre devis détaille les livrables, les prestations et les éventuels abonnements ou frais tiers.'
+      2:
+        q: 'Puis-je commencer par un petit projet ?'
+        a: 'Oui. Nous pouvons définir une première version utile, puis prévoir des évolutions selon vos retours et votre budget.'
+      3:
+        q: 'Comment se passent les paiements ?'
+        a: 'L’acompte, les échéances et les modalités de règlement sont précisés dans le devis avant le démarrage.'
+      4:
+        q: 'L’hébergement et la maintenance sont-ils inclus ?'
+        a: 'Le devis précise l’hébergement, le nom de domaine, les renouvellements et le suivi technique. La maintenance peut faire l’objet d’un accompagnement distinct.'
+      5:
+        q: 'Accompagnez-vous les associations ?'
+        a: 'Oui. Nous partons de vos usages, de votre budget et de vos ressources humaines pour définir les priorités et la prise en main.'
 quote:
   seo:
-    titleTab: "Demander un devis — MassGrafik"
-    metaDesc: "Décrivez votre projet en 2 minutes. MassGrafik vous répond sous 48 h avec une première orientation claire, sans engagement."
-    firstTitle: "Demander un devis"
-    titleThanks: "Merci — MassGrafik"
-  title: "Demander un devis"
-  subtitle: "Décrivez votre besoin en quelques mots. On vous répond sous 48 h."
-  selected: "Service présélectionné"
+    titleTab: 'Parler de votre projet à Samba — Massgrafik'
+    metaDesc: 'Présentez votre projet de site web ou d’outil numérique à Samba Sow, développeur indépendant pour petites structures et associations.'
+    firstTitle: 'Parlons de votre projet'
+    titleThanks: 'Demande reçue — Massgrafik'
+  title: 'Parlons de votre projet'
+  subtitle: 'Présentez votre structure, votre besoin et vos contraintes. Je reviendrai vers vous pour préciser la prochaine étape.'
+  selected: 'Accompagnement envisagé'
   form:
-    titleContact: "Contact direct"
-    titleFormContact: "Votre projet en quelques mots"
-    country: "France"
-    modeCom: "100 % à distance possible"
-    name: "Votre nom"
-    company: "Entreprise ou structure (optionnel)"
-    phone: "Numéro de téléphone"
-    phone_prefix: "Indicatif pays"
-    email: "E-mail"
-    pack: "Type de besoin"
-    "pack.placeholder": "Choisissez un type"
-    budget: "Budget estimé"
-    "budget.placeholder": "Sélectionnez une tranche"
-    "budget.1k": "≤ 1 000 €"
-    "budget.2k": "1 000 – 2 000 €"
-    "budget.5k": "2 000 – 5 000 €"
-    "budget.5k+": "5 000 € ou plus"
-    message: "Décrivez votre besoin"
-    submit: "Envoyer ma demande"
-  flash:
-    ok: "Merci ! Votre demande a été envoyée. On vous recontacte sous 48 h."
-    invalid_or_csrf: "Une erreur s'est produite. Merci de vérifier les champs indiqués."
-    too_many: "Vous avez envoyé trop de demandes. Merci de réessayer un peu plus tard."
-    too_fast: "Envoi trop rapide détecté. Merci de prendre le temps de remplir le formulaire."
-    too_short: "Le message est trop court. Merci de décrire votre besoin avec un peu plus de détails."
-    too_many_links: "Le message contient trop de liens."
-    bad_mx: "L'adresse e-mail semble invalide. Merci de la vérifier."
+    titleContact: 'Votre interlocuteur : Samba'
+    titleFormContact: 'Votre projet en quelques mots'
+    country: 'France et Espagne'
+    modeCom: 'Échanges en français ou en espagnol · À distance'
+    name: 'Votre nom'
+    company: 'Entreprise ou association (facultatif)'
+    phone: 'Téléphone (facultatif)'
+    phone_prefix: 'Indicatif pays'
+    email: 'Votre e-mail'
+    pack: 'Votre besoin ou l’offre envisagée'
+    pack.placeholder: 'Je souhaite en discuter'
+    message: 'Votre besoin, vos priorités et votre budget si vous le connaissez'
+    submit: 'Envoyer mon projet'
   thanks:
-    title: "Merci pour votre demande !"
-    desc: "On a bien reçu votre message. On vous recontacte sous 48 h avec une première orientation."
-    back: "Retour à l'accueil"
-
-contactPage:
-  seo:
-    titleTab: "Contact — MassGrafik"
-
-# ===================================================================
-# LÉGAL (inchangé)
-# ===================================================================
+    title: 'Merci pour votre message'
+    desc: 'Votre demande a bien été reçue. Je reviendrai vers vous pour échanger sur votre besoin.'
+    back: 'Retour à l’accueil'
+  next: 'Après votre message, nous précisons le besoin, puis je vous propose un devis si le projet peut être accompagné.'
+  flash:
+    ok: 'Merci, votre demande a bien été reçue.'
+    invalid_or_csrf: "Une erreur s'est produite. Merci de vérifier les champs indiqués."
+    too_many: 'Vous avez envoyé trop de demandes. Merci de réessayer un peu plus tard.'
+    too_fast: 'Envoi trop rapide détecté. Merci de prendre le temps de remplir le formulaire.'
+    too_short: 'Le message est trop court. Merci de décrire votre besoin avec un peu plus de détails.'
+    too_many_links: 'Le message contient trop de liens.'
+    bad_mx: "L'adresse e-mail semble invalide. Merci de la vérifier."
+email:
+  subject: 'Votre demande a bien été reçue — Massgrafik'
+  greeting: 'Bonjour %name%,'
+  intro: 'Merci pour votre message. J’ai bien reçu votre demande et je reviendrai vers vous pour préciser votre projet.'
+  summary: 'Votre message'
+  need: 'Accompagnement envisagé'
+  signature: 'Samba Sow · Développeur indépendant'
+  privacy: 'Votre demande sera utilisée pour échanger au sujet de votre projet.'
+blog:
+  title: 'Les ressources de Samba'
+  description: 'Conseils et pistes pour comprendre le web et faire avancer votre projet numérique. Articles en français.'
 legal:
   disclaimer: "Informations générales — ne constitue pas un conseil juridique. Adaptez les données à votre situation (raison sociale, numéro d'identification, hébergeur, etc.)."
-  lastUpdate: "Dernière mise à jour : %date%"
-
+  lastUpdate: 'Dernière mise à jour : %date%'
   mentions:
     seo:
-      titleTab: "Mentions légales — MassGrafik"
-    title: "Mentions légales"
+      titleTab: 'Mentions légales — MassGrafik'
+    title: 'Mentions légales'
     editor:
-      title: "Éditeur du site"
+      title: 'Éditeur du site'
       name: "Samba SOW, opérant sous l'enseigne MassGrafik"
-      legal: "Statut : auto-entrepreneur (microentreprise)"
-      id: "N° SIRET : [À COMPLÉTER]"
-      address: "Adresse : 132 boulevard Jean Mermoz, 93380 Saint-Denis, France"
+      legal: 'Statut : auto-entrepreneur (microentreprise)'
+      id: 'N° SIRET : [À COMPLÉTER]'
+      address: 'Adresse : 132 boulevard Jean Mermoz, 93380 Saint-Denis, France'
     dirpub:
-      title: "Directeur de la publication"
-      value: "Samba SOW"
+      title: 'Directeur de la publication'
+      value: 'Samba SOW'
     host:
-      title: "Hébergement"
-      name: "Hostinger International Ltd"
-      address: "61 Lordou Vironos Street, 6023 Larnaca, Chypre — hostinger.com"
+      title: Hébergement
+      name: 'Hostinger International Ltd'
+      address: '61 Lordou Vironos Street, 6023 Larnaca, Chypre — hostinger.com'
     contact:
-      title: "Contact"
-      value: "E-mail : contact.massgrafik@gmail.com — Tél. : (+33) 6 66 11 74 28"
+      title: Contact
+      value: 'E-mail : contact.massgrafik@gmail.com — Tél. : (+33) 6 66 11 74 28'
     ipr:
-      title: "Propriété intellectuelle"
+      title: 'Propriété intellectuelle'
       value: "L'ensemble des contenus du site (textes, visuels, logos, structure) est protégé par le droit d'auteur. Toute reproduction, représentation ou diffusion, totale ou partielle, sans autorisation écrite préalable est interdite."
-
   privacy:
     seo:
-      titleTab: "Politique de confidentialité — MassGrafik"
-    title: "Politique de confidentialité"
+      titleTab: 'Politique de confidentialité — MassGrafik'
+    title: 'Politique de confidentialité'
     controller:
-      title: "Responsable du traitement"
-      value: "Samba SOW — MassGrafik, 132 boulevard Jean Mermoz, 93380 Saint-Denis. Contact : contact.massgrafik@gmail.com"
+      title: 'Responsable du traitement'
+      value: 'Samba SOW — MassGrafik, 132 boulevard Jean Mermoz, 93380 Saint-Denis. Contact : contact.massgrafik@gmail.com'
     commitment:
-      title: "Notre engagement"
+      title: 'Notre engagement'
       value: "Les informations que vous nous transmettez ne servent qu'à traiter votre demande de devis et à réaliser la prestation convenue. Elles ne sont jamais utilisées à des fins de démarchage commercial, ne sont jamais revendues, et ne sont jamais transmises à des tiers à des fins commerciales. Toute action ultérieure (suivi de projet, envoi de documents, facturation) est réalisée avec votre accord explicite."
     purposes:
-      title: "Données collectées et finalités"
-      1: "Nom, prénom, e-mail, téléphone, entreprise — pour répondre à votre demande de devis et vous recontacter."
-      2: "Description de votre projet (champ message) — pour préparer une proposition adaptée."
-      3: "Adresse IP et User-Agent — à des fins de sécurité (anti-spam, protection du formulaire) uniquement."
-      4: "Cookies de session — nécessaires au fonctionnement technique du site (navigation, sécurité des formulaires)."
+      title: 'Données collectées et finalités'
+      1: 'Nom, prénom, e-mail, téléphone, entreprise — pour répondre à votre demande de devis et vous recontacter.'
+      2: 'Description de votre projet (champ message) — pour préparer une proposition adaptée.'
+      3: 'Adresse IP et User-Agent — à des fins de sécurité (anti-spam, protection du formulaire) uniquement.'
+      4: 'Cookies de session — nécessaires au fonctionnement technique du site (navigation, sécurité des formulaires).'
       5: "Cookies analytiques (avec votre consentement uniquement) — pour mesurer l'audience et améliorer le site."
     legalbases:
-      title: "Bases juridiques (RGPD)"
-      value: "Art. 6.1.b — mesures précontractuelles (réponse à votre demande de devis). Art. 6.1.f — intérêt légitime (sécurité, anti-spam). Art. 6.1.a — consentement (cookies analytiques, si vous les acceptez)."
+      title: 'Bases juridiques (RGPD)'
+      value: 'Art. 6.1.b — mesures précontractuelles (réponse à votre demande de devis). Art. 6.1.f — intérêt légitime (sécurité, anti-spam). Art. 6.1.a — consentement (cookies analytiques, si vous les acceptez).'
     notused:
-      title: "Ce que nous ne faisons pas"
-      1: "Nous ne vendons pas vos données."
-      2: "Nous ne vous ajoutons pas à une liste marketing sans votre accord."
-      3: "Nous ne partageons pas vos informations avec des annonceurs ou des partenaires commerciaux."
-      4: "Nous ne vous recontactons que dans le cadre de votre demande ou de la prestation en cours."
+      title: 'Ce que nous ne faisons pas'
+      1: 'Nous ne vendons pas vos données.'
+      2: 'Nous ne vous ajoutons pas à une liste marketing sans votre accord.'
+      3: 'Nous ne partageons pas vos informations avec des annonceurs ou des partenaires commerciaux.'
+      4: 'Nous ne vous recontactons que dans le cadre de votre demande ou de la prestation en cours.'
     retention:
-      title: "Durées de conservation"
+      title: 'Durées de conservation'
       value: "Demandes de devis sans suite : suppression au bout de 12 mois. Données liées à une prestation active : conservées pendant la durée du contrat et les 5 ans suivants (obligations comptables légales). Données de sécurité (logs) : 30 jours maximum. Cookies analytiques : durée définie par l'outil utilisé, au maximum 13 mois."
     rights:
-      title: "Vos droits (RGPD)"
-      1: "Accès : obtenir une copie de vos données."
-      2: "Rectification : corriger des données inexactes."
+      title: 'Vos droits (RGPD)'
+      1: 'Accès : obtenir une copie de vos données.'
+      2: 'Rectification : corriger des données inexactes.'
       3: "Suppression : demander l'effacement de vos données."
-      4: "Limitation : suspendre le traitement en cas de contestation."
+      4: 'Limitation : suspendre le traitement en cas de contestation.'
       5: "Opposition : vous opposer à un traitement basé sur l'intérêt légitime."
-      6: "Portabilité : recevoir vos données dans un format structuré."
-    howto: "Pour exercer vos droits, écrivez à contact.massgrafik@gmail.com en précisant votre demande. Réponse sous 30 jours. En cas de désaccord persistant, vous pouvez saisir la CNIL (cnil.fr)."
+      6: 'Portabilité : recevoir vos données dans un format structuré.'
+    howto: 'Pour exercer vos droits, écrivez à contact.massgrafik@gmail.com en précisant votre demande. Réponse sous 30 jours. En cas de désaccord persistant, vous pouvez saisir la CNIL (cnil.fr).'
     security:
-      title: "Sécurité"
+      title: Sécurité
       value: "Le formulaire est protégé contre le spam (honeypot, délai de saisie, limitation du débit). Les données sont stockées sur des serveurs hébergés chez Hostinger (Chypre, UE). L'accès est restreint à Samba SOW, responsable du traitement."
     transfers:
-      title: "Sous-traitants et transferts"
+      title: 'Sous-traitants et transferts'
       value: "Hostinger International Ltd (hébergement, Chypre — UE) : traitement des données serveur. Gmail/Google (envoi des e-mails de confirmation) : données transitent via les serveurs Google, couverts par les clauses contractuelles types UE. Aucun autre tiers n'a accès à vos données."
-
   cookies:
     seo:
-      titleTab: "Politique de cookies — MassGrafik"
-    title: "Politique de cookies"
-    intro: "Cette page explique quels cookies sont déposés sur votre appareil lorsque vous visitez massgrafik.com, pourquoi, et comment les contrôler."
+      titleTab: 'Politique de cookies — MassGrafik'
+    title: 'Politique de cookies'
+    intro: 'Cette page explique quels cookies sont déposés sur votre appareil lorsque vous visitez massgrafik.com, pourquoi, et comment les contrôler.'
     commitment:
-      title: "Notre position sur les cookies"
-      value: "Nous utilisons le strict minimum. Aucun cookie publicitaire, aucun cookie de suivi inter-sites, aucun partage avec des régies publicitaires. Les seuls cookies analytiques éventuellement déposés le sont uniquement avec votre consentement explicite, et servent exclusivement à améliorer ce site."
+      title: 'Notre position sur les cookies'
+      value: 'Nous utilisons le strict minimum. Aucun cookie publicitaire, aucun cookie de suivi inter-sites, aucun partage avec des régies publicitaires. Les seuls cookies analytiques éventuellement déposés le sont uniquement avec votre consentement explicite, et servent exclusivement à améliorer ce site.'
     what:
       title: "Qu'est-ce qu'un cookie ?"
       value: "Un cookie est un petit fichier texte enregistré sur votre appareil (ordinateur, téléphone, tablette) par votre navigateur lorsque vous visitez un site. Il peut servir à maintenir une session, mémoriser vos préférences, ou mesurer l'audience du site."
     types:
-      title: "Cookies utilisés sur ce site"
-      necessary_title: "Cookies strictement nécessaires (sans consentement)"
-      necessary_1: "Cookie de session Symfony (PHPSESSID) — maintient votre session de navigation (formulaire, sécurité CSRF). Durée : session (supprimé à la fermeture du navigateur). Aucune donnée personnelle transmise à un tiers."
-      necessary_2: "Cookie de consentement cookies (mg_cookie_consent) — mémorise votre choix (accepter/refuser). Durée : 6 mois."
-      analytics_title: "Cookies analytiques (avec votre consentement uniquement)"
+      title: 'Cookies utilisés sur ce site'
+      necessary_title: 'Cookies strictement nécessaires (sans consentement)'
+      necessary_1: 'Cookie de session Symfony (PHPSESSID) — maintient votre session de navigation (formulaire, sécurité CSRF). Durée : session (supprimé à la fermeture du navigateur). Aucune donnée personnelle transmise à un tiers.'
+      necessary_2: 'Cookie de consentement cookies (mg_cookie_consent) — mémorise votre choix (accepter/refuser). Durée : 6 mois.'
+      analytics_title: 'Cookies analytiques (avec votre consentement uniquement)'
       analytics_1: "Si vous acceptez, un outil de mesure d'audience peut être activé pour compter les visites et pages consultées de façon anonymisée. Aucun profil individuel n'est constitué. Vous pouvez refuser ou retirer votre consentement à tout moment."
-      social_title: "Cookies tiers (boutons de partage)"
+      social_title: 'Cookies tiers (boutons de partage)'
       social_1: "Les liens de partage (LinkedIn, X/Twitter, Facebook, WhatsApp) sont de simples liens texte — aucun cookie tiers n'est déposé tant que vous ne cliquez pas dessus. En cliquant, vous êtes redirigé vers le service concerné, qui peut alors déposer ses propres cookies selon sa politique."
     notdeposited:
-      title: "Ce que nous ne déposons PAS"
-      1: "Aucun cookie publicitaire (retargeting, tracking inter-sites)."
-      2: "Aucun cookie de profilage ou de personnalisation commerciale."
-      3: "Aucun cookie partagé avec des régies ou annonceurs."
+      title: 'Ce que nous ne déposons PAS'
+      1: 'Aucun cookie publicitaire (retargeting, tracking inter-sites).'
+      2: 'Aucun cookie de profilage ou de personnalisation commerciale.'
+      3: 'Aucun cookie partagé avec des régies ou annonceurs.'
     manage:
-      title: "Gérer vos préférences"
-      banner: "Lors de votre première visite, un bandeau vous demande votre accord pour les cookies analytiques. Vous pouvez accepter ou refuser en un clic."
-      browser: "Vous pouvez également supprimer ou bloquer tous les cookies via les paramètres de votre navigateur :"
-      browser_1: "Chrome : Paramètres → Confidentialité → Cookies"
-      browser_2: "Firefox : Options → Vie privée → Cookies"
-      browser_3: "Safari : Préférences → Confidentialité"
-      browser_4: "Edge : Paramètres → Cookies et autorisations de site"
-      note: "Bloquer les cookies nécessaires peut nuire au fonctionnement du formulaire de contact."
+      title: 'Gérer vos préférences'
+      banner: 'Lors de votre première visite, un bandeau vous demande votre accord pour les cookies analytiques. Vous pouvez accepter ou refuser en un clic.'
+      browser: 'Vous pouvez également supprimer ou bloquer tous les cookies via les paramètres de votre navigateur :'
+      browser_1: 'Chrome : Paramètres → Confidentialité → Cookies'
+      browser_2: 'Firefox : Options → Vie privée → Cookies'
+      browser_3: 'Safari : Préférences → Confidentialité'
+      browser_4: 'Edge : Paramètres → Cookies et autorisations de site'
+      note: 'Bloquer les cookies nécessaires peut nuire au fonctionnement du formulaire de contact.'
     contact:
-      title: "Questions ?"
-      value: "Pour toute question sur les cookies déposés par ce site, écrivez à contact.massgrafik@gmail.com."
-
+      title: 'Questions ?'
+      value: 'Pour toute question sur les cookies déposés par ce site, écrivez à contact.massgrafik@gmail.com.'
 cookie:
   banner:
     text: "Nous utilisons des cookies nécessaires et, avec votre consentement, des cookies de mesure d'audience."
-    accept: "Tout accepter"
-    decline: "Tout refuser"
-    more: "En savoir plus"
+    accept: 'Tout accepter'
+    decline: 'Tout refuser'
+    more: 'En savoir plus'
+title:
+  fallow: 'Retrouvez-moi sur'

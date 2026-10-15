@@ -1,5 +1,4 @@
 require('./bootstrap-datepicker/bootstrap-select.js');
-require('./flipclock/timer.js');
 require('./isotope/isotope-min.js');
 require('./jquery-ui/jquery-ui.js');
 require('./nice-select/js/jquery.nice-select.js');
@@ -9,6 +8,7 @@ require('./nice-select/js/jquery.nice-select.js');
 
 document.addEventListener("DOMContentLoaded", function() {
     const textElement = document.getElementById("typing-effect");
+    if (!textElement) return;
     const text = textElement.textContent;
     // textElement.textContent = ""; // Limpia el contenido inicial
 

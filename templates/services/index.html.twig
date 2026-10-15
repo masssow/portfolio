@@ -1,73 +1,16 @@
 {% extends 'base.html.twig' %}
-{% trans_default_domain 'messages' %}
-
 {% block title %}{{ 'services.seo.titleTab'|trans }}{% endblock %}
 {% block meta_description %}{{ 'services.seo.metaDesc'|trans }}{% endblock %}
-
 {% block body %}
-
-{# ===== BANNER ===== #}
-<section class="banner_area">
-  <div class="banner_inner d-flex align-items-center">
-    <div class="container">
-      <div class="banner_content text-center">
-        <h1>{{ 'services2.intro.title'|trans }}</h1>
-        <div class="page_link mt-2">
-          <a href="{{ path('app_home', {'_locale': app.request.locale}) }}">{{ 'menu.home'|trans }}</a>
-          <a href="#">{{ 'menu.services'|trans }}</a>
-        </div>
+  <section class="banner_area">
+    <div class="banner_inner d-flex align-items-center">
+      <div class="container banner_content text-center">
+        <h1>{{ 'menu.services'|trans }}</h1>
+        <p>{{ 'services2.intro.subtitle'|trans }}</p>
       </div>
     </div>
-  </div>
-</section>
-
-{# ===== INTRO ===== #}
-<section class="features_area section_gap">
-  <div class="container">
-
-    <div class="row justify-content-center mb-5">
-      <div class="col-lg-7 text-center">
-        <p class="lead">{{ 'services2.intro.subtitle'|trans }}</p>
-      </div>
-    </div>
-
-    {# ===== GRILLE 7 CARTES — badges pill, sans icônes FA ===== #}
-    <div class="row mg-service-grid">
-      {% for slug, svc in services %}
-        <div class="col-lg-4 col-md-6 mb-4">
-          <a href="{{ path('app_service_detail', {'_locale': app.request.locale, 'slug': slug}) }}"
-             class="mg-service-card mg-service-card--{{ svc.color }}">
-            <span class="mg-service-card__badge">{{ ('services2.cards.' ~ svc.key ~ '.teaser')|trans }}</span>
-            <h3 class="mg-service-card__title">{{ ('services2.cards.' ~ svc.key ~ '.title')|trans }}</h3>
-            <p class="mg-service-card__desc">
-              {% set firstItem = ('services2.cards.' ~ svc.key ~ '.items.1')|trans %}
-              {{ firstItem }}
-            </p>
-            <span class="mg-service-card__cta">{{ 'cta.discover'|trans }} →</span>
-          </a>
-        </div>
-      {% endfor %}
-    </div>
-
-  </div>
-</section>
-
-{# ===== CTA ===== #}
-<section class="cta-final-section">
-  <div class="container text-center">
-    <div class="main_title">
-      <h2>{{ 'cta.talk'|trans }}</h2>
-      <p>{{ 'services2.cta.subtitle'|trans }}</p>
-    </div>
-    <a class="primary_btn"
-       href="{{ path('app_quote', {'_locale': app.request.locale}) }}">
-      <span>{{ 'cta.devis'|trans }}</span>
-    </a>
-    <a class="primary_btn tr-bg ml-2"
-       href="{{ path('app_tarifs', {'_locale': app.request.locale}) }}">
-      <span>{{ 'menu.tarifs'|trans }}</span>
-    </a>
-  </div>
-</section>
-
+  </section>
+  {% include 'partials/_services.html.twig' %}
+  {% include 'partials/_method.html.twig' %}
+  {% include 'partials/_project_cta.html.twig' %}
 {% endblock %}

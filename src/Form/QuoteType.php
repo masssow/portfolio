@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Quote;
+use App\Content\AccompanimentCatalog;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -21,14 +22,7 @@ final class QuoteType extends AbstractType
 
     public function buildForm(FormBuilderInterface $b, array $opt): void
     {
-        $packChoices = [
-            'web'        => 'services2.cards.web.title',
-            'ecommerce'  => 'services2.cards.ecommerce.title',
-            'tools'      => 'services2.cards.tools.title',
-            'automation' => 'services2.cards.automation.title',
-            'terrain'    => 'services2.cards.terrain.title',
-            'support'    => 'services2.cards.support.title',
-        ];
+        $packChoices = AccompanimentCatalog::choices();
 
         $b->add('name', TextType::class, [
             'label' => 'quote.form.name',
@@ -40,7 +34,7 @@ final class QuoteType extends AbstractType
             ])
             ->add('phone', TelType::class, [
                 'label' => 'quote.form.phone',
-                'constraints' => [new Assert\NotBlank()],
+                'required' => false,
             ])
             ->add('email', EmailType::class, [
                 'label' => 'quote.form.email',
@@ -52,7 +46,7 @@ final class QuoteType extends AbstractType
                 'choices'      => array_keys($packChoices),
                 'choice_label' => fn(string $v) => $this->t->trans($packChoices[$v]),
                 'choice_value' => fn(?string $v) => $v,
-                'data'         => $opt['selected_pack'] ?? null,
+                'data'         => AccompanimentCatalog::normalize($opt['selected_pack']),
                 'required'     => false,
             ])
             ->add('message', TextareaType::class, [

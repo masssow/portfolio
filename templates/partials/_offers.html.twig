@@ -1,0 +1,13 @@
+<section class="mg-offers section_gap" id="offres"><div class="container">
+  <div class="main_title text-center"><span class="main_title__eyebrow">{{ 'offers_cards.header.eyebrow'|trans }}</span><h2>{{ 'offers_cards.header.title'|trans }}</h2><p>{{ 'offers_cards.header.subtitle'|trans }}</p></div>
+  <div class="row mg-offers__grid">
+    {% for pack, color in {'starter':'teal','pro':'purple','business':'coral'} %}
+      <div class="col-lg-4 col-md-6 mb-4"><article class="mg-offer-card">
+        <div class="mg-offer-card__top"><span class="mg-offer-card__badge mg-offer-card__badge--{{ color }}">{{ ('offers_cards.' ~ pack ~ '.badge')|trans }}</span><h3 class="mg-offer-card__name">{{ ('offers_cards.' ~ pack ~ '.name')|trans }}</h3><p>{{ ('offers_cards.' ~ pack ~ '.description')|trans }}</p></div>
+        <div class="mg-offer-card__pricing"><p class="mb-1">{{ 'offers_cards.from'|trans }}</p><div class="mg-offer-card__price">{{ ('offers_cards.' ~ pack ~ '.price')|trans }} € <span>{{ 'offers_cards.tax'|trans }}</span></div></div>
+        <ul class="mg-offer-card__includes">{% for i in 1..6 %}<li class="mg-offer-card__includes-item"><span class="mg-offer-card__check" aria-hidden="true">✓</span>{{ ('offers_cards.' ~ pack ~ '.includes.' ~ i)|trans }}</li>{% endfor %}</ul>
+        <div class="mg-offer-card__footer"><a class="mg-offer-card__cta" href="{{ path('app_quote', {'_locale':app.request.locale,'pack':pack}) }}" aria-label="{{ 'offers_cards.cta_label'|trans }} — {{ ('offers_cards.' ~ pack ~ '.name')|trans }}">{{ 'offers_cards.cta_label'|trans }}</a></div>
+      </article></div>
+    {% endfor %}
+  </div><p class="text-center offer-note">{{ 'offers_cards.note'|trans }}</p>
+</div></section>

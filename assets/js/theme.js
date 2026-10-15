@@ -83,11 +83,13 @@
 	/*  MailChimp Slider
     /*----------------------------------------------------*/
 	function mailChimp() {
-		$('#mc_embed_signup').find('form').ajaxChimp();
+		if ($('#mc_embed_signup form').length && $.fn.ajaxChimp) {
+			$('#mc_embed_signup').find('form').ajaxChimp();
+		}
 	}
 	mailChimp();
 
-	$('select').niceSelect();
+	// Keep native selects for accessible quote forms in both languages.
 	/* ---------------------------------------------
             Isotope js Starts
          --------------------------------------------- */

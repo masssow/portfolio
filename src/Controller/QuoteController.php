@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Form\QuoteType;
+use App\Content\AccompanimentCatalog;
 use App\Entity\Quote;
 use Doctrine\ORM\EntityManagerInterface;
 use Psr\Log\LoggerInterface;
@@ -42,7 +43,7 @@ final class QuoteController extends AbstractController
             $session->set('quote_hp_name', $hp);
         }
 
-        $selectedPack = $req->query->get('pack') ?? $req->query->get('service');
+        $selectedPack = AccompanimentCatalog::normalize($req->query->get('pack') ?? $req->query->get('service'));
         $honeypotName = $session->get('quote_hp_name', 'hp_fallback');
 
         // IMPORTANT : ne pas ajouter le honeypot via le FormType
@@ -158,11 +159,15 @@ final class QuoteController extends AbstractController
     private function sendUserConfirmation(Quote $quote): void
     {
         try {
-            $html = $this->renderView('emails/quote_user.html.twig', ['quote' => $quote]);
+            $html = $this->renderView('emails/quote_user.html.twig', [
+                'quote' => $quote,
+                'locale' => $quote->getLocale(),
+                'choice_key' => AccompanimentCatalog::choices()[$quote->getPack() ?? ''] ?? null,
+            ]);
             $email = (new Email())
                 ->from(new Address(self::ADMIN_EMAIL, self::ADMIN_NAME))
                 ->to(new Address($quote->getEmail(), $quote->getName()))
-                ->subject('Votre demande a bien été reçue — MassGrafik')
+                ->subject($this->t->trans('email.subject', [], 'messages', $quote->getLocale()))
                 ->html($html);
             $this->mailer->send($email);
         } catch (\Throwable $e) {
@@ -180,11 +185,17 @@ final class QuoteController extends AbstractController
     }
 
 
-    #[Route('/thank', name: 'app_quote_thanks', requirements: ['_locale' => 'fr|es'], methods: ['GET', 'POST'])]
+    #[Route('/{_locale}/merci', name: 'app_quote_thanks', requirements: ['_locale' => 'fr|es'], methods: ['GET'])]
     public function thanks(Request $req): Response {
 
             return $this->render('quote/thanks.html.twig',[
 
             ]);
+    }
+
+    #[Route('/thank', name: 'app_quote_thanks_legacy', methods: ['GET'])]
+    public function legacyThanks(): Response
+    {
+        return $this->redirectToRoute('app_quote_thanks', ['_locale' => 'fr'], 301);
     }
 }

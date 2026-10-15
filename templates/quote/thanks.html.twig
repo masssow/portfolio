@@ -8,9 +8,9 @@
 <section class="home_banner_area">
   <div class="banner_inner">
     <div class="container">
-      <h2>{{ 'quote.thanks.title'|trans }}</h2>
+      <h1>{{ 'quote.thanks.title'|trans }}</h1>
       <p>{{ 'quote.thanks.desc'|trans }}</p>
-      <a class="primary_btn" href="/{{ app.request.locale }}"><span>{{ 'quote.thanks.back'|trans }}</span></a>
+      <a class="primary_btn" href="{{ path('app_home', {'_locale':app.request.locale}) }}"><span>{{ 'quote.thanks.back'|trans }}</span></a>
     </div>
   </div>
 </section>

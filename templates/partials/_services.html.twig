@@ -1,0 +1,11 @@
+{% set catalogue = constant('App\\Content\\AccompanimentCatalog::SERVICES') %}
+<section class="section_gap"><div class="container">
+  <div class="main_title text-center"><h2>{{ 'services2.intro.title'|trans }}</h2><p>{{ 'services2.intro.subtitle'|trans }}</p></div>
+  {% for group in ['visibility','organisation','evolution'] %}
+    <div class="mg-service-group"><h3 class="mg-group-title">{{ ('services2.groups.' ~ group)|trans }}</h3><div class="row mg-service-grid">
+      {% for slug, svc in catalogue|filter(svc => svc.group == group) %}
+        <div class="col-lg-4 col-md-6 mb-4"><a class="mg-service-card mg-service-card--{{ svc.color }}" href="{{ path('app_service_detail', {'_locale':app.request.locale,'slug':slug}) }}"><span class="mg-service-card__badge">{{ ('services2.cards.' ~ svc.key ~ '.teaser')|trans }}</span><h4 class="mg-service-card__title">{{ ('services2.cards.' ~ svc.key ~ '.title')|trans }}</h4><p>{{ ('services2.cards.' ~ svc.key ~ '.desc')|trans }}</p><span class="mg-service-card__cta">{{ 'cta.details'|trans }} →</span></a></div>
+      {% endfor %}
+    </div></div>
+  {% endfor %}
+</div></section>

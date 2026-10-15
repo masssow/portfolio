@@ -11,7 +11,7 @@
                     {% endfor %}
                 </div> #}
                     <ul class="blog_meta list">
-                        <li><a href="#"><i class="lnr lnr-user"></i>  Samba SOW SOW</a></li>
+                        <li><a href="{{ path('app_about', {'_locale':'fr'}) }}"><i class="lnr lnr-user"></i> Samba Sow</a></li>
                         <li><a href="#"><i class="lnr lnr-calendar-full"></i>  {{post.createdAt | date('d-m-Y')}}</a></li>
                         {# <li><a href="#"><i class="lnr lnr-eye"></i>  111 Vues</a></li> #}
                         {# <li><a href="#"><i class="lnr lnr-bubble"></i>{% if totalComments > 0 %} {{ totalComments }} commentaire{% if totalComments > 1 %}s{% endif %}{% else %} Pas de commentaire #}
@@ -22,7 +22,7 @@
         </div>
         <div class="col-md-9">
             <div class="blog_post">
-                <img src="{{ asset('images/posts/' ~ post.imageName) }}" alt="">
+                <img src="{{ asset('images/posts/' ~ post.imageName) }}" alt="{{ post.title }}" loading="lazy">
                 <div class="blog_details">
                     <a href="{{ path('app_single_posts', {'id': post.id}) }}">
                         <h2>{{ post.title }}</h2>

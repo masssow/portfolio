@@ -5,8 +5,8 @@
     {# ── Bio auteur ── #}
     <aside class="single_sidebar_widget author_widget">
       <h4 class="mb-0">Samba SOW</h4>
-      <p class="text-muted small mb-2">Fondateur — MassGrafik</p>
-      <p>Développeur web indépendant basé à Paris, Samba accompagne artisans, commerçants et petites structures dans leur transformation digitale. Spécialisé en sites professionnels, outils de gestion sur mesure et automatisations métier, il intervient en France (IDF), en Espagne et au Sénégal.</p>
+      <p class="text-muted small mb-2">{{ 'site.role'|trans }}</p>
+      <p>{{ 'home.personal.text'|trans }}</p>
       <div class="social_icon mt-2">
         {% set _shareUrl = app.request.uri|escape('url') %}
         {% set _shareTitle = (post.title is defined ? post.title : 'Ressources MassGrafik')|escape('url') %}
@@ -74,10 +74,10 @@
     {# ── CTA devis ── #}
     <aside class="single_sidebar_widget" style="background:#eef6ff;border-radius:10px;padding:24px 20px;text-align:center;">
       <h4 style="color:#1e2d3e;">Un projet digital ?</h4>
-      <p class="small mb-3">Parlez-nous de votre besoin — réponse sous 48 h, sans engagement.</p>
+      <p class="small mb-3">{{ 'home.cta_center.subtitle'|trans }}</p>
       <a class="primary_btn" style="font-size:.85rem;padding:10px 20px;"
          href="{{ path('app_quote', {'_locale': app.request.locale ?? 'fr'}) }}">
-        <span>Demander un devis</span>
+        <span>{{ 'cta.devis'|trans }}</span>
       </a>
     </aside>
 

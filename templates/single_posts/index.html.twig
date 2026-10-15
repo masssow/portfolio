@@ -3,6 +3,7 @@
 {% block title %}{{ post.title }} — Ressources MassGrafik{% endblock %}
 {% block meta_description %}{{ post.content|striptags|slice(0, 155)|trim }}…{% endblock %}
 {% block og_title %}{{ post.title }} — MassGrafik{% endblock %}
+{% block og_type %}article{% endblock %}
 {% block og_description %}{{ post.content|striptags|slice(0, 155)|trim }}…{% endblock %}
 
 {% block body %}
@@ -49,9 +50,8 @@
                                     <ul class="blog_meta list">
                                         <li><a href="#"><i class="lnr lnr-user"></i> Samba </a></li>
                                         <li><a href="#"><i class="lnr lnr-calendar-full"></i> {{post.createdAt | date('d-m-Y')}}</a></li>
-                                        <li><a href="#"><i class="lnr lnr-eye"></i> 1.2M Vues</a></li>
                                         {% if totalComments > 0 %}
-                                        <li><a href="#"><i class="lnr lnr-bubble"></i> {{ totalComments }} Comments</a></li>
+                                        <li><a href="#comments"><i class="lnr lnr-bubble"></i> {{ totalComments }} commentaire(s)</a></li>
                                         {% endif %}
                                     </ul>
                                     <ul class="social-links">
@@ -72,7 +72,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-9 col-md-9 blog_details">
-                                <h2>{{ post.title }}</h2>
+                                <h1>{{ post.title }}</h1>
                                 <p class="excert">
                                     {{ post.content}}
                                     {# {% set excerpt = post.content|slice(0, 100) %} #}
@@ -112,7 +112,7 @@
                                         <a href="#"><span class="lnr text-white lnr-arrow-left"></span></a>
                                     </div>
                                     <div class="detials">
-                                        <p>Post précedent</p>
+                                        <p>Article précédent</p>
                                         <a href="{{ path('app_single_posts', { id: previusPost.id }) }}"><h4>{{previusPost.title}}</h4></a>
                                     </div>
                                 </div>
@@ -124,7 +124,7 @@
                                 {% if nextPost %}
                                 <div class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
                                     <div class="detials">
-                                        <p>Post suivant</p>
+                                        <p>Article suivant</p>
                                         <a href="{{ path('app_single_posts', { id: nextPost.id }) }}"><h4>{{ nextPost.title}}</h4></a>
                                     </div>
                                     <div class="arrow">

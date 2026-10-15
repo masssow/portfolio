@@ -2,24 +2,12 @@
 {% trans_default_domain 'messages' %}
 
 {% block title %}{{ ('services2.cards.' ~ yaml_key ~ '.title')|trans }} — MassGrafik{% endblock %}
-{% block meta_description %}{{ ('services2.cards.' ~ yaml_key ~ '.desc')|trans }} MassGrafik — solution digitale pour petites structures, artisans et commerçants.{% endblock %}
+{% block meta_description %}{{ ('services2.cards.' ~ yaml_key ~ '.desc')|trans }}{% endblock %}
 
 {% block schema_org %}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "{{ ('services2.cards.' ~ yaml_key ~ '.title')|trans|e('js') }}",
-  "description": "{{ ('services2.cards.' ~ yaml_key ~ '.desc')|trans|e('js') }}",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "MassGrafik",
-    "url": "{{ absolute_url(path('app_home', {'_locale': 'fr'})) }}"
-  },
-  "areaServed": ["Paris", "Île-de-France", "Espagne", "Sénégal"],
-  "url": "{{ app.request.uri }}"
-}
-</script>
+{{ parent() }}
+{% set serviceSchema = {'@context':'https://schema.org','@type':'Service','name':('services2.cards.' ~ yaml_key ~ '.title')|trans,'description':('services2.cards.' ~ yaml_key ~ '.desc')|trans,'provider':{'@id':personId},'areaServed':['France','Spain'],'url':canonical} %}
+<script type="application/ld+json">{{ serviceSchema|json_encode(15)|raw }}</script>
 {% endblock %}
 
 {% block body %}
@@ -76,25 +64,28 @@
         </a>
       </div>
 
-      {# Colonne droite — image ou placeholder #}
+      {# Existing tool visual, or a concrete usage example. #}
       <div class="col-lg-6 offset-lg-1">
-        <div class="img-ph img-ph--service">
-          {% if svc_image %}
+        {% if svc_image %}
+          <figure class="img-ph img-ph--service">
             <img src="{{ asset('build/images/' ~ svc_image) }}"
                  alt="{{ ('services2.cards.' ~ yaml_key ~ '.title')|trans }} — MassGrafik"
                  class="img-ph__img"
-                 onerror="this.closest('.img-ph').classList.add('img-ph--show-fallback')">
-          {% endif %}
-          <div class="img-ph__fallback{% if not svc_image %} img-ph__fallback--visible{% endif %}">
-            <i class="fa-solid fa-image fa-2x"></i>
-            <span>Illustration à venir</span>
-          </div>
-        </div>
+                 loading="lazy">
+          </figure>
+        {% else %}
+          <aside class="mg-example-panel">
+            <span class="main_title__eyebrow">{{ 'services2.example_title'|trans }}</span>
+            <p>{{ ('services2.cards.' ~ yaml_key ~ '.example')|trans }}</p>
+          </aside>
+        {% endif %}
       </div>
 
     </div>
   </div>
 </section>
+
+<section class="container pb-4"><h2 class="h4">{{ 'services2.audience_title'|trans }}</h2><p>{{ ('services2.cards.' ~ yaml_key ~ '.audience')|trans }}</p><p>{{ 'services2.scope'|trans }}</p></section>
 
 {# ===== CE QUI EST INCLUS ===== #}
 <section class="features_area section_gap" style="background:#f9f9ff;">
@@ -107,7 +98,7 @@
       </div>
     </div>
     <div class="row justify-content-center">
-      {% for i in 1..8 %}
+      {% for i in 1..6 %}
         {% set itemKey = 'services2.cards.' ~ yaml_key ~ '.items.' ~ i %}
         {% if (itemKey|trans) != itemKey %}
           <div class="col-lg-5 col-md-6 mb-3">
@@ -121,6 +112,8 @@
     </div>
   </div>
 </section>
+
+{% include 'partials/_method.html.twig' %}
 
 {# ===== CTA FINAL ===== #}
 <section class="cta-final-section">

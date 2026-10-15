@@ -1,0 +1,3 @@
+<section class="section_gap bg-light-section"><div class="container"><div class="main_title text-center"><h2>{{ 'home.method.title'|trans }}</h2></div><div class="row">
+{% for i in 1..3 %}<div class="col-md-4 mb-4"><div class="feature_item"><span class="method-num">{{ ('home.method.steps.' ~ i ~ '.num')|trans }}</span><h3>{{ ('home.method.steps.' ~ i ~ '.title')|trans }}</h3><p>{{ ('home.method.steps.' ~ i ~ '.desc')|trans }}</p></div></div>{% endfor %}
+</div></div></section>

@@ -10,9 +10,6 @@ import 'magnific-popup';
 import 'jquery-nice-select/css/nice-select.css';
 import 'linearicons/dist/web-font/style.css';
 import 'jquery-nice-select';
-import Choices from 'choices.js';
-// Pexels API (client-side usage)
-import { createClient } from 'pexels';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './vendors/vendors';
 import './js/stellar.js';
@@ -29,18 +26,12 @@ window.jQuery = $;
  */
 import './styles/app.scss';
 import './styles/overrides.scss';
+import './styles/_independent.scss';
 
-const pexelsClient = createClient('YOUR_PEXELS_API_KEY');
 
 //  Burger Menu
  
- $('.navbar-toggler').on('click', function() {
-    $(this).toggleClass('collapsed');
-    var expanded = $(this).attr('aria-expanded') === 'true';
-    $(this).attr('aria-expanded', !expanded);
-    var target = $(this).attr('data-target');
-    $(target).toggleClass('show');
-});
+// Bootstrap owns the mobile menu and its aria-expanded state.
 
 // Post Commentaires :
 document.addEventListener('DOMContentLoaded', () => {
@@ -97,6 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
 //CategoriePosts
 document.addEventListener('DOMContentLoaded', () => {
     const postsContainer = document.getElementById('posts-container');
+    if (!postsContainer) return;
 
     // Délégation d'événement pour les liens de catégories
     document.addEventListener('click', (e) => {
@@ -162,11 +154,7 @@ $(document).ready(function () {
         gallery: { enabled: true }
     });
 
-        const select = document.querySelector('select');
-        const choices = new Choices(select, {
-        searchEnabled: false,
-        itemSelectText: ''
-    });
+    // Native selects remain accessible and work without plugin initialization.
 
     // Nice Select
     // $('select').niceSelect();
