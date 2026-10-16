@@ -4,10 +4,19 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: production
+  cancel-in-progress: false
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
 
     steps:
       # Étape 1 : Récupérer le code source
@@ -32,28 +41,39 @@ jobs:
           EOF
       # Étape 3 : Déployer le projet Symfony via SSH
       - name: Deploy to Hostinger
+        shell: bash
         run: |
-          ssh -o StrictHostKeyChecking=no hostinger << 'EOF'
+          ssh -T -o BatchMode=yes hostinger "bash -se -- '$GITHUB_SHA'" << 'EOF'
+            set -euo pipefail
+            export APP_ENV=prod
+            export APP_DEBUG=0
+
+            expected_sha="$1"
             cd /home/u791166429/domains/massgrafik.com/public_html
-            git pull origin main
-            composer install --no-dev --optimize-autoloader
-            php bin/console cache:clear --env=prod
-            php bin/console doctrine:migrations:migrate --no-interaction --allow-no-migration --env=prod
+
+            if ! command -v npm >/dev/null 2>&1; then
+              echo "Deployment stopped: npm is not available in the SSH shell PATH."
+              exit 1
+            fi
+
+            git fetch origin main
+            if [ "$(git rev-parse FETCH_HEAD)" != "$expected_sha" ]; then
+              echo "Deployment stopped: this workflow no longer targets the latest main commit."
+              exit 1
+            fi
+            git checkout main
+            # Fast-forward preserves unrelated server settings and refuses conflicts.
+            git merge --ff-only FETCH_HEAD
+            test "$(git rev-parse HEAD)" = "$expected_sha"
+
+            composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist
+            npm ci --include=dev
+            npm run build
+            test -s public/build/entrypoints.json
+
+            php bin/console doctrine:migrations:migrate --no-interaction --allow-no-migration --env=prod --no-debug
+            php bin/console cache:clear --env=prod --no-debug --no-warmup
+            php bin/console cache:warmup --env=prod --no-debug
+
+            echo "Deployment completed at $(git rev-parse --short HEAD)."
           EOF
-
-       # Étape 3 : Mettre en cache les dépendances npm
-      - name: Cache npm dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      # Étape 4 : Installer les dépendances npm (si non en cache)
-      - name: Install dependencies
-        run: npm install
-
-      # Étape 5 : Compiler les assets avec Webpack Encore
-      - name: Build assets with Webpack Encore
-        run: npm run build
