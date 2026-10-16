@@ -31,6 +31,7 @@ final class PresentationTest extends WebTestCase
                 self::assertNotSame('', $crawler->filter('meta[name="description"]')->attr('content'));
                 self::assertStringNotContainsString('services2.', $crawler->filter('main')->text());
                 self::assertStringNotContainsString('home.', $crawler->filter('main')->text());
+                self::assertStringNotContainsString('legal.', $crawler->filter('main')->text());
                 foreach ($crawler->filter('script[type="application/ld+json"]') as $schema) {
                     self::assertIsArray(json_decode($schema->textContent, true, 512, JSON_THROW_ON_ERROR));
                 }

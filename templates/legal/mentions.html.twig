@@ -12,7 +12,10 @@
     <p>
       {{ 'legal.mentions.editor.name'|trans }}<br>
       {{ 'legal.mentions.editor.legal'|trans }}<br>
-      {{ 'legal.mentions.editor.id'|trans }}<br>
+      {% set editorId = 'legal.mentions.editor.id'|trans %}
+      {% if editorId and editorId != 'legal.mentions.editor.id' %}
+        {{ editorId }}<br>
+      {% endif %}
       {{ 'legal.mentions.editor.address'|trans }}
     </p>
 

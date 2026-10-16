@@ -397,8 +397,8 @@ legal:
       title: 'Éditeur du site'
       name: "Samba SOW, opérant sous l'enseigne MassGrafik"
       legal: 'Statut : auto-entrepreneur (microentreprise)'
-      id: 'N° SIRET : [À COMPLÉTER]'
-      address: 'Adresse : 132 boulevard Jean Mermoz, 93380 Saint-Denis, France'
+      # id: 'N° SIRET : [À COMPLÉTER]'
+      address: 'Adresse : Saint-Denis, Ile-de-France, France'
     dirpub:
       title: 'Directeur de la publication'
       value: 'Samba SOW'
@@ -418,7 +418,7 @@ legal:
     title: 'Politique de confidentialité'
     controller:
       title: 'Responsable du traitement'
-      value: 'Samba SOW — MassGrafik, 132 boulevard Jean Mermoz, 93380 Saint-Denis. Contact : contact.massgrafik@gmail.com'
+      value: 'Samba SOW — MassGrafik, Saint-Denis. Contact : contact.massgrafik@gmail.com'
     commitment:
       title: 'Notre engagement'
       value: "Les informations que vous nous transmettez ne servent qu'à traiter votre demande de devis et à réaliser la prestation convenue. Elles ne sont jamais utilisées à des fins de démarchage commercial, ne sont jamais revendues, et ne sont jamais transmises à des tiers à des fins commerciales. Toute action ultérieure (suivi de projet, envoi de documents, facturation) est réalisée avec votre accord explicite."

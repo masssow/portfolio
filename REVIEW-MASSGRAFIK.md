@@ -1,6 +1,6 @@
 # Revue de la refonte Massgrafik
 
-Branche : `refonte-massgrafik`. L’intégration à `main` attend la validation de Samba.
+Branche de réalisation : `refonte-massgrafik`. Refonte validée par Samba pour intégration à `main`.
 
 ## Présentation
 
@@ -22,7 +22,7 @@ Branche : `refonte-massgrafik`. L’intégration à `main` attend la validation 
 
 ## Vérifications
 
-Résultats : 8 tests et 415 assertions réussis ; 42 templates Twig et les deux YAML valides ; compilation de production réussie. Les avertissements Sass, Browserslist et Symfony existants restent présents.
+Résultats : 8 tests et 447 assertions réussis ; 42 templates Twig et les deux YAML valides ; compilation de production réussie. Les avertissements Sass, Browserslist et Symfony existants restent présents.
 
 Le contrôle dans Chrome aux largeurs 360, 768 et 1440 pixels ne relève aucune erreur JavaScript, image cassée ou zone de formulaire sans libellé sur les pages vérifiées. Le menu mobile s’ouvre et aucun débordement horizontal n’est observé.
 
@@ -39,4 +39,4 @@ Les tests ciblés vérifient les pages bilingues, les métadonnées, les donnée
 
 Les métadonnées comprennent les URL canoniques, les variantes linguistiques réelles et les données structurées de Samba et des services. Le blog conserve ses URL françaises. Le sitemap et les robots sont disponibles à `/sitemap.xml` et `/robots.txt`.
 
-Le champ SIRET reste à compléter dans les mentions légales, comme avant la refonte. Les données factuelles et les engagements juridiques existants n’ont pas été réinventés.
+Les adresses reprennent les indications actualisées par Samba. Le champ SIRET a été retiré des traductions et ne s’affiche pas lorsqu’il n’est pas renseigné. Les autres données factuelles et engagements juridiques existants n’ont pas été réinventés.
